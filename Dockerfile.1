@@ -1,0 +1,21 @@
+FROM node:10
+
+
+
+# set working directory for the front-end codebase angular
+RUN mkdir -p /usr/src/hhsPacdFrontEndPh2
+
+WORKDIR /usr/src/hhsPacdFrontEndPh2
+
+
+# install and cache app dependencies
+COPY package.json package*.json ./
+
+RUN npm install -g @angular/cli
+RUN npm install
+
+# add app
+COPY . /usr/src/hhsPacdFrontEndPh2
+
+# start app
+CMD ng serve --base-href /ui/

@@ -1,0 +1,410 @@
+<div class="container-fluid">
+
+
+  <div id="curtian" style="
+  width:0px;
+  height:95vh;position:fixed;z-index:999999;
+  background:white;right:0px;top:0px;box-shadow:0px 0px 10px gray">
+    <p id="exitnaics" style="position: absolute;top: 5px;
+  right: 9px;
+  font-weight: 600">X</p>
+    <header>NAICS Codes</header>
+    <table class="ngtable">
+      <tbody>
+        <tr [attr.code]="code.naics_code +' '+ code.naics_title" *ngFor="let code of Naiscsall; index as p" index="p"
+          (click)="NAICSclick($event,p)" [(attr.data-size)]="code.size_standards_dollars">
+          <th>
+
+            {{code.naics_code}}
+          </th>
+          <th>
+            {{code.naics_title}}
+          </th>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+  <div class="header mb-4">
+    <label id="formlabel">Form</label>
+    <p id="form">SF-1449</p>
+  </div>
+
+  <div *ngIf="this.state" class="dropdown float-right" style="margin-right: 40px; z-index: 1;">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      Action
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item text-dark"  data-toggle="modal" data-target="#exampleModal">Amendment</a>
+      <a class="dropdown-item disabled" href="#">Modification</a>
+    </div>
+  </div>
+
+  <div *ngIf="!this.state" class="mt-2">
+    &nbsp;
+  </div>
+
+
+  <div class="header" style="border-bottom:0.5px solid #AAAAAA; margin-top: -30px;">
+    <ul class="nav" id="justifiedTab" role="tablist" >
+      <li class="nav-item nav-item1 text-center" style="border-top-right-radius: 5px;
+      border-top-left-radius: 5px;">
+        <a aria-controls="home" aria-selected="true" class="nav-link active" 
+        style="    padding-top: 15px;
+        font-size: 15px"
+        data-toggle="tab" href="#home"
+          id="home-tab" role="tab">Solicitation</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="header">
+    <!-- -->
+    <div class="tab-content" id="justifiedTabContent">
+      <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home" role="tabpanel">
+        <div class="list-group" id="accordionOne">
+          <div class="mb-2 mt-3 expansion-panel list-group-item">
+            <a aria-controls="collapseOne" aria-expanded="false" class="btn-primar expansion-panel-toggler collapsed"
+              data-toggle="collapse" href="#collapseOne" id="headingOne">
+              Overview
+              <div class="expansion-panel-icon ml-3 text-black-secondary">
+                <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+                <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+              </div>
+            </a>
+            <!-- -->
+            <div aria-labelledby="headingOne" class="collapse" data-parent="#accordionOne" id="collapseOne">
+              <div class="expansion-panel-body" [ngStyle]="{'pointer-events':uservalidate?'all':'none'}">
+                <div id="ov_dropdown" class="card custom-height update">
+                  <p *ngIf="show" class="save" (click)="edithide($event)">SAVE</p>
+                </div>
+
+
+                <div style="position: relative;
+                  float: left;
+                  width: 350px">
+                  <p
+                    style="color: #1f5fbd;font-weight: normal;font-size: 14px;font-family:
+                    'Arial',' SansSerif';position:relative;float:left;width:100%;margin-top:10px; margin-bottom: -.1px; margin-bottom: 5px">
+                    Issuing Contract Office Information</p>
+                    
+                  <select id="userselect" (change)="setvalues($event.target.value)"
+                    [attr.disabledDiv]="!uservalidate || this.solstatus != 'Initiated'"
+                    [disabled]="!uservalidate || this.solstatus != 'Initiated'">
+
+                    <option *ngFor="let item of this.allusers" value="{{item.pkId}}"
+                      [selected]="this.coId == item.pkId">
+                      <span *ngIf="item.firstName != 'Not'">{{item.firstName}}&nbsp;{{item.lastName}}</span>
+                      <span
+                        *ngIf="item.firstName == 'Not'">{{(item.email.split('@')[0].split('.'))[0].charAt(0).toUpperCase() +  (item.email.split('@')[0].split('.'))[0].slice(1)}}</span>
+                    </option>
+                  </select>
+                </div>
+
+                <table style="position: relative;
+                float: left;width:100%">
+
+                  <tr>
+                    <th style="
+                        width: 200px;
+                    ">
+                      <p style="color: #1f5fbd;font-weight: normal;font-size: 14px;font-family:
+                        'Arial',' SansSerif';width:100%;margin-bottom:0px ">
+                        Contract Office</p>
+                    </th>
+
+
+                    <th style="
+                        width: 200px;
+                    ">
+                      <p style="color: #1f5fbd;font-weight: normal;font-size: 14px;font-family:
+                        'Arial',' SansSerif'; margin-bottom:0px">
+                        Email</p>
+                    </th>
+
+
+                    <th style="
+                        width: 200px;
+                    ">
+                      <p style="color: #1f5fbd;font-weight: normal;font-size: 14px;font-family:
+                        'Arial',' SansSerif';margin-bottom:0px">
+                        Phone</p>
+                    </th>
+                  </tr>
+
+
+                  <tbody>
+
+                    <tr style="background: #B7DBFB;width:100%;padding:0px !Important">
+                      <th style="padding:0px !Important">
+                        <textarea type="input" [ngModel]="this.coAddress" style="text-transform: none;color: #606060;font-weight: normal;
+                          text-decoration: none;font-size: 14px;font-family: Arial,SansSerif;font-style: normal;
+                          background:transparent;border:none;position:relative;float:left;
+                          width:70%;height:30px;" contenteditable="false" readonly="" id="ICO1" class=""></textarea>
+                      </th>
+
+                      <th style="padding:0px !Important">
+                        <textarea type="input" [ngModel]="this.email" style="text-transform: none;color: #606060;
+                          font-weight: normal;text-decoration: none;font-size: 14px;
+                          font-family: Arial, SansSerif;
+                          font-style: normal;background:transparent;border:none;
+                          width:270px;height:30px;resize: none" contenteditable="false" readonly=""
+                          class=""></textarea>
+                      </th>
+
+                      <th style="padding:0px !Important">
+                        <textarea type="input" [ngModel]="this.coPhone" style="text-transform: none;color: #606060;
+                            font-weight: normal;text-decoration: none;
+                            font-size: 14px;font-family: Arial, SansSerif;font-style: normal;background:transparent;
+                            border:none;
+                            width:200px;height:30px;resize: none;" contenteditable="false" readonly=""
+                          class=""></textarea>
+                      </th>
+                    </tr>
+                  </tbody>
+
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="expansion-panel mb-2 list-group-item">
+            <a aria-controls="collapseTwo" aria-expanded="false" class=" btn-primar expansion-panel-toggler collapsed"
+              data-toggle="collapse" href="#collapseTwo" id="headingTwo">
+              Acquisition Information
+              <div class="expansion-panel-icon ml-3 text-black-secondary">
+                <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+                <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+              </div>
+            </a>
+            <div aria-labelledby="headingTwo" class="collapse" data-parent="#accordionOne" id="collapseTwo">
+              <div class="expansion-panel-body" [ngStyle]="{'pointer-events':uservalidate?'all':'none'}">
+                <div id="aq_dropdown" class="card custom-height update">
+                  <p class="save" *ngIf="show" (click)="edithide($event)">SAVE</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="expansion-panel mb-2 list-group-item">
+            <a aria-controls="collapseThree" aria-expanded="false" class=" btn-primar expansion-panel-toggler collapsed"
+              data-toggle="collapse" href="#collapseThree" id="headingThree">
+              Deadlines
+              <div class="expansion-panel-icon ml-3 text-black-secondary">
+                <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+                <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+              </div>
+            </a>
+            <div aria-labelledby="headingThree" class="collapse" data-parent="#accordionOne" id="collapseThree">
+              <div class="expansion-panel-body">
+                <div id="dl_dropdown" style="overflow:hidden;height:200px" class="card custom-height update update">
+                  <div id="dl_label1">
+
+                  </div>
+                  <div class="datewraper" 
+                  (focusout)="validate_date('test')">
+
+                    <input  class="datebox" 
+                    type="datetime-local" 
+                    [(ngModel)]="qandaDate" 
+                    [min]="this.startmindate"
+                    [readonly]="this.formData?.status != 'Initiated' && this.formData?.status != 'Accepted' || this.username != this.formData?.pointsofContact[1]  ">
+
+                    
+                  </div>
+
+                  <div id="dl_label2" style="margin-top:40px">
+
+                  </div>
+                  <div (focusout)="validate_date('test')" 
+                  class="datewraper"
+                    [ngStyle]="{'opacity':!validate?'0.5':'1'}">
+                    <input 
+                    [(ngModel)]="enddate" 
+                    [min]="qandaDate"
+                    class="datebox test2" 
+                    type="datetime-local"
+                    [readonly]="!validate || this.solstatus != 'Initiated' ||this.username != this.formData?.pointsofContact[1]  ">
+                    
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="expansion-panel mb-2 list-group-item">
+            <a aria-controls="collapseFour" aria-expanded="false" class="btn-primar expansion-panel-toggler collapsed"
+              data-toggle="collapse" href="#collapseFour" id="headingFour">
+              Payment & Delivery
+              <div class="expansion-panel-icon ml-3 text-black-secondary">
+                <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+                <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+              </div>
+            </a>
+            <div aria-labelledby="headingFour" class="collapse" data-parent="#accordionOne" id="collapseFour">
+              <div class="expansion-panel-body">
+                <div id="pa_dropdown" class="card custom-height update">
+                  <p class="save" *ngIf="show" (click)="edithide($event)">SAVE</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="solType1" class="expansion-panel mb-2 list-group-item">
+            <a aria-controls="collapseFive" aria-expanded="true" class="btn-primar expansion-panel-toggler collapsed"
+              data-toggle="collapse" href="#collapseFive" id="headingfive">
+              Schedule & Clauses
+              <div class="expansion-panel-icon ml-3 text-black-secondary">
+                <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+                <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+              </div>
+            </a>
+            <div aria-labelledby="headingFive" class="collapse" data-parent="#accordionOne" id="collapseFive">
+              <div class="expansion-panel-body">
+                <div class="card custom-height update">
+                  <label style="color: #1f5fbd;font-weight: normal;font-size: 14px;font-family: 'Arial',' SansSerif';"
+                    name='are_attached'>Solicitation Incorporates by Reference FAR 52.212-1, 52-212.4. FAR 52.212-3 and
+                    52.212-5 are attached. Addenda</label>
+                  <div style="margin:10px;font-size:20px;position:relative;float:left">
+                    <input id="a27_yes" (click)='this.datag(true,"a27_yes");this.datag(false,"a27_no")'
+                      style="margin:10px;font-size:20px" name="drone" class="radio" type="radio">
+                    <label style="color: #183e67;font-weight: normal;font-size: 14px;font-family: 'Arial',' SansSerif';"
+                      for="are_attached">Are Attached</label>
+
+                    <input id="a27_no" (click)='this.datag(false,"a27_yes");this.datag(true,"a27_no")'
+                      style="margin:10px;font-size:20px" name="drone" class="radio" type="radio">
+                    <label
+                      style="color: #183e67;font-weight: normal;font-size: 14px;font-family: 'Arial',' SansSerif';">Are
+                      Not Attached</label>
+
+                  </div>
+                </div>
+
+                <table id="SITable" [ngStyle]="{'pointer-events':uservalidate?'all':'none'}">
+                  <tbody>
+                    <tr style="background:white">
+                      <th>Item</th>
+                      <th>Schedule of Supplies</th>
+                      <th>Quantity</th>
+                      <th>Unit</th>
+                      <th>Unit Price</th>
+                      <th>Amount</th>
+                      <th>Action</th>
+                    </tr>
+
+                    <tr *ngFor=" let item of itemsarray; let i = index" style="pointer-events:none">
+                      <th style="pointer-events: none;">
+                        <input value="{{item.item}}"></th>
+                      <th style="pointer-events: none;">
+                        <input value="{{item.schedule}}"></th>
+                      <th style="pointer-events: none;">
+                        <input value="{{item.quanity}}"></th>
+                      <th style="pointer-events: none;">
+                        <input value="{{item.unit}}"></th>
+                      <th style="pointer-events: none;">
+                        <input value="{{item.unitprice}}"></th>
+                      <th style="pointer-events: none;">
+                        <input value="${{item.amount| number:'2.2-2'}}"></th>
+                      <th (click)="removerow(i)" class="hover" style="font-size:20px;font-weight:bold;color:darkgray"><i
+                          class="fa fa-trash"></i></th>
+                    </tr>
+
+                    <tr>
+                      <th>
+
+                        <input type="text" [(ngModel)]="item">
+                      </th>
+
+
+                      <th>
+                        <input [(ngModel)]="schedule">
+                      </th>
+
+                      <th>
+                        <input [(ngModel)]="quanity" (keypress)="keyPress($event)">
+                      </th>
+                      <th>
+                        <select [(ngModel)]="unit" style="border-radius:0px;height:22.5px">
+                          <option value="EA">EA</option>
+                          <option value="T&M">T&M</option>
+                          <option value="LH">LH</option>
+
+                        </select>
+
+                      </th>
+                      <th>
+                        <input [(ngModel)]="unitprice" (keypress)="keyPress($event);"
+                          value="${{unitprice?.replace('$','')}}">
+                      </th>
+
+
+                      <th style="pointer-events: none;">
+                        <input *ngIf="unitprice?true:false"
+                          value="${{quanity*unitprice.replace('$','') | number:'1.2-2' }}">
+                        <input *ngIf="unitprice?false:true" value=''>
+                      </th>
+                      <th (click)="addrow()" class="hover" style="font-size:20px;font-weight:bold;color:darkgray">+</th>
+                    </tr>
+
+
+
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+    <div aria-labelledby="profile-tab" class="tab-pane fade" id="profile" role="tabpanel">
+      <p class="p-4">Data not yet decided !!</p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade p-4" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" style="margin-top: 8%" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="assets/hhs-accelerate-logo.png" height="27" style="margin-top: -30px;">
+        <button style="margin-top: -35px;" type="button" id="closeModalPmdashboard" class="close" data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="p-3 text-center" style="color: #0c59cf;">
+          <span>Are you sure you want to apply amendment to solicitation</span> <br/>
+          <span>{{this.solno}}?</span>
+        </div>
+        <div class="p-3 text-center">
+          <button class="btn btn-primary btn-sm mr-3" (click)="createAmmendment()">
+              Create
+          </button>
+
+          <button class="btn btn-primary btn-sm" style="background-color: silver;" type="button" data-dismiss="modal">
+            Cancel
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

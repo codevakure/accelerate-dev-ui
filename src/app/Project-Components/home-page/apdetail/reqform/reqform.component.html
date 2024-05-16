@@ -1,0 +1,285 @@
+<div class="col-md-12 col-lg-12 col-xl-12 col-sm-12">
+  <form [formGroup]="requisition" novalidate (change)="onChange(requisition)">
+    <span class="mb-3 ap-detail-title p-3">
+      {{title}}
+    </span>
+    <div class="mt-2 line-items pl-3 pt-3 pr-3">
+      Build Line Items
+      <hr class="blue-line">
+    </div>
+    <div *ngIf="getLines(requisition).length == 0" class="pl-3 pr-3">
+      <button
+        [disabled]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status=='Initiated' || this.status=='Generated'"
+        type="submit" (click)="addLines()" class="btn btn-sm btn-primary float-right">
+        <i class="fa fa-plus mr-2" aria-hidden="true"></i>Add Item
+      </button>
+    </div>
+    <div  *ngIf="getLines(requisition).length > 0" [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status=='Initiated' || this.status=='Generated'" class="product-container pl-3 pr-3" formArrayName="lineItems"
+      id="lineItems">
+      <table class="table table-striped mb-0 border">
+        <thead>
+          <tr>
+            <th scope="col" class="col-1">Item No.</th>
+    
+            <th scope="col" class="col-3">Description</th>
+            <th scope="col" class="col-1">Quantity</th>
+            <th scope="col" class="col-1">Unit of Measure</th>
+            <th scope="col" class="col-2">Unit Price</th>
+            <th scope="col" class="col-2">Acct Code</th>
+            <th scope="col" class="col-1">Total Cost</th>
+            <th scope="col" class="col-1" data-toggle="tooltip" data-placement="left" title="Delete CLIN">
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of getLines(requisition); let i = index; trackBy:trackByFn" [formGroupName]="i">
+            <td>
+              <input class="form-controls" readonly formControlName="itemno" value="0{{i+1 | number:'3.0-0' }}">
+            </td>
+
+            <td>
+              <input class="form-controls" type="text" formControlName="description" placeholder="Insert Text">
+            </td>
+            <td>
+              <input type="number" class="form-controls" formControlName="quantity" min="0" placeholder="0"
+                (keypress)="keyPress($event)" aria-label="Quantity" id="'inputQuantity_'+{{i}}"
+                [(ngModel)]="itemQuantity[i]">
+            </td>
+            <td>
+              <div>
+                <div class="textfield-box">
+                  <select class="form-controls" id="unitofmeasure" formControlName="unitofmeasure">
+                    <option *ngFor="let c of unitofMesureService" [ngValue]="c">
+                      {{c}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    $
+                  </span>
+                  <input class="form-controls" formControlName="unitprice" min="0" placeholder="0.00" step="0.01"
+                    aria-label="Unit Price" id="inputUnitPrice_{{i}}" [(ngModel)]="itemUnitPrice[i]"
+                    (keypress)="keyPress($event)" (blur)="formatNumber($event,'p',i)">
+                </div>
+              </div>
+            </td>
+            <td style="width: 180px">
+              <a [class.disabled]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                [attr.data-target]="'#' + 'prefix' + m + i" [class.disabled]="!product.get('quantity').value > 0 || !product.get('unitprice').value > 0 || !product.get('description').value ||   
+                !product.get('unitofmeasure').value" (click)="addAcctcodes(i)" data-toggle="modal"
+                data-target=".bd-example-modal-lg">
+                <span *ngIf="!product.get('clintotal').value || !product.get('description').value ||   
+                  !product.get('unitofmeasure').value; else showAccountCode">
+                  Insert Acct Code
+                </span>
+                <ng-template #showAccountCode>
+                  <span>
+                    Account Code
+                  </span>
+                </ng-template>
+                <i *ngIf=" 
+                  itemAllocationTotal[i] === itemTotalCost[i] &&  
+                  itemTotalCost[i] != 0" class="acctCodeChecked fa fa-check-circle-o text-center fa-1x ml-1"
+                  aria-hidden="true"></i>
+              </a>
+
+              <!-- BEGIN MODAL -->
+              <div [attr.id]=" 'prefix' + m + i" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                aria-labelledby="myLargeModalLabel" aria-hidden="true" id="bd-example-modal-lg">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-header d-none">
+                    <img src="assets/hhs-accelerate-logo.png" height="30">
+                    <button type="button" class="close d-none" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-content">
+                    <div class="card-header row" style="border-bottom-width: 0">
+                      <div class="col-9">
+                        <h5 class="card-title">
+                          &nbsp; Select Accounting Codes
+                        </h5>
+                      </div>
+                      <div class="col-2">
+                        <div class="row percentUpdateCalculateContainer">
+                          <span>
+                            <span class="percentUpdateCalculate"></span>%
+                          </span>
+                          <img src="assets/img/robot.png" class="robotCalculate img-responsive" alt="%">
+                        </div>
+                        <div class="row calculateFooter shadow-0">
+                          <div class="position-fixed progress col-2 mr-3">
+                            <div *ngIf="itemAllocationPercent[i] > 0" class="progress-bar-total progress-bar  
+                              progress-bar-striped progress-bar-animated" role="progressbar"
+                              [style.width.%]="itemAllocationPercent[i]" [attr.aria-valuenow]="itemAllocationPercent[i]"
+                              aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                            <br />
+                            <div *ngIf="itemAllocationPercentBalance[i] > 0" class="progress-bar-balance progress-bar  
+                              progress-bar-striped progress-bar-animated" role="progressbar"
+                              [style.width.%]="itemAllocationPercentBalance[i]"
+                              [attr.aria-valuenow]="itemAllocationPercentBalance[i]" aria-valuemin="0"
+                              aria-valuemax="100">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row clintotal">
+                          <span>
+                            ${{product.get('clintotal').value}}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body mt-4 mb-4" formArrayName="acctcode" id="acctcode">
+                      <table class="table table-striped mb-0 border">
+                        <thead>
+                          <tr>
+                            <th class="col-3" scope="col">Office Information</th>
+                            <th class="col-5" scope="col">Accounting Codes</th>
+                            <th class="col-2" scope="col">Select</th>
+                            <th class="col-2" style="width: 50px !important;" scope="col">Allocation</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let acct of getAcctcodes(product); let j = index" [formGroupName]="j">
+                            <td>{{acct.get('officeInfo').value}}</td>
+                            <td style="word-break: break-all;">{{acct.get('accountCodes').value}}</td>
+                            <td>
+                              <label class="switch">
+                                <input type="checkbox" formControlName="select">
+                                <span class="slider round"></span>
+                              </label>
+                            </td>
+                            <td>
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">$</span>
+                                  <input (keypress)="keyPress($event)" (keypress)="saveAllocationWithEnter($event,i)"
+                                    (blur)="formatNumber($event,'a',i)" id="inputAllocation_{{i}}_{{j}}"
+                                    class="form-controls" step="0.01" placeholder="0.00" min="0"
+                                    formControlName="allocation" aria-label="Allocation Amount" style="width:50px;"
+                                    [class.deactivate]="!acct.get('select').value">
+                                  <!-- (mousedown)="fillEmptyInput($event,'a')" -->
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="card-footer">
+                      <button type="button" type="button" class="close" data-dismiss="modal" aria-label="Close"
+                        class="btn btn-sm btn-light card-link ml-2 float-right mr-2">
+                        Cancel
+                      </button>
+                      <button id="inputAllocationButton{{i}}" type="button" data-dismiss="modal" aria-label="Save"
+                        [disabled]="this.itemAllocationPercent[i]!=100"
+                        class="save-button card-link btn-sm btn btn-primary float-right mr-2"
+                        (click)="getLines(requisition)">
+                        Save
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END MODAL -->
+            </td>
+            <td>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                  <input class="form-controls col" formControlName="clintotal"
+                    aria-label="Amount (to the nearest dollar)" readonly placeholder="0.00"
+                    [(ngModel)]="itemTotalCostStr[i]">
+                </div>
+              </div>
+            </td>
+            <td data-toggle="tooltip" data-placement="bottom" title="Delete SLIN">
+              <a [class.d-none]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                (click)="removeLines(i)">
+                <i class="trashcan fa fa-trash-o mr-1" aria-hidden="true"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="6"></td>
+            <td id="lineTotal">
+              {{ this.requisition.get('lineTotal').value | currency : USD }}
+            </td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+      <div class="col-12 mt-2">
+        <button
+          [disabled]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status=='Initiated' || this.status=='Generated'"
+          type="button" (click)="addLines()" class="btn btn-sm btn-primary float-right">
+          <i class="fa fa-plus mr-2" aria-hidden="true"></i>Add Item
+        </button>
+      </div>
+    </div>
+
+    <hr class="mt-5">
+
+
+    <div class="form-group col-md-9 mt-4 disabledDiv" style="color: grey;">
+      <div class="form-group">
+        <label class="label-class" style="font-weight: 600; color: grey;">Funds Certifying Official's Certification</label>
+      </div>
+      <label class="label-class mt-2" style="font-weight: 600; font-style: italic; color: grey;">Please select one statement below.
+      </label>
+      <div class="custom-control custom-radio" style="margin-top: 14px;">
+        <input type="radio" id="option1Yes" name="option" formControlName="option" class="custom-control-input"
+          value="option1">
+        <label class="custom-control-label" for="option1Yes" value="option1">
+          I hereby certify that:<br>
+          (a) this requirement represents a bona-fide need of the fiscal year or years for which the appropriation was
+          made and complies with the Anti-Deficiency Act; ​<br>(b) funds are committed for the entire performance period
+          of this acquisition
+        </label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="option2" name="option" formControlName="option" class="custom-control-input"
+          value="option2">
+        <label class="custom-control-label" for="option2" value="option2">
+          I hereby certify that:<br>
+          (a) this requirement represents a bona-fide need of the fiscal year or years for which the appropriation was
+          made and
+          ​complies with the Anti-Deficiency Act<br>
+          ​(b) funds are committed for the base period of first increment of performance of this acquisition
+        </label>
+      </div>
+
+      <div class="custom-control custom-radio">
+        <input type="radio" id="option3" name="option" formControlName="option" class="custom-control-input"
+          value="option3">
+        <label class="custom-control-label" for="option3" value="option3">
+          This acquisition will use the multi-year contracting procedures authorized in FAR Part 17.1 and HHSAR Part
+          317.1.
+          I hereby certify that:<br>
+          (a) this requirement represents a bona-fide need of the fiscal year or years for which the appropriation was
+          made and
+          ​complies with the Anti-Deficiency Act;
+          ​<br>
+          ​(b) funds are committed for the base period of first increment of performance of this acquisition
+        </label>
+      </div>
+
+
+      <div class="custom-control custom-radio">
+        <input type="radio" id="option4" name="option" formControlName="option" class="custom-control-input"
+          value="option4">
+        <label class="custom-control-label" for="option4" value="option4">Funds are not currently committed for this
+          acquisition</label>
+      </div>
+
+    </div>
+  </form>
+</div>

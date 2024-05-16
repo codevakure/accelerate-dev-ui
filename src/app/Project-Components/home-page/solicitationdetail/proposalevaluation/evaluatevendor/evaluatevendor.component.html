@@ -1,0 +1,530 @@
+<div class="header">
+      <div style="white-space:nowrap; color:#1a355d; 
+                    font-weight:bold; font-size:16px; font-family:'Arial','SansSerif'; 
+                    text-align:left;">
+            Proposal Evaluation - {{this.vendorID}}
+      </div>
+      <a class="float-right" style="text-decoration: none" (click)="back()"><span class="back"><i
+                        class="fa fa-arrow-left mr-2" aria-hidden="true"></i>Back</span></a>
+</div>
+
+<div class="mt-4">
+      <form [formGroup]="vendorEvaluation" novalidate (change)="onChange(vendorEvaluation)">
+
+
+            <div>
+                  <div>
+                        <ul class="nav nav-tabs" id="justifiedTab" role="tablist">
+                              <li class="nav-item nav-item1 text-center">
+                                    <a aria-controls="home" aria-selected="true" class="nav-link active"
+                                          data-toggle="tab" href="#home" id="home-tab" role="tab">Vendor Response</a>
+                              </li>
+                              <li class="nav-item nav-item1 text-center">
+                                    <a aria-controls="contact" aria-selected="false" class="nav-link" data-toggle="tab"
+                                          href="#contact" id="contact-tab" role="tab">Evaluation Package</a>
+                              </li>
+                        </ul>
+
+                        <div class="tab-content" id="justifiedTabContent"
+                              style="background:white;padding:40px;margin-top:-1px;">
+
+                              <div class="tab-pane fade show active" aria-labelledby="home-tab" id="home"
+                                    role="tabpanel" style="border-bottom: 2px solid #D6D6D6;">
+                                    <table style="width:100% !Important" id="home" formArrayName="vendorFiles">
+                                          <colgroup>
+                                                <col span="3" style="width:33.33%">
+                                          </colgroup>
+                                          <tr style="padding:5px">
+                                                <th style=" color: #0844a4 !Important;
+                                            font-weight: bold !Important;
+                                            font-size: 14px !Important;
+                                            text-align: left !Important;
+                                            ">File</th>
+                                                <th style=" color: #0844a4 !Important;
+                                            font-weight: bold !Important;
+                                            font-size: 14px !Important;
+                                            text-align: left !Important;
+                                            ">Status</th>
+                                                <th
+                                                      style=" color: #0844a4 !Important;
+                                            font-weight: bold !Important;
+                                            font-size: 14px !Important;
+                                            text-align: left !Important;
+                                            position: relative;float:left;margin-left:9%">
+                                                      Action</th>
+                                          </tr>
+
+                                          <tr *ngFor="let vendor of getFiles(vendorEvaluation); let i = index;"
+                                                class=" acc" id="accordion+i" [formGroupName]="i" style="height:52px">
+
+                                                <td>
+                                                      <span style="color: #0844a4;
+                                                      
+                                                      font-size: 14px; width: 200px;font-weight: normal">{{vendor.get('volumeName').value}}
+                                                      </span>
+                                                </td>
+
+                                                <td>
+                                                      <div *ngIf="!vendor.get('status').value" class="textupdate">
+                                                            &nbsp;<i class="fa fa-hourglass-start"
+                                                                  style="color:#0844a4 " aria-hidden="true"></i>
+                                                            &nbsp;<span style="color: grey">Not Started</span></div>
+                                                      <div *ngIf="vendor.get('status').value == 'Pending'"
+                                                            class="textupdate">&nbsp;<i class="fa fa-hourglass-start"
+                                                                  aria-hidden="true"></i>
+                                                            &nbsp;<span style="color:#2e73dc">Pending</span></div>
+                                                      <div *ngIf="vendor.get('status').value == 'Complete'"
+                                                            class="textupdate"> &nbsp;<i style="color: #629c44;"
+                                                                  class="fa fa-check-circle-o" aria-hidden="true"></i>
+                                                            &nbsp;<span style="color: green">Completed</span>
+                                                      </div>
+                                                </td>
+
+                                                <td>
+                                                      <a class="expansion-panel-icon ml-3 text-black-secondary">
+                                                            <a target="_blank" [href]="vendor.get('pdfSrc').value"
+                                                                  class="btn btn-sm btn-light" style="color: #000333;
+                                                                              font-weight: normal;
+                                                                              text-decoration: none;
+                                                                              font-size: 14px;
+                                                                              font-family: Arial,SansSerif;
+                                                                              font-style: normal;">View</a>
+                                                            <button *ngIf="vendor.get('status').value != 'Complete'"
+                                                                  class="btn btn-sm btn-primary ml-3"
+                                                                  data-toggle="modal" data-target="#collapseOne"
+                                                                  aria-expanded="true" aria-controls="collapseOne"
+                                                                  [attr.data-target]="'#' + 'active' + n + i">Evaluate</button>
+                                                            <button *ngIf="vendor.get('status').value == 'Complete'"
+                                                                  class="btn btn-sm btn-success ml-3"
+                                                                  data-toggle="modal" data-target="#collapseOne"
+                                                                  aria-expanded="true" aria-controls="collapseOne"
+                                                                  [attr.data-target]="'#' + 'active' + n + i">Review</button>
+
+                                                            <div class="modal fade bd-example-modal-lg"
+                                                                  [attr.id]=" 'active' + n + i" tabindex="-1"
+                                                                  role="dialog" aria-labelledby="myLargeModalLabel"
+                                                                  aria-hidden="true">
+                                                                  <div class="modal-dialog modal-lg">
+                                                                        <div class="modal-header">
+                                                                              <img src="assets/hhs-accelerate-logo.png"
+                                                                                    height="30">
+                                                                              <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <span
+                                                                                          aria-hidden="true">&times;</span>
+                                                                              </button>
+                                                                        </div>
+                                                                        <div class="modal-content">
+                                                                              <div class="card-header p-3">
+                                                                                    <h5 class="card-title"
+                                                                                          style="color: #0844a4;font-weight: bold;font-size: 14px;">
+                                                                                          <i class="fa fa-tags"
+                                                                                                style="color: grey"
+                                                                                                aria-hidden="true"></i>
+                                                                                          Evaluation
+                                                                                    </h5>
+                                                                              </div>
+                                                                              <div class="card-body"
+                                                                                    style="height: 60vh; overflow-y:scroll">
+                                                                                    <div class="form-group">
+                                                                                          <label
+                                                                                                for="strengths">Strengths</label>
+                                                                                          <textarea class="form-control"
+                                                                                                formControlName="strengths"
+                                                                                                id="strengths" rows="3"
+                                                                                                [readonly]="vendor.get('status').value == 'Complete'"></textarea>
+                                                                                    </div>
+
+                                                                                    <div class="form-group">
+                                                                                          <label
+                                                                                                for="weakness">Weakness</label>
+                                                                                          <textarea class="form-control"
+                                                                                                formControlName="weekness"
+                                                                                                id="weakness" rows="3"
+                                                                                                [readonly]="vendor.get('status').value == 'Complete'"></textarea>
+                                                                                    </div>
+
+                                                                                    <div class="form-group">
+                                                                                          <label
+                                                                                                for="Deficiencies">Deficiencies</label>
+                                                                                          <textarea class="form-control"
+                                                                                                formControlName="Deficiencies"
+                                                                                                id="Deficiencies"
+                                                                                                rows="3"
+                                                                                                [readonly]="vendor.get('status').value == 'Complete'"></textarea>
+                                                                                    </div>
+
+                                                                                    <div class="form-group">
+                                                                                          <label
+                                                                                                for="Remarks">Remarks</label>
+                                                                                          <textarea class="form-control"
+                                                                                                formControlName="Remarks"
+                                                                                                id="Remarks" rows="3"
+                                                                                                [readonly]="vendor.get('status').value == 'Complete'"></textarea>
+                                                                                    </div>
+
+                                                                              </div>
+                                                                              <div class="card-footer">
+                                                                                    <button data-dismiss="modal"
+                                                                                          aria-label="Close"
+                                                                                          class="close nav-link btn btn-sm btn-success"
+                                                                                          (click)="saveComplete(i)"
+                                                                                          [disabled]="(vendor.get('strengths').value && vendor.get('weekness').value && vendor.get('Deficiencies').value && vendor.get('Remarks').value) == '' ">Save
+                                                                                          & Complete</button>
+                                                                                    <button data-dismiss="modal"
+                                                                                          aria-label="Close"
+                                                                                          class="close nav-link btn btn-sm btn-primary mr-3"
+                                                                                          (click)="savePending(i)">Save</button>
+                                                                              </div>
+                                                                        </div>
+                                                                  </div>
+                                                            </div>
+
+                                                      </a>
+
+                                                </td>
+                                          </tr>
+
+
+                                    </table>
+
+                              </div>
+
+                              <!-- <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home"
+                                    role="tabpanel" formArrayName="vendorFiles"
+                                    style="border-bottom: 2px solid #D6D6D6;">
+
+
+                                    <ul style="list-style-type: none;width:100%;height: 10px;font-weight:normal !Important
+                                    ">
+                                          <li>Files</li>
+                                          <li style="margin-left:24%">Status</li>
+                                          <li style="margin-left:10%">Action</li>
+                                    </ul>
+
+                                    <div *ngFor="let vendor of getFiles(vendorEvaluation); let i = index;"
+                                          class="list-group acc" id="accordion+i" [formGroupName]="i" style="height:52px">
+
+
+                                          <div class="expansion-panel mb-2 list-group-item row ">
+                                                <div aria-expanded="false"
+                                                      class="expansion-panel-toggler btn-primar collapsed row "
+                                                      id="acquisitionInformation" style="height: 38px">
+                                                      <span
+                                                            style="color: #0844a4;
+                                                            
+                                                            font-size: 14px; width: 200px;font-weight: normal">{{vendor.get('volumeName').value}}
+                                                            </span>
+
+
+                                                      <div *ngIf="vendor.get('status').value == ''"
+                                                            class="textupdate" > &nbsp;<i
+                                                                  class="fa fa-hourglass-start" style="color:#0844a4 "aria-hidden="true"></i>
+                                                            &nbsp;<span style="color: grey">Not Started</span></div>
+                                                      <div *ngIf="vendor.get('status').value == 'Pending'"
+                                                      class="textupdate">&nbsp;<i
+                                                                  class="fa fa-hourglass-start" aria-hidden="true"></i>
+                                                            &nbsp;<span style="color:#2e73dc">Pending</span></div>
+                                                      <div *ngIf="vendor.get('status').value == 'Complete'"
+                                                      class="textupdate"> &nbsp;<i
+                                                                  style="color: #629c44;" class="fa fa-check-circle-o"
+                                                                  aria-hidden="true"></i>
+                                                            &nbsp;<span style="color: green">Completed</span></div>
+
+
+
+                                                      <a class="expansion-panel-icon ml-3 text-black-secondary">
+                                                            <a target="_blank" [href]="vendor.get('pdfSrc').value"
+                                                                  class="btn btn-sm btn-light" style="color: #000333;
+                                                                  font-weight: normal;
+                                                                  text-decoration: none;
+                                                                  font-size: 14px;
+                                                                  font-family: Arial,SansSerif;
+                                                                  font-style: normal;">View</a>
+                                                            <button *ngIf="vendor.get('status').value != 'Complete'"
+                                                                  class="btn btn-sm btn-primary ml-3"
+                                                                  data-toggle="modal" data-target="#collapseOne"
+                                                                  aria-expanded="true" aria-controls="collapseOne"
+                                                                  [attr.data-target]="'#' + 'active' + n + i">Evaluate</button>
+                                                            <button *ngIf="vendor.get('status').value == 'Complete'"
+                                                                  class="btn btn-sm btn-success ml-3"
+                                                                  data-toggle="modal" data-target="#collapseOne"
+                                                                  aria-expanded="true" aria-controls="collapseOne"
+                                                                  [attr.data-target]="'#' + 'active' + n + i">Review</button>
+
+                                                            <div class="modal fade bd-example-modal-lg"
+                                                                  [attr.id]=" 'active' + n + i" tabindex="-1"
+                                                                  role="dialog" aria-labelledby="myLargeModalLabel"
+                                                                  aria-hidden="true">
+                                                                  <div class="modal-dialog modal-lg">
+                                                                        <div class="modal-header">
+                                                                              <img src="assets/hhs-accelerate-logo.png"
+                                                                                    height="30">
+                                                                              <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <span
+                                                                                          aria-hidden="true">&times;</span>
+                                                                              </button>
+                                                                        </div>
+                                                                        <div class="modal-content">
+                                                                              <div class="card-header p-3">
+                                                                                    <h5 class="card-title"
+                                                                                          style="color: #0844a4;font-weight: bold;font-size: 14px;">
+                                                                                          <i class="fa fa-tags"
+                                                                                                style="color: grey"
+                                                                                                aria-hidden="true"></i>
+                                                                                          Evaluation
+                                                                                    </h5>
+                                                                              </div>
+                                                                              <div class="card-body"
+                                                                                    style="height: 60vh; overflow-y:scroll">
+                                                                                    <div class="form-group">
+                                                                                          <label
+                                                                                                for="strengths">Strengths</label>
+                                                                                          <textarea class="form-control"
+                                                                                                formControlName="strengths"
+                                                                                                id="strengths" rows="3"
+                                                                                                [readonly]="vendor.get('status').value == 'Complete'"></textarea>
+                                                                                    </div>
+
+                                                                                    <div class="form-group">
+                                                                                          <label
+                                                                                                for="weakness">Weakness</label>
+                                                                                          <textarea class="form-control"
+                                                                                                formControlName="weekness"
+                                                                                                id="weakness" rows="3"
+                                                                                                [readonly]="vendor.get('status').value == 'Complete'"></textarea>
+                                                                                    </div>
+
+                                                                                    <div class="form-group">
+                                                                                          <label
+                                                                                                for="Deficiencies">Deficiencies</label>
+                                                                                          <textarea class="form-control"
+                                                                                                formControlName="Deficiencies"
+                                                                                                id="Deficiencies"
+                                                                                                rows="3"
+                                                                                                [readonly]="vendor.get('status').value == 'Complete'"></textarea>
+                                                                                    </div>
+
+                                                                                    <div class="form-group">
+                                                                                          <label
+                                                                                                for="Remarks">Remarks</label>
+                                                                                          <textarea class="form-control"
+                                                                                                formControlName="Remarks"
+                                                                                                id="Remarks" rows="3"
+                                                                                                [readonly]="vendor.get('status').value == 'Complete'"></textarea>
+                                                                                    </div>
+                                                                   
+                                                                              </div>
+                                                                              <div class="card-footer">
+                                                                                    <button data-dismiss="modal"
+                                                                                          aria-label="Close"
+                                                                                          class="close nav-link btn btn-sm btn-success"
+                                                                                          (click)="saveComplete(i)"
+                                                                                          [disabled]="(vendor.get('strengths').value && vendor.get('weekness').value && vendor.get('Deficiencies').value && vendor.get('Remarks').value) == '' ">Save
+                                                                                          & Complete</button>
+                                                                                    <button data-dismiss="modal"
+                                                                                          aria-label="Close"
+                                                                                          class="close nav-link btn btn-sm btn-primary mr-3"
+                                                                                          (click)="savePending(i)">Save</button>
+                                                                              </div>
+                                                                        </div>
+                                                                  </div>
+                                                            </div>
+
+                                                      </a>
+                                                </div>
+                                               
+                                          </div>
+
+
+                                          <div class="modal fade bd-example-modal-lg" [attr.id]=" 'active' + n + i"
+                                                tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                      <div class="modal-header">
+                                                            <img src="assets/hhs-accelerate-logo.png" height="30">
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                  aria-label="Close">
+                                                                  <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                      </div>
+                                                      <div class="modal-content">
+                                                            <div class="card-header p-3">
+                                                                  <h5 class="card-title"
+                                                                        style="color: #0844a4;font-weight: bold;font-size: 14px;">
+                                                                        <i class="fa fa-tags" style="color: grey"
+                                                                              aria-hidden="true"></i> Evaluation
+                                                                  </h5>
+                                                            </div>
+                                                            <div class="card-body"
+                                                                  style="height: 60vh; overflow-y:scroll">
+                                                                  <div class="form-group">
+                                                                        <label for="strengths">Strengths</label>
+                                                                        <textarea class="form-control"
+                                                                              formControlName="strengths" id="strengths"
+                                                                              rows="3"
+                                                                              [readonly]="vendor.get('status').value == 'Complete'"></textarea>
+                                                                  </div>
+
+                                                                  <div class="form-group">
+                                                                        <label for="weakness">Weakness</label>
+                                                                        <textarea class="form-control"
+                                                                              formControlName="weekness" id="weakness"
+                                                                              rows="3"
+                                                                              [readonly]="vendor.get('status').value == 'Complete'"></textarea>
+                                                                  </div>
+
+                                                                  <div class="form-group">
+                                                                        <label for="Deficiencies">Deficiencies</label>
+                                                                        <textarea class="form-control"
+                                                                              formControlName="Deficiencies"
+                                                                              id="Deficiencies" rows="3"
+                                                                              [readonly]="vendor.get('status').value == 'Complete'"></textarea>
+                                                                  </div>
+
+                                                                  <div class="form-group">
+                                                                        <label for="Remarks">Remarks</label>
+                                                                        <textarea class="form-control"
+                                                                              formControlName="Remarks" id="Remarks"
+                                                                              rows="3"
+                                                                              [readonly]="vendor.get('status').value == 'Complete'"></textarea>
+                                                                  </div>
+                                                    
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                  <button data-dismiss="modal" aria-label="Close"
+                                                                        class="close nav-link btn btn-sm btn-success"
+                                                                        (click)="saveComplete(i)"
+                                                                        [disabled]="(vendor.get('strengths').value && vendor.get('weekness').value && vendor.get('Deficiencies').value && vendor.get('Remarks').value) == '' ">Save
+                                                                        & Complete</button>
+                                                                  <button data-dismiss="modal" aria-label="Close"
+                                                                        class="close nav-link btn btn-sm btn-primary mr-3"
+                                                                        (click)="savePending(i)">Save</button>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+
+                                    
+
+                                    
+                              </div> -->
+
+                              <div id="contact" aria-labelledby="contact-tab" class="tab-pane fade" role="tabpanel">
+                                    <table style="   
+                               border-bottom: 2px solid #D6D6D6;
+                              z-index: 900;width:100%">
+                                          <colgroup>
+                                                <col span="1" style="width:80%">
+                                          </colgroup>
+
+                                          <tr style="margin-bottom:10px">
+                                                <th style="color: #0844a4 !Important;
+                                      font-weight: bold !Important;
+                                      font-size: 14px !Important;
+                                      text-align: left !Important;
+                                      ">
+                                                      Files
+                                                </th>
+                                                <th style="color: #0844a4 !Important;
+                                      font-weight: bold !Important;
+                                      font-size: 14px !Important;
+                                      text-align: left !Important;
+                                      ">
+                                                      Action
+                                                </th>
+                                          </tr>
+                                          <!-- <ul style="list-style-type: none;width:100%;height: 10px;font-weight:normal !Important
+                                     ;padding:0px">
+                                           <li style="    width: 70px;
+                                           position: relative;
+                                           float: left;
+                                           color: #0844a4 !Important;
+                                          font-weight: bold !Important;
+                                          font-size: 14px !Important;
+                                          text-align: left !Important;
+                                           ">Files</li>
+                                           <li style="width: 40px;
+                                           position: relative;
+                                           float: left;margin-left:79%;
+                                           color: #0844a4 !Important;
+                                          font-weight: bold !Important;
+                                          font-size: 14px !Important;
+                                          text-align: left !Important;
+                                          ">Action</li>
+                                     </ul> -->
+                                          <tr *ngFor="let res of getPdf(vendorEvaluation);let j = index;" class="acc"
+                                                style="height:52px">
+
+                                                <td>
+
+                                                      <span style="color: #1a355d;">{{res.get('fileName').value}}</span>
+                                                </td>
+
+                                                <td>
+                                                      <a>
+                                                            <a target="_blank" [href]="res.get('pdfSrc').value"
+                                                                  class="btn btn-sm btn-light" style="color: #ffffff;
+                                                      font-size: 11px;
+                                                       background-color: #006fbe;
+                                                       
+                                                      text-align: center;
+                                                      padding: 6px;
+                                                      border-radius:5px">View</a>
+                                                      </a>
+
+                                                </td>
+                                                <!-- <div aria-expanded="false"
+                                                      class="expansion-panel-toggler btn-primar collapsed"
+                                                      id="acquisitionInformation"
+                                                      style="background:transparent !Important;padding:0px !Important">
+
+                                                      <span style="color: #1a355d;">{{res.get('fileName').value}}</span>
+
+                                                      <a>
+                                                            <a target="_blank" [href]="res.get('pdfSrc').value"
+                                                                  class="btn btn-sm btn-light"
+                                                                  style="color: #ffffff;
+                                                                  font-size: 11px;
+                                                                  background-color: #006fbe;
+                                                                  
+                                                                  text-align: center;
+                                                                  padding: 6px;
+                                                                  border-radius:5px">View</a>
+                                                      </a>
+                                                </div> -->
+
+                                          </tr>
+                                    </table>
+                              </div>
+
+
+                              <!-- <div id="footer">
+                                    <select id="page_select_drop_down"  [(ngModel)]="pageamount" (change)="pagesize(pageamount)"  >
+                                          <option *ngFor="let count of this.counter"  value="{{count}}">{{count}}</option>
+                                    </select>
+                                    <div id="items_of" class="bold" style="width:fit-content" >
+                                     OF
+                                    </div>
+                                    <div id="previous" class="bold hover" (click)="previouspage()" >
+                                      PREVIOUS
+                                    </div>
+                                    <div id="pagecount"></div>
+                    
+                                    <div id="next" class="bold hover" (click)="nextpage()" >
+                                      NEXT
+                                    </div>
+                    
+                              </div> -->
+
+
+                        </div>
+                  </div>
+            </div>
+            <!-- <pre class="mt-5"> {{vendorEvaluation.value | json}} </pre> -->
+      </form>
+</div>

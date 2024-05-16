@@ -1,0 +1,275 @@
+    <div class="wrapper">
+
+    <!-- Sidebar  -->
+    <nav id="sidebar" class="shadow-1" style="overflow: hidden;  position: fixed;">
+        <ul class="list-unstyled components" id="accordionExample" style="margin: 0; overflow: hidden; height: 100%;">
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a (click)="clickIgceCollapse()" id="general" *ngIf="apdata" [routerLink]="['/home', apdata?.ap_no]">
+                    <i class="fa fa-desktop" aria-hidden="true"></i>
+                                &nbsp; &nbsp; General
+                </a>
+            </li>
+
+
+
+            
+
+            <li *ngIf="productService != 'svc'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a (click)="clickIgceCollapse()" id="SOW" *ngIf="apdata" [routerLink]="['/home', apdata?.ap_no,'sow']">
+
+                    <i class="fa fa-file-text" aria-hidden="true"></i>
+                                 &nbsp; &nbsp; Statement of Work
+                </a>
+            </li>
+
+
+            <li *ngIf="productService == 'svc'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" style="border-left: #ffffff">
+                <a *ngIf="apdata" id="Funding" data-toggle="collapse" aria-expanded="false"
+                    class="dropdown-toggle" data-target="#pageSubmenus" aria-controls="pageSubmenus"> <i class="fa fa-file-text" aria-hidden="true"></i>
+                    &nbsp; &nbsp; Statement of Work</a>
+                <ul class="collapse list-unstyled" id="pageSubmenus" data-parent="#accordionExample">
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a id="sow" *ngIf="apdata" [routerLink]="['/home',  apdata?.ap_no,'sow']">
+                            <span
+                            class="dot"> </span>&nbsp;&nbsp;&nbsp;Statement of Work
+                        </a>
+                    </li>
+                    <li style="border-bottom: 1px solid #47748b" [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a id="section508" *ngIf="apdata"
+                            [routerLink]="['/home',  apdata?.ap_no,'section508']"><span
+                            class="dot"> </span>&nbsp;&nbsp;&nbsp;Section 508</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a (click)="clickIgceCollapse()" id="MR" *ngIf="apdata" [routerLink]="['/home', apdata?.ap_no,'market_research']">
+
+                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                    &nbsp; &nbsp; Market Research
+                </a>
+            </li>
+
+
+
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" style="border-left: #ffffff; ">
+                <a *ngIf="apdata" id="Funding" data-toggle="collapse" data-target="#pageSubmenu" aria-controls="pageSubmenu" aria-expanded="false"
+                    class="dropdown-toggle"> <i class="fa fa-usd" aria-hidden="true"></i>
+                    &nbsp; &nbsp; Funding</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu" data-parent="#accordionExample">
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a id="IGCE" *ngIf="apdata" [routerLink]="['/home',  apdata?.ap_no,'igce']">
+                            <span
+                            class="dot"> </span>&nbsp;&nbsp;&nbsp;IGCE
+                        </a>
+                    </li>
+                    <li style="border-bottom: 1px solid #47748b" [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a id="Tradeoffs" *ngIf="apdata"
+                            [routerLink]="['/home',  apdata?.ap_no,'igceDescription']"><span
+                            class="dot"> </span>&nbsp;&nbsp;&nbsp;IGCE Description</a>
+                    </li>
+                    <!-- <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a id="Estimate" *ngIf="apdata" [routerLink]="['/home',  apdata?.ap_no,'estimate']">Estimate</a>
+                    </li> -->
+                    <!-- <li style="border-bottom: 1px solid #47748b" [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a id="req" *ngIf="apdata"
+                        [routerLink]="['/home', apdata?.ap_no,'reqform']"><span
+                        class="dot"> </span>&nbsp;&nbsp;&nbsp;Requisition Form</a>
+                    </li> -->
+                    <!-- <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a id="Compatibility" *ngIf="apdata"
+                            [routerLink]="['/home',  apdata?.ap_no,'compatibility']">Compatibility</a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a id="Constraints" *ngIf="apdata"
+                            [routerLink]="['/home',  apdata?.ap_no,'constraints']">Constraints</a>
+                    </li> -->
+                </ul>
+            </li>
+            <!-- <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a id="general" *ngIf="apdata" [routerLink]="['/home', apdata?.ap_no,'reqform']">
+                    <i class="fa fa-table" aria-hidden="true"></i>
+                    &nbsp; &nbsp; Requisition Form
+                </a>
+            </li> -->
+            <li  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a (click)="clickIgceCollapse()" id="Evaluations" *ngIf="apdata" [routerLink]="['/home', apdata?.ap_no,'evaluations']">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                &nbsp; &nbsp; Evaluations
+                </a>
+            </li>
+
+
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a (click)="clickIgceCollapse()" id="Security" *ngIf="apdata" [routerLink]="['/home', apdata?.ap_no,'security']">
+
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                            &nbsp; &nbsp; Security
+                </a>
+            </li>
+
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a (click)="clickIgceCollapse()" id="Other" *ngIf="apdata" [routerLink]="['/home', apdata?.ap_no,'other']">
+
+                    <i class="fa fa-briefcase" aria-hidden="true"></i>
+                                &nbsp; &nbsp; Other Considerations
+                </a>
+            </li>
+
+
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a (click)="clickIgceCollapse()" id="Attachments" *ngIf="apdata" [routerLink]="['/home', apdata?.ap_no,'attachments']">
+                    <i class="fa fa-paperclip" aria-hidden="true"></i>
+                                 &nbsp; &nbsp; Attachments
+                </a>
+            </li>
+
+
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a (click)="clickIgceCollapse()" id="poc" *ngIf="apdata" [routerLink]="['/home', apdata?.ap_no,'poc']">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                 &nbsp; &nbsp; Points of Contact
+                </a>
+            </li>
+
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a (click)="clickIgceCollapse()" id="resources" *ngIf="apdata" [routerLink]="['/home', apdata?.ap_no,'resources']">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                    &nbsp; &nbsp; Resources
+                </a>
+            </li>
+
+            <!-- <ul class="list-unstyled CTAs ml-4 my-0">
+                <li>
+                    <button
+                        [ngClass]="{'hidden': this.status=='Collaborate' || this.status=='initiated' || this.status=='Submitted'}"
+                        (click)="collaborate()" class="btn btn-sm btn-info" style="margin-top: 230px;">
+                        <i class="fa fa-comments" aria-hidden="true"></i>
+                        Collaborate
+                    </button>
+                </li>
+            </ul> -->
+
+        </ul>
+
+
+    </nav>
+
+
+    <!-- Page Content  -->
+    <div id="content" style="margin-top: 135px;">
+
+
+        <div  id="sectionheader"
+         class="col-md-12 col-xl-12 col-lg-12 col-xl-12 position-fixed row"
+            style="background-color: #f7f6f6;; margin-top: -81px; height: 64px; z-index: 2; border-bottom: 1px solid #ebebeb">
+            <!-- <button type="button" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                    <span>Toggle Sidebar</span>
+                </button> -->
+            <!-- <div (click)="sidebarFunction()" id="sidebarCollapse"><i style="cursor: pointer;" id="material"
+                    class="material-icons">arrow_back</i>
+            </div> -->
+            <div class="p-2 pl-2">
+                <span class="projecttitle">{{apdata?.projectTitle}}
+
+                </span><br>
+                <span class="projectsub">
+                    Acquisition # {{apdata?.ap_no}}
+                </span>
+
+                <!-- <a [routerLink]="['/home', apdata?.ap_no,'appreview']">
+                   
+                    &nbsp; &nbsp; ap previw
+                </a> -->
+
+
+            </div>
+
+
+            <div *ngIf="acceptButton" class="position-absolute" style="right: 0; margin-right: 300px; margin-top: 16px">
+
+
+                <button (click)="acceptAp()" id="acceptAp" style="background: #008db1;" class="btn btn-sm btn-primary mr-2"> Accept AP </button>
+
+
+            </div>
+
+            <div *ngIf="intitiateButton"  class="position-absolute" style="right: 0; margin-right: 300px; margin-top: 16px">
+
+
+                <button (click)="initiateAp()" id="initiateAp"class="btn btn-sm btn-primary mr-2">Draft Solicitation</button>
+
+
+            </div>
+            
+            <div *ngIf="!hideSolicitations " class="position-absolute" style="right: 0; margin-right: 255px; margin-top: 17px">
+
+
+                <a *ngIf="apdata" [routerLink]="['/home', apdata?.ap_no,'preview']" class="mr-2 mt-2"><img height="30" src="assets/file-icon.png"></a>
+
+
+            </div>
+
+            <div *ngIf="hideSolicitations" class="position-absolute" style="right: 0; margin-right: 210px; margin-top: 13px">
+
+
+                <button (click)="backtoSol()" class="btn btn-sm btn-primary mr-2"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back to Solicitation</button>
+
+
+            </div>
+
+            <div *ngIf="comments" class="position-absolute" style="right: 0; margin-right: 210px; margin-top: 13px">
+
+
+                <a id="commentCollab" data-target="#navdrawerRight1" data-toggle="navdrawer" class="mr-2"><i style="color: #2e73dc" class="fa fa-commenting fa-4x" aria-hidden="true"></i></a>
+
+
+            </div>
+        </div>
+
+        <router-outlet></router-outlet>
+        <div class="mb-5"></div>
+    </div>
+</div>
+
+
+
+
+<div style="z-index: 2000" 
+
+aria-hidden="true" class="navdrawer navdrawer-right" id="navdrawerRight1" tabindex="-1">
+    <div class="navdrawer-content">
+        <div class="navdrawer-header">
+            <span style="margin-top: 20px"><span>{{this.sectionHeader}}</span>&nbsp;Collaboration Updates</span>
+            <button style="margin-top: -12px" type="button" class="close text-white float-right ml-3" data-dismiss="navdrawer" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            <img class="float-right" style="margin-top: -12px;" src="assets/hhs-accelerate-logo.png"
+              height="25" alt="">
+
+        </div>
+
+        <app-comment-box [sectionHeader]="sectionHeader" [routeHeader]="routeHeader"></app-comment-box>
+    </div>
+</div>
+<ngx-spinner bdColor="#93C0E1" size="large" color="#fff" type="false">
+
+    <div class="div-animation">
+        <h1 class="cssanimation sequence fadeInBottom">accelerate</h1>
+    </div>
+
+    <div [hidden]="this.role=='Program Officer'" class="div-animation2">
+        <h2 class="cssanimation1 sequence fadeInBottom">Initiating Solicitation</h2>
+    </div>
+
+    <div [hidden]="this.role !='Program Officer'" class="div-animation2">
+        <h2 class="cssanimation1 sequence fadeInBottom">Building Acquisition</h2>
+    </div>
+
+  <div style="margin-top: -160px; margin-left: 20px;">
+    <img height="450" src="assets/LoadingScreen/AniamtedSequence.gif">
+  </div>
+
+
+</ngx-spinner>

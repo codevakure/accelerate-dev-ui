@@ -1,0 +1,240 @@
+[
+  {
+    "description": "        Complete Questionnaire to create acquisition",
+    "keyword": "Feature",
+    "name": "Complete Questionnaire to create acquisition",
+    "line": 1,
+    "id": "complete-questionnaire-to-create-acquisition",
+    "tags": [],
+    "uri": "e2e\\features\\3questions.feature",
+    "elements": [
+      {
+        "id": "complete-questionnaire-to-create-acquisition;create-product-based-new-requirement-acq",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Create Product Based New requirement Acq",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\steps\\1cert\\1cert.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\steps\\2login\\2login.steps.ts:8"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\steps\\3questions\\3questions.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\steps\\4general\\4general.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\steps\\6sow\\6sow.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\steps\\7security\\7security.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\steps\\5poc\\5poc.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\steps\\13draftingSolicitation\\13draftingSolicitation.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\steps\\14formsf1449\\14formsf1449.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\steps\\g-publishSolicitation\\g-publishSolicitation.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\steps\\h-createAmendment\\h-createAmendment.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\steps\\i-formsf30\\i-formsf30.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\steps\\j-soc\\j-soc.steps.ts:7"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User on program manager dashboard",
+            "match": {
+              "location": "e2e\\steps\\3questions\\3questions.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 502000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "Click on create new",
+            "match": {
+              "location": "e2e\\steps\\3questions\\3questions.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2085000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "User completes the questions",
+            "match": {
+              "location": "e2e\\steps\\3questions\\3questions.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24664000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Click on Submit",
+            "match": {
+              "location": "e2e\\steps\\3questions\\3questions.steps.ts:77"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3283000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "Acquisition gets created and project general page is shown",
+            "match": {
+              "location": "e2e\\steps\\3questions\\3questions.steps.ts:85"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5003000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:26"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "browser": {
+        "name": "chrome",
+        "version": "86.0.4240.75"
+      },
+      "device": "",
+      "platform": {
+        "name": "",
+        "version": ""
+      }
+    }
+  }
+]

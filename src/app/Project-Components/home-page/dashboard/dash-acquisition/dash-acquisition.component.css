@@ -1,0 +1,283 @@
+.badge {
+  font-size: 90%;
+}
+
+
+
+.card-body{
+  /* background-color: #e7eaee; */
+  /* background-color: #c3daf8; */
+  /* background-color: #d8e6f1; */
+  background-color: #e8eef3;
+}
+
+.bullet {
+  display: list-item;
+  list-style-type: disc;
+  list-style-position: inside;
+  color: red;
+}
+
+
+.dot {
+height: 5px;
+width: 5px;
+background-color: red;
+border-radius: 50%;
+display: inline-block;
+}
+
+
+.table tbody {
+top: 455px;
+left: 240px;
+color: #929292;
+text-align: left;
+line-height: 2.8;
+/* height: 295px !important; */
+}
+
+.table-class tr:first-child>td{
+  position: sticky;
+  margin-top: -5px;
+  top: 0;
+}
+
+
+.table thead td, .table thead th {
+top: 428px;
+left: 710px;
+white-space: nowrap;
+color: #404040;
+font-weight: normal;
+font-size: 12.9px;
+text-align: left;
+font-weight: 700;
+}
+
+
+
+.table tr:first-child>td{
+  position: sticky;
+  top: 0;
+}
+
+.trclass{
+  background: white;
+  font-family: 'Poppins', sans-serif;
+  z-index: 20;
+  -webkit-box-shadow: 0 1px 2px -2px black;
+  -moz-box-shadow: 0 1px 2px -2px black;
+  box-shadow: 0 1px 2px -2px black;
+}
+
+
+.table tbody td, .table tbody th {
+font-size: 12.9px;
+font-weight: 400;
+height: 3rem;
+padding-top: 0.919643rem;
+padding-bottom: 0.919643rem;
+}
+
+.table th {
+border-top: 1px solid #e1e1e1;
+line-height: 1.228572;
+padding-right: 0.65rem;
+padding-left: 0.65rem;
+vertical-align: top;
+}
+.table td {
+  color: rgb(44, 43, 43);
+  line-height: 1.228572;
+  padding-right: 0.65rem;
+  padding-left: 0.65rem;
+  vertical-align: top;
+  }
+
+
+
+
+  
+
+@-webkit-keyframes dyinglight {
+  15% {
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+  }
+  50% {
+    -webkit-transform: rotate(-89deg);
+            transform: rotate(-89deg);
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+
+@keyframes dyinglight {
+  15% {
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+  }
+  50% {
+    -webkit-transform: rotate(-89deg);
+            transform: rotate(-89deg);
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+.dl {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: inline-block;
+}
+
+.dl__square {
+  display: block;
+  width: 75px;
+  height: 75px;
+  background-color: #4285F4;
+  /* background: url("../../../assets/logos/roboyellowclosed.png"); */
+}
+
+.dl__container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-transform-origin: 50% 50% 0;
+          transform-origin: 50% 50% 0;
+  -webkit-animation: dyinglight 1s ease infinite;
+          animation: dyinglight 1s ease infinite;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.dl__corner--top:before,
+.dl__corner--top:after,
+.dl__corner--bottom:before,
+.dl__corner--bottom:after {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  color: #4285F4;
+  content: "";
+}
+
+.dl__corner--top:before {
+  border-left: 1px solid;
+  border-top: 1px solid;
+  top: -6px;
+  left: -6px;
+}
+.dl__corner--top:after {
+  border-right: 1px solid;
+  border-top: 1px solid;
+  top: -6px;
+  right: -6px;
+}
+
+.dl__corner--bottom:before {
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  bottom: -6px;
+  left: -6px;
+}
+.dl__corner--bottom:after {
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  bottom: -6px;
+  right: -6px;
+}
+
+
+.btn-vsm {
+  font-size:12px;
+  padding:8px; 
+  width:51px;
+}
+
+.btn-border {
+  background: white; border:.5px solid #2e73dc; color: #2e73dc;
+}
+
+
+.div-animation {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(40%);
+}
+
+.div-animation2 {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(230%);
+}
+
+h2 {
+  font-size: 2.1em;
+  letter-spacing: 0px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4.3em;
+  letter-spacing: -4px;
+  font-weight: 700;
+  color: #0B3555;
+  text-align: center;
+}
+
+.cssanimation1, .cssanimation1 span {
+  animation-duration: 3s;
+  animation-fill-mode: both;
+}
+
+.cssanimation1 span { display: inline-block }
+
+.cssanimation, .cssanimation span {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.cssanimation span { display: inline-block }
+
+.fadeInBottom { animation-name: fadeInBottom }
+@keyframes fadeInBottom {
+  from {
+      opacity: 0;
+      transform: translateY(100%);
+  }
+  to { opacity: 1 }
+}
+
+
+.dropdown-menu button{
+  color: rgb(26,53,93);
+  padding: 0.0px;
+  font-style: normal;
+  font-family: Arial;
+  font-weight: 400.0;
+  font-size: 13px;
+  text-align: center;
+  background:rgb(249, 250, 251)
+}
+
+.dropdown-toggle.dropdown-toggle-split::after {
+  margin-right: 0;
+  margin-left: 0;
+  margin-top:-1px
+}

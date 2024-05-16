@@ -1,0 +1,272 @@
+<!-- <div class="card" >
+  <ul class="nav nav-justified nav-tabs" id="justifiedTab" role="tablist">
+    <li class="nav-item">
+      <a aria-controls="home" aria-selected="true" class="nav-link active font2" data-toggle="tab" href="#home"
+        id="home-tab" role="tab">Comments</a>
+    </li>
+    <li class="nav-item" style="width:110px;margin-left:5px">
+      <a aria-controls="profile" aria-selected="false" class="nav-link font2" data-toggle="tab" href="#profile"
+        id="profile-tab" role="tab">Q & A</a>
+    </li>
+  </ul>
+  <div class="tab-content custom-height4 " id="justifiedTabContent" style="border-width: 1px;
+  border-style: solid;
+  border-color: #d6d6d6;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: #d6d6d6;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: #d6d6d6;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #c0c0c0;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #d6d6d6;
+  overflow-x: hidden">
+
+    
+    <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home" role="tabpanel">
+      <div *ngIf="this.CommentsData == ''" class="col-4 text-center" style="margin-top: 20%; margin-left: 35%">
+        <div class="row">
+          <i aria-hidden="true"><img src="assets/nodata.png" width="100%" height="100%"></i>
+          <div style="width:100%">No Comments</div>
+        </div>
+        <div class="row mt-3" style="width: 200px;
+        margin: -43%;">
+          <div></div>
+        </div>
+      </div>
+
+      <div class="col-12 mt-2" *ngIf="this.CommentsData != ''" >
+          <div class="pl-2 p-2 ml-2" style="border-bottom: .2px solid silver;"  *ngFor="let comments of CommentsData">
+            <a (click)="viewComment(comments)" style="position:relative;left:13px">
+            <div class="row">
+              <span class="iconName"><p style="color:rgb(24, 62, 103);">
+                {{comments?.textUser.split('')[0]}} 
+              </p></span>
+               <div>
+                  <span style="text-transform: none;
+                  color: #0c59cf;
+                  font-weight: bold;
+                  text-decoration: none;
+                  font-size: 13px;
+                  font-family: Arial,SansSerif;
+                  font-style: normal;">{{comments?.textUser}}</span>&nbsp;
+                  <span class="mt-1" style="color: grey; font-size: 10px;">{{comments?.date | date}} ({{comments?.date | date:'shortTime' }})</span><br>
+               
+               </div>
+            </div>
+
+           
+            
+          </a>
+          <div class="row" style="    right: -4%;
+          position: relative;">
+              <span class="mt-1" style="color: grey; font-size: 12px;">{{comments?.text}}</span>
+            </div>
+
+          <div class="row" style="height:20px">
+              <a (click)="viewComment(comments)" style="
+             text-transform: none;
+              color: #0c59cf;
+              font-weight: bold;
+              text-decoration: none;
+              font-size: 11px;
+              font-family: Open Sans, SansSerif;
+              font-style: normal;
+              margin-top: 5px;
+              position: absolute;
+              right: 7%;">Reply</a>
+          </div>
+
+          </div>
+
+         
+   
+      </div>
+     
+    </div>
+
+   
+    <div aria-labelledby="profile-tab" class="tab-pane fade" id="profile" role="tabpanel">
+
+      <div *ngIf="this.QandAData == ''" class="col-4 text-center" style="margin-top: 20%; margin-left: 35%">
+        <div class="row">
+          <i aria-hidden="true"><img src="assets/nodata.png" width="100%" height="100%"></i>
+          <div style="width:100%">Nothing Assigned</div>
+        </div>
+        <div class="row mt-3" style="width: 200px;
+         margin-left: -67%;">
+          <div></div>
+        </div>
+      </div>
+
+      <div class="col-12 mt-2" *ngIf="this.QandAData != ''">
+        <div class="pl-2 p-2 ml-2" style="border-bottom: .2px solid silver;" *ngFor="let qa of QandAData">
+          <a (click)="viewQA(qa)">
+          <div class="row question">
+            <span style="    color: #0c59cf;
+            font-weight: bold;
+            font-size: 12px;
+            background-color: #ffffff;
+            /* font-family: Open Sans, SansSerif; */
+            line-height: 1.5;">{{qa?.question}}</span><br>
+            <span>Vendor: {{qa?.vendor}} <br> Sol #: {{qa?.sol_no}}</span>
+          </div>
+          <div class="row" style=" font-size: 12px;">
+            
+          </div>
+        </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> -->
+
+<div class="ard" style="height:100%;background:transparent;border:none;">
+
+ 
+      <ul class="nav nav-justified nav-tabs" id="justifiedTab" role="tablist">
+          <li class="nav-item">
+            <a aria-controls="home" aria-selected="true" class="nav-link active font2" data-toggle="tab" href="#home"
+              id="home-tab" role="tab">Comments</a>
+          </li>
+          <li class="nav-item" style="width:110px;margin-left:5px">
+            <a aria-controls="profile" aria-selected="false" class="nav-link font2" data-toggle="tab" href="#profile"
+              id="profile-tab" role="tab">Q & A</a>
+          </li>
+        </ul>
+        <div class="ard tab-content custom-height4 "
+         id="justifiedTabContent" style="border-width: 1px;
+        border-style: solid;
+        border-color: #d6d6d6;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: #d6d6d6;
+        border-left-width: 1px;
+        border-left-style: solid;
+        border-left-color: #d6d6d6;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: #c0c0c0;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: #d6d6d6;
+        overflow-x: hidden;
+        height: 303px;
+        background:white"
+        >
+      
+          
+          <div aria-labelledby="home-tab"
+          class="tab-pane fade show active" id="home" role="tabpanel">
+            <div *ngIf="this.CommentsData == ''" 
+            class="col-4 text-center" 
+            style="margin-top: 20%; margin-left: 35%">
+              <div class="row">
+                <i aria-hidden="true"><img src="assets/nodata.png" width="100%" height="100%"></i>
+                <div style="width:100%">No Comments</div>
+              </div>
+              <div class="row mt-3" style="width: 200px;
+              margin: -43%;">
+                <div></div>
+              </div>
+            </div>
+      
+            <div class="col-12 mt-2" *ngIf="this.CommentsData != ''" >
+                <div class="pl-2 p-2 ml-2" style="border-bottom: .2px solid silver;" 
+                 *ngFor="let comments of CommentsData?.reverse()">
+                  <a (click)="viewComment(comments)" style="position:relative;left:13px">
+                  <div class="row">
+                    <span class="iconName"><p style="color:rgb(24, 62, 103);">
+                      {{comments?.textUser.split('')[0]}} 
+                    </p></span>
+                     <div>
+                        <span style="text-transform: none;
+                        color: #0c59cf;
+                        font-weight: bold;
+                        text-decoration: none;
+                        font-size: 13px;
+                        font-family: Arial,SansSerif;
+                        font-style: normal;">
+                        {{comments?.textUser}}</span>&nbsp;
+                        <span class="mt-1" style="color: grey; font-size: 9px;">
+                          {{comments?.date | date}} ({{comments?.date | date:'shortTime' }})
+                        </span><br>
+                     
+                     </div>
+                  </div>
+      
+                 
+                  
+                </a>
+                <div class="row" style="    right: -4%;
+                position: relative;">
+                    <span class="mt-1" style="color: grey; font-size: 12px;">
+                      {{comments?.text}}</span>
+                  </div>
+      
+                <div class="row" style="height:20px">
+                    <a (click)="viewComment(comments)" style="
+                   text-transform: none;
+                    color: #0c59cf;
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-size: 11px;
+                    font-family: Open Sans, SansSerif;
+                    font-style: normal;
+                    margin-top: 5px;
+                    position: absolute;
+                    right: 7%;">Reply</a>
+                </div>
+      
+                </div>
+      
+               
+         
+            </div>
+           
+          </div>
+      
+         
+          <div aria-labelledby="profile-tab" class="tab-pane fade" id="profile" role="tabpanel">
+      
+            <div *ngIf="this.QandAData == ''" class="col-4 text-center" style="margin-top: 20%; margin-left: 35%">
+              <div class="row">
+                <i aria-hidden="true"><img src="assets/nodata.png" width="100%" height="100%"></i>
+                <div style="width:100%">Nothing Assigned</div>
+              </div>
+              <div class="row mt-3" style="width: 200px;
+               margin-left: -67%;">
+                <div></div>
+              </div>
+            </div>
+      
+            <div class="col-12 mt-2" *ngIf="this.QandAData != ''">
+              <div class="pl-2 p-2 ml-2" style="border-bottom: .2px solid silver;" *ngFor="let qa of QandAData">
+                <a (click)="viewQA(qa)">
+                <div class="row question">
+                  <span style="    color: #0c59cf;
+                  font-weight: bold;
+                  font-size: 12px;
+                  background-color: #ffffff;
+                  /* font-family: Open Sans, SansSerif; */
+                  line-height: 1.5;">{{qa?.question}}</span><br>
+                  <span>Vendor: {{qa?.vendor}} <br> Sol #: {{qa?.sol_no}}</span>
+                </div>
+                <div class="row" style=" font-size: 12px;">
+                  
+                </div>
+              </a>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+ 
+  
+
+</div>

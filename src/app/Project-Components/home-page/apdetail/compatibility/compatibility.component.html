@@ -1,0 +1,17 @@
+<div class="col-sm-12 col-md-12 cl-lg-11 col-xl-11">
+  <span class="mt-2 ap-detail-title">Compatibility</span>
+  <div class="float-right" style="margin-top: -20px">
+  </div>
+  <form name="Form" #f="ngForm">
+    <div class="row" style="margin-top: 30px">
+      <div class="col-12">
+        <quill-editor [disabled]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status=='Initiated' || this.status=='Generated'" [(ngModel)]="this.compatibilitydata" name= "description" format="html" [styles]="{height: '50vh'}" placeholder="" (onContentChanged)="onContentChanged($event)">
+        </quill-editor>
+      </div>
+    </div>
+  </form>
+  <!-- <pre>{{ f.value | json }}</pre> -->
+</div>
+<div class="mb-5" style="margin-bottom: 90px !important">
+
+</div>

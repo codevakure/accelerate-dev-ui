@@ -1,0 +1,261 @@
+<div class="col-sm-12 col-md-12 cl-lg-11 col-xl-11">
+  <span class="mt-2 ap-detail-title sowTitle">Statement of Work</span><br>
+
+
+  <div class="float-right" style="margin-top: -20px" *ngIf="this.show">
+    <a [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+      id="similarContracts" data-target="#navdrawerRight" data-toggle="navdrawer"><img src="assets/HR.png" height="73"
+        width="180" (click)="grabTitle()"></a>
+
+
+
+    <div aria-hidden="true" class="navdrawer navdrawer-right" id="navdrawerRight" tabindex="-1">
+      <div class="navdrawer-content">
+        <!-- <div class="modal-header">
+              <img src="assets/hhs-accelerate-logo.png" height="25">
+            </div> -->
+
+
+        <div class="navdrawer-header">
+          <span style="margin-top: 20px">Historical Reference</span>
+          <img style="margin-top: -100px; margin-left: 260px" src="assets/hhs-accelerate-logo.png" height="20" alt="">
+        </div>
+
+
+        <div class="p-3">
+          <!-- <div class="col search-container mt-1">
+            <input type="text" id="search-bar" (keyup)="onKey($event)" placeholder="#Similar Contract or Keywords">
+          </div> -->
+
+          <!-- <div class="col mt-3 mb-3">
+          <span>Value: &nbsp;</span><span class="badge badge-info">{{this.simNumber}}</span>
+        </div> -->
+
+          <div class="col-12 mt-2 mb-2 ">
+            <!-- <div class="col p-2 shadow-sm">
+              <a data-toggle="modal" data-target=".bd-example-modal-lg" (click)="clickSimilar(sco)">
+                <div class="mb-2">
+                  <span class="mr-3"
+                    style="color: #0844a4; font-size: 14px">{{sco.sol_id}}</span><span style="font-size: 14px" class="badge badge-pill badge-success">{{sco.score | number:'1.0-0'}}%</span>
+                </div>
+                <div class="overflow">{{sco.sow}}</div>
+              </a>
+  
+            </div> -->
+
+            <div class="ard custom-height1">
+            <table *ngIf="this.simNumber" class="table table-striped mb-0 border">
+              <thead>
+                <tr style="background-color: white">
+                  <th class="trclass" scope="col">Contract Title</th>
+                  <th class="trclass" scope="col">Feedback</th>
+                  <!-- <th scope="col">Score</th> -->
+                </tr>
+              </thead>
+              <thead>
+                <tr *ngFor="let sco of similarContractss | paginate: this.config; let i = index">
+                  <!-- <th class="simid" scope="row" id="title+{{(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1}}" (click)="clickSimilar(sco, (this.config.currentPage - 1) * this.config.itemsPerPage + i + 1)"> {{sco.publicDescription == 'Not Provided' ? sco.acqNumber :sco.publicDescription}} </th> -->
+                  <th class="simid" scope="row" id="title+{{(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1}}" (click)="clickSimilar(sco, (this.config.currentPage - 1) * this.config.itemsPerPage + i + 1)"> {{sco.publicDescription}} </th>
+                  <!-- <th class="simid" scope="row" id="title+{{(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1}}" (click)="clickSimilar(sco, (this.config.currentPage - 1) * this.config.itemsPerPage + i + 1)">Reference {{(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1}}</th> -->
+                  <!-- <th class="simid" scope="row" (click)="clickSimilar(sco)">{{sco.acqNumber}}</th> -->
+                  <td class="text-center">
+                    <a (click)="addFeedbacklike(sco, (this.config.currentPage - 1) * this.config.itemsPerPage + i + 1)"> <i
+                        [ngClass]="{'color-green':this.aiFeedbackForm.get('sow').controls[(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1].value.feedback_status == 'Like','color-greyy':this.aiFeedbackForm.get('sow').controls[(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1].value.feedback_status == '','color-greyy':this.aiFeedbackForm.get('sow').controls[(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1].value.feedback_status == undefined}"
+                        class="fa fa-thumbs-up" style="font-size: 150%;" aria-hidden="true"></i> </a> &nbsp; &nbsp;
+                    <a (click)="addFeedbackdislike(sco, (this.config.currentPage - 1) * this.config.itemsPerPage + i + 1)"> <i
+                        [ngClass]="{'color-red':this.aiFeedbackForm.get('sow').controls[(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1].value.feedback_status == 'dislike','color-greyy':this.aiFeedbackForm.get('sow').controls[(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1].value.feedback_status == '','color-greyy':this.aiFeedbackForm.get('sow').controls[(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1].value.feedback_status == undefined}"
+                        class="fa fa-thumbs-down" style="font-size: 150%;" aria-hidden="true"></i></a>
+                  </td>
+                  <!-- <td>
+                    <span style="font-size: 14px"
+                      class="badge badge-pill badge-success">{{sco.score | number:'1.0-0'}}%</span>
+                    <div class="progress blue" style="height: 20px;">
+                      <span class="progress-left">
+                        <span class="progress-bar"></span>
+                      </span>
+                      <span class="progress-right">
+                        <span class="progress-bar"></span>
+                      </span>
+                      <div class="progress-value">{{sco.score | number:'1.0-0'}}%</div>
+                    </div>
+
+                  </td> -->
+                </tr>
+              </thead>
+            </table>
+            
+            </div>
+            <div class="mt-3 ml-2">
+              <pagination-controls (pageChange)="pageChanged($event)" previousLabel="" nextLabel=""></pagination-controls>
+            </div>
+
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-sm btn-primary card-link ml-2" style="position: absolute;
+        right: 34px;" (click)="closeModals()" aria-label="Close" data-dismiss="navdrawer">Cancel</button>
+
+
+      </div>
+
+
+    </div>
+
+
+
+
+  </div>
+
+
+  <form name="Form" #f="ngForm">
+    <div class="mt-5"> <span class="ap-detail-title sowTitle" style="font-size: 13.5px; color:#1a355d;">
+        Product or Service Descriptions*</span></div>
+    <div class="mb-2">
+      <a class="tooltips" href="#">FAR 7.105(b)(7)
+
+        <span class="classic">Explain the choice of product or service description types (including performance- based
+          acquisition descriptions) to be used in the acquisition.</span></a>
+    </div>
+    <label class="label-class mb-1" style="font-style: italic; font-size:13px">Explain the choice of product or service
+      description types (including performance-based acquisition descriptions) to be used in the acquisition. FAR
+      Subpart 7.102 requires promoting and providing for the acquisition of commercial or non-developmental items, to
+      the maximum extent practicable (41 U.S.C. 3307), see guidance in FAR Part 12 and the definition of a commercial
+      item in FAR Part 2, Section 2.101. The AP shall provide details supporting the procurement of existing commercial
+      or non-developmental items or services. If not, then develop a justification requesting approval from the Senior
+      Procurement Executive (SPE) to procure a non-commercial item or service.
+    </label>
+    <div class="row" style="margin-top: 20px">
+      <div class="col-12">
+        <quill-editor customToolbarPosition="bottom"
+          [disabled]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status=='Initiated' || this.status=='Generated'"
+          [(ngModel)]="this.sowdata" name="description" format="html" [styles]="{height: '50vh'}" placeholder=""
+          (onContentChanged)="onSow($event)" (click)="onSowClick();hidehistorical(true)"></quill-editor>
+      </div>
+    </div>
+
+    <div class="mt-4"> <span class="ap-detail-title sowTitle" style="font-size: 13.5px; color:#1a355d;">Capability or
+        Performance</span></div>
+    <div class="mb-2">
+      <a class="tooltips" href="#">FAR 7.105(a)(4)
+
+        <span class="classic">{{this.FAR7105a4}}</span></a>
+    </div>
+    <label class="label-class mb-1" style="font-style: italic; font-size:13px">
+      For information technology acquisitions,
+      Discuss how the capital planning and investment control (CPIC) requirements of 40 U.S.C. 11312 and OMB Circular
+      A-130 will be met (see 7.103(v) and Part 39); and
+      Discuss why this action benefits the Government, such as when --
+      The agency can accomplish its mission more efficiently and effectively (e.g., take advantage of the servicing
+      agency's specialized expertise; or gain access to contractors with needed expertise); or Ordering through an
+      indefinite delivery contract facilitates access to small business concerns, including small disadvantaged business
+      concerns, 8(a) contractors, women-owned small business concerns, HUBZone small business concerns, veteran-owned
+      small business concerns, or service-disabled veteran-owned small business concerns. For information technology
+      acquisitions using Internet Protocol, discuss whether the requirements documents include the Internet Protocol
+      compliance requirements specified in 11.002(g) or a waiver of these requirements has been granted by the agency's
+      Chief Information Officer.
+
+    </label>
+    <div class="row" style="margin-top: 12px">
+      <div class="col-12">
+        <quill-editor customToolbarPosition="bottom"
+          [disabled]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status=='Initiated' || this.status=='Generated'"
+          [(ngModel)]="this.sowdata1" name="description1" format="html" [styles]="{height: '50vh'}" placeholder=""
+          (onContentChanged)="onCapability($event)" (click)="onCapabilityClick();hidehistorical(false)"></quill-editor>
+      </div>
+    </div>
+  </form>
+
+  <!-- <pre>{{ f.value | json }}</pre> -->
+  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> -->
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true" id="bd-example-modal-lg">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-header d-none">
+      <img src="assets/hhs-accelerate-logo.png" height="30">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-content">
+      <div class="card border">
+
+
+
+        <div class="card-header row">
+          <div class="col-12">
+            
+            <div class="float-left row">
+              <h5 class="card-title ml-3 mt-2"
+                style="color: #0844a4;font-weight: bold;font-size: 15px;font-family: Arial, SansSerif;   white-space: nowrap; 
+                max-width: 630px; 
+                overflow: hidden;
+                text-overflow: ellipsis; ">
+                <i class="fa fa-tags" style="color: grey" aria-hidden="true"></i> &nbsp;{{this.scosolid}}
+                
+              </h5>
+
+              <div class="ml-4 mt-1">
+                <a (click)="addFeedbacklike(this.historicalArray, this.index)"> <i class="fa fa-thumbs-up"
+                  [ngClass]="{'color-green':this.feedbackIndividual == 'Like'}"
+                    style="font-size: 170%;" aria-hidden="true"></i> </a> &nbsp; &nbsp;
+                <a (click)="addFeedbackdislike(this.historicalArray, this.index)"> <i class="fa fa-thumbs-down"
+                  [ngClass]="{'color-red':this.feedbackIndividual == 'dislike'}"
+                    style="font-size: 170%;" aria-hidden="true"></i></a>
+              </div>
+            </div>
+
+
+
+            <div class="float-right mr-2">
+              <button type="button" style="color: grey; font-weight:600; font-size: 35px;" data-dismiss="modal" class="close"
+                 aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div id="cardScroll" class="card-body custom-height2 p-5">
+          <p class="card-text" [innerHTML]="scosow"></p>
+          <!-- <p class="card-text" style="white-space: pre-wrap">{{scosow}}</p> -->
+          <!-- <div *ngFor="let sowcontent of scosow">
+            <p class="card-text">{{sowcontent.content}}</p>
+
+          </div> -->
+          <!-- <p class="card-text" [innerHTML]="this.scosow"></p> -->
+        </div>
+        <div class="card-footer">
+
+          <button type="button" *ngIf="this.error" class="card-link btn-sm btn btn-success  float-left mr-5" style="color: white"
+            (click)="textEditor()">&nbsp; Add &nbsp;</button>
+
+            <button [disabled]='this.index == 15' class="btn btn-sm btn-primary float-right ml-2" (click)="nextHR()">></button>
+            <button [disabled]='this.index == 1' class="btn btn-sm btn-primary mr-2 float-right" (click)="prevHR()"><</button>
+
+          
+
+          <!-- <button type="button" class="btn btn-sm btn-light card-link ml-2" (click)="closeModals()">Cancel</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="mb-5" style="margin-bottom: 90px !important">
+
+  </div>

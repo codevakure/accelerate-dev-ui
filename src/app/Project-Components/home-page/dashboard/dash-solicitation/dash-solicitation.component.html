@@ -1,0 +1,84 @@
+<div class="card" style="border-width: 1px;
+border-style: solid;
+border-color: #d6d6d6;
+border-right-width: 1px;
+border-right-style: solid;
+border-right-color: #d6d6d6;
+border-left-width: 1px;
+border-left-style: solid;
+border-left-color: #d6d6d6;
+border-bottom-width: 2px;
+border-bottom-style: solid;
+border-bottom-color: #c0c0c0;
+border-top-width: 1px;
+border-top-style: solid;
+border-top-color: #d6d6d6;">
+  <div class="card-body">
+    <h5 class="font2"><i class="fa fa-book" aria-hidden="true" style="margin-right:10px"></i>Solicitations<a [routerLink]="['/home/solicitations']"> <i class="fa fa-external-link float-right"  style="cursor: pointer; font-weight: 800; color: #2e73dc;"></i></a></h5>
+  </div>
+
+  <div class="ard custom-height3">
+    <table class="table mb-0">
+      <div class="col-4 text-center" *ngIf="this.getsol == ''" style="margin-top: 12%; margin-left: 40%">
+          <div class="row">
+              <i  aria-hidden="true"><img src="assets/nodata.png" height="100"></i>
+              
+          </div>
+          <div class="row mt-3">
+            <div style="margin-left: -10%">No Solicitations to Display</div>
+          </div>
+      </div>
+      <tbody *ngIf="this.getsol != ''">
+          <tr>
+              <td scope="col" class="trclass" style="color: #404040 !important;
+              font-weight: normal !important;
+              font-size: 12px !important;
+              font-family: Arial, SansSerif !important"><b>Solicitation#</b></td>
+              <td scope="col" class="trclass" style="color: #404040 !important;
+              font-weight: normal !important;
+              font-size: 12px !important;
+              font-family: Arial, SansSerif !important"><b>Project Title</b></td>
+              <td scope="col" class="trclass" style="color: #404040 !important;
+              font-weight: normal !important;
+              font-size: 12px !important;
+              font-family: Arial, SansSerif !important"><b>Status</b></td>
+              <td scope="col" class="trclass" style="color: #404040 !important;
+              font-weight: normal !important;
+              font-size: 12px !important;
+              font-family: Arial, SansSerif !important"></td>
+          </tr>
+        <tr *ngFor="let sol of getsol?.reverse(); let i = index">
+          <th scope="row" style="color: #006fbe; font-size: 13px; width: 180px"><span
+              class="dot" style="background-color:#006fbe"></span>&nbsp;{{ sol?.sol_no }}</th>
+          <td>{{ sol?.projectTitle }}</td>
+          <td><span class="badge mt-1"
+              [ngClass]="{'badge-primary':sol.status == 'Amendment','badge-published':sol.status == 'Published','badge-initiated':sol.status == 'Initiated'}">{{ sol?.status }}</span>
+          </td>
+          <td [hidden]="this.role == 'Program Officer'" style="font-size: 13px; width: 5px"><button
+              (click)="onResume(sol)" id="solicitationResume" type="button" class="btn btn-sm btn-vsm btn-primary">Resume</button>
+          </td>
+          <td [hidden]="this.role == 'Contracting Officer'" style="font-size: 13px; width: 5px"><button
+              (click)="onResume(sol)" id="solicitationResume" type="button" class="btn btn-sm btn-vsm btn-primary">Review</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+<!-- <div class="modal fade bd-example-modal-lg solicitaitonModal" tabindex="-1" role="dialog"
+  aria-labelledby="solicitaitonModal" id="solicitaitonModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg hello" style="max-width: 70rem !important">
+    <div class="modal-header">
+      <img src="assets/hhs-accelerate-logo.png" height="30">
+      <button type="button" id="closeModalSolicitation" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-content" id="modal1">
+      <app-pmsol></app-pmsol>
+    </div>
+  </div>
+</div> -->

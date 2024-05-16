@@ -1,0 +1,1104 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>hhs_pacd-frontend-phase2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">hhs_pacd-frontend-phase2 documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>AppPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>e2e/steps/4SOW/app.po.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectDropdownbyNum">selectDropdownbyNum</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#clickLogin">clickLogin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#clickTableButton">clickTableButton</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#enterPassword">enterPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#enterTableField">enterTableField</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#enterUsername">enterUsername</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getSearchResultItems">getSearchResultItems</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#navigateTo">navigateTo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#pageLoaded">pageLoaded</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#searchText">searchText</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectOptionByOptionIndex">selectOptionByOptionIndex</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#sowPageLoaded">sowPageLoaded</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#testTextEditor">testTextEditor</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectDropdownbyNum"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            selectDropdownbyNum</b>
+                            <a href="#selectDropdownbyNum"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>function ( elementID, optionNum ) {
+    const field &#x3D; element(by.id(elementID));
+    if (optionNum){
+      var options &#x3D; field.all(by.tagName(&#x27;option&#x27;))   
+        .then(function(options){
+          options[optionNum].click();
+        });
+    }
+  }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">e2e/steps/4SOW/app.po.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clickLogin"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            clickLogin
+                        </b>
+                        <a href="#clickLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>clickLogin()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">e2e/steps/4SOW/app.po.ts:19</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clickTableButton"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            clickTableButton
+                        </b>
+                        <a href="#clickTableButton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>clickTableButton(tableID, buttonID)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">e2e/steps/4SOW/app.po.ts:84</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>tableID</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>buttonID</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enterPassword"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            enterPassword
+                        </b>
+                        <a href="#enterPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>enterPassword(text: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">e2e/steps/4SOW/app.po.ts:14</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>text</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enterTableField"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            enterTableField
+                        </b>
+                        <a href="#enterTableField"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>enterTableField(tableID, fieldID)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">e2e/steps/4SOW/app.po.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>tableID</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>fieldID</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enterUsername"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            enterUsername
+                        </b>
+                        <a href="#enterUsername"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>enterUsername(text: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="9"
+                            class="link-to-prism">e2e/steps/4SOW/app.po.ts:9</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>text</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSearchResultItems"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getSearchResultItems
+                        </b>
+                        <a href="#getSearchResultItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSearchResultItems()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">e2e/steps/4SOW/app.po.ts:25</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateTo"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            navigateTo
+                        </b>
+                        <a href="#navigateTo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>navigateTo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="5"
+                            class="link-to-prism">e2e/steps/4SOW/app.po.ts:5</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageLoaded"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            pageLoaded
+                        </b>
+                        <a href="#pageLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>pageLoaded(pagename)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">e2e/steps/4SOW/app.po.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pagename</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchText"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            searchText
+                        </b>
+                        <a href="#searchText"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>searchText()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">e2e/steps/4SOW/app.po.ts:22</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectOptionByOptionIndex"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            selectOptionByOptionIndex
+                        </b>
+                        <a href="#selectOptionByOptionIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>selectOptionByOptionIndex(selectFormFieldElementId, index)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">e2e/steps/4SOW/app.po.ts:47</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>selectFormFieldElementId</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>index</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sowPageLoaded"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            sowPageLoaded
+                        </b>
+                        <a href="#sowPageLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sowPageLoaded()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">e2e/steps/4SOW/app.po.ts:30</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="testTextEditor"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            testTextEditor
+                        </b>
+                        <a href="#testTextEditor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>testTextEditor()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">e2e/steps/4SOW/app.po.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { browser, by, element, until, protractor } from &#x27;protractor&#x27;;
+
+export class AppPage {
+
+  public navigateTo() {
+    return  browser.get(&#x27;/&#x27;);
+  }
+
+  public enterUsername(text: string) {
+    return element(by.id(&#x27;username&#x27;))
+      .sendKeys(text);
+  }
+
+  public enterPassword(text: string) {
+    return element(by.id(&#x27;password&#x27;))
+      .sendKeys(text);
+  }
+
+  public clickLogin() {
+    return element(by.id(&#x27;login&#x27;)).click();
+  }
+  public searchText() {
+    return until.elementsLocated(by.className(&#x27;profilename&#x27;));
+  }
+  public getSearchResultItems() {
+    const condition &#x3D; until.elementsLocated(by.className(&#x27;modal-dialog&#x27;));
+    return browser.wait(condition, 5000);
+  }
+
+  public sowPageLoaded(){
+    // const condition &#x3D; until.elementsLocated(by.className(&#x27;sowTitle&#x27;));
+    // return browser.wait(condition, 5000);
+    return element(by.className(&#x27;ap-detail-title&#x27;)).getText();
+  }
+
+  public selectDropdownbyNum &#x3D; function ( elementID, optionNum ) {
+    const field &#x3D; element(by.id(elementID));
+    if (optionNum){
+      var options &#x3D; field.all(by.tagName(&#x27;option&#x27;))   
+        .then(function(options){
+          options[optionNum].click();
+        });
+    }
+  }
+
+  //use method to select elements from dropdown
+  public selectOptionByOptionIndex(selectFormFieldElementId, index) {
+
+    const formField &#x3D; element(by.id(selectFormFieldElementId));
+    formField.click().then(() &#x3D;&gt; {
+  
+      formField.element(by.tagName(&#x27;option&#x27;))
+        .getAttribute(&#x27;aria-owns&#x27;).then((optionIdsString: string) &#x3D;&gt; {
+          const optionIds &#x3D; optionIdsString.split(&#x27; &#x27;);
+  
+          const optionId &#x3D; optionIds[index];
+          const option &#x3D; element(by.id(optionId));
+          option.click();
+        });
+    });
+  }
+
+  //use this method to enter value into table fields 
+  public enterTableField(tableID, fieldID){
+
+      
+    var userNavLinks &#x3D; element.all(by.css(&quot;input[formControlName&#x3D;acctcode]&quot;));
+    userNavLinks.get(0).sendKeys(&quot;AcctCode001&quot;);  
+    browser.sleep(8000);
+    var descLinks &#x3D; element.all(by.css(&quot;input[formControlName&#x3D;description]&quot;));
+    descLinks.get(0).sendKeys(&#x27;Description001&#x27;);
+    browser.sleep(4000);
+    var quantityLinks &#x3D; element.all(by.css(&quot;input[formControlName&#x3D;quantity]&quot;));
+    quantityLinks.get(0).sendKeys(&#x27;5&#x27;); 
+    browser.sleep(4000);
+    var priceLinks &#x3D; element.all(by.css(&quot;input[formControlName&#x3D;unitprice]&quot;));
+    priceLinks.get(0).sendKeys(&#x27;50&#x27;); 
+    browser.sleep(8000);
+    var measureLinks &#x3D; element.all(by.css(&quot;input[formControlName&#x3D;unitmeasure]&quot;));
+    this.selectDropdownbyNum(measureLinks.get(0), 1);
+
+  } 
+
+  public clickTableButton(tableID, buttonID){
+    var addSlin &#x3D; element.all(by.xpath(&quot;.//*[contains(text(),&#x27;Add SLIN&#x27;)]&quot;)); 
+    addSlin.get(0).click();
+  } 
+
+  public testTextEditor(){
+    element(by.className(&#x27;ql-bold&#x27;)).click();
+   // browser.sleep(2000);
+    element(by.className(&#x27;ql-editor&#x27;)).sendKeys(&quot;Alphabets in bold&quot;);  
+    element(by.className(&#x27;ql-editor&#x27;)).sendKeys(protractor.Key.ENTER);
+    element(by.className(&#x27;ql-italic&#x27;)).click();
+    // browser.sleep(2000);
+    element(by.className(&#x27;ql-editor&#x27;)).sendKeys(&quot; Alphabets in italic&quot;); 
+    // browser.sleep(2000);
+    element(by.className(&#x27;ql-underline&#x27;)).click();
+    // browser.sleep(2000);
+    element(by.className(&#x27;ql-editor&#x27;)).sendKeys(&quot; Alphabets in underline&quot;); 
+    //browser.sleep(4000);
+    // element(by.className(&#x27;ql-editor&#x27;)).sendKeys(protractor.Key.ENTER);
+    element.all(by.className(&#x27;ql-list&#x27;)).last().click();
+    //browser.sleep(3000);
+    element(by.className(&#x27;ql-editor&#x27;)).sendKeys(&quot;Starting a bullet list&quot;); 
+    //browser.sleep(3000);
+    element(by.className(&#x27;ql-editor&#x27;)).sendKeys(protractor.Key.ENTER);
+    //browser.sleep(3000);
+    element(by.className(&#x27;ql-editor&#x27;)).sendKeys(&quot;Second item in bullet list&quot;);
+    element(by.className(&#x27;ql-editor&#x27;)).sendKeys(protractor.Key.ENTER);
+    element.all(by.className(&#x27;ql-list&#x27;)).first().click();
+    element(by.className(&#x27;ql-editor&#x27;)).sendKeys(&quot;Starting a numbered list&quot;);
+    element(by.className(&#x27;ql-editor&#x27;)).sendKeys(protractor.Key.ENTER);
+    element(by.className(&#x27;ql-editor&#x27;)).sendKeys(&quot;Second item in numbered list&quot;);
+    // element(by.className(&#x27;ql-editor&#x27;)).sendKeys(protractor.Key.CONTROL, &quot;a&quot;);
+    // element(by.className(&#x27;ql-font&#x27;)).click();
+    // element(by.className(&#x27;ql-picker-item&#x27;)).click();
+  }
+
+  public pageLoaded(pagename){
+    if(pagename&#x3D;&#x3D;&#x27;trade-offs&#x27;){
+      console.log(&quot;trade offs called&quot;);  
+      var heading &#x3D; element(by.className(&#x27;ap-detail-title&#x27;)).getText();
+      // expect(heading).toEqual(&quot;Trade-Offs&quot;);
+
+    } else if(pagename &#x3D;&#x3D; &quot;estimates&quot;){
+      console.log(&quot;estimate code&quot;);
+    } else if(pagename &#x3D;&#x3D; &quot;competition&quot;){
+
+    }else if(pagename &#x3D;&#x3D; &quot;compatibility&quot;){
+      console.log(&quot;estimate code&quot;);
+    }else if(pagename &#x3D;&#x3D; &quot;constraints&quot;){
+      console.log(&quot;estimate code&quot;);
+    }
+
+  }
+
+
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppPage-3.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <title>HHSPACDFRONTEND</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="insight-app-sec-validation" content="d9730dd5-bb7e-49a1-bb24-50417ec3314e">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+    var global = global || window;
+  </script>
+      <!-- <script type="text/javascript">
+        window.TENEOCTX || (TENEOCTX = {});
+        TENEOCTX = {
+          eventSource: "leopard-embed",
+          pageTitle: document.title,
+          pageUrl: window.location.href,
+          pageTopic: "Help",
+          message: "This was sent from the customer's web site"
+        };
+      </script> -->
+</head>
+
+<body>
+  <app-root></app-root>
+  <div id="leopardChatWindow"></div>
+  <!-- <script>
+    console.log("hostname from body",window.location.hostname);
+    var x = document.createElement("script");
+    x.src = "http://localhost:4200/chatbot/static/embed-leopard.js";
+  </script> -->
+  <script>
+    console.log("hostname from body",window.location.hostname);
+    var x = document.createElement("script");
+    var url = window.location.hostname;
+    var modified;
+    if(url == "localhost"){
+      modified = "http://localhost:4200"
+    } else if (url == "service.accelerate-dev.com") {
+      modified = "https://service.accelerate-dev.com/acc-ui"
+    } else if (url == "integration.accelerate.hhs.gov") {
+      modified = "https://integration.accelerate.hhs.gov/acc-ui"
+    } else if (url == "staging.accelerate.hhs.gov") {
+      modified = "https://staging.accelerate.hhs.gov/acc-ui"
+    } else if (url == "sandbox.accelerate.hhs.gov") {
+      modified = "https://sandbox.accelerate.hhs.gov/acc-ui"
+    }
+    var current = modified+"/chatbot/static/embed-leopard.js"
+    console.log("URL from body",current);
+    x.type = "text/javascript"
+    x.src = current;
+    document.body.appendChild(x);
+  </script>
+</body>
+
+</html>

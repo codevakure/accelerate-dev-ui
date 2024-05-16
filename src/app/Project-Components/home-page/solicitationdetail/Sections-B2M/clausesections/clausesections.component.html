@@ -1,0 +1,625 @@
+<div class="alert alert-info mt-3" role="alert" [class.d-none]="!this.hide">
+  <i style="color: #0844a4; font-size: 160%" class="fa fa-info-circle" aria-hidden="true">
+  </i> &nbsp; There are no clauses to display for this section. Click here to &nbsp;
+  <button (click)="hideclause(true)" class="btn btn-sm btn-primary" [disabled]="this.disable"><i class="fa fa-plus"
+      aria-hidden="true"></i>&nbsp;Add Clauses</button>
+</div>
+<div class="mt-4" [class.d-none]="this.hide">
+  <div class="clause-title mb-3">
+    Clauses
+  </div>
+  <div>
+    <div>
+      <!-- <p style="color:navy; font-style: italic;"><span class="badge badge-info">Note:</span>&nbsp;The following 
+      clauses have been auto-picked by the accelerate system and are included in the solictation. The user can 
+      review/delete the Applicable/optional clauses and can also select new clauses from the clause library</p> -->
+    </div>
+    <div>
+      <button (click)="hideclause(true)" id="clauseLibrary" style="color: #2e73dc;width:200px;background:155ACF"
+        class="btn btn-sm btn-primary shadow-none text-white float-right" [disabled]="this.disable">
+        <img src="assets/book-2.png" height="26" width="28">&nbsp; Clause Library
+      </button>
+
+
+      <ul class="nav nav-tabs" id="justifiedTab" role="tablist">
+        <li class="nav-item nav-item1 text-center">
+          <a aria-controls="home" aria-selected="true" class="nav-link active" data-toggle="tab" href="#home"
+            id="home-tab" role="tab">FAR Clauses</a>
+        </li>
+        <!-- <li class="nav-item nav-item1 text-center">
+          <a style="pointer-events: none" aria-controls="profile" aria-selected="false" class="nav-link"
+            data-toggle="tab" href="#profile" id="profile-tab" role="tab">HHSAR Clauses</a>
+        </li> -->
+      </ul>
+
+
+
+      <div class="tab-content" id="justifiedTabContent">
+        <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home" role="tabpanel"
+          style="height:50vh !important;overflow:hidden;overflow-y:scroll">
+          <!-- *********************Start of clause table-->
+
+          <table class="table" style="table-layout:fixed;">
+            <thead>
+              <tr>
+                <th style="width: 100px;">FAR Clause</th>
+                <th style="color:#000333;max-width:150px !important">Score</th>
+                <th style="color:#000333" style="width: 60px;">
+                  <select  [(ngModel)]='pValue'
+                    (change)="filter(raoValue,pValue)" style="color:#000333;border:none;font-weight: bold;">
+                    <option value="">P/C</option>
+                    <option value="P">P</option>
+                    <option value="C">C</option>
+                  </select></th>
+                <th style="width: 70px;">
+                  <!--(mouseenter)="hovershow($event,'Required/Required when Applicable/Optional Clauses','body',1000)"-->
+                  <select
+                    
+                    id="raoValueTable" [(ngModel)]='raoValue' (change)="filter(raoValue,pValue)"
+                    style="color:#000333;border:none;font-weight: bold">
+                    <option value="">R/A/O</option>
+                    <option value="R">R</option>
+                    <option value="A">A</option>
+                    <option value="O">O</option>
+                  </select></th>
+                <th style="width: 260px;">Description</th>
+                <th style="width: 100px;">Prescribed In</th>
+                <th style="width: 100px;">IBR</th>
+                <th></th>
+
+              </tr>
+            </thead>
+           <!--Table for section E Solifction Provision-->
+            <tbody id="soltable" *ngIf="solp">
+              <tr 
+              *ngFor="let item of this.allsectionclauses;let i = index">
+
+                <td *ngIf="item['p_or_c'] == 'P'" data-toggle="modal" data-target="#exampleModal" style="color:navy; cursor: pointer; height:50px"
+                  (click)="getClauseNo(item)">{{item.present_id}}
+                  <i *ngIf="item.alt == 0 && item.id == '52.212-5' || item.id == '52.212-2' && (item.complete != 'done')  "
+                    class="fa fa-hourglass-half" aria-hidden="true" style=' font-size:125%;color:orange'></i>
+
+                  <i *ngIf=" (item.alt == 0 && item.id == '52.212-5' || item.id == '52.212-2') && (item.complete =='done')  "
+                    class="fa fa-check" aria-hidden="true" style=' font-size:125%;color:green'></i>
+                </td>
+
+                <td *ngIf="item['p_or_c'] == 'P'">
+                  <div class="progress">
+                    <div style="width:50px !important" class="single-chart responsive-center">
+                      <svg viewBox="0 0 40 40" class="circular-chart blue">
+                        <path class="circle-bg" d="M18 2.0845 
+                                      a 15.9155 15.9155 0 0 1 0 31.831 
+                                      a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle" attr.stroke-dasharray="{{item.score * 100 | number:'1.0-0'}}, 100" d="M18 2.0845 
+             
+                    a 15.9155 15.9155 0 0 1 0 31.831 
+                                      a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <text x="18" y="20.35" class="percentages">{{item.score * 100 | number:'1.0-0'}}%</text>
+                      </svg>
+                    </div>
+                  </div>
+                </td>
+
+                <td *ngIf="item['p_or_c'] == 'P'">{{item['p_or_c']}}</td>
+
+                <td *ngIf="item['p_or_c'] == 'P'">{{item.rao}}</td>
+                <!--(mouseenter)="hovershow($event,item.title,'body')"-->
+
+                <td *ngIf="item['p_or_c'] == 'P'" [attr.data-before]='item.title'>
+                  <div>
+                    <a class="tooltips-clause">
+                      <p class="p-text" style="width: 200px;">{{item.title}}</p><span class="classic">{{item.title}}</span>
+                    </a>
+                  </div>
+                </td>
+
+                <td *ngIf="item['p_or_c'] == 'P'" >{{item['prescription_reference']}}</td>
+
+                <td *ngIf="!this.specialclauses.includes(item.id) && item['p_or_c'] == 'P'">
+                  <input style="z-index:1 !important " class="form-check-input" type="checkbox"
+                    (click)=" Ibrupdate_clause($event,item.rao,item.id,item)" [checked]="item.ibr"
+                    [disabled]="this.disable">
+                </td>
+
+                <td *ngIf="this.specialclauses.includes(item.id) && item['p_or_c'] == 'P'">
+                  <input style="z-index:1 !important " class="form-check-input" type="checkbox"
+                    (click)=" Ibrupdate_clause($event,item.rao,item.id,item)" [checked]="item.ibr"
+                     [disabled]="true">
+                </td>
+
+                <!--Delete Caluse Button-->
+                <td  *ngIf="item['p_or_c'] == 'P'" style="z-index:-1;">
+                  <button *ngIf="item.rao != 'R'" type="button" class="btn w3-hover-red" [disabled]="this.disable"
+                    name="button" (click)="delete_clause(item.rao,item)"><i class="fa fa-trash"></i></button>
+                </td>
+
+
+              </tr>
+            </tbody>
+            <!--Table for Solication Full -->
+            <tbody id="notsoltable" *ngIf="!solp && this.soltype !='half'"> 
+              <tr 
+              *ngFor="let item of this.allsectionclauses;let i = index">
+
+                <td data-toggle="modal" data-target="#exampleModal" style="color:navy; cursor: pointer; height:50px"
+                  (click)="getClauseNo(item)">{{item.present_id}}
+                  <i *ngIf="item.alt == 0 && item.id == '52.212-5' || item.id == '52.212-2' && (item.complete != 'done')  "
+                    class="fa fa-hourglass-half" aria-hidden="true" style=' font-size:125%;color:orange'></i>
+
+                  <i *ngIf=" (item.alt == 0 && item.id == '52.212-5' || item.id == '52.212-2') && (item.complete =='done')  "
+                    class="fa fa-check" aria-hidden="true" style=' font-size:125%;color:green'></i>
+                </td>
+
+                <td>
+                  <div class="progress">
+                    <div style="width:50px !important" class="single-chart responsive-center">
+                      <svg viewBox="0 0 40 40" class="circular-chart blue">
+                        <path class="circle-bg" d="M18 2.0845 
+                                      a 15.9155 15.9155 0 0 1 0 31.831 
+                                      a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle" attr.stroke-dasharray="{{item.score * 100 | number:'1.0-0'}}, 100" d="M18 2.0845 
+             
+                    a 15.9155 15.9155 0 0 1 0 31.831 
+                                      a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <text x="18" y="20.35" class="percentages">{{item.score * 100 | number:'1.0-0'}}%</text>
+                      </svg>
+                    </div>
+                  </div>
+                </td>
+
+                <td>{{item['p_or_c']}}</td>
+
+                <td>{{item.rao}}</td>
+                <!--(mouseenter)="hovershow($event,item.title,'body')"-->
+
+                <td [attr.data-before]='item.title'>
+                  <div>
+                    <a class="tooltips-clause">
+                      <p class="p-text" style="width: 200px;">{{item.title}}</p><span class="classic">{{item.title}}</span>
+                    </a>
+                  </div>
+                </td>
+
+                <td>{{item['prescription_reference']}}</td>
+
+                <td *ngIf="!this.specialclauses.includes(item.id)">
+                  <input style="z-index:1 !important " class="form-check-input" type="checkbox"
+                    (click)=" Ibrupdate_clause($event,item.rao,item.id,item)" [checked]="item.ibr"
+                    [disabled]="this.disable">
+                </td>
+
+                <td *ngIf="this.specialclauses.includes(item.id)">
+                  <input style="z-index:1 !important " class="form-check-input" type="checkbox"
+                    (click)=" Ibrupdate_clause($event,item.rao,item.id,item)" [checked]="item.ibr" [disabled]="true">
+                </td>
+
+                <!--Delete Caluse Button-->
+                <td style="z-index:-1;">
+                  <button *ngIf="item.rao != 'R'" type="button" class="btn w3-hover-red" [disabled]="this.disable"
+                    name="button" (click)="delete_clause(item.rao,item)"><i class="fa fa-trash"></i></button>
+                </td>
+
+
+              </tr>
+
+            </tbody>
+            <!--Table for Solication Half -->
+            <tbody id="notsoltable" *ngIf="!solp && this.soltype =='half'"> 
+              <tr 
+              *ngFor="let item of this.allsectionclauses;let i = index">
+
+                <td *ngIf="item['p_or_c'] == 'C'" data-toggle="modal" data-target="#exampleModal" style="color:navy; cursor: pointer; height:50px"
+                  (click)="getClauseNo(item)">{{item.present_id}}
+                  <i *ngIf="item.alt == 0 && item.id == '52.212-5' || item.id == '52.212-2' && (item.complete != 'done')  "
+                    class="fa fa-hourglass-half" aria-hidden="true" style=' font-size:125%;color:orange'></i>
+
+                  <i *ngIf=" (item.alt == 0 && item.id == '52.212-5' || item.id == '52.212-2') && (item.complete =='done')  "
+                    class="fa fa-check" aria-hidden="true" style=' font-size:125%;color:green'></i>
+                </td>
+
+                <td *ngIf="item['p_or_c'] == 'C'" >
+                  <div class="progress">
+                    <div style="width:50px !important" class="single-chart responsive-center">
+                      <svg viewBox="0 0 40 40" class="circular-chart blue">
+                        <path class="circle-bg" d="M18 2.0845 
+                                      a 15.9155 15.9155 0 0 1 0 31.831 
+                                      a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle" attr.stroke-dasharray="{{item.score * 100 | number:'1.0-0'}}, 100" d="M18 2.0845 
+             
+                    a 15.9155 15.9155 0 0 1 0 31.831 
+                                      a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <text x="18" y="20.35" class="percentages">{{item.score * 100 | number:'1.0-0'}}%</text>
+                      </svg>
+                    </div>
+                  </div>
+                </td>
+
+                <td *ngIf="item['p_or_c'] == 'C'">{{item['p_or_c']}}</td>
+
+                <td *ngIf="item['p_or_c'] == 'C'" >{{item.rao}}</td>
+                <!--(mouseenter)="hovershow($event,item.title,'body')"-->
+
+                <td *ngIf="item['p_or_c'] == 'C'" [attr.data-before]='item.title'>
+                  <div>
+                    <a class="tooltips-clause">
+                      <p class="p-text" style="width: 200px;">{{item.title}}</p><span class="classic">{{item.title}}</span>
+                    </a>
+                  </div>
+                </td>
+
+                <td *ngIf="item['p_or_c'] == 'C'" >{{item['prescription_reference']}}</td>
+
+                <td *ngIf="!this.specialclauses.includes(item.id) && item['p_or_c'] == 'C'">
+                  <input style="z-index:1 !important " class="form-check-input" type="checkbox"
+                    (click)=" Ibrupdate_clause($event,item.rao,item.id,item)" [checked]="item.ibr"
+                    [disabled]="this.disable">
+                </td>
+
+                <td *ngIf="this.specialclauses.includes(item.id) && item['p_or_c'] == 'C'">
+                  <input style="z-index:1 !important " class="form-check-input" type="checkbox"
+                    (click)=" Ibrupdate_clause($event,item.rao,item.id,item)" [checked]="item.ibr" [disabled]="true">
+                </td>
+
+                <!--Delete Caluse Button-->
+                <td *ngIf="item['p_or_c'] == 'C'"  style="z-index:-1;">
+                  <button *ngIf="item.rao != 'R'" type="button" class="btn w3-hover-red" [disabled]="this.disable"
+                    name="button" (click)="delete_clause(item.rao,item)"><i class="fa fa-trash"></i></button>
+                </td>
+
+
+              </tr>
+            </tbody>
+
+
+
+          </table>
+
+
+
+        </div>
+        <div aria-labelledby="profile-tab" class="tab-pane fade" id="profile" role="tabpanel">
+          <p class="p-4">Data not yet decided !!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h5 class="modal-title" style="color:white " id="exampleModalLabel">Description for
+          {{this.clauseDescriptionId?.id }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mt-3" style="min-height:500px">
+        <div class="card custom-height2 p-2" style="min-height:450px" >
+
+
+          <!--Form for 52.212-2-->
+          <div *ngIf="this.clauseDescriptionId?.id == '52.212-2'" id="mka19aadba99554c13b11ea9da61a3b8f1"
+            _widgetname="Text" irisetype="Text" simgroupid="mka19aadba99554c13b11ea9da61a3b8f1" class="irise-irmlText"
+            style="font-weight:normal; 
+          font-size:14px; font-family;Arial, SansSerif;
+          line-height:1.5; width:464px; height:725px; " simid="i216"><span id="mk3a4c6840076ba69cf59503f1806f4f06"
+              irisetype="Span" simgroupid="mk3a4c6840076ba69cf59503f1806f4f06" simid="i212" class=""
+              style="text-transform:none; color:#183e67; font-weight:bold; text-decoration:none; font-size:14px; font-family:&quot;Arial&quot;,&quot; SansSerif&quot;; font-style:normal; width:null; height:null; ">52.212-2
+              -- Evaluation -- Commercial Items (Oct 2014)<br><br></span><span id="mk40ee837ec85365e68226885ece3e6963"
+              irisetype="Span" simgroupid="mk40ee837ec85365e68226885ece3e6963" simid="i213" class=""
+              style="text-transform:none; color:#183e67; font-weight:normal; text-decoration:none; font-size:14px; font-family:&quot;Arial&quot;,&quot; SansSerif&quot;; font-style:normal; width:null; height:null; ">(a)
+              The Government will award a contract resulting from this solicitation to the responsible offeror whose
+              offer
+              conforming to the solicitation will be most advantageous to the Government, price and other factors
+              considered.
+              The following factors shall be used to evaluate offers:</span>
+            <br><br>
+            <textarea id="mk495e77e8d20d46aca17f103c88fa4fc2" _widgetname="Text Area" irisetype="TextArea"
+              simgroupid="mk495e77e8d20d46aca17f103c88fa4fc2" name="495e77e8d20d46aca17f103c88fa4fc2" rows="3"
+              [(ngModel)]='this.selectedclause.var1' class=" istyle_3 " style="overflow-y:scroll;background-color:#fefce0; 
+                  padding:6px; border-width:0px; border-style:none; border-color:;
+                  border-right-width:0px; border-right-style:none; border-right-color:;
+                  border-left-width:0px; border-left-style:none; border-left-color:;
+                  border-bottom-width:2px; border-bottom-style:solid;
+                  border-bottom-color:#0c59cf; border-top-width:0px;
+                  border-top-style:none; width:460px; 
+                  height:null; " simid="i218"></textarea>
+
+            <br><br>
+            <span id="mk573c03c18a94c66c0f770659ed87cc15" irisetype="Span"
+              simgroupid="mk573c03c18a94c66c0f770659ed87cc15" simid="i214" class=""
+              style="text-transform:none; color:#183e67; font-weight:normal; text-decoration:none; font-size:14px; font-family:&quot;Arial&quot;,&quot; SansSerif&quot;; font-style:italic; width:null; height:null; ">[Contracting
+              Officer shall insert the significant evaluation factors, such as<br>(i) technical capability of the item
+              offered
+              to meet the Government requirement;<br>(ii) price;<br>(iii) past performance (see FAR
+              15.304);<br><br></span><span id="mk05f44a1ec029ed5790eb85a68d3ea5fe" irisetype="Span"
+              simgroupid="mk05f44a1ec029ed5790eb85a68d3ea5fe" simid="i215" class=""
+              style="text-transform:none; color:#183e67; font-weight:normal; text-decoration:none; font-size:14px; font-family:&quot;Arial&quot;,&quot; SansSerif&quot;; font-style:normal; width:null; height:null; ">Technical
+              and past performance, when combined, are&nbsp;
+
+              <input id="mkb9471d98c2914f3996b7f2998afde19d" [(ngModel)]='this.selectedclause.var2'
+                _widgetname="Text Input" irisetype="TextInput" simgroupid="mkb9471d98c2914f3996b7f2998afde19d"
+                name="b9471d98c2914f3996b7f2998afde19d" type="text" size="19" class="irise-irmlTextInput istyle_3 "
+                style=" font-size:14px; background-color:#fefce0; font-family:&quot;Arial&quot;,&quot; SansSerif&quot;; padding:6px; border-width:0px; border-style:none; border-color:; border-right-width:0px; border-right-style:none; border-right-color:; border-left-width:0px; border-left-style:none; border-left-color:; border-bottom-width:2px; border-bottom-style:solid; border-bottom-color:#0c59cf; border-top-width:0px; border-top-style:none; border-top-color:; width:120px; height:null; "
+                simid="i217" _textinputinit="true">
+
+              <br> [Contracting Officer state, in accordance with FAR
+              15.304,
+              the relative importance of all other evaluation factors, when combined, when compared to
+              price.]<br><br>(b) It
+              is [<input type="text" [(ngModel)]='this.selectedclause.box1' 
+              (keyup)="specialClauseBoxSelectUpdate('box1')"
+              style="font-size:10px; background-color:#fefce0; 
+              font-family:Arial, SansSerif; text-align: center;
+               padding:2px; border-width:0px; border-style:none; 
+                border-right-width:0px; 
+               border-right-style:none; 
+                border-left-width:0px; border-left-style:none;
+                  border-bottom-width:2px; 
+                 border-bottom-style:solid; border-bottom-color:#0c59cf;
+                  border-top-width:0px; border-top-style:none; border-top-color:; 
+                  width:20px; height:null;"> ] is not [<input 
+                  (keyup)="specialClauseBoxSelectUpdate('box2')"
+                  type="text" 
+                  [(ngModel)]='this.selectedclause.box2' 
+                  style="font-size:10px; background-color:#fefce0; 
+              font-family:Arial, SansSerif; text-align: center;
+               padding:2px; border-width:0px; border-style:none; 
+                border-right-width:0px; 
+               border-right-style:none; 
+                border-left-width:0px; border-left-style:none;
+                  border-bottom-width:2px; 
+                 border-bottom-style:solid; border-bottom-color:#0c59cf;
+                  border-top-width:0px; border-top-style:none; border-top-color:; 
+                  width:20px; height:null;"> ] government evaluation. The Government will evaluate offers for
+              award
+              purposes by adding the total price for all options to the total price for the basic requirement. The
+              Government
+              may determine that an offer is unacceptable if the option prices are significantly unbalanced. Evaluation
+              of
+              options shall not obligate the Government to exercise the option(s).<br><br>(c) A written notice of award
+              or
+              acceptance of an offer, mailed or otherwise furnished to the successful offer or within the time for
+              acceptance
+              specified in the offer, shall result in a binding contract without further action by either party. Before
+              the
+              offer's specified expiration time, the Government may accept an offer (or part of an offer), whether or
+              not
+              there are negotiations after its receipt, unless a written notice of withdrawal is received before
+              award.<br><br></span></div>
+
+
+          <!--If clause is 52.212-5-->
+          <div *ngIf="this.clauseDescriptionId?.id == '52.212-5'   ">
+            <div *ngIf="this.clauseDescriptionId?.alt !=0" [innerHTML]='this.clauseDescriptionId?.description_html'>
+            </div>
+            <div id="clauselog" *ngIf="this.clauseDescriptionId?.alt ==0" [innerHTML]='htt'>
+            </div>
+
+          </div>
+
+          <div *ngIf="this.clauseDescriptionId?.id == '52.212-3'">
+            <div [innerHTML]='this.clauseDescriptionId?.description_html'>
+
+            </div>
+
+            <div *ngIf="this.clauseDescriptionId?.alt == 0">
+              <p
+                style="margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:.8in;text-indent:-.4in;font-size:16px;font-family:&quot;Times New Roman&quot;,serif;">
+                (2)&nbsp; &nbsp; &nbsp;The Offeror represents that--</p>
+              <p
+                style="margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:1.2in;text-indent:-.4in;font-size:16px;font-family:&quot;Times New Roman&quot;,serif;">
+                (i)&nbsp; &nbsp; &nbsp;&nbsp;It is [ &nbsp;] is not [ &nbsp; ] a corporation that has any unpaid Federal
+                tax liability that has been assessed, for which all judicial and administrative remedies have been
+                exhausted or have lapsed, and that is not being paid in a timely manner pursuant to an agreement with
+                the authority responsible for collecting the tax liability; and</p>
+              <p
+                style="margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:1.2in;text-indent:-.4in;font-size:16px;font-family:&quot;Times New Roman&quot;,serif;">
+                (ii)&nbsp; &nbsp; &nbsp;It is [ &nbsp;] is not [ &nbsp; ] a corporation that was convicted of a felony
+                criminal violation under a Federal law within the preceding 24 months.</p>
+              <p
+                style="margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:.4in;text-indent:-.4in;font-size:16px;font-family:&quot;Times New Roman&quot;,serif;">
+                (r)&nbsp; &nbsp; &nbsp;&nbsp;<em>Predecessor of Offeror.</em> (Applies in all solicitations that include
+                the provision at 52.204-16, Commercial and Government Entity Code Reporting.)</p>
+              <p
+                style="margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:.8in;text-indent:-.4in;font-size:16px;font-family:&quot;Times New Roman&quot;,serif;">
+                (1)&nbsp; &nbsp; &nbsp;The Offeror represents that it [ &nbsp;] is or [ &nbsp;] is not a successor to a
+                predecessor that held a Federal contract or grant within the last three years.</p>
+              <p
+                style="margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:.8in;text-indent:-.4in;font-size:16px;font-family:&quot;Times New Roman&quot;,serif;">
+                (2)&nbsp; &nbsp; &nbsp;If the Offeror has indicated “is” in paragraph (r)(1) of this provision, enter
+                the following information for all predecessors that held a Federal contract or grant within the last
+                three years (if more than one predecessor, list in reverse chronological order):</p>
+              <p
+                style="margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:1.2in;text-indent:-.4in;font-size:16px;font-family:&quot;Times New Roman&quot;,serif;">
+                Predecessor CAGE code ______(or mark “Unknown).</p>
+              <p
+                style="margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:1.2in;text-indent:-.4in;font-size:16px;font-family:&quot;Times New Roman&quot;,serif;">
+                Predecessor legal name: _________________________.
+                <br>&nbsp;(Do not use a “doing business as” name).
+              </p>
+            </div>
+          </div>
+
+
+
+          <!--Add clause HTML if not one of the special clauses-->
+          <span *ngIf="!this.specialclauses.includes(this.clauseDescriptionId?.id)"
+            [innerHTML]='this.clauseDescriptionId?.description_html'>
+
+
+          </span>
+
+
+        </div>
+        <div *ngIf="this.clauseDescriptionId?.id == '52.212-2'  " class="modal-footer"
+          style="z-index: 999999999;width:90% !important">
+          <button type="button" (click)="this.selectedclause.var1 ='';this.selectedclause.var2 =''; this.selectedclause.box1='';this.selectedclause.box2=''
+          ;this.selectedclause.complete ='notdone';SaveForm(this.selectedclause)"
+            class="btn  button cancel">Reset</button>
+          <button id="addclause" type="button" (click)='SaveForm(this.selectedclause)'
+            class="btn button add" data-dismiss="modal" aria-label="Close" >Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--///////////////////////////////////////// CLAUSE LIBARAY/////////////////////////////////////-->
+<!--  
+clause library -->
+<div *ngIf="show" id="clausesdiv" style="z-index:9999999">
+  <div class="modal-header">
+    <h5 class="modal-title">Clause Library</h5>
+    <img src="assets/hhs-accelerate-logo.png" style="width:100px;height:24px">
+  </div>
+  <div class="modal-body" style="padding:0px;">
+    <div class="container-fluid">
+      <div id="center">
+        <mat-form-field style="width:100% !Important" class="search-form-field search" floatLabel="never">
+
+          <input matInput 
+          (input)="applyFilter($event.target.value)"
+          (keyup)="applyFilter($event.target.value)" 
+          
+          placeholder="Search data in Clause library">
+          <i class="fa fa-search sicon"></i>
+        </mat-form-field>
+
+      </div>
+      <div class="row">
+        <div class="col-md-6 mr-auto container">
+
+          <div id="tablewraper" >
+            <table mat-table style="max-width:none;width:500px;border:1px solid lightgray;margin-top:1px;margin-top:0px !Important 
+                " [dataSource]="this.dataSource" matSort
+              class="table-striped col-md-12 col-lg-12 col-sm-12 col-xl-12 mt-4 ">
+
+              <!-- FaR Column -->
+              <ng-container matColumnDef="clauseNo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="color:black;width:200px"> FAR </th>
+                <td mat-cell *matCellDef="let element" style="color: #1060d6;width:200px"> <a
+                    (click)="viewEle(element, true)"> {{element.id}}</a> </td>
+              </ng-container>
+
+              <!-- Title Column -->
+              <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="color:black;width:200px"> Title </th>
+                <td mat-cell st *matCellDef="let element">
+                  <div>
+                    <a [attr.data-before]='element.title' (click)="viewEle(element)" class="tooltips-clause">
+                      <p class="p-text mt-3" style="max-width:100px">{{element.title}}</p>
+                      <span class="classic">{{element.title}}</span>
+                    </a>
+                  </div>
+
+
+                </td>
+              </ng-container>
+
+              <!-- Score Column -->
+              <ng-container matColumnDef="score">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="color:black"> Score </th>
+                <td mat-cell *matCellDef="let element, let i = index">
+
+                  <div class="progress" style="z-index:0 !important">
+                    <div style="width:50px !important;position: relative;margin:auto"
+                      class="single-chart responsive-center">
+                      <svg viewBox="0 0 40 40" class="circular-chart blue">
+                        <path class="circle-bg" d="M18 2.0845 
+                                                  a 15.9155 15.9155 0 0 1 0 31.831 
+                                                  a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle" attr.stroke-dasharray="{{element.score * 100 | number:'1.0-0'}}, 100" d="M18 2.0845 
+                         
+                                a 15.9155 15.9155 0 0 1 0 31.831 
+                                                  a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <text x="18" y="20.35" class="percentages">{{element.score * 100 | number:'1.0-0'}}%</text>
+                      </svg>
+                    </div>
+                  </div>
+
+
+
+                  <!-- {{element.precentage | number:'1.0-0'}} -->
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="pc">
+                <th class="text-center" mat-header-cell *matHeaderCellDef style="color:black;width:200px">Prescribed
+                  In</th>
+                <td mat-cell class="text-center" *matCellDef="let element">
+                  <p>{{element.prescription_reference}}</p>
+
+                </td>
+              </ng-container>
+
+
+
+              <ng-container matColumnDef="select">
+                <th class="text-center" mat-header-cell *matHeaderCellDef style="color:black">Select</th>
+                <td mat-cell class="text-center" *matCellDef="let element">
+                  <input type="checkbox" (click)="multiadd(element,$event)">
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- <mat-paginator class ="adj" style="margin-top:0px;height:20px" [pageSizeOptions]="[5, 30, 40, 50]" showFirstLastButtons></mat-paginator> -->
+  </div>
+
+
+  <div class="modal-footer" style="z-index: 999999999">
+    <button type="button" (click)="hideclause(false);resetclauses()" class="btn  button cancel" data-dismiss="modal">Cancel</button>
+    <button id="addclause" type="button" (click)="onAdd();hideclause(false)" class="btn button add">Add</button>
+  </div>
+  <!-- Modal for Clause discription viewer-->
+  <div id="textreader" class="col-md-6 ml-auto" *ngIf='hideclausepreview'>
+
+
+    <h4 *ngIf="OutputDec">
+      <p class="headertext">{{this.OutputHeaderStatic}}</p>
+    </h4>
+    <div *ngIf="OutputDec" class="card p-3 custom-height2">
+      {{this.OutputDecriptionStatic}}
+    </div>
+
+    <p class="exitclause" (click)="hideclausepreview_function(false)" ngModal="hideclausepreview">&times;</p>
+    <h4 *ngIf="OutputHea" class="headertext">{{this.OutputHeader}}</h4>
+    <div *ngIf="OutputHea" class="card p-3 custom-height2">
+      {{this.OutputDecription}}
+    </div>
+  </div>
+
+</div>
+<div *ngIf="show" (click)="hideclause(false)" id="overlay">
+
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Clause Library</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>

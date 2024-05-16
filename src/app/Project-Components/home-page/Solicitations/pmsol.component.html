@@ -1,0 +1,108 @@
+<div style="background-color:rgb(249, 250, 251)">
+  <div class="container">
+    <div class="col-md-5 col-sm-12 col-lg-12 col-xl-12 custom-top">
+      <div class="row">
+        <div class="col-md-11 col-sm-11 col-lg-11 col-xl-11">
+          <div class="font2 header2 dashboardcomp mb-2">Solicitations</div>
+        </div>
+        <div class="col-md-1 col-sm-1 col-lg-1 col-xl-1">
+          <a style="text-decoration: none" [routerLink]="['/home']"><span class="back"><i class="fa fa-arrow-left mr-2"
+                aria-hidden="true"></i>Back</span></a>
+        </div>
+      </div>
+
+
+
+      <mat-form-field class="search-form-field shadow-1 mt-1" floatLabel="never">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search data in Solicitations">
+      </mat-form-field>
+      <div class="shadow-1">
+        <table mat-table [dataSource]="dataSource" matSort
+          class="table-striped  col-md-12 col-lg-12 col-sm-12 col-xl-12 mt-4 " style="overflow-x: auto">
+
+          <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Solicitation Number Column -->
+          <ng-container matColumnDef="sol_no">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Solicitation #</th>
+            <td mat-cell *matCellDef="let element" (click)="onSelect(element)" style="color: #2e73dc">
+              {{element.sol_no}}
+            </td>
+          </ng-container>
+
+          <!-- Description Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              <div class="ml-4">Project Title </div>
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <div class="row">
+                <div class="col-12 ml-4">
+                  {{element.projectTitle}}
+                </div>
+              </div>
+            </td>
+          </ng-container>
+
+          <!-- POC Column -->
+          <ng-container matColumnDef="poc">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                <span *ngIf="this.role == 'Program Officer'">
+                    Contracting POC
+                </span> 
+                <span *ngIf="this.role != 'Program Officer'">
+                    Program POC
+                </span></th>
+            <td mat-cell *matCellDef="let element" class="mat-cell-custom">
+                <div *ngIf="this.hidepm">
+                    <span *ngIf="element.coName == ''"><i style="color: #007bff; margin-right: 5%; font-size: 115%;"
+                        class="fa fa-times-circle-o" aria-hidden="true"></i>Unassigned</span>
+                    <a *ngIf="element.coName != ''" style="cursor: pointer" (click)="sendEmailCo(element)"><i
+                        style="color: #007bff; margin-right: 5%; font-size: 115%;" class="fa fa-envelope"></i>
+                      <span>{{ element?.coName }}</span></a>
+                  </div>
+                  <div *ngIf="this.hideco">
+                    <a style="cursor: pointer" (click)="sendEmailPm(element)"><i
+                        style="color: #007bff; margin-right: 5%; font-size: 115%;" class="fa fa-envelope"></i>
+                      <span>{{ element?.rName }}</span></a>
+                  </div>
+                 </td>
+          </ng-container>
+
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Initiated Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.acceptedDate | date }} </td>
+          </ng-container>
+
+          <!-- Date Column -->
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+            <td mat-cell *matCellDef="let element"><span span class="badge mt-1"
+                [ngClass]="{'badge-published':element.status == 'Published','badge-initiated':element.status == 'Initiated'}">{{element.status}}</span>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell class="text-center" *matHeaderCellDef>Action</th>
+            <td mat-cell class="text-center" *matCellDef="let element">
+              <div *ngIf="this.hidepm">
+                <button type="button" class="btn btn-primary btn-sm" style="margin-right: 2%"
+                  (click)="onResume(element)">Review</button>
+              </div>
+              <div *ngIf="this.hideco">
+                <button type="button" class="btn btn-primary btn-sm" (click)="onResume(element)">Resume</button>
+              </div>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[15, 30, 40]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+  </div>
+  <div class="mb-5"></div>
+</div>

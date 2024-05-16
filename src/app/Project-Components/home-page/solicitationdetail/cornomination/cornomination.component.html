@@ -1,0 +1,326 @@
+
+    <div  class="col-md-12 col-lg-12 col-xl-12 col-sm-12"
+    style="width:70vw">
+        <div class="col-11 mb-3"
+        style="max-width: 100%;padding-left:0px">
+          <span class="mt-2 ap-detail-title">COR Appointment Letter
+              </span>
+        </div>
+    </div>
+
+    <div class="linkdiv">
+      <a class="linktofaitas">Link to FAITAS</a>
+    </div>
+
+  <div class="mb-5" 
+  [ngStyle]="{'height': this.disableQuill == true?'':'60vh'}"
+  style="margin-bottom: 0px !important;
+  padding:0px;margin-left:20px;
+  width:70vw;overflow: hidden!important
+  ">
+    <div class="letterheader">
+    <label id="editcontent" class="hover" 
+    [ngStyle]="{'pointer-events':disabled?'none':'','opacity':disabled?'0.4':'1'}"
+    (click)="editquill();editContent(true);signfunction(false)"
+    *ngIf="this.disableQuill"
+    >
+    <i class="fa fa-pencil" aria-hidden="true">&nbsp; &nbsp;</i>Edit Content 
+    </label>
+    
+   </div>
+    <!--Leter Template-->
+    <div class="letter" 
+    style="font-family: 'Times New Roman','sans-serif' !important"
+    [ngStyle]="{'padding': this.disableQuill == true?'100px':'0px',
+    'padding-left': this.disableQuill == true?'67px':'0px',
+    'padding-right': this.disableQuill == true?'67px':'0px'}">
+    
+      <span >
+       
+        <div >
+          <div *ngIf="disableQuill" style="margin-left:13px"
+          [ngStyle]="{'pointer-events':disabled ? 'none' : '' }">
+          Dear <label   (mouseleave)="hideSelect()">
+            <input type="text" 
+             class="inputbox name"
+             style="margin-left:5px" 
+            (keyup)="showSelect($event.target.value)"
+            [(ngModel)]="this.cors.selectedName"
+            
+          > 
+              <div *ngIf="showselect"  class="nameselect hover">
+                <p *ngFor="let person of persons"
+                (click)="nameselected(person)"
+                >{{person.name}}</p>
+              </div>
+          </label>
+          <br>
+          <br>
+          You are hereby designated as the COR in connection with the technical phases of 
+          Contract No.
+          <!-- [ngStyle]="{'pointer-events':disableQuill ? 'none' : '' }" -->
+          <input  
+          type="text" 
+          class="inputbox"
+          [ngStyle]="{'pointer-events':disabled ? 'none' : '' }"
+          [(ngModel)]="this.cors.contractNo"
+          (change)="addcontract($event.target.value)">, (list title of requirement after the contract number). 
+          <br>
+          <br>
+          <br>
+        </div>
+
+          <quill-editor customToolbarPosition="bottom" 
+          [disabled]="disableQuill" 
+          [(ngModel)]="description"
+          format="html"
+          [styles]="{'height': 'auto',
+          'border':'none','font-type':'Times New Roman, SansSerif',
+          'font-size':'15px','line-height':'1.5'}"
+           >
+          
+          </quill-editor> 
+          <div>
+             
+         </div>
+
+        </div> 
+          <div id="section2" *ngIf="disableQuill" style="margin-left:13px;margin-top:0px">
+              <div style="display:flex" >
+              
+                <div class="signature" 
+                [ngStyle]="{'pointer-events':enablesign ? '' : 'none' }"
+                (touchmove)="setPosition($event);draw($event)"  
+                (mousemove)="draw($event)" 
+                (mousedown)="setPosition($event)" 
+                (mouseenter)="setPosition($event)"
+                (mouseleave)="removestyle()">
+                <svg id="signature" width="340" height="50" 
+                style="background:transparent;border-bottom:1px solid #2e73dc;">
+                  <path id="write" d='' stroke="black" 
+                  stroke-linecap="round"
+                  stroke-width="1" fill="none" />
+                </svg>
+                </div>
+                <button *ngIf="!editcontent" class="activesign hover"
+                (click)="signfunction(true);resetsign('signature')">
+                  <img (click)="signfunction(true)" style="    position: relative;
+                  float: left;
+                  width: 25px;
+                  margin-top: -3px;" src="assets/Pencil-Icon-PNG.png"> 
+                  <p>{{this.cors.signature ==' Z M ' || this.cors.signature ==''?'Sign':'Clear'}}</p>
+                </button>
+              </div>
+              
+                Contracting Officer
+                <br>
+                <br>
+                COR Acknowledgement: 
+                <br><br>
+                Name: <input 
+                style="margin-left:34px;width: 229px;
+                height: 35px;"
+                [(ngModel)]="this.cors.Name"
+                type="text" 
+                class="inputbox v2" 
+                [ngStyle]="{'pointer-events':this.authenticatedUser == this.cors.selectedName ? '' : 'none' }"
+                (change)="Updatedatabase(this.corsId,'Name',this.cors.Name)">
+                <br><br>
+                Title: 
+                <input 
+                style="margin-left:41px;width: 229px;
+                height: 35px;"
+                [(ngModel)]="this.cors.Title"
+                type="text"
+                class="inputbox v2" 
+                (change)="Updatedatabase(this.corsId,'Title',this.cors.Title)"
+                [ngStyle]="{'pointer-events':this.authenticatedUser == this.cors.selectedName ? '' : 'none' }" >
+                <br>
+                <br>
+                Signature:
+
+                <button *ngIf="this.authenticatedUser == this.cors.selectedName" class="activesign hover"
+                (click)="resetsign('CORSIG')"
+                style="margin-left:265px"
+                >
+                  <img  style="    position: relative;
+                  float: left;
+                  width: 25px;
+                  margin-top: -3px;" src="assets/Pencil-Icon-PNG.png"> 
+                  <p>{{this.cors.signature ==' Z M ' || this.cors.signature ==''?'Sign':'Clear'}}</p>
+                </button>
+
+                <div class="signature" 
+                style="
+                margin-left: 76px;
+                width: 193px;
+                height: 35px;
+                margin-top: -39px;"
+                [ngStyle]="{'pointer-events':this.authenticatedUser == this.cors.selectedName ? '' : 'none' }"
+                (touchmove)="setPosition($event);draw($event)"  
+                (mousemove)="draw($event)" 
+                (mousedown)="setPosition($event)" 
+                (mouseenter)="setPosition($event)"
+                (mouseleave)="removestyle()"
+                (mouseup)="captureSignDate()">
+                <svg id="signature" width="230" height="50" 
+                style="background:transparent;border-bottom:1px solid #2e73dc;">
+                  <path id="write2" d='' stroke="black" 
+                  stroke-linecap="round"
+                  stroke-width="1" fill="none" />
+                </svg>
+                </div>
+
+                <br>
+                <br>
+                Date: 
+                <!--(change)="Updatedatabase(this.corsId,'date',this.cors.date)"-->
+                <input
+                style="margin-left:45px;width: 229px;
+                height: 35px;pointer-events: none;    color: gray !important;
+                border-bottom: 1px solid gray;
+                opacity: 0.7;"
+                type="text"
+                [(ngModel)]="this.cors.date.dateSign"
+                class="inputbox v2"
+                contenteditable="false"
+                >
+          </div>
+      </span>
+
+      
+
+
+    </div>
+ 
+<!-- Modal -->
+<div class="modal fade" id="sendmodeal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="top:20%">
+      <div class="modal-content">
+        <div class="modal-header" >
+          <h5 class="modal-title" id="exampleModalLabel" style="color: #444444;
+          font-weight: normal;
+          font-size: 15px;
+          font-family:Arial,SansSerif;
+          text-align: left;
+          text-decoration: none;
+          font-style: normal;
+          text-transform: none;">Search and select applicable staff to be notified:</h5>
+        </div>
+        <div class="modal-body" style="padding:30px">
+
+        <!-- Name Search Box -->
+        <label (mouseleave)="hideSelect()">
+        <input
+        placeholder="Search Name" 
+        (keyup)="showSelect($event.target.value)"
+        class="inputbox box2" style="padding:5px"> 
+        <i class="fa fa-search sicon"></i> 
+
+        <div  *ngIf="showselect"
+         class="nameselect hover"
+         style="width:277px">
+            <p *ngFor="let person of persons"
+            (click)="addnames(person)"
+            >{{person.name}} </p>
+          </div>
+        </label>
+
+
+        <div id="namestable">
+          <div *ngFor="let names of this.cors?.selectedNames;let i = index" 
+          style="width:100%;height:40px;padding:10px"
+          class="color">
+              <p >{{names.name}}</p>
+              <i *ngIf="i != 0" style="position: relative;
+              float: left;
+              font-size: 18px;"
+              class="fa fa-trash" aria-hidden="true"
+              (click)="removename(names)"
+              ></i>
+
+          </div>
+          
+        </div>
+
+
+        </div>
+        <div class="modal-footer" style="padding-top:17.5px;padding-bottom:17.5px;">
+            <button type="button" class="btn hover " 
+            style="position:relative;float:right; 
+            background:rgba(0,110,186,255);color: #ffffff;
+            font-size: 14px;
+            background-color: #006fbe;
+            font-family: Arial, SansSerif;
+            padding: 6px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #006fbe;
+            width: 90px;border-radius:5px"
+            (click)="sendnotification()"
+            data-dismiss="modal">Send</button>
+
+
+
+            <button type="button" class="btn hover " 
+            style="position:relative;float:right; 
+            background:white;color: #202020;
+            font-size: 14px;
+            background-color: #ffffff;
+            background-repeat: no-repeat;
+            background-position-x: right;
+            background-position-y: center;
+            font-family: Arial, SansSerif;
+            padding: 6px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #c0c0c0;
+            width: 90px;border-radius:5px" 
+            data-dismiss="modal">Cancel</button>  
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="signaturesection">
+  
+    <button
+    [ngStyle]="{'pointer-events':disabled?'none':'','opacity':disabled?'0.4':'1'}"
+    *ngIf="editcontent" type="button" class="btn export hover" data-toggle="modal" data-target="#exampleModal" 
+    style="position:relative;float:right; 
+    background:rgba(0,110,186,255);text-transform:none;
+    color:white"
+ (click)="editContent(false);disablequill('save','');">Review & Sign</button>
+
+ <button *ngIf="!disableQuill"
+ type="button" class="btn export hover" data-toggle="modal" data-target="#exampleModal" 
+ style="position:relative;float:right; 
+ background:#c2c2c2;text-transform:none;
+ color:#183e67;margin-right: 5px;"
+ (click)="disablequill('reset','scroll');signfunction(false)" >Cancel</button>
+  
+
+ <button *ngIf="!editcontent" 
+ [ngClass]="{'disableDiv':this.cors.signature ==' Z M ' || this.cors.signature ==''}"
+ type="button" class="btn export hover" data-toggle="modal" data-target="#exampleModal" 
+ style="position:relative;float:right; 
+ background:rgba(0,110,186,255);text-transform:none;
+ color:white"
+ data-toggle="modal" data-target="#sendmodeal"
+ >Send</button>
+
+
+ <p
+  *ngIf="this.cors.date?.dateSent != '' && this.cors.date?.dateSent != undefined"
+  class="cors_bottom_notification">
+  COR nomination letter successfully sent on {{this.cors.date?.dateSent}}
+</p>
+
+
+
+
+</div>
+<!---->
+

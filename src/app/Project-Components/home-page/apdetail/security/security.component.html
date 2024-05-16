@@ -1,0 +1,227 @@
+<div class="col-md-12 col-lg-12 col-xl-12 col-sm-12">
+  <span class="mt-2 ap-detail-title">Security</span>
+  <form [formGroup]="security" novalidate (change)="onChange(security);">
+
+    <div *ngIf="productService != 'svc'">
+      <div class="form-group col-md-10 mt-4">
+        <div class="form-group">
+          <label class="label-class" style="font-weight: 600;">Security Considerations*</label>
+        </div>
+        <div style="margin-top: -10px;">
+          <a class="tooltipss">FAR 7.105(b)(18)
+            </a>
+        </div>
+        <label class="label-class mt-2">This procurement includes hardware, non-commercial and open source software,
+          information technology application design, development,
+          ​or support, and/or physical access to Government-controlled facilities only?*</label>
+        <div class="custom-control custom-radio" style="margin-top: 14px;">
+          <input type="radio" id="securityConsiderationsYes" name="securityConsiderations"
+            formControlName="securityConsiderations" class="custom-control-input" value="Yes">
+          <label class="custom-control-label" for="securityConsiderationsYes" value="Yes"
+            (click)="securityConsiderationsYes()">Yes</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input type="radio" id="securityConsiderationsNo" name="securityConsiderations"
+            formControlName="securityConsiderations" class="custom-control-input" value="No">
+          <label class="custom-control-label" for="securityConsiderationsNo" value="No"
+            (click)="securityConsiderationsNo()">No</label>
+        </div>
+      </div>
+
+
+      <div *ngIf="securityConsiderationss" class="form-group col-md-10 mt-3" style="margin-left: 30px;">
+        <div class="textfield-box">
+
+          <div class="label-class mb-1"> If "Yes" has been selected for one or more of the above questions, please
+            provide further explanation.* </div>
+
+          <textarea class="form-control" rows="3" formControlName="optionFFP" type="text"
+            placeholder="Please type Acquisition explanation"></textarea>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div *ngIf="productService == 'svc'">
+      <div class="form-group col-md-10 mt-4">
+        <div class="form-group">
+          <label class="label-class" style="font-weight: 600;">Security Considerations*</label>
+        </div>
+        <div style="margin-top: -10px;">
+          <a class="tooltips">FAR 7.105(b)(18)<span class="classic">•	For acquisitions dealing with classified matters, discuss how adequate security will be established, maintained, and monitored (see subpart 4.4).<br>
+            •	For information technology acquisitions, discuss how agency information security requirements will be met.<br>
+            •	For acquisitions requiring routine contractor physical access to a Federally-controlled facility and/or routine access to a Federally-controlled information system, discuss how agency requirements for personal identity verification of contractors will be met (see subpart 4.13).<br>
+            •	For acquisitions that may require Federal contract information to reside in or transit through contractor<br>
+            •	information systems, discuss compliance with subpart 4.19.<br></span></a>
+        </div>
+        <label class="label-class mt-2" style="font-style: italic; font-weight: 600;">Please answer the following
+          questions about the security and privacy considerations applicable to the Program/Project.</label>
+
+        <label class="label-class mt-3">This procurement requires information security and/or physical access*:</label>
+        <div class="custom-control custom-radio ml-3" style="margin-top: 14px;">
+          <input type="radio" id="informationSecurityYes" name="informationSecurity"
+            formControlName="informationSecurity" class="custom-control-input" value="Yes">
+          <label class="custom-control-label" for="informationSecurityYes" value="Yes"
+            (click)="securityConsiderationsYes()">Yes</label>
+        </div>
+        <div class="custom-control custom-radio ml-3">
+          <input type="radio" id="informationSecurityNo" name="informationSecurity"
+            formControlName="informationSecurity" class="custom-control-input" value="No">
+          <label class="custom-control-label" for="informationSecurityNo" value="No"
+            (click)="securityConsiderationsNo()">No</label>
+        </div>
+
+
+
+        <label class="label-class mt-3">This procurement involves Personally Identifiable Information, PII, or records
+          of individuals?*</label>
+        <div class="custom-control custom-radio ml-3" style="margin-top: 14px;">
+          <input type="radio" id="informationSecurity1Yes" name="informationSecurity1"
+            formControlName="informationSecurity1" class="custom-control-input" value="Yes">
+          <label class="custom-control-label" for="informationSecurity1Yes" value="Yes"
+            (click)="securityConsiderationsYes()">Yes</label>
+        </div>
+        <div class="custom-control custom-radio ml-3">
+          <input type="radio" id="informationSecurity1No" name="informationSecurity1"
+            formControlName="informationSecurity1" class="custom-control-input" value="No">
+          <label class="custom-control-label" for="informationSecurity1No" value="No">No</label>
+        </div>
+
+
+
+
+        <label class="label-class mt-3">This procurement requires Government Information processed on
+          Government-Owner/Contractor-Operated, GOCO, or
+          ​Contractor-Owned/Contractor-Operated, COCO, systems?*</label>
+        <div class="custom-control custom-radio ml-3" style="margin-top: 14px;">
+          <input type="radio" id="informationSecurity2Yes" name="informationSecurity2"
+            formControlName="informationSecurity2" class="custom-control-input" value="Yes">
+          <label class="custom-control-label" for="informationSecurity2Yes" value="Yes"
+            (click)="securityConsiderationsYes()">Yes</label>
+        </div>
+        <div class="custom-control custom-radio ml-3">
+          <input type="radio" id="informationSecurity2No" name="informationSecurity2"
+            formControlName="informationSecurity2" class="custom-control-input" value="No">
+          <label class="custom-control-label" for="informationSecurity2No" value="No">No</label>
+        </div>
+
+
+
+        <label class="label-class mt-3">This procurement involves cloud services?*
+        </label>
+        <div class="custom-control custom-radio ml-3" style="margin-top: 14px;">
+          <input type="radio" id="informationSecurity3Yes" name="informationSecurity3"
+            formControlName="informationSecurity3" class="custom-control-input" value="Yes"
+            (click)="securityConsiderationsYes()">
+          <label class="custom-control-label" for="informationSecurity3Yes" value="Yes">Yes</label>
+        </div>
+        <div class="custom-control custom-radio ml-3">
+          <input type="radio" id="informationSecurity3No" name="informationSecurity3"
+            formControlName="informationSecurity3" class="custom-control-input" value="No">
+          <label class="custom-control-label" for="informationSecurity3No" value="No">No</label>
+        </div>
+
+
+
+        <label class="label-class mt-3">This procurement includes hardware, non-commercial and open source software,
+          information technology application design, development,
+          ​or support, and/or physical access to Government-controlled facilities only?*
+        </label>
+        <div class="custom-control custom-radio ml-3" style="margin-top: 14px;">
+          <input type="radio" id="informationSecurity4Yes" name="informationSecurity4"
+            formControlName="informationSecurity4" class="custom-control-input" value="Yes">
+          <label class="custom-control-label" for="informationSecurity4Yes" value="Yes"
+            (click)="securityConsiderationsYes()">Yes</label>
+        </div>
+        <div class="custom-control custom-radio ml-3">
+          <input type="radio" id="informationSecurity4No" name="informationSecurity4"
+            formControlName="informationSecurity4" class="custom-control-input" value="No">
+          <label class="custom-control-label" for="informationSecurity4No" value="No">No</label>
+        </div>
+      </div>
+
+
+      <div *ngIf="securityConsiderationss" class="form-group col-md-10 mt-3" style="margin-left: 30px;">
+        <div class="textfield-box">
+
+          <div class="label-class mb-1"> If "Yes" has been selected for one or more of the above questions, please
+            provide further explanation.* </div>
+
+          <textarea class="form-control" rows="3" formControlName="optionFFP" type="text"
+            placeholder="Please type Acquisition explanation"></textarea>
+        </div>
+      </div>
+    </div>
+
+
+    <hr>
+
+    <div *ngIf="productService == 'svc'">
+
+      <div class="form-group col-md-10 mt-4">
+        <div class="textfield-box">
+          <label class="label-class mb-1" style="font-weight: 600;">Classified Matters Security Considerations</label>
+          <div class="mb-2">
+            <a class="tooltipss">FAR 7.105(b)(18)</a>
+          </div>
+          <label class="label-class mb-1" style="font-style: italic; font-size:13px">For acquisitions dealing with classified matters, discuss how adequate security will be established, maintained, and monitored (see FAR Part 4.4). 
+          </label>
+
+          <textarea class="form-control" rows="3" formControlName="classifiedMatters" type="text"
+            placeholder="Please type Classified Matters Security Considerations"></textarea>
+        </div>
+      </div>
+
+
+
+      <div class="form-group col-md-10 mt-4">
+        <div class="textfield-box">
+          <label class="label-class mb-1" style="font-weight: 600;">Information Technology Security
+            Considerations*</label>
+          <div class="mb-2">
+            <a class="tooltipss">FAR 7.105(b)(18)</a>
+          </div>
+          <label class="label-class mb-1" style="font-style: italic; font-size:13px">For information technology
+            acquisitions, discuss how agency information security requirements will be met. Discuss the applicability
+            ​and implementation for HSPD-12, FAR Subpart 4.13, the Privacy Act, the Federal Risk and Authorization
+            Management Act (FISMA),
+            ​Contractor Access to Sensitive Information, and the Federal Risk and Authorization Management Program
+            (FedRAMP), and the
+            ​applicable standard security and privacy language provided in "HHS Security and Privacy Language for
+            Information and Information
+            ​Technology Procurements Version 2.0" dates June 26, 2017.
+          </label>
+
+          <textarea class="form-control" rows="3" formControlName="informationTechnology" type="text"
+            placeholder="Please type Classified Matters Security Considerations"></textarea>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="form-group col-md-10 mt-4">
+      <div class="textfield-box">
+        <label class="label-class mb-1" style="font-weight: 600;">Contractor Facility Access and Identity Verification
+          Security Considerations</label>
+        <div class="mb-2">
+          <a class="tooltipss">FAR 7.105(b)(18)</a>
+        </div>
+        <label class="label-class mb-1" style="font-style: italic; font-size:13px">If this procurement requires access to HHS-controlled information systems and/or physical access to HHS-controlled information systems and/or physical access to HHS-controlled facilities for contractors in order to perform the Contract/ Statement of Work (SOW)/Performance Work Statement (PWS), please briefly describe the process, type, frequency, and duration of such access (see "HHS Security and Privacy Language for Information and Information Technology Procurements Version 2.0" dated June 26, 2017 located in Resources tab).
+        </label>
+
+        <textarea class="form-control" rows="3" formControlName="contractorFacility" type="text"
+          placeholder="Please type Contractor Facility Access and Identity Verification Security Considerations"></textarea>
+      </div>
+    </div>
+
+
+
+
+
+    
+
+  </form>
+</div>

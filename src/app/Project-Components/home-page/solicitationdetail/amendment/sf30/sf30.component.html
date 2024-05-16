@@ -1,0 +1,344 @@
+
+
+<div class="container-fluid">
+  <div class="header">
+    <label id="formlabel">Form</label>
+    <p id="form" style="margin-top: 8px !important;
+    margin-left: 8px !important;">SF-30</p>
+  </div>
+  
+  <div class="header" style="border-bottom:0.5px solid #AAAAAA">
+    <ul class="nav nav-tabs" id="justifiedTab" role="tablist">
+      <li class="nav-item nav-item1 text-center">
+        <a aria-controls="home" aria-selected="true" class="nav-link active" data-toggle="tab" href="#home"
+          id="home-tab" role="tab">Amendment</a>
+      </li>
+    </ul>
+  </div>
+
+  
+ 
+  <form [formGroup]="SF30"
+  (change)="getform($event)"
+  style="position:relative !important;
+  float:left;width:100%;
+  left:-11px;
+  height:calc((100vw/1060) * 760)">
+                    
+
+<div id="Accordian330"
+class="Accordian_Accordian330_0">
+
+
+<div 
+id="AccordianDropDown330_0"
+style="margin-bottom:1%"
+class="dropdownwrapper" >
+  <label 
+  style="background:rgba(239,242,245,1);color:rgba(26,53,93,1);font-family:Arial;font-size:13px;
+  padding:15px
+  "
+  class="dropdowntitle"><p><strong>Overview</strong></p></label>
+  <input type="checkbox" class="hiddenaction"
+  (click)="modal =1"
+  [checked]="modal == 1">
+  <div class="indicator"
+  style="border-color:rgba(192,187,187,1);top:17px;right:undefinedpx"
+  ></div>
+  <div class="dropdownbody"
+  
+  >
+  <div 
+  class="dropdownmarker" style="position:relative !important;width:100%
+  !important;margin-top:500px
+  "></div>
+  
+
+  <div class="Text_1721_0 "
+  
+  >
+  <p>Contract ID Code</p>
+  </div>
+
+
+
+  <input 
+  placeholder="N/A"
+  id="contractid"
+  type="text"
+  class="contractid_1 " 
+  formControlName="contractid"
+  [attr.disabled]="true"
+  >
+  
+
+  <div class="amendnolabel_2 "
+  
+  >
+  <p>Amendment/Modification Number</p>
+  </div>
+
+  <input 
+  placeholder="N/A"
+  id="amendno"
+  type="text"
+  class="amendno_4 " 
+  formControlName="amendno"
+  [attr.disabled]="true"
+  >
+  
+
+  <div class="Text_1721Copy_5 "
+  
+  >
+  <p>Amendment of Solication Number</p>
+  </div>
+
+
+
+  <input 
+  placeholder="N/A"
+  id="amensol"
+  type="text"
+  class="amensol_6 " 
+  formControlName="sol_no"
+  [attr.disabled]="true"
+  >
+  
+
+  <div class="Text_1721CopyCopy_7 "
+  
+  >
+  <p>Requistion Number</p>
+  </div>
+
+
+
+  <input 
+  placeholder="N/A"
+  id="reqnumber"
+  type="text"
+  class="reqnumber_8 " 
+  formControlName="requisitionNumber"
+  [attr.disabled]="true"
+
+  >
+  
+
+  <div class="Text_1721CopyCopyCopyCopy_9 "
+  
+  >
+  <p>Issuing Contract Officer</p>
+  </div>
+
+
+
+  <select class="Option2742_10 "
+  (change)="coChange($event.target.value)"
+  [ngStyle]="{'pointer-events':this.edit?'none':'all'}"
+  >
+  <option *ngFor="let item of this.allusers" value="{{item.pkId}}"
+              [selected]="this.coId == item.pkId">
+              <span *ngIf="item.firstName != 'Not'">{{item.firstName}}&nbsp;{{item.lastName}}</span>
+              <span
+                *ngIf="item.firstName == 'Not'">{{(item.email.split('@')[0].split('.'))[0].charAt(0).toUpperCase() +  (item.email.split('@')[0].split('.'))[0].slice(1)}}</span>
+            </option>
+  
+  </select>
+
+
+
+
+  <div class="Text_1721CopyCopyCopyCopyCopy_11 "
+  
+  >
+  <p>Contract Office</p>
+  </div>
+
+
+
+  <div class="coemail_12 "
+  
+  >
+  <p>Email</p>
+  </div>
+
+
+
+  <div class="cophone_13 "
+  
+  >
+  <p>Phone</p>
+  </div>
+
+
+
+  <input 
+  placeholder="N/A"
+  id="coOffice"
+  type="text"
+  class="coOffice_14 " 
+  formControlName="coOfficeName"
+  [attr.disabled]="true"
+
+  >
+  
+
+  <input 
+  placeholder="N/A"
+  id="coEmail"
+  type="text"
+  class="coEmail_15 " 
+        formControlName="coEmail"
+        [attr.disabled]="true"
+
+  >
+  
+
+  <input 
+  placeholder="N/A"
+  id="coPhone"
+  type="text"
+  class="coPhone_16 " 
+        formControlName="coPhone"
+        [attr.disabled]="true"
+
+  >
+  
+
+  <div 
+  id="Box3366"
+  class="Box3366_17 " 
+  
+  >
+  </div>
+  
+  </div>
+</div>
+
+
+
+<div 
+id="_1"
+style="margin-bottom:1%"
+class="dropdownwrapper" >
+  <label 
+  style="background:rgba(239,242,245,1);color:rgba(26,53,93,1);font-family:Arial;font-size:13px;
+  padding:15px
+  "
+  class="dropdowntitle"><p><strong>Deadlines</strong></p></label>
+  <input type="checkbox" class="hiddenaction"
+  (click)="modal =2"
+  [checked]="modal == 2"
+  >
+  <div class="indicator"
+  style="border-color:rgba(192,187,187,1);top:17px;right:undefinedpx"
+  ></div>
+  <div class="dropdownbody">
+  <div class="dropdownmarker" 
+  [ngStyle]="{'pointer-events':this.edit?'none':'all'}"
+  style="position:relative !important;width:100%
+  !important;margin-top:calc((100vw/1060) * 200)
+  "></div>
+  
+
+  <div class="Text_4699_0 "
+  
+  >
+  <p>Effective Date</p>
+  </div>
+
+
+
+  <div class="Text_4699Copy_1 "
+  
+  >
+  <p>Extension Due Date</p>
+  </div>
+
+
+
+  <input 
+  id="ammendeffectivedate"
+  type="datetime-local" 
+  class="ammendeffectivedate_2 " 
+  (change)="datepicker()"
+        formControlName="amendate"
+        [ngStyle]="{'pointer-events':this.edit?'none':'all'}"
+[min]="this.mindate"
+
+  >
+  
+
+  <input 
+  id="extensiondate"
+  type="datetime-local" 
+  class="extensiondate_3 " 
+  formControlName="extensiondate"
+  (change)="datepicker()"
+  [ngStyle]="{'pointer-events':this.edit?'none':'all'}"
+[min]="this.SF30.get('amendate').value"
+
+  >
+  
+  </div>
+</div>
+
+
+
+<div 
+id="_2"
+style="margin-bottom:1%"
+class="dropdownwrapper" >
+  <label 
+  style="background:rgba(239,242,245,1);color:rgba(26,53,93,1);font-family:Arial;font-size:13px;
+  padding:15px
+  "
+  class="dropdowntitle"><p><strong>Amendment Description</strong></p></label>
+  <input type="checkbox" class="hiddenaction"
+  (click)="modal =3"
+  [checked]="modal == 3">
+  <div class="indicator"
+  style="border-color:rgba(192,187,187,1);top:17px;right:undefinedpx"
+  ></div>
+  <div class="dropdownbody">
+ 
+
+  
+<quill-editor
+*ngIf="!this.edit"
+format="html"
+formControlName="ammendnotes" 
+name="ammendnotes"
+[styles]="{height: '250px'}" 
+placeholder=""
+(onSelectionChanged)="onContentChanged($event)">
+</quill-editor>
+
+<div 
+*ngIf="this.edit"
+style="font-size: 14px;padding:10px"
+[innerHTML]="this.SF30.get('ammendnotes').value">
+
+</div>
+  
+  </div>
+</div>
+
+ 
+</div>
+                  </form>
+  <div class="artboardmarker" style="margin-top:111px"></div>                
+  
+    
+                 
+             
+                        
+          
+
+
+
+
+
+      
+</div>

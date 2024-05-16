@@ -1,0 +1,1710 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>hhs_pacd-frontend-phase2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">hhs_pacd-frontend-phase2 documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>VendorresevalComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-vendorreseval</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./vendorreseval.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./vendorreseval.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#attachments">attachments</a>
+                            </li>
+                            <li>
+                                <a href="#blockchainRes">blockchainRes</a>
+                            </li>
+                            <li>
+                                <a href="#dltdid">dltdid</a>
+                            </li>
+                            <li>
+                                <a href="#evaluationID">evaluationID</a>
+                            </li>
+                            <li>
+                                <a href="#id">id</a>
+                            </li>
+                            <li>
+                                <a href="#solno">solno</a>
+                            </li>
+                            <li>
+                                <a href="#vendorEvaluation">vendorEvaluation</a>
+                            </li>
+                            <li>
+                                <a href="#volumename">volumename</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#back">back</a>
+                            </li>
+                            <li>
+                                <a href="#downloadFile">downloadFile</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onChange">onChange</a>
+                            </li>
+                            <li>
+                                <a href="#proposals">proposals</a>
+                            </li>
+                            <li>
+                                <a href="#saveComplete">saveComplete</a>
+                            </li>
+                            <li>
+                                <a href="#savePending">savePending</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#i">i</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, ap: <a href="../injectables/AcquisitionService.html">AcquisitionService</a>, toastr: ToastrService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ap</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AcquisitionService.html" target="_self" >AcquisitionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastr</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="i"></a>
+                        <b>i</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:32</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="back"></a>
+                    <span class="name">
+                        <b>
+                            back
+                        </b>
+                        <a href="#back"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>back()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:88</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadFile"></a>
+                    <span class="name">
+                        <b>
+                            downloadFile
+                        </b>
+                        <a href="#downloadFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>downloadFile(x)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:112</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>x</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onChange"></a>
+                    <span class="name">
+                        <b>
+                            onChange
+                        </b>
+                        <a href="#onChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onChange(vendorEvaluation)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:81</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>vendorEvaluation</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="proposals"></a>
+                    <span class="name">
+                        <b>
+                            proposals
+                        </b>
+                        <a href="#proposals"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>proposals()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:93</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveComplete"></a>
+                    <span class="name">
+                        <b>
+                            saveComplete
+                        </b>
+                        <a href="#saveComplete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveComplete()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:98</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="savePending"></a>
+                    <span class="name">
+                        <b>
+                            savePending
+                        </b>
+                        <a href="#savePending"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>savePending()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:104</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="attachments"></a>
+                        <span class="name">
+                            <b>
+                            attachments</b>
+                            <a href="#attachments"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="blockchainRes"></a>
+                        <span class="name">
+                            <b>
+                            blockchainRes</b>
+                            <a href="#blockchainRes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dltdid"></a>
+                        <span class="name">
+                            <b>
+                            dltdid</b>
+                            <a href="#dltdid"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="evaluationID"></a>
+                        <span class="name">
+                            <b>
+                            evaluationID</b>
+                            <a href="#evaluationID"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="id"></a>
+                        <span class="name">
+                            <b>
+                            id</b>
+                            <a href="#id"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="solno"></a>
+                        <span class="name">
+                            <b>
+                            solno</b>
+                            <a href="#solno"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="vendorEvaluation"></a>
+                        <span class="name">
+                            <b>
+                            vendorEvaluation</b>
+                            <a href="#vendorEvaluation"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="volumename"></a>
+                        <span class="name">
+                            <b>
+                            volumename</b>
+                            <a href="#volumename"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Response } from &quot;@angular/http&quot;;
+import { Component, OnInit, Input } from &quot;@angular/core&quot;;
+import { ActivatedRoute, Router, ParamMap } from &quot;@angular/router&quot;;
+import { AcquisitionService } from &quot;../../../../../Services/acquisition.service&quot;;
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+  FormArray
+} from &quot;@angular/forms&quot;;
+import { MatPaginator } from &quot;@angular/material/paginator&quot;;
+import { MatSort } from &quot;@angular/material/sort&quot;;
+import { MatTableDataSource } from &quot;@angular/material/table&quot;;
+import { ToastrService } from &quot;ngx-toastr&quot;;
+
+@Component({
+  selector: &#x27;app-vendorreseval&#x27;,
+  templateUrl: &#x27;./vendorreseval.component.html&#x27;,
+  styleUrls: [&#x27;./vendorreseval.component.css&#x27;]
+})
+export class VendorresevalComponent implements OnInit {
+
+  evaluationID;
+  dltdid;
+  solno;
+  blockchainRes;
+  vendorEvaluation;
+  id;
+  attachments;
+  volumename;
+  @Input() i;
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private fb: FormBuilder,
+    private ap: AcquisitionService,
+    private toastr: ToastrService
+  ) { }
+
+  ngOnInit() {
+
+
+    this.vendorEvaluation &#x3D; new FormGroup({
+      volumeName: new FormControl(&quot;&quot;, Validators.required),
+      vendorId: new FormControl(&quot;&quot;, Validators.required),
+      volumepkId:new FormControl(&quot;&quot;, Validators.required), 
+      strengths: new FormControl(&quot;&quot;, Validators.required),
+      weekness: new FormControl(&quot;&quot;, Validators.required),
+      Deficiencies: new FormControl(&quot;&quot;, Validators.required),
+      Remarks: new FormControl(&quot;&quot;, Validators.required),
+      vendorstatus: new FormControl(&quot;&quot;, Validators.required),
+    });
+    this.solno &#x3D; this.route.snapshot.parent.parent.params.sid;
+    this.evaluationID &#x3D; this.route.snapshot.params.evaluationId;
+    this.dltdid &#x3D; this.route.snapshot.params.vendorName;
+    //console.log(this.evaluationID);
+    //console.log(this.dltdid);
+    this.ap.getAuroVendoreval(this.evaluationID).subscribe(response &#x3D;&gt; {
+      console.log(response);
+      this.id &#x3D; response[0].ID;
+      this.volumename &#x3D; response[0].volumeName;
+      this.attachments &#x3D; response[0].attachments;
+      this.vendorEvaluation.get(&#x27;volumeName&#x27;).setValue(response[0].volumeName);
+      this.vendorEvaluation.get(&#x27;vendorId&#x27;).setValue(response[0].vendorID);
+      this.vendorEvaluation.get(&#x27;volumepkId&#x27;).setValue(response[0].volumepkId);
+      this.vendorEvaluation.get(&#x27;strengths&#x27;).setValue(response[0].strengths);
+      this.vendorEvaluation.get(&#x27;weekness&#x27;).setValue(response[0].weekness);
+      this.vendorEvaluation.get(&#x27;Deficiencies&#x27;).setValue(response[0].Deficiencies);
+      this.vendorEvaluation.get(&#x27;Remarks&#x27;).setValue(response[0].Remarks);
+      this.vendorEvaluation.get(&#x27;vendorstatus&#x27;).setValue(response[0].vendorstatus);
+      //console.log(response);  
+    });
+
+    this.ap.getBlockchainres(this.dltdid).subscribe((response1)&#x3D;&gt;{
+     // console.log(response1);
+      this.blockchainRes &#x3D; response1;
+    });
+  }
+
+  onChange(vendorEvaluation) {
+   // console.log(vendorEvaluation.value);
+    this.ap.patchAuroVendoreval(this.id, vendorEvaluation.value).subscribe(response &#x3D;&gt; {
+    //  console.log(response);
+    })
+  }
+  
+  back() {
+    this.router.navigate([
+      &quot;/home/sol/&quot;+this.solno +&quot;/proposalevaluation/&quot;+this.dltdid
+    ]);
+  }
+  proposals() {
+    this.router.navigate([
+      &quot;/home/sol/&quot;+this.solno +&quot;/proposalevaluation&quot;
+    ]);
+  }
+  saveComplete(){
+    this.vendorEvaluation.get(&#x27;vendorstatus&#x27;).setValue(&quot;Complete&quot;);
+    this.onChange(this.vendorEvaluation);
+    this.toastr.success(this.volumename+&quot; &quot;+&quot;Evaluation Completed Successfully&quot;);
+  }
+
+  savePending(){
+    this.vendorEvaluation.get(&#x27;vendorstatus&#x27;).setValue(&quot;Pending&quot;);
+    this.onChange(this.vendorEvaluation);
+    this.toastr.info(this.volumename+&quot; &quot;+&quot;Evaluation Saved&quot;)
+
+  }
+
+
+  downloadFile(x) {
+    console.log(x);
+    this.ap.getFile(x).subscribe((response) &#x3D;&gt; {
+      //console.log(response);
+      var binaryData &#x3D; [];
+
+      // binaryData.push(response);
+      var length &#x3D; response[&quot;_body&quot;].length
+      var buffer &#x3D; new Uint8Array(response[&quot;_body&quot;].length);
+      for (var i&#x3D;0; i&lt;response[&quot;_body&quot;].length; i++) {
+        buffer[i] &#x3D; response[&quot;_body&quot;].charCodeAt(i);
+       // //console.log(buffer)
+      }
+       
+      const contentDispositionHeader: string &#x3D; response.headers[&quot;_headers&quot;].get(&#x27;cache-control&#x27;).toString();
+      const type &#x3D; response.headers[&quot;_headers&quot;].get(&#x27;content-type&#x27;).toString();
+      //console.log(type);
+       const parts: string[] &#x3D; contentDispositionHeader.split(&#x27;;&#x27;);
+      const filename &#x3D; parts[1].split(&#x27;&#x3D;&#x27;)[1];
+      //console.log(filename);
+      const blob &#x3D; new Blob([response[&quot;_body&quot;]], { type: type });
+      var fileURL &#x3D; URL.createObjectURL(blob);
+      //console.log(fileURL);
+      saveAs(blob, filename);
+    })
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;nav aria-label&#x3D;&quot;breadcrumb&quot;&gt;
+    &lt;ol class&#x3D;&quot;breadcrumb&quot;&gt;
+      &lt;li class&#x3D;&quot;breadcrumb-item&quot;&gt;&lt;a (click)&#x3D;&quot;proposals()&quot;&gt;Proposals&lt;/a&gt;&lt;/li&gt;
+      &lt;li class&#x3D;&quot;breadcrumb-item&quot;&gt;&lt;a (click)&#x3D;&quot;back()&quot;&gt;Vendor Files&lt;/a&gt;&lt;/li&gt;
+      &lt;li class&#x3D;&quot;breadcrumb-item active&quot; aria-current&#x3D;&quot;page&quot;&gt;Evaluation&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/nav&gt;
+&lt;div class&#x3D;&quot;header ml-1&quot;&gt;
+  &lt;div style&#x3D;&quot;white-space:nowrap; color:#1a355d; 
+              font-weight:bold; font-size:16px; font-family:&#x27;Arial&#x27;,&#x27;SansSerif&#x27;; 
+              text-align:left;&quot;&gt;
+    {{this.volumename}} Evaluation
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;mt-4&quot;&gt;
+  &lt;div&gt;
+
+
+    &lt;ul class&#x3D;&quot;nav nav-tabs&quot; id&#x3D;&quot;justifiedTab&quot; role&#x3D;&quot;tablist&quot;&gt;
+      &lt;li class&#x3D;&quot;nav-item nav-item1 text-center&quot;&gt;
+        &lt;a aria-controls&#x3D;&quot;home&quot; aria-selected&#x3D;&quot;true&quot; class&#x3D;&quot;nav-link active&quot; data-toggle&#x3D;&quot;tab&quot; href&#x3D;&quot;#home&quot;
+          id&#x3D;&quot;home-tab&quot; role&#x3D;&quot;tab&quot;&gt;Evaluation&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class&#x3D;&quot;nav-item nav-item1 text-center&quot;&gt;
+        &lt;a aria-controls&#x3D;&quot;contact&quot; aria-selected&#x3D;&quot;false&quot; class&#x3D;&quot;nav-link&quot; data-toggle&#x3D;&quot;tab&quot; href&#x3D;&quot;#contact&quot;
+          id&#x3D;&quot;contact-tab&quot; role&#x3D;&quot;tab&quot;&gt;Attachments&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;!--loading Table--&gt;
+    &lt;div class&#x3D;&quot;tab-content&quot; id&#x3D;&quot;justifiedTabContent&quot;&gt;
+      &lt;div aria-labelledby&#x3D;&quot;home-tab&quot; class&#x3D;&quot;tab-pane fade show active&quot; id&#x3D;&quot;home&quot; role&#x3D;&quot;tabpanel&quot; style&#x3D;&quot;margin-bottom: -16px;
+        z-index:200px;
+        padding: 20px !Important;
+              background: white !Important;border-bottom-style:none !Important; &quot;&gt;
+            &lt;form [formGroup]&#x3D;&quot;vendorEvaluation&quot; novalidate (change)&#x3D;&quot;onChange(vendorEvaluation)&quot; style&#x3D;&quot;padding: 20px !Important;
+            background: white !Important;border-bottom-style:none !Important;margin-top:-15px&quot;&gt;
+
+            &lt;div class&#x3D;&quot;card&quot;&gt;
+              &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                          &lt;label
+                                for&#x3D;&quot;strengths&quot;&gt;Strengths&lt;/label&gt;
+                          &lt;textarea class&#x3D;&quot;form-control&quot;
+                                formControlName&#x3D;&quot;strengths&quot;
+                                id&#x3D;&quot;strengths&quot; rows&#x3D;&quot;3&quot;
+                                [readonly]&#x3D;&quot;vendorEvaluation.get(&#x27;vendorstatus&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                          &lt;label
+                                for&#x3D;&quot;weakness&quot;&gt;Weakness&lt;/label&gt;
+                          &lt;textarea class&#x3D;&quot;form-control&quot;
+                                formControlName&#x3D;&quot;weekness&quot;
+                                id&#x3D;&quot;weakness&quot; rows&#x3D;&quot;3&quot;
+                                [readonly]&#x3D;&quot;vendorEvaluation.get(&#x27;vendorstatus&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                          &lt;label
+                                for&#x3D;&quot;Deficiencies&quot;&gt;Deficiencies&lt;/label&gt;
+                          &lt;textarea class&#x3D;&quot;form-control&quot;
+                                formControlName&#x3D;&quot;Deficiencies&quot;
+                                id&#x3D;&quot;Deficiencies&quot;
+                                rows&#x3D;&quot;3&quot;
+                                [readonly]&#x3D;&quot;vendorEvaluation.get(&#x27;vendorstatus&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                          &lt;label
+                                for&#x3D;&quot;Remarks&quot;&gt;Remarks&lt;/label&gt;
+                          &lt;textarea class&#x3D;&quot;form-control&quot;
+                                formControlName&#x3D;&quot;Remarks&quot;
+                                id&#x3D;&quot;Remarks&quot; rows&#x3D;&quot;3&quot;
+                                [readonly]&#x3D;&quot;vendorEvaluation.get(&#x27;vendorstatus&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;mt-3&quot;&gt;
+                    &lt;button
+                          class&#x3D;&quot;close nav-link btn btn-sm btn-success&quot;
+                          (click)&#x3D;&quot;saveComplete()&quot; [disabled]&#x3D;&quot;(vendorEvaluation.get(&#x27;strengths&#x27;).value &amp;&amp; vendorEvaluation.get(&#x27;weekness&#x27;).value &amp;&amp; vendorEvaluation.get(&#x27;Deficiencies&#x27;).value &amp;&amp; vendorEvaluation.get(&#x27;Remarks&#x27;).value) &#x3D;&#x3D; &#x27;&#x27; &quot;
+                          &gt;Save
+                          &amp; Complete&lt;/button&gt;
+                    &lt;button
+                          class&#x3D;&quot;close nav-link btn btn-sm btn-primary mr-3&quot;
+                          (click)&#x3D;&quot;savePending()&quot;&gt;Save&lt;/button&gt;
+              &lt;/div&gt;
+        &lt;/div&gt;
+
+&lt;!-- 
+          &lt;pre class&#x3D;&quot;mt-5&quot;&gt; {{vendorEvaluation.value | json}} &lt;/pre&gt; --&gt;
+
+        &lt;/form&gt; 
+
+
+      &lt;/div&gt;
+      &lt;div aria-labelledby&#x3D;&quot;contact-tab&quot; class&#x3D;&quot;tab-pane fade&quot; id&#x3D;&quot;contact&quot;
+        role&#x3D;&quot;tabpanel&quot;&gt;
+        &lt;div&gt;
+                  &lt;div [class.d-none]&#x3D;&quot;this.attachments !&#x3D; &#x27;&#x27;&quot; class&#x3D;&quot;alert alert-info&quot; role&#x3D;&quot;alert&quot;&gt;
+                              &lt;i style&#x3D;&quot;font-size: 140%; color: #1a355d&quot; class&#x3D;&quot;fa fa-info-circle&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&amp;nbsp; There are no Attachments
+                  &lt;/div&gt;
+            &lt;table [class.d-none]&#x3D;&quot;this.attachments &#x3D;&#x3D; &#x27;&#x27;&quot; class&#x3D;&quot;table table-striped mb-0 border&quot;&gt;
+      
+      
+                &lt;thead&gt;
+                  &lt;tr&gt;
+                    &lt;th scope&#x3D;&quot;col&quot;&gt;Filename&lt;/th&gt;
+                    &lt;th scope&#x3D;&quot;col&quot;&gt;Action&lt;/th&gt;
+                  &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                  &lt;tr *ngFor&#x3D;&quot;let res of this.attachments; let i &#x3D; index&quot;&gt;
+                    &lt;td&gt;{{res.attachmentName}}&lt;/td&gt;
+                    &lt;td&gt;&lt;a style&#x3D;&quot;min-width: 2.5rem;&quot; class&#x3D;&quot;btn&quot; (click)&#x3D;&quot;downloadFile(res.filePkId)&quot;&gt;&lt;i class&#x3D;&quot;fa fa-download&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                  &lt;/tr&gt;
+            
+                &lt;/tbody&gt;
+            
+              &lt;/table&gt;
+        &lt;/div&gt;
+      
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./vendorreseval.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+
+.nav-item1 {
+    width: 233px;
+  }
+  
+  
+  
+  
+  .nav-link.active {
+    color: #0c59cf;
+    background-color: #eff2f5;
+  } 
+  
+  /* .search-form-field {
+    margin-top: -5%;
+    margin-bottom: -5%;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #d2d7db;
+    color: white
+  } */
+  
+  .mat-input-element {
+    caret-color: white;
+  }
+
+  .line-items {
+    white-space: nowrap;
+    color: #0844a4;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+    text-align: left;
+  }
+  
+  
+  .textfield-box .form-control, .textfield-box .custom-select, .textfield-box .form-control-file {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: .6rem .6rem calc(.6rem - .6px);
+    color: grey;
+    font-size: 14px;
+    font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+    border-style: none;
+    border-bottom-style: solid;
+    border-bottom-color: #2e73dc;
+  }
+  
+  .label-class {
+    font-size: 0.80rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.5;
+    white-space: nowrap;
+    color: #1f5fbd;
+    font-size: 14px;
+    display: inline-block;
+  }
+  
+    .thclass {
+      color: #000333;
+  
+    }
+  
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: rgb(243, 246, 249);
+    }
+    
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      line-height: 1.4;
+      
+    }
+   .btn-outline-primary{
+    color: #2e73dc
+    }
+  
+  
+    .form-control, .custom-select, .form-control-file {
+      background-clip: padding-box;
+      background-color: transparent;
+      border-color: rgba(0, 0, 0, 0.42);
+      border-radius: 0;
+      border-style: solid;
+      border-width: 0 0 1px;
+      box-shadow: none;
+      color: rgba(0, 0, 0, 0.87);
+      display: block;
+      font-size: 1rem;
+      line-height: 1.5;
+      padding: 0.375rem 0 calc(0.375rem - 1px);
+      width: 100%;
+  }
+  
+  
+  form-control[_ngcontent-c3], .custom-select[_ngcontent-c3], .form-control-file[_ngcontent-c3] {
+    background-clip: padding-box;
+    background-color: transparent;
+    border-color: rgba(0, 0, 0, 0.42);
+    border-radius: 0;
+    border-style: solid;
+    border-width: 0 0 1px;
+    box-shadow: none;
+    color: #606060;
+    font-size: 14px;
+    font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+    display: block;
+    line-height: 1.5;
+    padding: .6rem .6rem calc(.6rem - .6px);
+    width: 100%;
+  }
+  
+  .form-control {
+    color: #606060;
+    font-size: 14px;
+  }
+  
+  
+  
+  .list-group-item {
+    font-size: 0.9375rem;
+    line-height: 1.028572;
+    min-height: 2rem;
+    padding: 0.230357rem .2rem;
+    position: relative;
+    width: 110%;
+  }
+  
+  .list-group-item.active {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  
+  .hidden { 
+    display: none
+  }
+  
+  /* .form-control {
+    border-bottom: none !important;
+  } */
+  
+  .form-controls{
+    background-clip: padding-box;
+    background-color: transparent;
+    border-color: rgba(0, 0, 0, 0.42);
+    border-radius: 0;
+    border-style: solid;
+    border-width: 0 0 1px;
+    box-shadow: none;
+    color: rgba(0, 0, 0, 0.87);
+    display: block;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.375rem 0 calc(0.375rem - 1px);
+    width: 100%;
+    font-size: 14px;
+    color: grey;
+    border-bottom: none;
+    box-shadow: none; outline:none;
+  }
+  
+
+  
+  
+
+
+  
+  
+  .inlinepara p { display: inline }
+  
+  .alert-red {
+    color: red;
+  }
+  
+  .blue-line {
+    border-top:1.5px solid #0844a4;
+  }
+  
+  i.fa-hourglass-half {
+    color: #0844a4;                  
+  }
+  
+  i.fa-check-circle-o {
+    color: rgb(54, 201, 54);                  
+  }
+  
+  i.fa-times-circle {
+    color: red;                  
+  }
+  
+  :host ::ng-deep.mat-paginator .mat-paginator-container {
+    justify-content: space-between;
+  }
+
+  td{
+    border-bottom-style: none !Important;
+ 
+  }
+
+  ::ng-deep th{
+    border-bottom-style: none !Important;
+    color: #0844a4 !Important;
+    font-weight: bold !Important;
+    font-size: 14px !Important;
+    text-align: left !Important;
+    font-family: Arial, &quot;SansSerif&quot; !Important
+  }
+  
+  .textupdate{
+    word-spacing: 4px;
+    font-family: Arial;
+    font-size: 14px;
+    color: #444444;
+  }
+
+  .statusicon{
+    position: relative;
+    float: left;
+    /* padding: 10px;
+    border: 1px solid lightgray; */
+    border-radius: 100%;
+    margin-right: 5px;
+    margin-left: -40px;
+    color: #2e73dc;
+
+   
+  }
+
+  .nav-link.active{
+    background-color: white;
+    box-shadow: none !important;
+    /* height: 60px; */
+  }
+
+  .action{
+    background:#006fbe !Important;
+    width:90px;
+    font-size: 11px;
+    background-color: #006fbe;
+    font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+    text-align: center;
+    padding: 6px;
+    margin-left:50px
+  }
+
+  .arrow{
+    position: relative;
+    float: right;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    height: 8px;
+    width: 8px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#something::ng-deep .mat-paginator{
+  color: #1a355d;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+  text-transform: uppercase;
+}
+
+#something::ng-deep .mat-form-field-wrapper::after {
+  position: relative;
+    float: right;
+    top: -18px;
+    width: 98px;
+    right: -102px;
+    content: &quot;ITEMS OF&quot;;
+    color: #1a355d;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+    z-index: 200;
+}
+
+#something::ng-deep .mat-paginator-range-actions{
+  position: absolute;
+  float: left;
+  margin-left: 178px;
+}
+
+#something::ng-deep .mat-paginator-range-label{
+  
+  margin-top: 26px !Important;
+  margin-left: -61px  !Important;
+
+}
+
+#something::ng-deep .mat-paginator-range-label::before{
+  position: relative;
+  float: right;
+  height: 40px;
+  width: 46px;
+  left: -55px;
+  content: &quot;&quot;;
+  background: white;
+}
+
+#something::ng-deep .mat-paginator-navigation-previous::before {
+  position: relative;
+  float: right;
+  height: 40px;
+  width: 46px;
+  left: 0px;
+  content: &quot;PREVIOUS&quot;;
+  color: #2671d8;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+  z-index: 200;
+}
+
+#something::ng-deep .mat-paginator-navigation-previous{
+  margin-left:100px !Important
+}
+
+#something::ng-deep .mat-paginator-navigation-next{
+  margin-left:50px !Important
+}
+
+#something::ng-deep .mat-paginator-navigation-next::after {
+  position: relative;
+  float: right;
+  height: 40px;
+  width: 46px;
+  left: 0px;
+  content: &quot;NEXT&quot;;
+  color: #2671d8;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+  z-index: 200;
+}
+
+#something::ng-deep .mat-paginator-icon{
+  display:none !Important;
+}
+
+
+.first{
+  position: relative;
+  float:left;
+}
+
+#something::ng-deep  #contact{
+  margin-top: 15px;
+  height: 433px;
+        color: #606060;
+        font-size: 14px;
+        background-color: #ffffff;
+        font-family: Arial, SansSerif;
+        padding: 27px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #cad2db;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: #cad2db;
+        border-left-width: 1px;
+        border-left-style: solid;
+        border-left-color: #cad2db;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: #cad2db;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: #cad2db;
+}
+
+.addeval{
+  color: #ffffff;
+  font-size: 11px;
+  /* background-color: #006fbe; */
+  font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+  text-align: center;
+  padding: 6px;
+  border-width: 0px;
+  border-style: none;
+
+  border-right-width: 0px;
+  border-right-style: none;
+
+  border-left-width: 0px;
+  border-left-style: none;
+
+  border-bottom-width: 0px;
+  border-bottom-style: none;
+
+  border-top-width: 0px;
+  border-top-style: none;
+
+  width: 133px;
+  height: 33px;
+}
+
+.select{
+  font-family: Arial, SansSerif;
+    font-size: 14px;
+    color: #0844a4
+}
+
+.dropmenubutton{
+  height: 30px;
+    text-align: center;
+    font-size: 14px;
+    background: rgba(0,0,0,0.1);
+    padding: 0px;
+    margin-bottom: 2px;
+    color: #1a355d;
+    font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+    opacity: 0.8
+}
+
+.dropmenubutton:hover{
+background-color: rgba(0,0,0,0.2);
+opacity: 1;
+}
+
+.hover:hover{
+  cursor: pointer;
+}
+
+.awardcontent p{
+  color: #1a355d;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+  margin:auto;
+  text-align: center;
+  font-weight: normal;
+  padding:0px
+}
+
+.cancel{
+  border: 1px solid lightgray;
+    border-radius: 5px;
+    color: black;
+    width: 90px;
+    height: 30px;
+    margin-left: 5px;
+    padding:6px
+}
+
+.cancel:hover{
+  color: black !Important
+}
+
+.center{  position: relative;
+  float: left;
+  margin: auto;
+}
+
+.notselected{
+  color: #ffffff;
+    font-size: 11px;
+    background-color: #e61610;
+    font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+    text-align: center;
+    padding: 6px;
+    border-width: 0px;
+    border-style: none;
+    width: 90px;
+    border-radius:5px;
+    display:none
+}
+
+  /* ul li{
+    bottom: 0px;
+    position: absolute;
+    transition: height 500s;
+} */
+
+
+.nav-tabs .nav-link {
+
+  text-transform: none !important;
+  color: #0844a4;
+  font-weight: 600;
+  font-size: 14.5px;
+  font-family: &#x27;Arial&#x27;, &#x27;SansSerif&#x27;;
+
+}
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><nav aria-label="breadcrumb">    <ol class="breadcrumb">      <li class="breadcrumb-item"><a (click)="proposals()">Proposals</a></li>      <li class="breadcrumb-item"><a (click)="back()">Vendor Files</a></li>      <li class="breadcrumb-item active" aria-current="page">Evaluation</li>    </ol>  </nav><div class="header ml-1">  <div style="white-space:nowrap; color:#1a355d;               font-weight:bold; font-size:16px; font-family:\'Arial\',\'SansSerif\';               text-align:left;">    {{this.volumename}} Evaluation  </div></div><div class="mt-4">  <div>    <ul class="nav nav-tabs" id="justifiedTab" role="tablist">      <li class="nav-item nav-item1 text-center">        <a aria-controls="home" aria-selected="true" class="nav-link active" data-toggle="tab" href="#home"          id="home-tab" role="tab">Evaluation</a>      </li>      <li class="nav-item nav-item1 text-center">        <a aria-controls="contact" aria-selected="false" class="nav-link" data-toggle="tab" href="#contact"          id="contact-tab" role="tab">Attachments</a>      </li>    </ul>    <!--loading Table-->    <div class="tab-content" id="justifiedTabContent">      <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home" role="tabpanel" style="margin-bottom: -16px;        z-index:200px;        padding: 20px !Important;              background: white !Important;border-bottom-style:none !Important; ">            <form [formGroup]="vendorEvaluation" novalidate (change)="onChange(vendorEvaluation)" style="padding: 20px !Important;            background: white !Important;border-bottom-style:none !Important;margin-top:-15px">            <div class="card">              <div class="card-body">                    <div class="form-group">                          <label                                for="strengths">Strengths</label>                          <textarea class="form-control"                                formControlName="strengths"                                id="strengths" rows="3"                                [readonly]="vendorEvaluation.get(\'vendorstatus\').value == \'Complete\'"></textarea>                    </div>                    <div class="form-group">                          <label                                for="weakness">Weakness</label>                          <textarea class="form-control"                                formControlName="weekness"                                id="weakness" rows="3"                                [readonly]="vendorEvaluation.get(\'vendorstatus\').value == \'Complete\'"></textarea>                    </div>                    <div class="form-group">                          <label                                for="Deficiencies">Deficiencies</label>                          <textarea class="form-control"                                formControlName="Deficiencies"                                id="Deficiencies"                                rows="3"                                [readonly]="vendorEvaluation.get(\'vendorstatus\').value == \'Complete\'"></textarea>                    </div>                    <div class="form-group">                          <label                                for="Remarks">Remarks</label>                          <textarea class="form-control"                                formControlName="Remarks"                                id="Remarks" rows="3"                                [readonly]="vendorEvaluation.get(\'vendorstatus\').value == \'Complete\'"></textarea>                    </div>              </div>              <div class="mt-3">                    <button                          class="close nav-link btn btn-sm btn-success"                          (click)="saveComplete()" [disabled]="(vendorEvaluation.get(\'strengths\').value && vendorEvaluation.get(\'weekness\').value && vendorEvaluation.get(\'Deficiencies\').value && vendorEvaluation.get(\'Remarks\').value) == \'\' "                          >Save                          & Complete</button>                    <button                          class="close nav-link btn btn-sm btn-primary mr-3"                          (click)="savePending()">Save</button>              </div>        </div><!--           <pre class="mt-5"> {{vendorEvaluation.value | json}} </pre> -->        </form>       </div>      <div aria-labelledby="contact-tab" class="tab-pane fade" id="contact"        role="tabpanel">        <div>                  <div [class.d-none]="this.attachments != \'\'" class="alert alert-info" role="alert">                              <i style="font-size: 140%; color: #1a355d" class="fa fa-info-circle" aria-hidden="true"></i>&nbsp; There are no Attachments                  </div>            <table [class.d-none]="this.attachments == \'\'" class="table table-striped mb-0 border">                            <thead>                  <tr>                    <th scope="col">Filename</th>                    <th scope="col">Action</th>                  </tr>                </thead>                <tbody>                  <tr *ngFor="let res of this.attachments; let i = index">                    <td>{{res.attachmentName}}</td>                    <td><a style="min-width: 2.5rem;" class="btn" (click)="downloadFile(res.filePkId)"><i class="fa fa-download" aria-hidden="true"></i></a></td>                  </tr>                            </tbody>                          </table>        </div>            </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'ApdetailComponent', 'selector': 'app-apdetail'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AttachmentsComponent', 'selector': 'app-attachments'},{'name': 'AttachmentsinfoComponent', 'selector': 'app-attachmentsinfo'},{'name': 'ClausesectionsComponent', 'selector': 'app-clausesections'},{'name': 'CloseOutComponent', 'selector': 'app-close-out'},{'name': 'CodeValidateComponent', 'selector': 'app-code-validate'},{'name': 'CommentBoxComponent', 'selector': 'app-comment-box'},{'name': 'CompatibilityComponent', 'selector': 'app-compatibility'},{'name': 'CompetetionComponent', 'selector': 'app-competetion'},{'name': 'ConstraintsComponent', 'selector': 'app-constraints'},{'name': 'ContactAdminComponent', 'selector': 'app-contact-admin'},{'name': 'ContractadmindataComponent', 'selector': 'app-contractadmindata'},{'name': 'ContractComponent', 'selector': 'app-contract'},{'name': 'ContractdetailComponent', 'selector': 'app-contractdetail'},{'name': 'ContractFileComponent', 'selector': 'app-contract-file'},{'name': 'ContractGenerationComponent', 'selector': 'app-contract-generation'},{'name': 'ContractPreviewComponent', 'selector': 'app-contract-preview'},{'name': 'ContractsdisplayComponent', 'selector': 'app-contractsdisplay'},{'name': 'CoprofileComponent', 'selector': 'app-coprofile'},{'name': 'CornominationComponent', 'selector': 'app-cornomination'},{'name': 'DashAcquisitionComponent', 'selector': 'app-dash-acquisition'},{'name': 'DashActiveComponent', 'selector': 'app-dash-active'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DashExpiredComponent', 'selector': 'app-dash-expired'},{'name': 'DashSolicitationComponent', 'selector': 'app-dash-solicitation'},{'name': 'DeleveriesandperformanceComponent', 'selector': 'app-deleveriesandperformance'},{'name': 'EstimateComponent', 'selector': 'app-estimate'},{'name': 'EvaluatevendorComponent', 'selector': 'app-evaluatevendor'},{'name': 'EvaluationfactorsComponent', 'selector': 'app-evaluationfactors'},{'name': 'EvaluationsComponent', 'selector': 'app-evaluations'},{'name': 'FormdetailComponent', 'selector': 'app-formdetail'},{'name': 'GeneralComponent', 'selector': 'app-general'},{'name': 'HomePageComponent', 'selector': 'app-home-page'},{'name': 'IgceComponent', 'selector': 'app-igce'},{'name': 'InspectionandacceptanceComponent', 'selector': 'app-inspectionandacceptance'},{'name': 'InstructionsComponent', 'selector': 'app-instructions'},{'name': 'LoginPageComponent', 'selector': 'app-login-page'},{'name': 'LogoutComponent', 'selector': ''},{'name': 'MarketresearchComponent', 'selector': 'app-marketresearch'},{'name': 'ModifyContractComponent', 'selector': 'app-modify-contract'},{'name': 'PackagingandmarketingComponent', 'selector': 'app-packagingandmarketing'},{'name': 'PmacquisitionsComponent', 'selector': 'app-pmacquisitions'},{'name': 'PmdashComponent', 'selector': 'app-pmdash'},{'name': 'PmprofileComponent', 'selector': 'app-pmprofile'},{'name': 'PmsolComponent', 'selector': 'app-pmsol'},{'name': 'PreviewComponent', 'selector': 'app-preview'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProposalevalhomeComponent', 'selector': 'app-proposalevalhome'},{'name': 'ProposalevaluationComponent', 'selector': 'app-proposalevaluation'},{'name': 'QandaComponent', 'selector': 'app-qanda'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RepresentationcertsComponent', 'selector': 'app-representationcerts'},{'name': 'ReqformComponent', 'selector': 'app-reqform'},{'name': 'SolCommentBoxComponent', 'selector': 'app-sol-comment-box'},{'name': 'SolicitationdetailComponent', 'selector': 'app-solicitationdetail'},{'name': 'SowComponent', 'selector': 'app-sow'},{'name': 'SpecialcontractreqComponent', 'selector': 'app-specialcontractreq'},{'name': 'StatementofworkComponent', 'selector': 'app-statementofwork'},{'name': 'SuppliesandservicesComponent', 'selector': 'app-suppliesandservices'},{'name': 'TradeoffsComponent', 'selector': 'app-tradeoffs'},{'name': 'VendorresevalComponent', 'selector': 'app-vendorreseval'},{'name': 'VendorresponseComponent', 'selector': 'app-vendorresponse'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'VendorresevalComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'VendorresevalComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,2770 @@
+<button id="savebutton" (click)="printme()" style="
+position: fixed;
+right: 0; 
+margin-top: -80px;
+z-index: 20;
+margin-right: 280px;" class="print-button btns float-right">
+    <span class="print-icon"></span><span></span> &nbsp;Export/Print</button>
+<div id="documentwrapper" *ngIf="AP_FULL_AP?.AP">
+
+    <p align="center" class="title">
+        <strong>HHS Acquisition Plan</strong>
+    </p>
+
+    <p class="title">
+        <strong>Project Overview</strong>
+    </p>
+
+
+
+    <table class ="wrap">
+        <tbody>
+            <tr>
+                <td class="header" width="144" valign="top">
+                    <p>
+                        Acquisition Year
+                    </p>
+                </td>
+                <td width="480" valign="top">
+                    <span *ngIf="AP_FULL_AP?.AP?.popstartDate">
+                        {{AP_FULL_AP?.AP?.popstartDate.split("-")[0]}}
+                    </span>
+
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="144" valign="top">
+                    <p>
+                        Project Title
+                    </p>
+                </td>
+                <td width="480" valign="top">
+                    <span *ngIf="AP_FULL_AP?.AP?.projectTitle">
+                        {{AP_FULL_AP?.AP?.projectTitle}}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="144" valign="top">
+                    <p>
+                        Program Manager
+                    </p>
+                    <p>
+                        Contact Details
+                    </p>
+                </td>
+                <td width="480" valign="top">
+                    <span *ngIf="AP_FULL_AP?.AP?.commentMention[1]">
+                        {{AP_FULL_AP?.AP?.commentMention[1].value}}<br>
+                        {{AP_FULL_AP?.AP?.commentMention[1].Phone}}<br>
+                        {{AP_FULL_AP?.AP?.commentMention[1].email}}
+                    </span>
+
+
+                </td>
+            </tr>
+        </tbody>
+    </table><br><br>
+    <p>
+        <strong></strong>
+    </p>
+    <p>
+        <strong>
+            Identification of Participants in Acquisition Plan Preparation
+        </strong>
+        <br />
+        FAR 7.105(b)(22)
+    </p>
+    <table class ="wrap">
+        <tbody>
+            <tr class="header">
+                <td width="156" valign="top">
+                    <p>
+                        Name &amp; Office
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                    <p>
+                        Role
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                    <p>
+                        Phone Number
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                    <p>
+                        Email Address
+                    </p>
+                </td>
+            </tr>
+
+            <tr style="height:20px" *ngFor="let col of AP_FULL_AP?.AP?.collaborators">
+                <td width="156" valign="top">
+                    {{col.value}}
+                </td>
+                <td width="156" valign="top">
+                    {{col.role}}
+                </td>
+                <td width="156" valign="top">
+                    {{col.Phone}}
+                </td>
+                <td width="156" valign="top">
+                    {{col.email}}
+                </td>
+            </tr>
+        </tbody>
+    </table><br><br>
+
+    <p class="title">
+        <strong>General Details</strong>
+    </p>
+
+
+    <table class ="wrap">
+        <tbody>
+            <tr>
+                <td class="header" width="264" valign="top">
+                    <p>
+                        <strong>Statement of Need</strong>
+                        <br> FAR 7.105(a)(1)
+                    </p>
+                    <p>
+                        <em>
+                            Briefly describe the purpose of and need for the
+                            proposed requirement as defined in the approved AS.
+                        </em>
+                    </p>
+                </td>
+                <td width="360" valign="top">
+                    <span *ngIf="AP_FULL_AP?.AP?.statementofNeed">{{AP_FULL_AP?.AP?.statementofNeed}}</span>
+
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="264" valign="top">
+                    <p>
+                        <strong>Period of Performance:</strong><br>
+                        Start Date/ End Date<br>
+                        Option Year Durations
+                    </p>
+
+                </td>
+                <td width="360" valign="top">
+                    <span *ngIf="AP_FULL_AP?.AP?.popstartDate"> {{AP_FULL_AP?.AP?.popstartDate}}<br>
+                        {{AP_FULL_AP?.AP?.popendDate}} </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="264" valign="top">
+                    <p>
+                        <strong>Anticipated Award Date</strong>
+                        <strong></strong>
+                    </p>
+                </td>
+                <td width="360" valign="top">
+                    <span *ngIf="AP_FULL_AP?.AP?.anticipatedPop">{{AP_FULL_AP?.AP?.anticipatedPop}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="264" valign="top">
+                    <p>
+                        <strong>Estimated Budget</strong>
+                        <strong></strong>
+                    </p>
+                </td>
+                <td width="360" valign="top">
+                    <span
+                        *ngIf="AP_FULL_AP?.AP?.estimatedBudgett">${{AP_FULL_AP?.AP?.estimatedBudgett| number:'1.2-2'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="264" valign="top">
+                    <p>
+                        <strong>Commercial or Non-Commercial Purchase</strong>
+                        <strong></strong>
+                    </p>
+                </td>
+                <td width="360" valign="top">
+                    {{AP_FULL_AP.AP?.Source == false ? 'Non-Commercial Purchase':''}}
+                    {{AP_FULL_AP.AP?.Source == true ? 'Commercial Purchase':''}}
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="264" valign="top">
+                    <p>
+                        <strong>Categories of Contracting</strong>
+                        <strong></strong>
+                    </p>
+                </td>
+                <td width="360" valign="top">
+                    {{AP_FULL_AP?.AP?.productService == 'svc'?'Service':'Products'}}
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="264" valign="top">
+                    <p>
+                        <strong>Category Management</strong>
+                        <strong></strong>
+                    </p>
+                </td>
+                <td width="360" valign="top">
+                    {{AP_FULL_AP?.AP?.categoryManagement}}
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="264" valign="top">
+                    <p>
+                        <strong>NAICS Code</strong>
+                    </p>
+                </td>
+                <td width="360" valign="top">
+                    {{AP_FULL_AP?.AP?.naicscode}}
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="264" valign="top">
+                    <p>
+                        <strong>Product Service Code</strong>
+                    </p>
+                </td>
+                <td width="360" valign="top">
+                    {{AP_FULL_AP?.AP?.catalogue}}
+                </td>
+            </tr>
+        </tbody>
+    </table><br><br>
+
+    <p class="title">
+        <strong>Acquisition Method &amp; Background </strong>
+    </p>
+
+
+    <!-- Technical and contractual div -->
+
+    <div  class="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Technical and Contractual History – FAR 7.105(a)(1)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Provide a brief factual summary of the history of the
+                            requirement, including any legislative history. Discuss
+                            the scientific/ technical context of the requirement
+                            and provide relevant prior acquisition information,
+                            including names of previous/incumbent contractor(s),
+                            periods of performance, contract numbers, and
+                            performance problems.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.technicalHistory}}
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <br>
+    <br>
+
+
+    <!-- Acquisition Method-->
+
+    <div class="wrap" >
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Acquisition Method – FAR 7.402</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Proposed Action is competitive or non-competitive? For
+                            a proposed competitive acquisition, is it unrestricted
+                            full and open, and does it possess a partial set-aside?
+                            For a non-competitive acquisition, select one of the
+                            following options to justify non-competitive selection:
+                            8 (a) Program Direct Award (FAR 19.8), Acquisition from
+                            nonprofit agencies employing people who are blind or
+                            severely disabled (AbilityOne, FAR 8.7), Federal Prison
+                            Industries (UNICOR) Direct Award (FAR 8.6), Federal
+                            Prison Industries (UNICOR) Direct Award (FAR 8.6,
+                            Justification for Other than Full and Open Competition
+                            (JUFOC, FAR 6.3), Sole Source Justification (J&amp;A),
+                            Use of Brand Name Characteristics (BNC, FAR
+                            6.302-1(c)).
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.method_of_solicitation}}<br>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+
+    <!-- Set-Aside Selection -->
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Set-Aside Selection</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Insert set-aside percentage and all socioeconomic
+                            categories that apply.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.percent + '%'}}<br>
+                    {{AP_FULL_AP?.AP?.eightA == true ?'8a,':''}}
+                    {{AP_FULL_AP?.AP?.EDWOSB == true ?'Women-Owned Small Business(WOSB) Eligible Under the Women-Owned Small Business Program,':''}}
+                    {{AP_FULL_AP?.AP?.SDVOB == true ?'Service-Disabled Veteran-Owned Small Business,':''}}
+                    {{AP_FULL_AP?.AP?.hubzoneSB == true ?'Hub Zone Small Business,':''}}
+                    {{AP_FULL_AP?.AP?.smallBusiness == true ?'Small Business ':''}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+
+    <!--Small Business-->
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Small Business</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Describe the consideration of small business as
+                            required by FAR Part 19. Ensure consultation with the
+                            Division-servicing Small Business Advisor. Address, at
+                            a minimum, compliance with HHS Federal Procurement
+                            Forecasting requirements (HHS PFDR), planned
+                            set-aside(s), and document consideration of small
+                            business, veteran-owned business, service-disabled
+                            veteran- owned small business, HUBZone small business,
+                            small disadvantaged business, and women-owned small
+                            business concerns (FAR Part 19), and the impact of any
+                            bundling that might affect their participation in the
+                            acquisition. In accordance with FAR 7.105(b) (1), when
+                            the proposed AS involves bundling, identify the
+                            incumbent contractors and contracts affected by the
+                            bundling.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.smallBusines}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+    <!--Acquisition Alternatives-->
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Acquisition Alternatives</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss acquisition alternatives considered and the
+                            impact of prior acquisitions as they relate to the
+                            alternatives considered. This discussion should include
+                            any existing internal or Government-wide contracts that
+                            satisfy the same or similar needs, the results of the
+                            market research conducted that substantiate the need
+                            for the alternative chosen, and the potential for using
+                            Federal or HHS' Strategic Sourcing Vehicles, such as
+                            Government Wide Acquisition contracts (GWACs),
+                            indefinite- delivery contracts, and General Services
+                            Administration Federal Supply Schedules to acquire the
+                            required supplies or services.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.acqAlternative}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <p class="title">
+        <strong>Contract Information </strong>
+    </p>
+
+
+    <!--Special contracting Methods-->
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Special Contracting Methods – FAR 17</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss use of multi-year contracting, options,
+                            interagency acquisitions, leader company contracting,
+                            management and operating contracts, or other special
+                            contracting methods
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                   {{convertContractMethod(AP_FULL_AP?.AP?.specialcontractingmethod)}}
+                </div> 
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+
+    <!--contracting Methods – FAR Subchapter C-->
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Contracting Methods – FAR Subchapter C</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss whether sealed bidding, simplified acquisition
+                            procedures, or negotiation will be used and why.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{convertContractMethod(AP_FULL_AP?.AP?.contractingmethod)}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <!--contract Type Selection – FAR 16-->
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" colspan="2" valign="top">
+                    <p>
+                        <strong>Contract Type Selection – FAR 16</strong>
+                    </p>
+                    <p>
+                        <em>
+                            In accordance with FAR, Subpart 7.102 the AP should
+                            promote and provide details which support the selection
+                            of an appropriate contract type in accordance with FAR
+                            Part 16. Firm-fixed-price contracts are preferred. If
+                            considering any other contract type, include details to
+                            justify the type of contract chosen. Additionally,
+                            discuss the techniques, process, and/or procedures that
+                            will be used the managed the additional risks
+                            associated with the selection of other than a
+                            firm-fixed-price contract type.
+                        </em>
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div width="623" colspan="2" valign="top">
+                    <span
+                        *ngIf="AP_FULL_AP?.AP?.contractType">{{AP_FULL_AP.AP.contractType == 'fp'?'Fixed Price':''}}</span>
+                </div>
+            </div>
+
+            <div>
+                <div style="height: 20px;background: darkblue;" width="623" colspan="2" valign="top">
+                </div>
+            </div>
+            <div>
+                <div width="456" valign="top">
+                    <p>
+                        Is this acquisition an Indefinite Delivery, Indefinite
+                        Quantity (IDIQ)?
+                    </p>
+                </div>
+                <div width="168" valign="top">
+                    <label>
+                        <input type="radio" [checked]="IDIQ('Yes')" [disabled]="true">
+                        <strong>Yes</strong>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" [checked]="IDIQ('No')" [disabled]="true">
+                        <strong>No</strong>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+
+
+
+
+
+    <!--contract Vehicle-->
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Contract Vehicle</strong>
+                        <em></em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.contractVehicle}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+    <!--Subcontract Competition – FAR 44-->
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Subcontract Competition – FAR 44</strong>
+                    </p>
+                    <p>
+                        <em>
+                            When effective subcontract competition is both feasible
+                            and desirable, describe how such subcontract
+                            competition will be sought, promoted, and sustained
+                            throughout the course of the acquisition. Identify any
+                            known barriers to increasing subcontract competition
+                            and address how to overcome them.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.subcontractCompetition}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+
+    <!--Unique Solicitation Clauses or Provisions-->
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Unique Solicitation Clauses or Provisions</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss any special clauses, special solicitation
+                            provisions, or FAR deviations required (see Subpart
+                            1.4) that will be required for this acquisition.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.uniqueSolicitationClauses}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <p class="title">
+        <strong>Inherently Governmental, GFI &amp; GFP</strong>
+    </p>
+
+    <!--Government-Furnished Property - FAR 7.105(b)(15) -->
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Government-Furnished Property - FAR 7.105(b)(15) <em></em>
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Indicate any Government property to be furnished to
+                            contractors, and discuss any associated considerations,
+                            such as its availability or the schedule for its
+                            acquisition (see FAR Part 45.102). Ensure that any
+                            Government-furnished property, including materials,
+                            facilities, equipment, and information that are to be
+                            provided under the contract are clearly identified.
+                            Consult the OPDIV Property Management Officer, as
+                            appropriate, to ensure that the proposed acquisition
+                            meets HHS personal property requirements for
+                            cannibalization, accountability, sensitivity,
+                            reporting, re-utilization, and disposal. Review the HHS
+                            contracting Guide for Control of Government Property.
+                            Finally, address how furnishing the property is in the
+                            Government’s best interest and how the overall benefit
+                            to the Government significantly outweighs the increased
+                            cost of Administration including ultimate property
+                            disposal, discuss how furnishing the property does not
+                            substantially increase the risk to the Government, and
+                            why the Government requirements cannot otherwise be
+                            met.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.governmentFurnishedProperty}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Government-Furnished Information - FAR 7.105(b)(16)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Identify any Government information, such as manuals,
+                            drawings, and test data, to be provided to prospective
+                            offerors and contractors. Indicate which information
+                            that requires additional Controls to monitor access and
+                            distribution (e.g., technical specifications, maps,
+                            building designs, schedules, etc.), as determined by
+                            the agency, is to be posted via the enhanced Controls
+                            of the Governmentwide Point of Entry (GPE) at
+                        </em>
+                        <a href="http://www.fedbizopps.gov/">
+                            <strong><em>http://www.fedbizopps.gov</em></strong>
+                            <strong><em> </em></strong>
+                        </a>
+                        <em>
+                            (see FAR Part 5.102(a)). Furthermore, describe how this
+                            data will be provided during the competitive process,
+                            such as through individual copies to offerors,
+                            providing data on the agency web site, or by
+                            establishing a reading library, and discuss the
+                            schedule and means for providing the information to the
+                            successful contractor after award and the impact that
+                            any delays by the Government in providing the data
+                            might have upon contract performance.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.governmentFurnishedInformation}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div class ="wrap" *ngIf="AP_FULL_AP?.AP?.productService != 'sup' && AP_FULL_AP?.AP?.productService != 'svc' ">
+        <div>
+
+            <div>
+                <div class="header" width="623" colspan="2" valign="top">
+                    <p>
+                        <strong>Inherently Governmental Functions - FAR 7.503</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Address the consideration given to FAR Subpart 7.5.
+                            Please review the Office of Federal Procurement Policy's (OFPP) Policy Letter 11-01
+                            for further information regarding Inherently Governmental Functions.
+                        </em>
+
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div class="header" width="623" colspan="2" valign="top" style="background:darkblue;">
+                    <p style="color:white">
+                        <strong>Services Certification</strong>
+                    </p>
+
+                </div>
+            </div>
+
+            <div>
+                <div width="498" valign="top">
+                    <p>
+                        As it pertains to this procurement, I hereby certify that this service requirement for an
+                        inherently governmental function
+                        which is defined as a function that is so intimately related to the public interest,
+                        it requires performance by Federal Government employees.
+                    </p>
+                </div>
+                <div width="126" valign="top">
+                    <label>
+                        <input type="radio" [checked]="IGF('Yes','igce1')" [disabled]="true"> &nbsp;
+                        <strong>YES</strong>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" [checked]="IGF('No','igce1')" [disabled]="true"> &nbsp;
+                        <strong>NO</strong>
+                    </label>
+                </div>
+            </div>
+
+            <div *ngIf=" AP_FULL_AP?.AP?.productService == 'sup' && IGF('Yes','igce1') == true">
+                <div width="498" valign="top">
+                    <p>
+                        As it pertains to this procurement,
+                        I hereby certify that this service requirement is closely
+                        associated with an inherently governmental function defined as
+                        certain services and actions that generally are not considered to be
+                        inherently governmental, but may approach that category because of the
+                        nature of the function and the risk that performance may impinge
+                        on the performance of an inherently governmental function.
+                    </p>
+                </div>
+                <div width="126" valign="top">
+                    <label>
+                        <input type="radio" [checked]="IGF('Yes','igce2')" [disabled]="true"> &nbsp;
+                        <strong>YES</strong>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" [checked]="IGF('No','igce2')" [disabled]="true"> &nbsp;
+                        <strong>NO</strong>
+                    </label>
+                </div>
+            </div>
+
+
+
+
+
+            <div>
+                <div width="623" style="height:20px;background:darkblue" colspan="2" valign="top">
+                </div>
+            </div>
+
+
+            <div>
+                <div class="header" width="623" colspan="2" valign="top">
+                    <p>
+                        Briefly describe your rationale for selecting “Yes” or “No” in the previous two questions.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div>
+                <div width="623" colspan="2" valign="top">
+                    {{AP_FULL_AP?.AP?.igce2textarea}}
+                </div>
+            </div>
+
+
+            <div>
+                <div width="623" style="height:20px;background:darkblue" colspan="2" valign="top">
+                </div>
+            </div>
+
+
+            <div>
+                <div width="498" valign="top">
+                    <p>
+                        As it pertains to this procurement,
+                        I hereby certify that this service requirement is for a critical
+                        government function which is defined as a function that is
+                        necessary to the agency being able to effectively
+                        perform and maintain control of its mission and operations.
+                        Critical functions are typically recurring and long-term in duration.
+                    </p>
+                </div>
+                <div width="126" valign="top">
+                    <label>
+                        <input type="radio" [checked]="IGF('Yes','igce3')" [disabled]="true"> &nbsp; &nbsp;
+                        <strong>YES</strong>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" [checked]="IGF('No','igce3')" [disabled]="true"> &nbsp; &nbsp;
+                        <strong>NO</strong>
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <div width="623" style="height:20px;background:darkblue" colspan="2" valign="top">
+                </div>
+            </div>
+
+
+            <div>
+                <div class="header" width="623" colspan="2" valign="top">
+                    <p>
+                        Briefly describe your rationale for selecting “Yes” or “No” in the previous question.
+                    </p>
+
+                </div>
+            </div>
+
+
+
+            <div>
+                <div width="623" colspan="2" valign="top">
+                    {{AP_FULL_AP?.AP?.igce3textarea}}
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <br>
+    <br>
+
+
+
+
+
+
+
+    <!--Management Information Requirements-->
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Management Information Requirements - Contractor Monitoring Management System - FAR
+                            7.105(b)(11)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss, as appropriate, what management system will be
+                            used by the Government to monitor the contractor's
+                            effort. If an Earned Value Management System (EVMS) is
+                            to be used, discuss the methodology the Government will
+                            employ to analyze and use the earned value data to
+                            assess and monitor contract performance. In addition,
+                            discuss how the offeror's/contractor's EVMS will be
+                            verified for compliance with the Electronic Industries
+                            Alliance Standard 748 (EIA-748), Earned Value
+                            Management Systems, and the timing and conduct of
+                            integrated baseline reviews (whether prior to or
+                            post-award).
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.managementInformationRequirements}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <p class="title">
+        <strong>Supplemental Information</strong>
+        <strong></strong>
+    </p>
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Organizational Conflict of Interest – FAR Subpart 9.5
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Review and discuss Organizational and Consultant
+                            Conflicts of Interest for roles and responsibilities
+                            concerning potential Conflicts of Interest as it
+                            pertains to the procurement.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    <span *ngIf="AP_FULL_AP?.AP.organizationalConflict">
+                        {{AP_FULL_AP.AP.organizationalConflict == "No"?'There are no conflict of interest pertaining to this procurement':'Yes'}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="480" valign="top">
+                    <p>
+                        <strong>Severability</strong>
+                        <em>
+                            <br />
+                            As it pertains to this procurement, the following
+                            applies: yes/no?
+                        </em>
+                        <em></em>
+                    </p>
+                </div>
+                <div width="144" valign="top">
+                    <label>
+                        <input type="radio" [checked]="Severability('Yes')" [disabled]="true">
+                        <strong>Yes</strong>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" [checked]="Severability('No')" [disabled]="true">
+                        <strong>No</strong>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" [checked]="Severability('NA')" [disabled]="true">
+                        <strong>N/A</strong>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <div width="623" style="height:20px;background:darkblue" colspan="2" valign="top">
+                </div>
+            </div>
+
+
+            <div *ngIf="AP_FULL_AP?.AP?.productService != 'sup'">
+                <div class="header" width="623" colspan="2" valign="top">
+                    <p>
+                        <strong>Performance-Based Acquisition – FAR 37.6</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Provide details to support any decisions for using
+                            anything other than performance-based acquisition
+                            methods. Address performance-based acquisition for
+                            services when the basis to procure is other than
+                            firm-fixed-price (see FAR 37.102(a), 16.103(d), and
+                            16.505(a)(3)).
+                        </em>
+
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" colspan="2" valign="top">
+                    {{AP_FULL_AP?.AP?.performanceBasedAcq}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <!--Lease or Purchase – FAR 7.105(b)(5)-->
+    <div class ="wrap" *ngIf="AP_FULL_AP?.AP?.productService != 'svc'">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Lease or Purchase – FAR 7.105(b)(5)</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss whether equipment will be acquired by lease or
+                            purchase (see Subpart 7.4) and why, and any other
+                            contracting considerations.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.leasePurchase}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <!--Compatibility – FAR 7.105(a)(2)-->
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Compatibility – FAR 7.105(a)(2)</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss any compatibility requirements with future or
+                            existing systems/programs.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.compatibility}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+    <!-- Constraints-->
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Constraints – FAR 7.105(a)(2)</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss any known cost, schedule, capability, or
+                            performance Constraints. If such conditions exist,
+                            discuss the steps that will be taken to promote
+                            competition and socio-economic goals.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.constraints}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+    <!-- Spares and Repair Parts Competition-->
+    <div class ="wrap" *ngIf="AP_FULL_AP?.AP?.productService != 'svc'">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Spares and Repair Parts Competition – FAR 7.105(b)(2)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Describe how competition will be sought, promoted, and
+                            sustained for spares and repair parts. Identify the key
+                            logistic milestones, such as technical data delivery
+                            schedules and acquisition method coding conferences
+                            that affect competition.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{AP_FULL_AP?.AP?.spareParts}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <p class="title">
+        <strong>Statement of Work</strong>
+    </p>
+
+
+
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Product or Service Descriptions – FAR 7.105(b)(7)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Explain the choice of product or service description
+                            types (including performance-based acquisition
+                            descriptions) to be used in the acquisition. FAR
+                            Subpart 7.102 requires promoting and providing for the
+                            acquisition of commercial or non-developmental items,
+                            to the maximum extent practicable (41 U.S.C. 3307), see
+                            guidance in FAR Part 12 and the definition of a
+                            commercial item in FAR Part 2, Section 2.101. The AP
+                            shall provide details supporting the procurement of
+                            existing commercial or non-developmental items or
+                            services. If not, then develop a justification
+                            requesting approval from the Senior Procurement
+                            Executive (SPE) to procure a non-commercial item or
+                            service
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    <div [innerHTML]="this.sow?.description"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Capability or Performance - FAR 7.105(a)(4)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Specify the required capabilities or performance
+                            characteristics of the supplies or performance
+                            standards of the services being acquired and state how
+                            they are related to the need
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    <div [innerHTML]="this.sow?.description1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+    <!--Section 508-->
+    <p class="title" *ngIf="AP_FULL_AP?.AP?.productService == 'svc'">
+        <strong>Section 508</strong>
+    </p>
+    <div class ="wrap" *ngIf="AP_FULL_AP?.AP?.productService == 'svc'">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Information Technology Acquisition – FAR 39.201</strong>
+                    </p>
+                    <p style="line-height: 1.1;">
+                        <em>
+                            Discuss how the capital planning and investment Control, CPIC,
+                            requirements of 40 U.S.C. 11312 and OMB Circular A-130 will be met.
+                            Discuss why this action benefits the Government such as when:
+                            <br><br>
+                            (1) The agency can accomplish its mission more efficiently and effectively
+                            <br><br>
+                            (2) Ordering through IDIQ contract facilitates access to small business concerns, including
+                            small disadvantaged business concerns.
+                            <br><br>
+                            Discuss whether the requirements documents include the Internet Protocol compliance
+                            requirements specified in 11.002(g) or a waiver of these requirements has been granted by
+                            the agency's CIO.
+                            <br>
+                            Discuss whether Electronic and Information Technology (EIT) products or services are subject
+                            to Section 508 as well as the involvement of audiovisual materials, publications or public
+                            affairs services will be produced. If applicable, describe the approach that will be used to
+                            make all files Section 508 compliant.
+
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    <div [innerHTML]="this.s508?.description"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+    <p class="title">
+        <strong>Market Research</strong>
+    </p>
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Market Research – FAR 10</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Address the extent and results of the market research
+                            and indicate their impact on the various elements of
+                            the plan
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    <div class="div div-sdiviped mt-3 mb-0 border" style="margin:0px !important">
+
+
+                        <thead>
+                            <div>
+                                <th scope="col">File Name</th>
+                                <th scope="col">Research Date</th>
+                                <!-- <th scope="col">Download</th> -->
+
+                            </div>
+                        </thead>
+
+                        <div>
+                            <div *ngFor="let at of attachmentsdata; let i = index">
+                                <div>{{at.title}}</div>
+                                <div>{{at.creation_date | date:'medium'}}</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Acquisition Streamlining - FAR 7.105(a)(8)</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss how to encourage industry participation by
+                            using draft solicitations, pre-solicitation
+                            conferences, and other means of stimulating industry
+                            involvement during design and development in
+                            recommending the most appropriate application and
+                            tailoring of contract requirements. Additionally,
+                            discuss planned actions that will be taken to
+                            streamline the acquisition including, but not limited
+                            to, conducting outreach efforts to stimulate industry
+                            involvement, using draft solicitations, Statements of
+                            Work (SOWs), Performance Work Statements (PWSs), or
+                            Statements of Objectives (SOOs) for industry comment,
+                            and limiting the size of proposals.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    <div [innerHTML]="this.market?.description1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Sources – FAR 7.105(b)(1)</strong>
+                    </p>
+                    <p>
+                        Describe the prospective sources of supplies or services that can meet the need. Consider
+                        required sources of supplies or services (see FAR Part 8) and sources identifiable through
+                        databases including the Government-wide database of contracts and other procurement instruments
+                        intended for use by multiple agencies available at 
+                        <a href="http://www.contractdirectory.gov/contractdirectory">
+                            www.contractdirectory.gov/contractdirectory
+                        </a>
+                        <em>.</em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    <div [innerHTML]="this.market?.description"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <p class="title">
+        <strong>Independent Government Cost Estimate</strong>
+    </p>
+
+
+    <div class ="wrap">
+        <div>
+            <p style="position: relative;
+            float: right;
+            width: 30%;
+            height: 23px;
+            margin-top: 1px;
+            background: white;
+            padding: 2px;
+    color: black;">{{this.AP_FULL_AP?.AP?.acceptedDate| date:'M/d/yy'}}</p>
+            <div>
+                <div class="header"valign="top">
+                    <p>
+                        <strong><em>IGCE Date of Completion</em></strong>
+                    </p>
+                   
+                </div>
+            </div>
+
+           
+                <div style="background: darkblue;height:20px" width="623" colspan="2" valign="top">
+
+                </div>
+            
+
+
+
+            <div>
+                <div class="header" width="623" colspan="2" valign="top">
+                    <p>
+                        <strong>
+                            <em>IGCE Description – FAR 7.105(b)(6)</em>
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Provide a brief explanation how the attached IGCE was
+                            developed.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" colspan="2" valign="top">
+                    {{this.tradeoff?.igceDescription}}
+                </div>
+            </div>
+        </div>
+    </div><br>
+    <br>
+
+
+    <!--Cost Goals-->
+
+    <div class ="wrap" >
+        <div>
+            <div>
+                <div class="header" width="623" colspan="2" valign="top">
+                    <p>
+                        <strong><em>Cost Goals – FAR 7.105(a)(3)</em></strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss the established cost goals for the acquisition
+                            and the rationale supporting them, and discuss related
+                            cost concepts to be employed, including, as
+                            appropriate, the following items:
+                        </em>
+                    </p>
+                    <p>
+                        <em>(i) </em>
+                        <em>
+                            Lifecycle cost. Discuss how lifecycle cost will be
+                            considered. If it is not used, explain why. If
+                            appropriate, discuss the cost model used to develop
+                            lifecycle cost estimates.
+                        </em>
+                    </p>
+                    <p>
+                        <em>(ii) </em>
+                        <em>
+                            Design-to-cost. Describe the design-to-cost
+                            objective(s) and underlying assumptions, including the
+                            rationale for quantity, learning-curve, and economic
+                            adjustment factors. Describe how objectives are to be
+                            applied, tracked, and enforced. Indicate specific
+                            related solicitation and contractual requirements to be
+                            imposed.
+                        </em>
+                    </p>
+                    <p>
+                        <em>(iii) </em>
+                        <em>
+                            Application of should-cost. Describe the application of
+                            should-cost analysis to the acquisition (see 15.407-4).
+                            <strong></strong>
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" colspan="2" valign="top">
+                    {{this.tradeoff?.coastGoals}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Funding – FAR 7.105(b)(6)</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss the schedule for obtaining both adequate funds
+                            and the right type of funds at the time they are
+                            required.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.tradeoff?.funding}}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br><br>
+
+    <p class="title">
+        <strong>Evaluations</strong>
+    </p>
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Source Selection Procedures - FAR 7.105(b)(4)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss the source selection procedures for the
+                            acquisition.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    <div [innerHTML]="this.evaluation?.sourceSelectionPlan"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Mandatory Criteria</strong>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    <div [innerHTML]="this.evaluation?.mandatoryCriterias"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <br><br>
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Evaluation Criteria</strong>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top" style="padding:5px">
+                    <span style="color:darkblue;"
+                        *ngFor='let eval of this.AP_FULL_AP?.Evaluation_Criteria?.evaluationCriteria; let i = index '>
+                        <br *ngIf="i >0">
+                        <strong>Volume Title:</strong>&nbsp;{{eval.volumeName}}
+                        <br>
+                        <span style="position:relative;left:24px;" *ngFor="let fact of eval.factorRows">
+                            <br>
+                            <strong>Factor Title:</strong>&nbsp;{{fact.factorName}}<br>
+                            <div style="max-width:80%;overflow:hidden" [innerHTML]="fact.factorText"></div>
+                            <strong>Factor
+                                Score</strong>:&nbsp;{{fact.factorPoints}}{{fact.factorScore == 'Points'?'Points':'Adjectival |'}}
+                            <span
+                                *ngIf="fact.factorScore != 'Points'">{{ fact.factorScoreUpdate == 'factorScoreUpdateYes'?'Excellent, Satisfactory, Poor, etc.':'Accepted, Non-Accepted'}}</span>
+                            <br>
+                        </span>
+
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Scoring Guidelines</strong>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    <div [innerHTML]="this.evaluation?.scoringMechanism"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <p class="title">
+        <strong>Security </strong>
+    </p>
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" style=" background:darkblue" width="623" colspan="2" valign="top">
+                    <p style="color:white">
+                        <strong>Security Considerations - FAR 7.105(b)(18)a</strong>
+                        <em></em>
+                    </p>
+                    <p style="color:white">
+                        <em>
+                            Please answer the following questions about the
+                            security and privacy considerations applicable to the
+                            Program/Project (P/P).
+                        </em>
+
+                    </p>
+                </div>
+            </div>
+
+            <div *ngIf="AP_FULL_AP?.AP?.productService == 'svc' ">
+                <div width="498" valign="top">
+                    <p>
+                        Will this procurement require information security and/or physical access?
+                    </p>
+                </div>
+                <div width="126" valign="top">
+                    <label>
+                        <input type="radio" [checked]="this.security.informationSecurity =='Yes'?true:false"
+                            [disabled]="true"> &nbsp;
+                        <strong>YES</strong>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" [checked]="this.security.informationSecurity =='No'?true:false"
+                            [disabled]="true"> &nbsp;
+                        <strong>NO</strong>
+                    </label>
+                </div>
+            </div>
+
+            <div *ngIf="AP_FULL_AP?.AP?.productService == 'svc'">
+                <div width="498" valign="top">
+                    <p>
+                        Will this procurement involve Personally Identifiable Information (PII) or records of
+                        individuals?
+                    </p>
+                </div>
+                <div width="126" valign="top">
+                    <label>
+                        <input type="radio" [checked]="this.security.informationSecurity1 =='Yes'?true:false"
+                            [disabled]="true"> &nbsp;
+                        <strong>YES</strong>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" [checked]="this.security.informationSecurity1 =='No'?true:false"
+                            [disabled]="true"> &nbsp;
+                        <strong>NO</strong>
+                    </label>
+                </div>
+            </div>
+
+            <div *ngIf="AP_FULL_AP?.AP?.productService == 'svc'">
+                <div width="498" valign="top">
+                    <p>
+                        Will the procurement involve Government Information processed on Government-Owned/
+                        Contractor-Operated (GOCO) or Contractor-Owned/Contractor-Operated (COCO) systems?
+                    </p>
+                </div>
+                <div width="126" valign="top">
+                    <label>
+                        <input type="radio" [checked]="this.security.informationSecurity2 =='Yes'?true:false"
+                            [disabled]="true"> &nbsp;
+                        <strong>YES</strong>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" [checked]="this.security.informationSecurity2 =='No'?true:false"
+                            [disabled]="true"> &nbsp;
+                        <strong>NO</strong>
+                    </label>
+                </div>
+            </div>
+
+            <div *ngIf="AP_FULL_AP?.AP?.productService == 'svc'">
+                <div width="498" valign="top">
+                    <p>
+                        Will this procurement involve cloud services?
+                    </p>
+                </div>
+                <div width="126" valign="top">
+                    <label>
+                        <input type="radio" [checked]="this.security.informationSecurity3 =='Yes'?true:false"
+                            [disabled]="true"> &nbsp;
+                        <strong>YES</strong>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" [checked]="this.security.informationSecurity3 =='No'?true:false"
+                            [disabled]="true"> &nbsp;
+                        <strong>NO</strong>
+                    </label>
+                </div>
+            </div>
+
+
+            <div>
+                <div width="498" valign="top">
+                    <p>
+                        Will this procurement include hardware; non-commercial and
+                        open source software; information technology application
+                        design, development, or support; and/or physical access to
+                        Government-controlled facilities only?
+                    </p>
+                </div>
+                <div width="126" valign="top">
+                    <label>
+                        <input type="radio" [checked]="this.security.securityConsiderations == 'Yes' "
+                            [disabled]="true"> &nbsp;
+                        <strong>YES</strong>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" [checked]="this.security.securityConsiderations == 'No' "
+                            [disabled]="true"> &nbsp;
+                        <strong>NO</strong>
+                    </label>
+                </div>
+            </div>
+
+
+            <div>
+                <div style=" background:darkblue;height:20px" width="623" colspan="2" valign="top">
+                </div>
+            </div>
+            <div>
+                <div width="623" colspan="2" valign="top">
+                    <p>
+                        If "Yes" has been selected for one or more of the above
+                        questions, please fill out and attach the Information
+                        Security Certification Checklist (Appendix A of the "HHS
+                        Security and Privacy Language for Information and
+                        Information Technology Procurements Version 2.0" dated June
+                        26, 2017) and submit it with the AP.<em></em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" colspan="2" valign="top">
+                    <span
+                        *ngIf=" this.security.informationSecurity =='Yes' || this.security.informationSecurity1 =='Yes' || this.security.informationSecurity2 =='Yes' || this.security.informationSecurity3 =='Yes' || this.security.securityConsiderations == 'Yes'">
+                        {{this.security.optionFFP}}
+                    </span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div *ngIf="AP_FULL_AP?.AP?.productService == 'svc'" class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Classified Matters Security Considerations – FAR
+                            7.105(b)(18)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            For acquisitions dealing with classified matters,
+                            discuss how adequate security will be established,
+                            maintained, and monitored (see FAR Part 4.4).
+                        </em>
+                        <strong></strong>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.security?.classifiedMatters}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+
+    <div *ngIf="AP_FULL_AP?.AP?.productService == 'svc'" class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Information Technology Security Considerations – FAR
+                            7.105(b)(18)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            For information technology acquisitions, discuss how
+                            agency information security requirements will be met.
+                            Discuss the applicability and implementation for
+                            HSPD-12, FAR Subpart 4.13, the Privacy Act, the Federal
+                            Information Security Management Act (FISMA), Contractor
+                            Access to Sensitive Information, and the Federal Risk
+                            and Authorization Management Program (FedRAMP),and the
+                            applicable standard security and privacy language
+                            provided in "HHS Security and Privacy Language for
+                            Information and Information Technology Procurements
+                            Version 2.0" dated June 26, 2017.
+                        </em>
+                        <strong></strong>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.security?.informationTechnology}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Contractor Facility Access and Identity Verification
+                            Security Considerations – FAR 7.105(b)(18)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            If this procurement requires access to HHS-controlled
+                            information systems and/or physical access to
+                            HHS-controlled information systems and/or physical
+                            access to HHS-controlled facilities for contractors in
+                            order to perform the Contract/ Statement of Work
+                            (SOW)/Performance Work Statement (PWS), please briefly
+                            describe the process, type, frequency, and duration of
+                            such access (see "HHS Security and Privacy Language for
+                            Information and Information Technology Procurements
+                            Version 2.0" dated June 26, 2017).
+                        </em>
+                        <strong></strong>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.security?.contractorFacility}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <p class="title">
+        <strong>Other Considerations</strong>
+    </p>
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Contract Administration - FAR 7.105(b)(19)<em></em>
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Describe how the contract will be administered. In
+                            contracts for services, include how inspection and
+                            acceptance corresponding to the work statement's
+                            performance criteria will be enforced along with plans
+                            to ensure separation of duties between the CO and the
+                            COR. Please include information on the role that the CO
+                            will have in administering the contracts for this P/P
+                            and information on the proposed COR's FAC-COR
+                            certification level.
+                        </em>
+
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.consideration?.proposedCOR}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Trade-Offs - FAR 7.105(a)(6)</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss the expected consequences of trade-offs among
+                            the various cost, capability or performance, and
+                            schedule goals. For IT investments, include or
+                            reference the applicable portion of the alternatives
+                            analysis section of the required HHS EPLC business
+                            case. For major construction/facilities capital
+                            investments, include or reference the applicable
+                            portion of the current HHS business case, reviewed and
+                            approved by an appropriate governance structure, and
+                            the supporting acquisition strategy.
+                            <br />
+                            <strong>Note: </strong>
+                            This section should not discuss trade-offs in relation
+                            to source selection.
+                        </em>
+
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.consideration?.tradeOff}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Priorities, Allocations, and Allotments - FAR
+                            7.105(b)(8)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Specify the method for obtaining and using priorities,
+                            allocations, and allotments, and the reasons for them
+                            (see FAR Part 11.6). If the program is authorized under
+                            the Defense Productions Act of 1950, as amended (FAR
+                            Subpart 11.6), and will be using a preferential or
+                            priority rating, identify the applicable information.
+                        </em>
+                        <strong></strong>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.consideration?.priorities}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Major Components or Subsystems Competition – FAR
+                            7.105(b)(2)(ii)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Identify the major components or subsystems. Discuss
+                            component breakout plans relative to these major
+                            components or subsystems. Describe how competition will
+                            be sought, promoted, and sustained for these components
+                            or subsystems.
+                        </em>
+
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.consideration?.majorComponents}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Contractor versus Government Performance Consideration
+                            - FAR 7.105(b)(9)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Address the consideration given to OMB Circular No.
+                            A-76 (See FAR Part 7.3) and HHS SAI guidance.
+                        </em>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.consideration?.govtPerformance}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class ="wrap" *ngIf="AP_FULL_AP?.AP?.productService != 'svc'">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Make or Buy Program Considerations – FAR 7.105(b)(12)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss any consideration given to make-or-buy programs
+                            (see FAR Part 15.407-2).
+                        </em>
+
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.consideration?.makeBuy}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Test and Evaluation - FAR 7.105(b)(13)</strong>
+                    </p>
+                    <p>
+                        <em>
+                            To the extent applicable, describe the test program of
+                            the contractor and the Government. Describe the test
+                            program for each major phase of a major system
+                            acquisition. If concurrency is planned, discuss the
+                            extent of testing to be accomplished before production
+                            release.
+                        </em>
+
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.consideration?.testEvaluation}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Contractor Data Requirements – FAR 7.105(b)(14)(ii)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss the requirements for contractor data (including
+                            repurchase data) and data rights, their estimated cost,
+                            and the use to be made of the data (see Part 27).
+                        </em>
+
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.consideration?.contractorData}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Contractor or Agency Maintenance Support – FAR
+                            7.105(b)(14)(i)
+                        </strong>
+                    </p>
+                    <p>
+                        Discuss the assumptions determining contractor or agency
+                        support, both initially and over the life of the
+                        acquisition, including consideration of contractor or
+                        agency maintenance and servicing (see Subpart 7.3); support
+                        for contracts to be performed in a designated operational
+                        area or supporting a diplomatic or consular mission (see
+                        25.301-3); and distribution of commercial items.
+                        <strong></strong>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.consideration?.contractorAgency}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Reliability, Maintainability, and Quality Assurance
+                            Requirements – FAR 7.105(b)(14)(ii)
+                        </strong>
+                    </p>
+                    <p>
+                        Discuss the reliability, maintainability, and quality
+                        assurance requirements, including any planned use of
+                        warranties (see Part 46). Additionally, discuss whether
+                        support both in the beginning and over the life of the
+                        acquisition must be by the contractor (i.e. sole source) or
+                        the agency.<strong></strong>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.consideration?.assuranceRequirements}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Standardization Concepts – FAR 7.105(b)(14)(iv)
+                        </strong>
+                    </p>
+                    <p>
+                        Discuss the need for standardization concepts, including
+                        the necessity to designate, in accordance with agency
+                        procedures, technical equipment as “standard” so that
+                        future purchases of the equipment can be made from the same
+                        manufacturing source.<strong></strong>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.consideration?.standardizationConcepts}}
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <p>
+        <u></u>
+    </p>
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>
+                            Environmental and Energy Conservation Objectives - FAR
+                            7.105(b)(17)
+                        </strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss all applicable environmental and energy
+                            conservation objectives associated with the acquisition
+                            (see FAR Part 23), the applicability of an
+                            environmental assessment or environmental impact
+                            statement (see 40 CFR 1502), the proposed resolution of
+                            environmental issues, and any environmentally-related
+                            requirements to be included in solicitations and
+                            contracts (see FAR Part 11.002 and FAR Part 11.303).
+                            Review APM 2011-05 to verify if the acquisition is
+                            subject to the requirements.
+                        </em>
+                    </p>
+                    <p>
+                        <em>
+                            If applicable, discuss how the acquisition will meet
+                            the requirements of APM 2011-05. Additionally,
+                            specifically discuss the acquisition of products
+                            containing recovered materials, including the special
+                            requirements for printing and writing paper, and the
+                            requirements of FAR Part 23 with regards to the
+                            purchase and use of green products and services to the
+                            maximum extent practicable.
+                        </em>
+                        <strong></strong>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.consideration?.conservationObjectives}}
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+
+
+
+    <div class ="wrap">
+        <div>
+            <div>
+                <div class="header" width="623" valign="top">
+                    <p>
+                        <strong>Other Considerations - FAR 7.105(b)(20)</strong>
+                    </p>
+                    <p>
+                        <em>
+                            Discuss, as applicable: (i) Standardization concepts;
+                            (ii) The industrial readiness program; (iii) The
+                            Defense Production Act; (iv) The Occupational Safety
+                            and Health Act; (v) Support Anti-terrorism by Fostering
+                            Effective Technologies Act of 2002 (SAFETY Act) (see
+                            FAR Part 50.2); (vi) Foreign sales implications; (vii)
+                            Special requirements for contracts to be performed in a
+                            designated operational area or supporting a diplomatic
+                            or consular mission; and, (viii) Any other matters
+                            germane to the plan not covered elsewhere.
+                        </em>
+
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div width="623" valign="top">
+                    {{this.consideration?.otherConsiderations}}
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <p>
+        <u></u>
+    </p>
+    <p>
+        <u></u>
+    </p>
+    <p>
+        <u></u>
+    </p>
+    <p>
+        <u></u>
+    </p>
+    <p>
+        <u></u>
+    </p>
+    <p>
+        <u></u>
+    </p>
+    <p>
+        <u></u>
+    </p>
+    <p>
+        <u></u>
+    </p>
+    <br>
+    <br>
+
+    <p class="title">
+        <strong>Independent Government Cost Estimate (IGCE)</strong>
+    </p>
+    <br>
+    
+
+    <div style="width:100%;height: 50px;">
+
+        <div class="igcetotalscontainer" style="margin-left:0px !important">
+            <p class="igceheader">Target Budget</p>
+            <p class="igcebody">{{AP_FULL_AP?.AP?.estimatedBudgett | currency }}</p>
+        </div>
+
+        <div class="igcetotalscontainer">
+            <p class="igceheader">IGCE Total</p>
+            <p class="igcebody">{{igcetotal | currency }}</p>
+        </div>
+
+        <div class="igcetotalscontainer"
+        *ngFor="let optionyear of this.igceData?.optionYears;let i = index"
+        >
+            <p 
+            *ngIf="i ==0 "
+            class="igceheader">Base Year Total</p>
+            <p 
+            *ngIf="i !=0 "
+            class="igceheader">Option Year {{i}} Total</p>
+            <p class="igcebody">{{optionyear.totalbaseyear | currency }}</p>
+        </div>
+
+        
+
+        
+
+    </div>
+
+    <div *ngFor="let optionyear of this.igceData?.optionYears;let i = index">
+        <br>
+        <!--Option Year Headers-->
+        <div>
+            <p  *ngIf="i == 0" class="baseheader">
+            Base Period of Performance: {{optionyear.startDate | date:'M/d/yy' }} - {{optionyear.endDate | date:'M/d/yy' }}
+            </p>
+
+            <p *ngIf=" i != 0" class="baseheader">
+                Option Year {{i}}: {{optionyear.startDate | date:'M/d/yy'}} - {{optionyear.endDate | date:'M/d/yy'}}
+                </p>
+        </div>
+        <!--Option Year Esitmate Data-->
+        <div *ngFor="let clin of optionyear.clins;let p = index" style="color:black">
+            <br>
+         <span style="color:black;font-weight: 600;">Group {{p+1}}</span>
+         <p style="color:black;font-weight:500">{{clin.clinTitle}}</p>
+         <div class="est"><p style="font-weight: 500;">Estimated Budget: </p><p style="color:darkblue;font-weight: 600;">&nbsp; {{turn(clin.estimatedTotal) | currency}}</p></div> 
+         <br>     
+         <div class="est"><p style="font-weight: 500;">Remaining Budget: </p><p style="color:darkblue;font-weight: 600;">&nbsp; {{clin.remainingTotal | currency}}</p></div>
+        <br>
+        <br>
+
+         <!-- Item Tabel-->
+         <table id="igcetable" class="table table-striped mb-0 border">
+            <thead>
+                <tr>
+                    <th scope="col">Item No.</th>
+                    <th scope="col">
+                        Description
+                    </th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Unit of Measure</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Total Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let product of clin.productrows,let n = index" style="height: 50px;">
+                    <!--Item #-->
+                    <td>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="font-size: 14px;  margin-top: 2px">{{n+1}}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <!--Description-->
+                    <td style="color:#01008c;font-family: Arial, Helvetica, sans-serif;">
+                       <em> {{product.description}}</em>
+                    </td>
+
+                    <!--Quanity-->
+                    <td>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"
+                                    style="font-size: 14px;  margin-top: 2px">{{ turn(product.quantity)  | number }}</span>
+                            </div>
+                        </div>
+                    </td>
+
+                    <!--Unit Measure-->
+                    <td>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <!--For Labor-->
+                                <span class="input-group-text" *ngIf="clin.clinTitle =='Labor'"
+                                    style="font-size: 14px;  margin-top: 2px">LH
+                                </span>
+
+                                <!--For Travel-->
+                                <span class="input-group-text" *ngIf="clin.clinTitle =='Travel' || clin.clinTitle =='Freight' || clin.clinTitle == 'Other Direct Cost' "
+                                    style="font-size: 14px;  margin-top: 2px">N/A
+                                </span>
+
+                                 <!--For Travel-->
+                                 <span class="input-group-text" *ngIf="clin.clinTitle =='Product'"
+                                 style="font-size: 14px;  margin-top: 2px">{{product.unitmesure == ''?'EA':product.unitmesure}}
+                             </span>
+                            </div>
+                        </div>
+                    </td>
+
+
+                    <td>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"
+                                    style="font-size: 14px;  margin-top: 2px">{{turn(product.unitprice) | currency}}</span>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td style="width: 150px; overflow: hidden;">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"
+                                    style="font-size: 14px; margin-top: 2px">{{product.totalcost | currency}}</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="5"></td>
+                    <td style="font-family: Arial, SansSerif; font-size: 14px; 
+                    color: #01008c; line-height: 1; vertical-align: middle;
+                     padding: 2px; background-color: #8cafcb; text-align: center;
+                      border-width: 1px 0px; border-style: solid none;
+                       border-bottom-color: rgb(0, 164, 211); 
+                       border-top-color: rgb(0, 164, 211); width: 109px; height: 10px;">
+                        <span>{{clin.clinTotal | currency}}</span></td>
+
+                </tr>
+            </tfoot>
+        </table>
+        </div>
+
+       
+        
+       
+    </div>
+    <br>
+    <br>
+
+    <p class="title">
+        <strong>Review and Approvals of the Acquisition Plan</strong>
+    </p>
+    <table class ="wrap">
+        <tbody>
+            <tr>
+                <td style="background: darkblue" width="623" colspan="4" valign="top">
+                    <p style="color:white">
+                        <strong>
+                            <em>
+                                Please fill in with N/A for reviews and approvals
+                                that are not required due to the value of the
+                                Acquisition.
+                            </em>
+                        </strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        <strong>Official</strong>
+                    </p>
+                </td>
+                <td class="header" width="156" valign="top">
+                    <p>
+                        <strong>Name &amp; Title</strong>
+                    </p>
+                </td>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        <strong>Signature</strong>
+                    </p>
+                </td>
+                <td class="header" width="72" valign="top">
+                    <p>
+                        <strong>Date</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        Program/Project Manager (P/PM)
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                </td>
+                <td width="198" valign="top">
+                </td>
+                <td width="72" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        Funds Certifying Official
+                        <br />
+                        <br />
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                </td>
+                <td width="198" valign="top">
+                </td>
+                <td width="72" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        Business Owner (Requiring Activity) Representative
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                </td>
+                <td width="198" valign="top">
+                </td>
+                <td width="72" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        Business Owner (Requiring Activity) Representative
+                        Immediate Supervisor
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                </td>
+                <td width="198" valign="top">
+                </td>
+                <td width="72" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        Head of the Sponsoring Program Office
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                </td>
+                <td width="198" valign="top">
+                </td>
+                <td width="72" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        Contracting Officer
+                        <br />
+                        <br />
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                </td>
+                <td width="198" valign="top">
+                </td>
+                <td width="72" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        Chief of the Contracting Office
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                </td>
+                <td width="198" valign="top">
+                </td>
+                <td width="72" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        Office of the General Counsel (Legal)
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                </td>
+                <td width="198" valign="top">
+                </td>
+                <td width="72" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        Division CIO
+                        <br />
+                        <br />
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                </td>
+                <td width="198" valign="top">
+                </td>
+                <td width="72" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        Office of Small and Disadvantaged Business Utilization
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                </td>
+                <td width="198" valign="top">
+                </td>
+                <td width="72" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        HCA
+                        <br />
+                        <br />
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                </td>
+                <td width="198" valign="top">
+                </td>
+                <td width="72" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        Competition Advocate
+                        <br />
+                        <br />
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                </td>
+                <td width="198" valign="top">
+                </td>
+                <td width="72" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        HHS CIO
+                        <br />
+                        <br />
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                </td>
+                <td width="198" valign="top">
+                </td>
+                <td width="72" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td class="header" width="198" valign="top">
+                    <p>
+                        HHS SPE
+                        <br />
+                        <br />
+                    </p>
+                </td>
+                <td width="156" valign="top">
+                </td>
+                <td width="198" valign="top">
+                </td>
+                <td width="72" valign="top">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <u></u>
+    </p>
+    <p>
+        <u></u>
+    </p>
+            </div>

@@ -1,0 +1,195 @@
+<div style="background-color:rgb(249, 250, 251)">
+  <div class="container">
+    <div class="col-md-5 col-sm-12 col-lg-12 col-xl-12 custom-top">
+      <div class="row">
+        <div class="col-md-11 col-sm-11 col-lg-11 col-xl-11">
+          <div class="font2 header2 dashboardcomp mb-2">Acquisition Plan</div>
+        </div>
+        <div class="col-md-1 col-sm-1 col-lg-1 col-xl-1">
+          <a style="text-decoration: none" [routerLink]="['/home']"><span class="back"><i class="fa fa-arrow-left mr-2"
+                aria-hidden="true"></i>Back</span></a>
+        </div>
+      </div>
+
+      <div class="mt-3">
+
+        <mat-form-field class="search-form-field shadow-1" floatLabel="never">
+          <input matInput (keyup)="applyFilterDrafts($event.target.value)" placeholder="Search data in Acquisitions">
+        </mat-form-field>
+        <div class="shadow-1">
+          <table mat-table [dataSource]="draftSource" matSort
+            class="table-striped  col-md-12 col-lg-12 col-sm-12 col-xl-12 mt-4 ">
+
+            <!-- Acquisition Number Column -->
+            <ng-container matColumnDef="ap_no">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Acquisition # </th>
+              <td mat-cell *matCellDef="let element" style="color: #2e73dc"> {{element.ap_no}} </td>
+            </ng-container>
+
+            <!-- Description Column -->
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Project Title </th>
+              <td mat-cell *matCellDef="let element"> {{element.projectTitle}} </td>
+            </ng-container>
+
+            <!-- Supply or Service Column -->
+            <ng-container matColumnDef="productorService">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                <span *ngIf="this.role == 'Program Officer'">
+                    Contracting POC
+                </span> 
+                <span *ngIf="this.role != 'Program Officer'">
+                  Program POC
+                </span> </th>
+              
+              <td mat-cell *matCellDef="let element">
+                <div *ngIf="this.hidepm">
+                  <span *ngIf="element.coName == ''"><i style="color: #007bff; margin-right: 5%; font-size: 115%;"
+                      class="fa fa-times-circle-o" aria-hidden="true"></i>Unassigned</span>
+                  <a *ngIf="element.coName != ''" style="cursor: pointer" (click)="sendEmailCo(element)"><i
+                      style="color: #007bff; margin-right: 5%; font-size: 115%;" class="fa fa-envelope"></i>
+                    <span>{{ element?.coName }}</span></a>
+                </div>
+                <div *ngIf="this.hideco">
+                  <a style="cursor: pointer" (click)="sendEmailPm(element)"><i
+                      style="color: #007bff; margin-right: 5%; font-size: 115%;" class="fa fa-envelope"></i>
+                    <span>{{ element?.rName }}</span></a>
+                </div>
+              </td>
+
+            </ng-container>
+            
+            <!-- It ot Non-IT Column -->
+            <ng-container matColumnDef="anticipatedDate">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Created Date </th>
+              <td mat-cell *matCellDef="let element"> {{element.createdDate | date }} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="status">
+              <th class="text-center" mat-header-cell *matHeaderCellDef>Status</th>
+              <td mat-cell class="text-center" *matCellDef="let element">
+                <!-- <span class="badge" [ngClass]="{'badge-info': element.status=='Submitted', 'badge-success':element.status=='Collaborate', 'badge-dark':element.status=='Draft', 'badge-danger':element.status=='initiated' }">{{element.status}}</span> -->
+
+                <span class="badge mt-1"
+                  [ngClass]="{'badge-shared':element.status == 'Shared','badge-draft':element.status == 'Draft','badge-accepted':element.status == 'Accepted', 'badge-initiated':element.status == 'Initiated'}">{{element.status}}</span>
+
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+              <th class="text-center" mat-header-cell *matHeaderCellDef>Action</th>
+              <td mat-cell class="text-center" *matCellDef="let acq">
+                  <div class="btn-group dropdown" [attr.id]="'btn_dropdown' + i"
+                  style="    background: transparent;
+                  border: none;
+                  box-shadow: none;
+                  height: 28.67px;
+                  width: 90px;
+                  ">
+
+                  <button 
+                  [ngStyle]="{'width':this.role == 'Program Officer' || !acq?.pointsofContact.includes(this.userid)?'84%':''}"
+                  (click)="review(acq)" 
+                  style="
+                  border-radius: 5px !Important;
+                  padding: 8px;
+                  font-size: 12px;
+                  font-family: 'Poppins', sans-serif;  "
+                  type="button" class="btn btn-primary  btn-sm action">
+                    Review
+                  </button>
+
+
+                  <!-- <button *ngIf="element.status == 'Completed'" style="margin-left:-5px" type="button" -->
+                  <button [hidden]="this.role == 'Program Officer' || !acq?.pointsofContact.includes(this.userid)"
+                    style="margin-left:-5px" type="button"
+                    class="actiondropdown btn btn-primary  btn-sm dropdown-toggle dropdown-toggle-split"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+
+
+                  <div class="dropdown-menu" style="padding:5px;height:auto; font-size: 14px;box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.33)">
+
+
+                      <button style="
+                      height: 30px;
+                      padding: 4px;
+                      text-align: center;" [disabled]="this.disable" *ngIf="acq.status == 'Accepted'" (click)="onInitiate(acq)" type="button"
+                      class="dropdown-item dropmenubutton hover" [attr.data-target]="'#rejectmodel'+i">Initiate</button>
+
+                      <button style="
+                      height: 30px;
+                      padding: 4px;
+                      text-align: center;" [attr.data-target]="'#awardmodel'+i" *ngIf="acq.status == 'Shared'" (click)="onAccept(acq);" class="dropdown-item dropmenubutton hover"
+                      type="button">Accept</button>
+                  </div>
+
+
+                </div>
+
+                <!-- <div *ngIf="hidepm">
+                  <button (click)="review(element)" type="button" class="btn btn-sm btn-primary"
+                    style="margin-right: 2%">Review</button>
+                </div>
+                <div class="row" *ngIf="hideco">
+                  <div class="col-6 col-lg-6 col-xl-6 col-md-3 p-0">
+                    <button (click)="review(element)" type="button" class="btn btn-primary btn-sm"
+                      style="margin-right: 2%">Review</button>
+                  </div>
+                  <div class="col-6 col-lg-6 col-xl-6 col-md-3 pl-1"
+                    [hidden]="this.role == 'Program Officer' || !element?.pointsofContact.includes(this.userid)">
+                    <button [disabled]="this.disable" [ngClass]="{'btn-primary':element.status == 'Accepted'}"
+                      style="border: 1px solid #2e73dc; color: #2e73dc; background: #ffffff;"
+                      *ngIf="element.status == 'Accepted'" type="button" class="btn btn-sm"
+                      (click)="onInitiate(element)">Initiate</button>
+                    <button *ngIf="element.status == 'Shared'" type="button" class="btn btn-primary btn-sm"
+                    (click)="onAccept(element)">Accept</button>
+                  </div>
+                </div> -->
+
+
+
+
+              </td>
+            </ng-container>
+
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+          <mat-paginator [pageSizeOptions]="[15, 30, 40]" showFirstLastButtons></mat-paginator>
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <ngx-spinner bdColor="#93C0E1" size="large" color="#fff" type="false">
+
+      <div class="div-animation">
+          <h1 class="cssanimation sequence fadeInBottom">accelerate</h1>
+      </div>
+  
+      <div class="div-animation2">
+          <h2 class="cssanimation1 sequence fadeInBottom">Initiating Acquisition</h2>
+      </div>
+  
+  
+    <div style="margin-top: -160px; margin-left: 20px;">
+      <img height="450" src="assets/LoadingScreen/AniamtedSequence.gif">
+    </div>
+  
+  
+  </ngx-spinner>
+
+
+    <div class="mt-5 modal-footer">
+
+    </div>
+  </div>
+</div>

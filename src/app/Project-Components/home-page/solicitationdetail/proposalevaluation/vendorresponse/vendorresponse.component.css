@@ -1,0 +1,21 @@
+th {
+    color: #000333;
+
+  }
+
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f3f6f9;
+  }
+  
+  .breadcrumb {
+    border-radius: 2px;
+    align-items: center;
+    background-color:rgb(249, 250, 251) !important;
+    color: #2e73dc !important;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-bottom: 1rem;
+    min-height: 3.5rem;
+    padding: 0.325rem .4rem;
+}

@@ -1,0 +1,159 @@
+<div style="margin-top: -10px">
+  <form [formGroup]="commentService" novalidate (change)="onChange(commentService)">
+
+
+
+
+    <div class="mb-2">
+      <!-- <quill-editor name="commentText" id="commentText" format="html" [styles]="{height: '10vh'}" placeholder=""
+        (onContentChanged)="onContentChanged($event)">
+      </quill-editor> -->
+      <div class="p-2 shadow-0">
+
+        <quill-editor class="shadow-1" id="commentText" format="html"
+          [styles]="{height: '8vh', background: 'white', 'border-bottom': '2px solid #2873dc'}" placeholder=""
+          (onContentChanged)="onContentChanged($event)" customToolbarPosition="bottom" trackChanges="all"
+          [modules]="modules" format="object" placeholder="Type a new comment" formControlName="description">
+          <div quill-editor-toolbar>
+            <span class="ql-formats">
+              <button class="ql-image"></button>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-bold"></button>
+              <button class="ql-italic"></button>
+              <button class="ql-underline"></button>
+              <button class="ql-strike"></button>
+            </span>
+            <span class="ql-formats">
+              <select class="ql-color"></select>
+              <select class="ql-background"></select>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-list" value="ordered"></button>
+              <button class="ql-list" value="bullet"></button>
+              <select class="ql-align">
+                <option selected></option>
+                <option value="center"></option>
+                <option value="right"></option>
+                <option value="justify"></option>
+              </select>
+              <button class="ql-video"></button>
+            </span>
+            <a class="btn btn-sm btn-primary" style="color: #2e73dc" class="float-right" (click)="addComments()"><i
+              class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;Send</a>
+          </div>
+        </quill-editor>
+
+      </div>
+      <!-- <textarea type="text" class="form-controls" id="commentText" (keyup)="commentText($event)"></textarea> -->
+    </div>
+    <div class="product-container" formArrayName="comments">
+      <div class="col-12 cards" style="overflow-y: scroll; height: 70vh">
+        <div class="mt-3">
+          <div *ngFor="let comment of getComments(commentService); let i = index" [attr.data-index]="i" [formGroupName]="i">
+
+            <div class="rounded mb-4 card shadow-1" style="background: white">
+              <div class="p-2">
+                <div><span style="font-size: 13px; font-weight: 500;">{{comment.get('commentUser').value}}</span> <span
+                    style="font-size: 13px; color: #2e73dc" class="float-right">
+                    {{comment.get('commentDate').value | date: 'medium'}} &nbsp; <i (click)="removeComments(i)"
+                      class="fa fa-trash-o" aria-hidden="true"></i></span> </div>
+                <div style="font-size: 13px;" class="mt-1"
+                  [innerHTML]="comment.get('commentText').value | sanitizeHtml">
+                </div>
+              </div>
+              <input class="d-none" formControlName="commentText">
+              <input class="d-none" formControlName="commentDate">
+              <input class="d-none" formControlName="commentUser">
+              <div style="background: #eae9f1">
+                <a *ngIf="comment.get('replyGroup').length != 0" class="coll ml-3 mb-1"
+                  style="font-size: 12px; color: #2873dc" data-toggle="collapse" href="#collapseExample" role="button"
+                  aria-expanded="false" aria-controls="collapseExample" [attr.data-target]="'#' + 'prefix' + i">
+                  <span style="font-weight: 400"><i class="fa fa-chevron-down" aria-hidden="true"></i> {{comment.get('replyGroup').length}} Replies</span>
+                </a>
+
+                <div class="collapse mt-1" id="collapseExample" style="border-top:1px solid silver"
+                  [attr.id]="'prefix' + i">
+                  <div formArrayName="replyGroup">
+                    <div *ngFor="let reply of getReplies(comment); let j = index" [formGroupName]="j">
+                      <input class="d-none" formControlName="replyText">
+                      <input class="d-none" formControlName="replyDate">
+                      <input class="d-none" formControlName="replyUser">
+
+                      <div class="col-12 mb-2 mt-2">
+                        <div><span style="font-size: 13px; font-weight: 500;">{{reply.get('replyUser').value}}</span>
+                          &nbsp; &nbsp; <span style="font-size: 13px; color: #2e73dc">
+                            {{reply.get('replyDate').value | date: 'medium'}} &nbsp; <i (click)="removeReply(comment.controls.replyGroup, j)"
+                              class="fa fa-trash-o" aria-hidden="true"></i></span> </div>
+                        <div style="font-size: 13px;" class="mt-1"
+                          [innerHTML]="reply.get('replyText').value | sanitizeHtml">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                &nbsp; &nbsp;
+                <a class="mb-2" style="font-size: 12px; color: #2873dc" data-toggle="collapse" href="#reply"
+                  role="button" aria-expanded="false" aria-controls="reply"
+                  [attr.data-target]="'#' + 'suffix' + i" (click)="replyReply(i)">
+                  <span style="font-weight: 400"><i class="fa fa-reply" aria-hidden="true"></i>&nbsp; Reply</span>
+                </a>
+
+
+                <div class="collapse" id="reply" [attr.id]=" 'suffix' + i">
+                  <quill-editor id="replyText" format="html" formControlName="replyDescription"
+                    [styles]="{height: '7vh', background: 'white', 'border-bottom': '2px solid #2873dc'}" placeholder=""
+                    (onContentChanged)="replyMessageevent($event)" customToolbarPosition="bottom" trackChanges="all"
+                    [modules]="modules" format="object" placeholder="Reply">
+                    <div quill-editor-toolbar>
+                      <span class="ql-formats">
+                        <button class="ql-image"></button>
+                      </span>
+                      <span class="ql-formats">
+                        <button class="ql-bold"></button>
+                        <button class="ql-italic"></button>
+                        <button class="ql-underline"></button>
+                        <button class="ql-strike"></button>
+                      </span>
+                      <span class="ql-formats">
+                        <select class="ql-color"></select>
+                        <select class="ql-background"></select>
+                      </span>
+                      <span class="ql-formats">
+                        <button class="ql-list" value="ordered"></button>
+                        <button class="ql-list" value="bullet"></button>
+                        <select class="ql-align">
+                          <option selected></option>
+                          <option value="center"></option>
+                          <option value="right"></option>
+                          <option value="justify"></option>
+                        </select>
+                        <button class="ql-video"></button>
+                      </span>
+                      <a class="btn btn-sm btn-primary" style="color: #2e73dc" class="float-right"  (click)="addReplies(i)"><i
+                        class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;Send</a>
+                    </div>
+                  </quill-editor>
+                </div>
+
+
+              </div>
+            </div>
+
+
+            <!-- 
+            <textarea type="text" class="form-controls" id="replyText" (keyup)="replyText($event)"></textarea>
+            <button (click)="addReplies(i)">Reply{{i}}</button> -->
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+    
+  <!-- <pre class="mt-5"> {{commentService.value | json}} </pre> -->
+
+  </form>
+</div>

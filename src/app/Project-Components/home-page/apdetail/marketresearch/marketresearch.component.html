@@ -1,0 +1,176 @@
+<div class="col-sm-12 col-md-12 cl-lg-11 col-xl-11">
+  <span class="mt-2 ap-detail-title">Market Research</span>
+  <div class="float-right">
+    <a [class.disabled]="yesDisabled" id="hide1"
+      href="{{this.UNITED_URL}}/market/?apId={{this.apId}}&token={{this.token}}"
+      class="btn btn-sm btn-primary shadow-none text-white" style="background: #008db1;">Access Market Research</a>
+  </div>
+
+  <div class="mt-3"><span class="ap-detail-title sowTitle" style="font-size: 13.5px; color:#1a355d;">Market Research*</span></div>
+  <div class="mb-2">
+      <a class="tooltipss">FAR 7.105(b)v</a>
+    </div>
+    <label class="label-class mb-1" style="font-style: italic; font-size:13px">
+      Address the extent and results of the market research and indicate their impact on the various elements of the plan
+    </label>
+  <div>
+    <table class="table table-striped mt-3 mb-0 border">
+
+
+      <thead>
+        <tr>
+          <th scope="col">File Name</th>
+          <th scope="col">Research Date</th>
+          <!-- <th scope="col">Download</th> -->
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="noAttachments" class="mt-3 mb-5 ml-5">
+
+          <tr>
+            <td><p class="mt-3">There is no Market Research to display.</p></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <!-- <a [class.disabled]="yesDisabled" id="hide5" class="btn btn-primary btn-sm shadow-0 text-white" data-toggle="modal"
+            data-target="#exampleModal"><i class="fa fa-upload" aria-hidden="true"></i> &nbsp;Upload</a> -->
+      </tbody>
+      <tbody *ngIf="yesAttachments">
+        <tr *ngFor="let at of attachmentsdata; let i = index">
+          <td>{{at.title}}</td>
+          <td>{{at.creation_date | date:'medium'}}</td>
+          <!-- <td><a [class.disabled]="yesDisabled" id="hide2" style="min-width: 2.5rem;" class="btn"
+              (click)="downloadFile(at.attachment_no)"><i class="fa fa-download" aria-hidden="true"></i></a></td> -->
+          <td><a [class.disabled]="yesDisabled" id="hide3" style="min-width: 2.5rem;" class="btn"
+              (click)="deleteFile(at.id, i)"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+        </tr>
+      </tbody>
+
+    </table>
+
+    <div class="float-right mt-2">
+      <a [class.disabled]="yesDisabled" id="hide4" class="btn btn-primary btn-sm shadow-0 text-white"
+        data-toggle="modal" data-target="#exampleModal"><i class="fa fa-upload" aria-hidden="true"></i> Upload</a>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <img src="assets/hhs-accelerate-logo.png" height="30">
+        <button (click)="stepper.reset()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-content pr-5 pl-5 pb-3 pt-3">
+        <div class="mb-1">
+          <div class="mx-auto upload-text">Upload File</div>
+        </div>
+
+        <mat-horizontal-stepper #stepper>
+          <ng-template matStepperIcon="edit">
+            <mat-icon class="mat-icon1">done</mat-icon>
+          </ng-template>
+          <!-- <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel id="selectType">Select Type</ng-template>
+              <div class="form-group col-10 mx-auto p-5">
+                <div class="textfield-box">
+                  <select type="text" class="form-control dropdown" (change)="addFactors($event)">
+                      <option value="">Select Type</option>
+                    <option *ngFor="let c of requirementsType" [ngValue]="c">{{c}}</option>
+                  </select>
+                </div>
+              </div>
+              <button mat-button matStepperNext>Next</button>
+            </form>
+          </mat-step> -->
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Upload File</ng-template>
+              <div class="textfield-box col-12">
+
+              </div>
+              <div class="form-group col-12 mx-auto">
+                <label for="exampleFormControlFile1" class="btn btn-sm btn-outline-primary"><img
+                    src="assets/uploadimage.PNG" height="185"></label>
+
+
+              </div>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext id="next">Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Confirm</ng-template>
+            <form [formGroup]="secondFormGroup">
+              <div class="col-10 mx-auto p-5">
+                <input style="display: none" type="file" name="input-file" formControlName="secondCtrl"
+                  class="form-control-file float-right mr-auto" id="exampleFormControlFile1"
+                  (change)="onFileSelected($event)">
+                <div>
+                  {{this.filename}}
+                </div>
+              </div>
+              <div class="mt-5">
+                <button (click)="uploadFile(); stepper.reset()" mat-button>Save</button>
+                <button mat-button matStepperPrevious>Back</button>
+                <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
+              </div>
+            </form>
+          </mat-step>
+        </mat-horizontal-stepper>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4"><span class="ap-detail-title sowTitle" style="font-size: 13.5px; color:#1a355d;">Sources</span></div>
+  <div class="mb-2">
+      <a class="tooltips" >FAR 7.105(b)(1)<span class="classic">(i) Indicate the prospective sources of supplies or services that can meet the need.<br>
+        (ii) Consider required sources of supplies or services (see part 8) and sources identifiable through databases including the Governmentwide database of contracts and other procurement instruments intended for use by multiple agencies available at https://www.contractdirectory.gov/contractdirectory/.<br>
+        (iii) Include consideration of small business, veteran-owned small business, service-disabled veteran-owned small business, HUBZone small business, small disadvantaged business, and women-owned small business concerns (see part 19).<br>
+        (iv) Consider the impact of any consolidation or bundling that might affect participation of small businesses in the acquisition (see 7.107) (15 U.S.C. 644(e) and 15 U.S.C. 657q). When the proposed acquisition strategy involves bundling, identify the incumbent contractors and contracts affected by the bundling.<br>
+        (v) Address the extent and results of the market research and indicate their impact on the various elements of the plan (see part 10).<br>
+        <br>
+        </span></a>
+    </div>
+    <label class="label-class mb-1" style="font-style: italic; font-size:13px">Describe the prospective sources of supplies or services that can meet the need. Consider required sources of supplies or services (see FAR Part 8) and sources identifiable through databases including the Government-wide database of contracts and other procurement instruments intended for use by multiple agencies available at www.contractdirectory.gov/contractdirectory</label>
+  <div class="row" style="margin-top: 12px">
+    <div class="col-12">
+      <quill-editor customToolbarPosition="bottom" [disabled]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status=='Initiated' || this.status=='Generated'" [(ngModel)]="this.mrdata1" name="description1" format="html"
+        [styles]="{height: '30vh'}" placeholder="" (onContentChanged)="onSources($event)"></quill-editor>
+    </div>
+  </div>
+
+
+  <div class="mt-4"><span class="ap-detail-title sowTitle" style="font-size: 13.5px; color:#1a355d;">Acquisition Streamlining</span></div>
+  <div class="mb-2">
+      <a class="tooltips" >FAR 7.105(a)(8)<span class="classic">
+        If specifically designated by the requiring agency as a program subject to acquisition streamlining, discuss plans and procedures to-<br>
+        •	Encourage industry participation by using draft solicitations, pre-solicitation conferences, and other means of stimulating industry involvement during design and development in recommending the most appropriate application and tailoring of contract requirements;<br>
+        •	Select and tailor only the necessary and cost-effective requirements; and<br>
+        •	State the timeframe for identifying which of those specifications and standards, originally provided for guidance only, shall become mandatory.<br>
+        </span></a>
+    </div>
+    <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss how to encourage industry participation by using draft solicitations, pre-solicitation conferences, and other means of stimulating industry involvement during design and development in recommending the most appropriate application and tailoring of contract requirements. Additionally, discuss planned actions that will be taken to streamline the acquisition including, but not limited to, conducting outreach efforts to stimulate industry involvement, using draft solicitations, Statements of Work (SOWs), Performance Work Statements (PWSs), or Statements of Objectives (SOOs) for industry comment, and limiting the size of proposals.</label>
+  <div class="row" style="margin-top: 12px">
+    <div class="col-12">
+      <quill-editor customToolbarPosition="bottom" [disabled]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status=='Initiated' || this.status=='Generated'" [(ngModel)]="this.mrdata2" name="description1" format="html"
+        [styles]="{height: '30vh'}" placeholder="" (onContentChanged)="onAcq($event)"></quill-editor>
+    </div>
+  </div>
+</div>
+
+<div class="mb-5" style="margin-bottom: 90px !important">
+
+</div>

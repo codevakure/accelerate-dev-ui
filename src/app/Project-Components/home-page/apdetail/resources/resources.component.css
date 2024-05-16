@@ -1,0 +1,18 @@
+  
+    th {
+        color: #0844a4;
+        font-weight: bold;
+    
+      }
+    
+      .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f3f6f9;
+      }
+
+      tr {
+        color: #0844a4;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 14px;
+    font-style: normal;
+      }

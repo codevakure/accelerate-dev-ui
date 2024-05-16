@@ -1,0 +1,91 @@
+<div class="col-sm-12 col-md-12 cl-lg-11 col-xl-11">
+  <span class="mt-2 ap-detail-title">Independent Government Cost Estimate*</span>
+  <form [formGroup]="igceDecsriptions" novalidate (change)="onChange(igceDecsriptions);">
+
+
+    <div class="form-group col-md-10 mt-4">
+      <div class="textfield-box">
+        <label class="label-class mb-1" style="font-weight: 600;">IGCE Description</label>
+        <div class="mb-2">
+          <a class="tooltips">FAR 7.105(b)(6)<span class="classic">Include budget estimates, explain how they were derived, and discuss the schedule for obtaining adequate funds at the time they are required (see subpart 32.7).</span></a>
+        </div>
+        <label class="label-class mb-1" style="font-style: italic; font-size:13px">
+
+        </label>
+        <label class="label-class mb-1" style="font-style: italic; font-size:13px">Provide a brief explanation on how the IGCE was developed.
+        </label>
+        <textarea class="form-control" rows="3" formControlName="igceDescription" type="text"
+          placeholder="Please type your explanation"></textarea>
+      </div>
+    </div>
+
+
+
+
+    <div class="form-group col-md-10 mt-4">
+      <div class="textfield-box">
+        <label class="label-class mb-1" style="font-weight: 600;">Cost Goals*</label>
+        <div class="mb-2">
+          <a class="tooltips" >FAR 7.105(a)(3)<span class="classic">
+            <b>Cost Goals	Cost</b>. Set forth the established cost goals for the acquisition and the rationale supporting them, and discuss related cost concepts to be employed, including, as appropriate, the following items:<br>
+            
+           <b>Life-cycle cost</b>. Discuss how life-cycle cost will be considered. If it is not used, explain why. If appropriate, discuss the cost model used to develop life-cycle-cost estimates.<br>
+            
+            <b>Design-to-cost</b>. Describe the design-to-cost objective(s) and underlying assumptions, including the rationale for quantity, learning-curve, and economic adjustment factors. Describe how objectives are to be applied, tracked, and enforced. Indicate specific related solicitation and contractual requirements to be imposed.<br>
+            
+            <b>Application of should-cost</b>. Describe the application of should-cost analysis to the acquisition (see 15.407-4).<br>
+            
+            <b>Capability or performance</b>. Specify the required capabilities or performance characteristics of the supplies or the performance standards of the services being acquired and state how they are related to the need.<br>
+            
+            <b>Delivery or performance-period requirements</b>. Describe the basis for establishing delivery or performance-period requirements (see subpart 11.4). Explain and provide reasons for any urgency if it results in concurrency of development and production or constitutes justification for not providing for full and open competition.<br>
+            
+            <b>Trade-offs</b>. Discuss the expected consequences of trade-offs among the various cost, capability or performance, and schedule goals.<br>
+            
+            <b>Risks</b> Discuss technical, cost, and schedule risks and describe what efforts are planned or underway to reduce risk and the consequences of failure to achieve goals. If concurrency of development and production is planned, discuss its effects on cost and schedule risks.<br>
+            
+            <b>Acquisition streamlining</b>. If specifically designated by the requiring agency as a program subject to acquisition streamlining, discuss plans and procedures to-<br>
+            •	Encourage industry participation by using draft solicitations, pre-solicitation conferences, and other means of stimulating industry involvement during design and development in recommending the most appropriate application and tailoring of contract requirements;<br>
+            •	Select and tailor only the necessary and cost-effective requirements; and<br>
+            •	State the timeframe for identifying which of those specifications and standards, originally provided for guidance only, shall become mandatory.<br>
+            
+            </span></a>
+        </div>
+        <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss the established cost goals for the acquisition and the rationale supporting them, and discuss related cost concepts to be employed, including, as appropriate, the following items:<br>
+
+          (i)&nbsp;Lifecycle cost. Discuss how lifecycle cost will be considered. If it is not used, explain why. If appropriate, discuss the cost model used to develop lifecycle cost estimates.<br>
+          
+          (ii)&nbsp;Design-to-cost. Describe the design-to-cost objective(s) and underlying assumptions, including the rationale for quantity, learning-curve, and economic adjustment factors. Describe how objectives are to be applied, tracked, and enforced. Indicate specific related solicitation and contractual requirements to be imposed. <br>
+          
+          (iii)&nbsp;Application of should-cost. Describe the application of should-cost analysis to the acquisition (see 15.407-4).<br>
+        </label>
+        <textarea class="form-control" rows="3" formControlName="coastGoals" type="text"
+          placeholder="Please type your explanation"></textarea>
+      </div>
+    </div>
+
+
+
+    <div class="form-group col-md-10 mt-4">
+      <div class="textfield-box">
+        <label class="label-class mb-1" style="font-weight: 600;">Funding</label>
+        <div class="mb-2">
+          <a class="tooltips" >FAR 7.105(b)(6)<span class="classic">
+            Include budget estimates, explain how they were derived, and discuss the schedule for obtaining adequate funds at the time they are required (see subpart 32.7).
+            </span></a>
+        </div>
+        <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss the schedule for obtaining both adequate funds and the right type of funds at the time they are required.  
+        </label>
+        <textarea class="form-control" rows="3" formControlName="funding" type="text"
+          placeholder="Please type your explanation"></textarea>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+
+
+<div class="mb-5" style="margin-bottom: 90px !important">
+
+</div>

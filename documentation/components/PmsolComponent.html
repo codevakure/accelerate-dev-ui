@@ -1,0 +1,1377 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>hhs_pacd-frontend-phase2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">hhs_pacd-frontend-phase2 documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>PmsolComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Project-Components/home-page/Solicitations/pmsol.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-pmsol</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>../Acquisitions/pmacquisitions.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./pmsol.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSource">dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns">displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#getsolicitation">getsolicitation</a>
+                            </li>
+                            <li>
+                                <a href="#hideco">hideco</a>
+                            </li>
+                            <li>
+                                <a href="#hidepm">hidepm</a>
+                            </li>
+                            <li>
+                                <a href="#paginator">paginator</a>
+                            </li>
+                            <li>
+                                <a href="#role">role</a>
+                            </li>
+                            <li>
+                                <a href="#searchKey">searchKey</a>
+                            </li>
+                            <li>
+                                <a href="#sort">sort</a>
+                            </li>
+                            <li>
+                                <a href="#userid">userid</a>
+                            </li>
+                            <li>
+                                <a href="#username">username</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#applyFilter">applyFilter</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onResume">onResume</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit">onSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#sendEmailCo">sendEmailCo</a>
+                            </li>
+                            <li>
+                                <a href="#sendEmailPm">sendEmailPm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(authco: <a href="../injectables/AuthenticationService.html">AuthenticationService</a>, acqco: <a href="../injectables/AcquisitionService.html">AcquisitionService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, spinner: NgxSpinnerService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>authco</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthenticationService.html" target="_self" >AuthenticationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>acqco</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AcquisitionService.html" target="_self" >AcquisitionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>spinner</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgxSpinnerService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="applyFilter"></a>
+                    <span class="name">
+                        <b>
+                            applyFilter
+                        </b>
+                        <a href="#applyFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>applyFilter(filterValue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:66</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filterValue</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onResume"></a>
+                    <span class="name">
+                        <b>
+                            onResume
+                        </b>
+                        <a href="#onResume"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onResume(selectedSol: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>selectedSol</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <b>
+                            onSubmit
+                        </b>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit(selectedSol: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:82</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>selectedSol</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendEmailCo"></a>
+                    <span class="name">
+                        <b>
+                            sendEmailCo
+                        </b>
+                        <a href="#sendEmailCo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendEmailCo(element)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:94</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>element</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendEmailPm"></a>
+                    <span class="name">
+                        <b>
+                            sendEmailPm
+                        </b>
+                        <a href="#sendEmailPm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendEmailPm(element)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:87</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>element</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSource"></a>
+                        <span class="name">
+                            <b>
+                            dataSource</b>
+                            <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayedColumns"></a>
+                        <span class="name">
+                            <b>
+                            displayedColumns</b>
+                            <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    &quot;sol_no&quot;,
+    &quot;description&quot;,
+    &quot;poc&quot;,
+    &quot;date&quot;,
+    &quot;status&quot;,
+    &quot;actions&quot;
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getsolicitation"></a>
+                        <span class="name">
+                            <b>
+                            getsolicitation</b>
+                            <a href="#getsolicitation"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hideco"></a>
+                        <span class="name">
+                            <b>
+                            hideco</b>
+                            <a href="#hideco"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hidepm"></a>
+                        <span class="name">
+                            <b>
+                            hidepm</b>
+                            <a href="#hidepm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="paginator"></a>
+                        <span class="name">
+                            <b>
+                            paginator</b>
+                            <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatPaginator</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(MatPaginator)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="role"></a>
+                        <span class="name">
+                            <b>
+                            role</b>
+                            <a href="#role"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchKey"></a>
+                        <span class="name">
+                            <b>
+                            searchKey</b>
+                            <a href="#searchKey"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sort"></a>
+                        <span class="name">
+                            <b>
+                            sort</b>
+                            <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatSort</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(MatSort)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userid"></a>
+                        <span class="name">
+                            <b>
+                            userid</b>
+                            <a href="#userid"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="username"></a>
+                        <span class="name">
+                            <b>
+                            username</b>
+                            <a href="#username"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/Project-Components/home-page/Solicitations/pmsol.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &quot;@angular/core&quot;;
+import { AcquisitionService } from &quot;../../../Services/acquisition.service&quot;;
+import { AuthenticationService } from &quot;../../../Services/authentication.service&quot;;
+import { Router } from &quot;@angular/router&quot;;
+import { MatPaginator } from &quot;@angular/material/paginator&quot;;
+import { MatSort } from &quot;@angular/material/sort&quot;;
+import { MatTableDataSource } from &quot;@angular/material/table&quot;;
+import { NgxSpinnerService } from &#x27;ngx-spinner&#x27;;
+import { Observable, of, timer } from &#x27;rxjs&#x27;;
+declare var $: any;
+
+
+@Component({
+  selector: &#x27;app-pmsol&#x27;,
+  templateUrl: &#x27;./pmsol.component.html&#x27;,
+  styleUrls: [&#x27;../Acquisitions/pmacquisitions.component.css&#x27;]
+})
+export class PmsolComponent implements OnInit {
+  getsolicitation;
+  displayedColumns: string[] &#x3D; [
+    &quot;sol_no&quot;,
+    &quot;description&quot;,
+    &quot;poc&quot;,
+    &quot;date&quot;,
+    &quot;status&quot;,
+    &quot;actions&quot;
+  ];
+  dataSource;
+  searchKey: string;
+  username;
+  userid;
+  role;
+  hideco: boolean &#x3D; false;
+  hidepm: boolean &#x3D; false;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
+  constructor(
+    private authco: AuthenticationService,
+    private acqco: AcquisitionService,
+    private router: Router,
+    private spinner: NgxSpinnerService
+  ) { }
+
+  ngOnInit() {
+    this.acqco.getUserprofile().subscribe(response &#x3D;&gt; {
+      this.username &#x3D; response.firstName;
+      if(response.roles[0].roleName &#x3D;&#x3D; &quot;Contracting Officer (CO)&quot;) {
+        this.role &#x3D; &quot;Contracting Officer&quot;
+        this.hideco &#x3D; true;
+      } else if (response.roles[0].roleName &#x3D;&#x3D; &quot;Program Manager (PM)&quot;) {
+        this.role &#x3D; &quot;Program Officer&quot;
+        this.hidepm &#x3D; true;
+      }
+    })
+    this.acqco.getSolicitations().subscribe((data) &#x3D;&gt; {
+      this.getsolicitation &#x3D; data;
+      console.log(this.getsolicitation);
+      this.dataSource &#x3D; new MatTableDataSource(this.getsolicitation);
+      this.dataSource.paginator &#x3D; this.paginator;
+      this.dataSource.sort &#x3D; this.sort;
+    });
+  }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter &#x3D; filterValue.trim().toLowerCase();
+  }
+
+  onResume(selectedSol: any) {
+   // document.getElementById(&quot;closeModalSolicitation&quot;).click();
+    console.log(selectedSol);
+    // this.router.navigate([&#x27;/pacd&#x27;, selectedSol.form_id]);
+       // this.spinner.show();
+ 
+        // setTimeout(() &#x3D;&gt; {
+        //     this.spinner.hide();
+            this.router.navigate([&#x27;/home/sol&#x27;, selectedSol.sol_no]);
+        // }, 10000);
+
+  }
+  onSubmit(selectedSol: any) {
+    
+    console.log(selectedSol.sol_no);
+  }
+
+  sendEmailPm(element) {
+    var email &#x3D; element.rEmail;
+    var subject &#x3D; &quot;Regarding&quot;+&quot; &quot;+element.ap_no+&quot; &quot;+element.projectTitle;
+    var emailBody &#x3D; &#x27;Hi &#x27;+element.rName;
+    document.location.href &#x3D; &quot;mailto:&quot;+email+&quot;?subject&#x3D;&quot;+subject+&quot;&amp;body&#x3D;&quot;+emailBody;
+  }
+
+  sendEmailCo(element) {
+    var email &#x3D; element.coEmail;
+    var subject &#x3D; &quot;Regarding&quot;+&quot; &quot;+element.ap_no+&quot; &quot;+element.projectTitle;
+    var emailBody &#x3D; &#x27;Hi &#x27;+element.coName;
+    document.location.href &#x3D; &quot;mailto:&quot;+email+&quot;?subject&#x3D;&quot;+subject+&quot;&amp;body&#x3D;&quot;+emailBody;
+  }
+
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;background-color:rgb(249, 250, 251)&quot;&gt;
+  &lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-5 col-sm-12 col-lg-12 col-xl-12 custom-top&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-11 col-sm-11 col-lg-11 col-xl-11&quot;&gt;
+          &lt;div class&#x3D;&quot;font2 header2 dashboardcomp mb-2&quot;&gt;Solicitations&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-md-1 col-sm-1 col-lg-1 col-xl-1&quot;&gt;
+          &lt;a style&#x3D;&quot;text-decoration: none&quot; [routerLink]&#x3D;&quot;[&#x27;/home&#x27;]&quot;&gt;&lt;span class&#x3D;&quot;back&quot;&gt;&lt;i class&#x3D;&quot;fa fa-arrow-left mr-2&quot;
+                aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;Back&lt;/span&gt;&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+
+
+      &lt;mat-form-field class&#x3D;&quot;search-form-field shadow-1 mt-1&quot; floatLabel&#x3D;&quot;never&quot;&gt;
+        &lt;input matInput (keyup)&#x3D;&quot;applyFilter($event.target.value)&quot; placeholder&#x3D;&quot;Search data in Solicitations&quot;&gt;
+      &lt;/mat-form-field&gt;
+      &lt;div class&#x3D;&quot;shadow-1&quot;&gt;
+        &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; matSort
+          class&#x3D;&quot;table-striped  col-md-12 col-lg-12 col-sm-12 col-xl-12 mt-4 &quot; style&#x3D;&quot;overflow-x: auto&quot;&gt;
+
+          &lt;!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition&quot; --&gt;
+
+          &lt;!-- Solicitation Number Column --&gt;
+          &lt;ng-container matColumnDef&#x3D;&quot;sol_no&quot;&gt;
+            &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Solicitation #&lt;/th&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; (click)&#x3D;&quot;onSelect(element)&quot; style&#x3D;&quot;color: #2e73dc&quot;&gt;
+              {{element.sol_no}}
+            &lt;/td&gt;
+          &lt;/ng-container&gt;
+
+          &lt;!-- Description Column --&gt;
+          &lt;ng-container matColumnDef&#x3D;&quot;description&quot;&gt;
+            &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;
+              &lt;div class&#x3D;&quot;ml-4&quot;&gt;Project Title &lt;/div&gt;
+            &lt;/th&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+              &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;col-12 ml-4&quot;&gt;
+                  {{element.projectTitle}}
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/td&gt;
+          &lt;/ng-container&gt;
+
+          &lt;!-- POC Column --&gt;
+          &lt;ng-container matColumnDef&#x3D;&quot;poc&quot;&gt;
+            &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;
+                &lt;span *ngIf&#x3D;&quot;this.role &#x3D;&#x3D; &#x27;Program Officer&#x27;&quot;&gt;
+                    Contracting POC
+                &lt;/span&gt; 
+                &lt;span *ngIf&#x3D;&quot;this.role !&#x3D; &#x27;Program Officer&#x27;&quot;&gt;
+                    Program POC
+                &lt;/span&gt;&lt;/th&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; class&#x3D;&quot;mat-cell-custom&quot;&gt;
+                &lt;div *ngIf&#x3D;&quot;this.hidepm&quot;&gt;
+                    &lt;span *ngIf&#x3D;&quot;element.coName &#x3D;&#x3D; &#x27;&#x27;&quot;&gt;&lt;i style&#x3D;&quot;color: #007bff; margin-right: 5%; font-size: 115%;&quot;
+                        class&#x3D;&quot;fa fa-times-circle-o&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;Unassigned&lt;/span&gt;
+                    &lt;a *ngIf&#x3D;&quot;element.coName !&#x3D; &#x27;&#x27;&quot; style&#x3D;&quot;cursor: pointer&quot; (click)&#x3D;&quot;sendEmailCo(element)&quot;&gt;&lt;i
+                        style&#x3D;&quot;color: #007bff; margin-right: 5%; font-size: 115%;&quot; class&#x3D;&quot;fa fa-envelope&quot;&gt;&lt;/i&gt;
+                      &lt;span&gt;{{ element?.coName }}&lt;/span&gt;&lt;/a&gt;
+                  &lt;/div&gt;
+                  &lt;div *ngIf&#x3D;&quot;this.hideco&quot;&gt;
+                    &lt;a style&#x3D;&quot;cursor: pointer&quot; (click)&#x3D;&quot;sendEmailPm(element)&quot;&gt;&lt;i
+                        style&#x3D;&quot;color: #007bff; margin-right: 5%; font-size: 115%;&quot; class&#x3D;&quot;fa fa-envelope&quot;&gt;&lt;/i&gt;
+                      &lt;span&gt;{{ element?.rName }}&lt;/span&gt;&lt;/a&gt;
+                  &lt;/div&gt;
+                 &lt;/td&gt;
+          &lt;/ng-container&gt;
+
+          &lt;ng-container matColumnDef&#x3D;&quot;date&quot;&gt;
+            &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Initiated Date &lt;/th&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element.acceptedDate | date }} &lt;/td&gt;
+          &lt;/ng-container&gt;
+
+          &lt;!-- Date Column --&gt;
+          &lt;ng-container matColumnDef&#x3D;&quot;status&quot;&gt;
+            &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Status &lt;/th&gt;
+            &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;&lt;span span class&#x3D;&quot;badge mt-1&quot;
+                [ngClass]&#x3D;&quot;{&#x27;badge-published&#x27;:element.status &#x3D;&#x3D; &#x27;Published&#x27;,&#x27;badge-initiated&#x27;:element.status &#x3D;&#x3D; &#x27;Initiated&#x27;}&quot;&gt;{{element.status}}&lt;/span&gt;
+            &lt;/td&gt;
+          &lt;/ng-container&gt;
+
+          &lt;ng-container matColumnDef&#x3D;&quot;actions&quot;&gt;
+            &lt;th mat-header-cell class&#x3D;&quot;text-center&quot; *matHeaderCellDef&gt;Action&lt;/th&gt;
+            &lt;td mat-cell class&#x3D;&quot;text-center&quot; *matCellDef&#x3D;&quot;let element&quot;&gt;
+              &lt;div *ngIf&#x3D;&quot;this.hidepm&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary btn-sm&quot; style&#x3D;&quot;margin-right: 2%&quot;
+                  (click)&#x3D;&quot;onResume(element)&quot;&gt;Review&lt;/button&gt;
+              &lt;/div&gt;
+              &lt;div *ngIf&#x3D;&quot;this.hideco&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary btn-sm&quot; (click)&#x3D;&quot;onResume(element)&quot;&gt;Resume&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/td&gt;
+          &lt;/ng-container&gt;
+
+          &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+          &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+        &lt;/table&gt;
+
+        &lt;mat-paginator [pageSizeOptions]&#x3D;&quot;[15, 30, 40]&quot; showFirstLastButtons&gt;&lt;/mat-paginator&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;mb-5&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>../Acquisitions/pmacquisitions.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.badge {
+    font-size: 90%;
+    /* background-color: #20295b;
+    color: white; */
+}
+
+.header2 {
+    font-size: 130%;
+}
+.btn-flat-primary, .btn-flat-primary:active, .btn-flat-primary:focus, .btn-flat-primary:hover, .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary:focus, .btn-outline-primary:hover {
+    color: #1f5fbd;
+    border: 1px solid #2e73dc;
+    border-radius: 5% !important;
+    font-size: 85%;
+}
+
+.btn-primary {
+    /* background-color: #9c27b0; */
+    background-color: #2e73dc;
+    color: white;
+    border-radius: 5px;
+    font-size: 85%;
+}
+
+.bd-example-modal-lg {
+    max-width: 70.5rem !important;
+}
+
+
+h1 {
+    font-size: 4.3em;
+    letter-spacing: -4px;
+    font-weight: 700;
+    color: #0B3555;
+    text-align: center;
+  }
+  
+  .cssanimation1, .cssanimation1 span {
+    animation-duration: 3s;
+    animation-fill-mode: both;
+  }
+  
+  .cssanimation1 span { display: inline-block }
+  
+  .cssanimation, .cssanimation span {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .cssanimation span { display: inline-block }
+  
+  .fadeInBottom { animation-name: fadeInBottom }
+  @keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to { opacity: 1 }
+  }</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div style="background-color:rgb(249, 250, 251)">  <div class="container">    <div class="col-md-5 col-sm-12 col-lg-12 col-xl-12 custom-top">      <div class="row">        <div class="col-md-11 col-sm-11 col-lg-11 col-xl-11">          <div class="font2 header2 dashboardcomp mb-2">Solicitations</div>        </div>        <div class="col-md-1 col-sm-1 col-lg-1 col-xl-1">          <a style="text-decoration: none" [routerLink]="[\'/home\']"><span class="back"><i class="fa fa-arrow-left mr-2"                aria-hidden="true"></i>Back</span></a>        </div>      </div>      <mat-form-field class="search-form-field shadow-1 mt-1" floatLabel="never">        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search data in Solicitations">      </mat-form-field>      <div class="shadow-1">        <table mat-table [dataSource]="dataSource" matSort          class="table-striped  col-md-12 col-lg-12 col-sm-12 col-xl-12 mt-4 " style="overflow-x: auto">          <!--- Note that these columns can be defined in any order.          The actual rendered columns are set as a property on the row definition" -->          <!-- Solicitation Number Column -->          <ng-container matColumnDef="sol_no">            <th mat-header-cell *matHeaderCellDef mat-sort-header> Solicitation #</th>            <td mat-cell *matCellDef="let element" (click)="onSelect(element)" style="color: #2e73dc">              {{element.sol_no}}            </td>          </ng-container>          <!-- Description Column -->          <ng-container matColumnDef="description">            <th mat-header-cell *matHeaderCellDef mat-sort-header>              <div class="ml-4">Project Title </div>            </th>            <td mat-cell *matCellDef="let element">              <div class="row">                <div class="col-12 ml-4">                  {{element.projectTitle}}                </div>              </div>            </td>          </ng-container>          <!-- POC Column -->          <ng-container matColumnDef="poc">            <th mat-header-cell *matHeaderCellDef mat-sort-header>                <span *ngIf="this.role == \'Program Officer\'">                    Contracting POC                </span>                 <span *ngIf="this.role != \'Program Officer\'">                    Program POC                </span></th>            <td mat-cell *matCellDef="let element" class="mat-cell-custom">                <div *ngIf="this.hidepm">                    <span *ngIf="element.coName == \'\'"><i style="color: #007bff; margin-right: 5%; font-size: 115%;"                        class="fa fa-times-circle-o" aria-hidden="true"></i>Unassigned</span>                    <a *ngIf="element.coName != \'\'" style="cursor: pointer" (click)="sendEmailCo(element)"><i                        style="color: #007bff; margin-right: 5%; font-size: 115%;" class="fa fa-envelope"></i>                      <span>{{ element?.coName }}</span></a>                  </div>                  <div *ngIf="this.hideco">                    <a style="cursor: pointer" (click)="sendEmailPm(element)"><i                        style="color: #007bff; margin-right: 5%; font-size: 115%;" class="fa fa-envelope"></i>                      <span>{{ element?.rName }}</span></a>                  </div>                 </td>          </ng-container>          <ng-container matColumnDef="date">            <th mat-header-cell *matHeaderCellDef mat-sort-header> Initiated Date </th>            <td mat-cell *matCellDef="let element"> {{element.acceptedDate | date }} </td>          </ng-container>          <!-- Date Column -->          <ng-container matColumnDef="status">            <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>            <td mat-cell *matCellDef="let element"><span span class="badge mt-1"                [ngClass]="{\'badge-published\':element.status == \'Published\',\'badge-initiated\':element.status == \'Initiated\'}">{{element.status}}</span>            </td>          </ng-container>          <ng-container matColumnDef="actions">            <th mat-header-cell class="text-center" *matHeaderCellDef>Action</th>            <td mat-cell class="text-center" *matCellDef="let element">              <div *ngIf="this.hidepm">                <button type="button" class="btn btn-primary btn-sm" style="margin-right: 2%"                  (click)="onResume(element)">Review</button>              </div>              <div *ngIf="this.hideco">                <button type="button" class="btn btn-primary btn-sm" (click)="onResume(element)">Resume</button>              </div>            </td>          </ng-container>          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>        </table>        <mat-paginator [pageSizeOptions]="[15, 30, 40]" showFirstLastButtons></mat-paginator>      </div>    </div>  </div>  <div class="mb-5"></div></div></div>'
+    var COMPONENTS = [{'name': 'ApdetailComponent', 'selector': 'app-apdetail'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AttachmentsComponent', 'selector': 'app-attachments'},{'name': 'AttachmentsinfoComponent', 'selector': 'app-attachmentsinfo'},{'name': 'ClausesectionsComponent', 'selector': 'app-clausesections'},{'name': 'CloseOutComponent', 'selector': 'app-close-out'},{'name': 'CodeValidateComponent', 'selector': 'app-code-validate'},{'name': 'CommentBoxComponent', 'selector': 'app-comment-box'},{'name': 'CompatibilityComponent', 'selector': 'app-compatibility'},{'name': 'CompetetionComponent', 'selector': 'app-competetion'},{'name': 'ConstraintsComponent', 'selector': 'app-constraints'},{'name': 'ContactAdminComponent', 'selector': 'app-contact-admin'},{'name': 'ContractadmindataComponent', 'selector': 'app-contractadmindata'},{'name': 'ContractComponent', 'selector': 'app-contract'},{'name': 'ContractdetailComponent', 'selector': 'app-contractdetail'},{'name': 'ContractFileComponent', 'selector': 'app-contract-file'},{'name': 'ContractGenerationComponent', 'selector': 'app-contract-generation'},{'name': 'ContractPreviewComponent', 'selector': 'app-contract-preview'},{'name': 'ContractsdisplayComponent', 'selector': 'app-contractsdisplay'},{'name': 'CoprofileComponent', 'selector': 'app-coprofile'},{'name': 'CornominationComponent', 'selector': 'app-cornomination'},{'name': 'DashAcquisitionComponent', 'selector': 'app-dash-acquisition'},{'name': 'DashActiveComponent', 'selector': 'app-dash-active'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DashExpiredComponent', 'selector': 'app-dash-expired'},{'name': 'DashSolicitationComponent', 'selector': 'app-dash-solicitation'},{'name': 'DeleveriesandperformanceComponent', 'selector': 'app-deleveriesandperformance'},{'name': 'EstimateComponent', 'selector': 'app-estimate'},{'name': 'EvaluatevendorComponent', 'selector': 'app-evaluatevendor'},{'name': 'EvaluationfactorsComponent', 'selector': 'app-evaluationfactors'},{'name': 'EvaluationsComponent', 'selector': 'app-evaluations'},{'name': 'FormdetailComponent', 'selector': 'app-formdetail'},{'name': 'GeneralComponent', 'selector': 'app-general'},{'name': 'HomePageComponent', 'selector': 'app-home-page'},{'name': 'IgceComponent', 'selector': 'app-igce'},{'name': 'InspectionandacceptanceComponent', 'selector': 'app-inspectionandacceptance'},{'name': 'InstructionsComponent', 'selector': 'app-instructions'},{'name': 'LoginPageComponent', 'selector': 'app-login-page'},{'name': 'LogoutComponent', 'selector': ''},{'name': 'MarketresearchComponent', 'selector': 'app-marketresearch'},{'name': 'ModifyContractComponent', 'selector': 'app-modify-contract'},{'name': 'PackagingandmarketingComponent', 'selector': 'app-packagingandmarketing'},{'name': 'PmacquisitionsComponent', 'selector': 'app-pmacquisitions'},{'name': 'PmdashComponent', 'selector': 'app-pmdash'},{'name': 'PmprofileComponent', 'selector': 'app-pmprofile'},{'name': 'PmsolComponent', 'selector': 'app-pmsol'},{'name': 'PreviewComponent', 'selector': 'app-preview'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProposalevalhomeComponent', 'selector': 'app-proposalevalhome'},{'name': 'ProposalevaluationComponent', 'selector': 'app-proposalevaluation'},{'name': 'QandaComponent', 'selector': 'app-qanda'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RepresentationcertsComponent', 'selector': 'app-representationcerts'},{'name': 'ReqformComponent', 'selector': 'app-reqform'},{'name': 'SolCommentBoxComponent', 'selector': 'app-sol-comment-box'},{'name': 'SolicitationdetailComponent', 'selector': 'app-solicitationdetail'},{'name': 'SowComponent', 'selector': 'app-sow'},{'name': 'SpecialcontractreqComponent', 'selector': 'app-specialcontractreq'},{'name': 'StatementofworkComponent', 'selector': 'app-statementofwork'},{'name': 'SuppliesandservicesComponent', 'selector': 'app-suppliesandservices'},{'name': 'TradeoffsComponent', 'selector': 'app-tradeoffs'},{'name': 'VendorresevalComponent', 'selector': 'app-vendorreseval'},{'name': 'VendorresponseComponent', 'selector': 'app-vendorresponse'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PmsolComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PmsolComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

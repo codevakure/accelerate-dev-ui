@@ -1,0 +1,422 @@
+<div class="col-xl-11 col-lg-11 col-md-12" style="margin: 15px; margin-top: -2px;">
+  <form (keydown.enter)="$event.preventDefault()" [formGroup]="igce" novalidate (change)="onChange(igce)">
+    <div class="sticky" style="margin-top: -71px; margin-bottom: 60px;">
+      <ul class="nav nav-tabs float-right" id="myTab" role="tablist" style="margin-top: -0px; margin-right: 125px;"
+        formArrayName="optionYears">
+        <li *ngFor="let option of getOptions(igce); let k = index; let f = first; let l = last" (change)="indexPass(l)"
+          class="nav-item" style="margin-right: 2px" [formGroupName]="k">
+
+          <a (click)="currentIndex(k)" class="nav-link" [class.active]="this.index === k" data-toggle="tab" role="tab"
+            [attr.data-target]="'#' + 'prefix' + k">
+            <div class="inlinepara">
+              <p *ngIf="f">Base Period</p>
+              <p *ngIf="!f"> Option Year {{k}}</p>&nbsp; <a
+                [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                *ngIf="!f" (click)="removeOption(k)"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+          </a>
+
+
+        </li>
+        <li class="nav-item" style="margin-right: 2px">
+          <a id="addOption" (click)="addOption()" id="addOption" class="nav-link"><i class="fa fa-plus"
+              aria-hidden="true"></i></a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="tab-content" id="myTabContent" formArrayName="optionYears">
+      <div *ngFor="let option of getOptions(igce); let k = index; let f = first" [class.active]="this.index === k"
+        [class.show]="this.index === k" [formGroupName]="k" class="tab-pane fade" role="tabpanel"
+        [attr.id]=" 'prefix' + k">
+        <!---igce Option Years -->
+        <span class="mt-2 mb-1 ap-detail-title">Independent Government Cost Estimate (IGCE)</span>
+        <!-- <h3>
+                Change detection is triggered at:
+                <span [textContent]="_time | date:'hh:mm:ss:SSS'"></span>
+            </h3> -->
+        <!-- <div class="float-right">
+          <a data-toggle="modal" data-target=".bd-example-modal-lg"><img src="assets/HR.png" height="73" width="180"></a>
+          </div> -->
+        <div class="row">
+          <div class=" col mt-3">
+            <div
+              style="color:#444444; font-weight:bold; font-size:15px; background-color:#ebebeb; text-align:left; padding:6px; width: 377px"
+              data-toggle="tooltip" data-placement="left" title="Period of Performance can be changed in Genral page">
+              Period of Performance: &nbsp;{{this.popStart | date:'MM/dd/yyyy'}} -
+              {{this.popEnd | date:'MM/dd/yyy'}}</div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div *ngIf="f" class="col-2 p-2 ml-2">
+            <span class="mt-5" style="color:#1f5fbd; font-weight: 400; font-size:15px; padding:8px;">Base
+              Period</span>
+          </div>
+          <div *ngIf="!f" class="col-2 p-2 ml-2">
+            <span class="mt-5" style="color:#1f5fbd; font-weight: 400; font-size:15px; padding:8px;">Option Year
+              {{k}}</span>
+          </div>
+
+          <div class="col-3" style="margin-left: -30px">
+            <div class="form-group">
+              <div class="textfield-box">
+                <input [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                  type="date" (click)="startDatess()" class="form-control mb-2" formControlName="startDate"
+                  name="startDate" min="{{this.popStart}}" max="{{this.popEnd}}">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div class="form-group">
+              <div class="textfield-box" [class.disabledDiv]="this.endDatess == false">
+                <input [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                  type="date" class="form-control mb-2" formControlName="endDate" name="endDate"
+                  min="{{option.get('startDate').value}}" max="{{this.popEnd}}">
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr style="border-top: dotted 1px; color: #2e73dc" />
+        <div>
+          <div class="col-3 float-left">
+            <div class="form-group">
+              <div class="textfield-box">
+                <select [disabled]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                  (change)="addClin(k,$event)" type="text" class="form-control" id="product">
+                  <option *ngFor="let c of awardType" [ngValue]="c">{{c}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="float-right igceback mr-2 text-center">
+              <div class="targetBudget p-1 mb-2" style="background-color: #006e8c;">
+                <div class="inlinepara">
+                  <p *ngIf="f">Base Year Total</p>
+                  <p *ngIf="!f"> Option Year {{k}} Total</p>
+                </div>
+              </div>
+              &nbsp;<span [attr.id]="'totalbaseyear' + k"
+                class="p-2 text-center">${{ this.option.get('totalbaseyear').value | number:'1.2-2' }}</span>
+
+              <!-- <span class="input-group-text" style="font-size: 14px; margin-top: -3px; position: absolute; margin-left: -73px;">$</span>
+                     
+            <input [attr.id]="'totalbaseyear' + k"
+              [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+              type="text" style="border: none; background: none; margin-right: -140px; margin-left: -63px;padding: none; margin-top: -14px; color: #4c7a34;
+              font-weight: bold;
+              font-size: 15px;"
+              formControlName="totalbaseyear"> -->
+            </div>
+            <div class="float-right igceback mr-2 text-center" [class.alert-red]="this.igceTotal1 > this.valueBudget">
+              <div class="targetBudget p-1 mb-2" style="background-color: #006e8c;">IGCE Total</div>
+              &nbsp;<span id="igceTotal" class="p-2">${{ this.igce.get('igceTotal').value }}</span>
+            </div>
+            <!-- <div class="float-right igceback mr-2 text-center"
+            [class.alert-red]="this.igce.get('igceTotal').value > this.budget">
+            <div class="targetBudget p-1 mb-2" style="background-color: #006e8c;">Target Budget</div>
+            &nbsp;<span class="p-2 text-center">${{this.budget }}</span>
+          </div> -->
+            <div class="float-right igceback mr-2 text-center">
+              <div class="targetBudget p-1 mb-2" style="background-color: #006e8c;">Target Budget</div>
+              &nbsp;<span class="p-2 text-center">${{this.budget }}</span>
+            </div>
+          </div>
+        </div>
+
+
+        <!---igce clin -->
+        <div formArrayName="clins">
+          <div *ngFor="let clin of getClins(option); let i = index">
+            <div [formGroupName]="i">
+              <div class="form-group" style="display: none">
+                <div class="textfield-box">
+                  <input [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                    type="text" class="form-control mb-2" formControlName="clinTitle">
+                </div>
+              </div>
+              <div class="row" style=" margin-left: 10px; margin-top: 80px; ">
+                <div class="float-left" style="width: 100px">
+
+                  <span
+                    style="white-space:nowrap; color:#275ec2; font-weight:bold; font-size:15; text-align:left; width:null; height:null; font-family: Arial, SansSerif;">Group
+                    {{i+1}}</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row mt-2 mb-1" [attr.id]="'prefix' + i">
+                  <div class="col" style="border: 1px solid #BCD3E4; background:#EFF4F8; padding: 10px;">
+                    <div class="float-left ml-3"
+                      style="color: rgb(24, 62, 103); font-weight: bold; font-family:Arial,SansSerif; font-size:13px;">
+                      {{clin.get('clinTitle').value}}
+                    </div>
+                    <a [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                      class="float-right" (click)="removeClin(option.controls.clins, i)"><i class="fa fa-times"
+                        aria-hidden="true" style='font-size:125%; color: #2e73dc'></i></a>
+                    <div class="float-right ml-2 mr-3"
+                      style="color: rgb(24, 62, 103); font-weight: bold; font-family:Arial,SansSerif; font-size: 13px; ">
+                      Remaining Budget: $
+                      <span [attr.id]=" 'remaining' + k + i"
+                        style="color:#0c59cf">{{clin.get('remainingTotal').value}}</span>
+                    </div>
+
+                    <!-- <div class="float-right ml-2"
+                      style="color: rgb(24, 62, 103); font-weight: bold; font-family:Arial,SansSerif; font-size:13px;">
+                      Remaining Budget: <span style="color:#0c59cf; font-weight: bold; margin-right: 3px">$</span><input
+                        [attr.id]="'remaining' + k + i"
+                        [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                        type="text" style="border: none; background: #EFF4F8; color: #2e73dc;font-weight: bold;"
+                        formControlName="remainingTotal">
+                    </div> -->
+
+                    <div class="float-right mr-2"
+                      style="color: #0c59cf; font-weight: bold; font-family:Arial,SansSerif; font-size:13px;">
+                      Estimated Budget: <span [class.alert-red]="this.estimatedTotal1 > this.valueBudget"
+                        style=" font-weight: bold; margin-right: 3px">$</span><input
+                        [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                        style="color: #0c59cf;font-weight: bold; margin-top: -2px" autocomplete="off"
+                        [class.blue-back]="this.estimatedTotal1 < this.valueBudget"
+                        [class.alert-red]="this.estimatedTotal1 > this.valueBudget"
+                        [ngStyle]="{'background':this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated' || clin.get('estimatedTotal').value ?'transparent':'white','border':this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated' || clin.get('estimatedTotal').value?'none':'1px solid gray'}"
+                        type="text" (keypress)="keyPress($event)" formControlName="estimatedTotal"
+                        [attr.id]=" 'estimated' + k + i">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product segment -->
+              <!---igce Clin -->
+              <div class="product-container mt-3" style="margin-bottom: -50px;"
+                *ngIf="clin.get('estimatedTotal').value !== ''">
+
+                <table class="table table-striped mb-0 border">
+
+                  <thead>
+
+                    <tr>
+                      <th scope="col">Item No.</th>
+                      <th scope="col">
+
+                        Description
+
+
+                      </th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Unit of Measure</th>
+                      <th scope="col">Unit Price</th>
+                      <th scope="col">Total Cost</th>
+                      <th scope="col" data-toggle="tooltip" data-placement="left" title="Delete CLIN">
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody formArrayName="productrows">
+                    <tr *ngFor="let product of getProducts(clin); let j = index" [formGroupName]="j">
+                      <td><input
+                          [readonly]="this.status == 'Shared' || this.status == 'Draft' || this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                          class="form-controls" formControlName="clin" value="{{j+1}}"></td>
+                      <td>
+
+                        <div *ngIf="clin.get('clinTitle').value =='Freight'">
+                          <textarea
+                            [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated' || this.status=='Shared' || this.status=='Draft'"
+                            class="form-controls" rows="1" formControlName="description"></textarea>
+                          <div class="form-controls d-none" rows="1">{{product.get('description').setValue("Freight")}}
+                          </div>
+                        </div>
+
+                        <div *ngIf="clin.get('clinTitle').value =='Travel'">
+                          <textarea
+                            [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated' || this.status=='Shared' || this.status=='Draft'"
+                            class="form-controls" rows="1" formControlName="description"></textarea>
+                          <div class="form-controls d-none" rows="1">{{product.get('description').setValue("Travel")}}
+                          </div>
+                        </div>
+                        <div *ngIf="clin.get('clinTitle').value =='Other Direct Cost'">
+                          <textarea
+                            [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated' || this.status=='Shared' || this.status=='Draft'"
+                            class="form-controls" rows="1" formControlName="description"></textarea>
+                          <div class="form-controls d-none" rows="1">
+                            {{product.get('description').setValue("Other Direct Cost")}}</div>
+                        </div>
+
+                        <div
+                          *ngIf="clin.get('clinTitle').value =='Custom' || clin.get('clinTitle').value =='Product' || clin.get('clinTitle').value =='Labor'">
+                          <textarea
+                            [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                            class="form-controls" rows="1" formControlName="description"></textarea>
+                        </div>
+
+
+
+
+                        <!-- <div
+                              *ngIf="clin.get('clinTitle').value =='Custom' || clin.get('clinTitle').value =='Product'">
+                              <textarea class="form-controls" rows="1" formControlName="description"></textarea></div> -->
+
+                      </td>
+                      <td>
+                        <div *ngIf="clin.get('clinTitle').value =='Labor'">
+                          <input
+                            [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                            class="form-controls" formControlName="quantity" autocomplete="off"
+                            (keypress)="keyPress($event)">
+                        </div>
+
+                        <div
+                          *ngIf="clin.get('clinTitle').value =='Travel' || clin.get('clinTitle').value =='Freight' || clin.get('clinTitle').value =='Other Direct Cost' ">
+                          <input
+                            [readonly]="this.status=='Shared' || this.status=='Draft' || this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                            type="text" class="form-controls" (keypress)="keyPress($event)" autocomplete="off"
+                            formControlName="quantity" value="{{this.unitPrice}}">
+                          <span class="d-none"> {{product.get('quantity').setValue('1')}}</span>
+                        </div>
+
+                        <div *ngIf="clin.get('clinTitle').value =='Custom' || clin.get('clinTitle').value =='Product'">
+                          <input
+                            [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                            class="form-controls" formControlName="quantity" autocomplete="off"
+                            (keypress)="keyPress($event)">
+                        </div>
+
+                      </td>
+                      <td>
+                        <div *ngIf="clin.get('clinTitle').value =='Labor'">
+                          <input
+                            [readonly]="this.status=='Draft' ||this.status=='Shared' ||this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                            type="text" class="form-controls" autocomplete="off" formControlName="unitmesure"
+                            value="{{this.Labor}}">
+                        </div>
+
+                        <div
+                          *ngIf="clin.get('clinTitle').value =='Travel' || clin.get('clinTitle').value =='Freight' || clin.get('clinTitle').value =='Other Direct Cost' ">
+                          <input
+                            [readonly]="this.status=='Draft' ||this.status=='Shared' || this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                            type="text" class="form-controls" autocomplete="off" formControlName="unitmesure"
+                            value="{{this.na}}">
+                        </div>
+                        <div *ngIf="clin.get('clinTitle').value =='Custom' || clin.get('clinTitle').value =='Product'">
+                          <div class="textfield-box" style="width: 100px">
+                            <select
+                              [disabled]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                              type="text" class="form-controls" id="unitmesure" formControlName="unitmesure">
+                              <option value="">EA</option>
+                              <option *ngFor="let c of unitofMesureService" [ngValue]="c">{{c}}</option>
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" style="font-size: 14px;  margin-top: 2px">$</span>
+                          </div>
+                          <input [attr.id]="'unitprice' + k + i + j" (keypress)="keyPress($event)"
+                            [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                            type="text" class="form-controls col" autocomplete="off" formControlName="unitprice"
+                            style="margin-left: -14px" aria-label="Amount (to the nearest dollar)"
+                            [value]="product.get('unitprice').value">
+                        </div>
+                        <!-- <div class="text-danger"
+                                *ngIf="product.get('unitprice').invalid && product.get('unitprice').dirty ">
+                                *Numbers Only
+                              </div> -->
+                      </td>
+                      <td style="width: 150px; overflow: hidden;">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" style="font-size: 14px; margin-top: 2px">$</span>
+                          </div>
+                          <input [attr.id]="'total' + k + i + j"
+                            [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                            type="text" class="form-controls col totalcost" style="margin-left: -14px"
+                            autocomplete="off" formControlName="totalcost" aria-label="Amount (to the nearest dollar)"
+                            readonly>
+                        </div>
+                      </td>
+                      <td style="position: absolute; margin-left: -18px; height: 100%;" data-toggle="tooltip"
+                        data-placement="bottom" title="Delete SLIN"> <a
+                          [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                          *ngIf="getProducts(clin).length > 1" (click)="removeProduct(clin.controls.productrows, j)"><i
+                            class="fa fa-trash-o mr-1" aria-hidden="true"
+                            style='font-size:125%; margin-top: 6px;'></i></a>
+                      </td>
+
+                    </tr>
+
+                  </tbody>
+                  <!-- <tfoot>
+                    <tr>
+                      <td colspan="5"></td>
+                      <td
+                        style="font-family: Arial, SansSerif; font-size: 14px; color: rgb(0, 3, 51); line-height: 1; vertical-align: middle; padding: 2px; background-color: rgb(209, 225, 237); text-align: center; border-width: 1px 0px; border-style: solid none; border-bottom-color: rgb(0, 164, 211); border-top-color: rgb(0, 164, 211); width: 109px; height: 10px;">
+                     
+                              <span class="input-group-text" style="font-size: 14px; margin-top: -1px; position: absolute; margin-left: -73px;">$</span>
+                     
+                        <input [attr.id]="'clinTotal' + k + i"
+                          [readonly]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                          type="text" style="border: none; background: none; margin-right: -140px; margin-left: -60px;padding: none;"
+                          formControlName="clinTotal">
+                      </td>
+
+
+                      <td></td>
+                    </tr>
+                  </tfoot> -->
+                  <tfoot>
+                    <tr>
+                      <td colspan="5"></td>
+                      <td
+                        style="font-family: Arial, SansSerif; font-size: 14px; color: rgb(0, 3, 51); line-height: 1; vertical-align: middle; padding: 2px; background-color: rgb(209, 225, 237); text-align: center; border-width: 1px 0px; border-style: solid none; border-bottom-color: rgb(0, 164, 211); border-top-color: rgb(0, 164, 211); width: 109px; height: 10px;">
+                        <span [attr.id]="'clinTotal' + k + i">${{ clin.get('clinTotal').value }}</span></td>
+                      <td></td>
+                    </tr>
+                  </tfoot>
+                </table>
+
+                <div class="col-12 mt-2">
+                  <button [disabled]="this.status=='Accepted' || this.status=='Initiated' || this.status=='Generated'"
+                    type="submit" (click)="addProduct(i,k)" class="btn btn-sm btn-primary float-right"><i
+                      class="fa fa-plus mr-2" aria-hidden="true"></i>Add Item</button>
+                </div>
+
+
+                <div class="mb-5">
+                </div>
+
+              </div>
+              <!-- End Product -->
+
+            </div><br>
+
+          </div>
+          <!-- End Clin -->
+
+          <!-- End Option Years -->
+          <!-- 
+          <pre> {{igce.value | json}} </pre> -->
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+  </form>
+</div>
+
+
+
+<div>
+  <button (click)="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
+      aria-hidden="true"></i></button>
+</div>
+
+
+<!-- <ngx-spinner></ngx-spinner> -->
+
+<!-- <ngx-spinner class="myspiner"
+        bdColor="rgba(1, 13, 48, 0.89)" size="medium" type="ball-beat" color="#fff"></ngx-spinner> -->

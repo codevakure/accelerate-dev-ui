@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Entered the install phase... Adding Angular files
+      - npm i -g @angular/cli
+      - npm install --save @angular-devkit/build-angular
+  pre_build:
+    commands:
+      - echo Nothing to do here
+  build:
+    commands:
+      - echo Build started on `date`
+      - ng build --base-href ./
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - ls -al
+      - ls -al dist/
+      - pwd
+      - echo Post build completed
+artifacts:
+  files:
+    - dist/HHS-PACS-mine/**/*
+  discard-paths: no
+  base-directory: .

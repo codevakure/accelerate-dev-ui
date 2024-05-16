@@ -1,0 +1,93 @@
+{"id":"HHSLS03LGOL5H",
+"SOL":{"id":"5d55ab19b387edf08aa035a0",
+"sol_no":"HHSLS03LGOL5H",
+"projectTitle":"Test Varun V3",
+"capabilityPerformance":"",
+"contractVehicle":"",
+"contractType":"",
+"awardType":"",
+"bundlingDetermination":""
+,"form_id":"5bf38304a0ab7d1b9c3c6d88",
+"status":"Published",
+"description":"Biomedical and Related Research Grant Application Support Services",
+"itornonit":"IT","createdBy":"Mehul",
+"selection":"NewRequirement",
+"catalogue":"1120 DEGAUSSING & MINE SWEEPING EQUIPMEN",
+"acqConsideration":"",
+"acqMethod":"",
+"baAddress":"8701 Georgia Avenue Silver Spring, MD 20910",
+"baEmail":"daren.arnold@aurotechcorp.com",
+"baName":"Daren",
+"baPhone":"+19998887776",
+"coAddress":"200 Independence Ave SW Washington DC 20201",
+"coEmail":"imnnetpal.brar@aurotechcorp.com",
+"coName":"Imneet",
+"coPhone":"+18577569131",
+"performanceApproach":"",
+"rAddress":"8701 Georgia Avenue Silver Spring, MD 20910",
+"rEmail":"mehul.gulati@hhs.gov","rName":"Mehul","rPhone":"+13016617483","requirementsType":"","productKind":"Service","anticipatedPop":"2019-08-16","estimatedBudgett":"25000","productService":"Product","similarNumber":"Server","statementofNeed":"","typeofWork":"","backgroundStatement":"","categoryManagement":"","naicscode":"Other Food Crops Grown Under Cover ","performanceBased":"performanceNo","popendDate":"","popstartDate":"","serverable":"non-severable","startdate":"08-27-2019"},
+"SOW":{"id":"5d55ab194ba3407337d37bfe"},
+"Evaludation_Criteria":{"id":"5d55ab19aea89a4b341f2698",
+"evaluationCriteria":[
+    {
+        "volumeName":"Volume 1",
+        "factorRows":[
+    {
+        "factorName":"Technical Capabilities",
+        "factorText":"<div>1. Understanding of the work, including creativity and thoroughness shown in understanding the objectives of the SOW and specific tasks, and planned execution of the project.</div><div>2. Evidence of specific methods and techniques for completing each discrete task, to include such items as quality assurance, and customer-service.</div><div>3. Ability to address anticipated potential problem areas, and creativity and feasibility of solutions to problems and future integration of new processes and technology enhancements.</div><div>4. Quality and effectiveness of the allocation of personnel and resources.</div>",
+        "factorScore":"Acceptable",
+        "factorPoints":""
+    },
+{
+    "factorName":"Technical Capabilities",
+    "factorText":"<div>1. Understanding of the work, including creativity and thoroughness shown in understanding the objectives of the SOW and specific tasks, and planned execution of the project.</div><div>2. Evidence of specific methods and techniques for completing each discrete task, to include such items as quality assurance, and customer-service.</div><div>3. Ability to address anticipated potential problem areas, and creativity and feasibility of solutions to problems and future integration of new processes and technology enhancements.</div><div>4. Quality and effectiveness of the allocation of personnel and resources.</div><div><br></div>",
+    "factorScore":"",
+    "factorPoints":""}
+    ]
+}
+],
+"mandatoryCriterias":"<div>dfdfdvav axcv vsadvasdfsadfsafsafsafsadfs</div>"},
+"IGCE":{"id":"5d55ab19a8f9f4f88560144f"},
+"ESTIMATE":{"id":"5d55ab19ccdd0158d34e3d0d"},
+"Tradeoffs":{"id":"5d55ab1927c5385a3744e539"},
+"Competition":{"id":"5d55ab192a8cf2aefab1b2b9"},
+"Compatibility":{"id":"5d55ab19f3e15d4a521ec57c"},
+"Constraints":{"id":"5d55ab19b9630b10331da895"},
+"FORM":{"id":"5d55ab1936b4ee58bfb0ced2","Bundling":"Yes","SDVOB":"","acqConsideration":"","acqMethod":"","anticipatedPop":"2019-08-16","awardType":"","baAddress":"8701 Georgia Avenue Silver Spring, MD 20910","baEmail":"daren.arnold@aurotechcorp.com","baName":"Daren","baPhone":"+19998887776","backgroundStatement":"","bundlingDetermination":"","capabilityPerformance":"","catalogue":"1120 DEGAUSSING & MINE SWEEPING EQUIPMEN","categoryManagement":"","coAddress":"200 Independence Ave SW Washington DC 20201","coEmail":"imnnetpal.brar@aurotechcorp.com","coName":"Imneet","coPhone":"+18577569131","contractType":"","contractVehicle":"","createdBy":"Mehul","description":"Biomedical and Related Research Grant Application Support Services","eightA":"","estimatedBudgett":"25000","form_id":"5bf38304a0ab7d1b9c3c6d88","hubzoneSB":true,"itornonit":"IT","method_of_solicitation":"RFP","naicscode":"111120-Oilseed (except Soybean) Farming","offerDueDate":"2019-08-22","offerDueTime":"00:00","orderNumber":"4567879","percent":"","performanceApproach":"","performanceBased":"performanceNo","popendDate":"","popstartDate":"","productKind":"Service","productService":"Product","projectTitle":"Test Varun V3","proposedAction":"Non-Competitive","rAddress":"8701 Georgia Avenue Silver Spring, MD 20910","rEmail":"mehul.gulati@hhs.gov","rName":"Mehul","rPhone":"+13016617483","requirementsType":"","requisitionNumber":"789867","selection":"NewRequirement","serverable":"non-severable","setAside":"","similarNumber":"Server","smallBusiness":true,"sol_no":"HHSLS03LGOL5H","startdate":"08-27-2019","startime":"","statementofNeed":"","status":"Published","typeofWork":"","unrestricted":"","viewed":"opened","womenSB":"","starttime":"01:00","a27_yes":"X","a27_no":"","size_standards_dollars":"0.75","qandaDate":"08-27-2019","qandaTime":"01:00","solicitationTitle":"Test Varun V3 "},
+"DELIVERY":{"id":"5d55ab199e25fa2b9257e16e","description":"<div>dfadf asdf</div>"},
+"PACKAGING":{
+    "id":"5d55ab19c17660acc0850548",
+    "clauses":[
+        {"clause 1":"Data 1"},
+        {"clause 2":"Data 2"}],
+        "description":"<div class=\"ql-align-justify\"><span style=\"background-color: rgb(255, 255, 255);\">Contract Terms and Conditions--Commercial Items</span></div><div class=\"ql-align-justify\"><br></div><div class=\"ql-align-justify\"><br></div>"},
+        "SUPPLY":{
+            "id":"5d55ab192746aa8624d82fa3",
+            "description":"<div>adf afd asdfdfdadfas as fddf adf adsf sfasdf saf</div>"},
+        "INSTRUCTION":{"id":"5d55ab19db1893eb3cf1a871"},
+        "INSPECTION":{
+                    "id":"5d55ab19beee28d1d6484d0f",
+                    "description":"<div><span style=\"background-color: rgb(255, 255, 255);\">Service Contract Reporting Requirements</span></div>"},
+        "CONTRACT_ADMIN":{"id":"5d55ab19bd5e7b69f0e29d81"},
+        "CONTRACT_REQ":{"id":"5d55ab1a0dd6fb413925fae1"},
+        "CONTRACT_CLAUSE":{"id":"5d55ab19f323016ede1705d5"},
+        "CERT":{"id":"5d55ab19dc54e34056311074"},
+        "VENDOR_QA":{
+            "id":"5d55ab1ade2b355d6e5d9096",
+            "sol_no":"HHSLS03LGOL5H",
+            "vendorQAs":[
+                {
+                    "vendor":"Dummy Sandy Springs Bank",
+                    "question":"Dummy- What technology do you use for ticketing?",
+                    "complete":true,
+                    "response":"testing",
+                    "assigned":"Ashley Spence"},
+                    {
+                        "vendor":"Sun Trust",
+                        "question":"What technology do you use for ticketing?",
+                        "complete":true,
+                        "response":"Ask Assigneeeeee",
+                        "assigned":"Imneet S. Brar"
+                        }
+                    ],
+"projectTitle":"Test Varun V3"}}

@@ -1,0 +1,30 @@
+variables:
+    RUN_ENV_LIST: "sandbox integration staging prod"
+  build:docker:
+    stage: build
+    tags:
+      - shellBuild
+    script:
+      - |+
+        for dirName in *
+        do
+          if [ -d $dirName ]
+          then       
+            IFS=' ' read -r -a list <<< "$RUN_ENV_LIST"
+            for item in ${list[@]}
+            do
+              cd $dirName
+              if [ -f Dockerfile ]
+              then
+                regName=`echo $dirName'_'$item`
+                cp ../$item.env .env
+                docker login -u $USER_NAME -p $USER_PW $REGISTRY_HOST
+                docker build -t $REGISTRY_HOST/hhs-accelerate/$CI_PROJECT_NAME/$regName --build-arg RUNENV=$item .
+                docker push $REGISTRY_HOST/hhs-accelerate/$CI_PROJECT_NAME/$regName
+              fi
+              cd ${CI_PROJECT_DIR}
+            done
+          fi
+        done
+  
+  

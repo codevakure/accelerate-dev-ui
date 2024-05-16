@@ -1,0 +1,38 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Entered the install phase... Adding Angular files
+      - NODE_VERSION="8.12.0"
+      - set -ex
+      - wget "https://nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" -O node-v$NODE_VERSION-linux-x64.tar.gz 
+      - wget "https://nodejs.org/download/release/v$NODE_VERSION/SHASUMS256.txt.asc" -O SHASUMS256.txt.asc 
+      - tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 
+      - rm "node-v$NODE_VERSION-linux-x64.tar.gz"
+      - ln -s /usr/local/bin/node /usr/local/bin/nodejs 
+      - rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
+      - npm set unsafe-perm true
+      - npm i -g @angular/cli
+      - npm install --save @angular-devkit/build-angular
+  pre_build:
+    commands:
+      - echo Get AWS credentials
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  build:
+    commands:
+      - echo Build started on `date`
+      - ng build --base-href ./
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - pwd
+      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
+      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG 
+      - echo Pushing the Docker image...
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+artifacts:
+  files:
+    - appspec.yml
+    - scripts/*
+  discard-paths: no

@@ -1,0 +1,192 @@
+<div class="col-sm-12 col-md-12 cl-lg-11 col-xl-11">
+  <span class="mt-2 ap-detail-title">Points of Contact</span>
+
+
+<form [formGroup]="projectGeneral" novalidate (change)="onChange(projectGeneral);">
+    <div class="mt-4"><span class="ap-detail-title sowTitle" style="font-size: 13.5px; color:#1a355d;">Points of Contact*</span></div>
+<div [hidden]="this.role == 'Contracting Officer'">
+  <div class="form-group mt-3" style="margin-left: 20px;">
+    <label class="label-class" style="font-weight: 700;">Contracting Officer &nbsp; &nbsp;<i
+      [hidden]="this.status == 'Initaited' || this.status == 'Published' || this.status == 'Accepted' " id="disableIcon" class="fa fa-trash-o" style="cursor: pointer" aria-hidden="true"
+        (click)="removeCo()"></i></label>
+  </div>
+  <div class="form-group col-md-7">
+    <div class="textfield-box">
+      <ng-select [items]="coFilter" #select bindLabel="fullCode" dropdownPosition="auto"
+        bindValue="fullCode" labelForId="coPointsofContact" placeholder="Select CO" [virtualScroll]="true"
+        formControlName="coName">
+        <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+          <div id="updatePOC1" (click)="updatePointsofcontact(item)">
+            <span *ngIf="item.firstName != 'Not'">{{item.firstName}}&nbsp;{{item.lastName}}</span>
+            <span id="updatePOC2" (click)="updatePointsofcontact(item)"
+              *ngIf="item.firstName == 'Not'">{{(item.email.split('@')[0].split('.'))[0].charAt(0).toUpperCase() +  (item.email.split('@')[0].split('.'))[0].slice(1)}}</span>
+          </div>
+        </ng-template>
+      </ng-select>
+    </div>
+  </div>
+
+  <div class="form-group col-md-7" style="filter: invert(5%);">
+    <div class="textfield-box">
+      <label class="label-class mb-1">Contact Information</label>
+      <!-- <input class="form-control" formControlName="coAddress" type="text"> -->
+      <div class="form-control" style="filter: invert(5%);">
+        {{this.projectGeneral.get("coOfficeName").value}}&nbsp;{{this.projectGeneral.get("coAddress").value}}
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-left: 2px;">
+    <div class="form-group col-md-4" style="filter: invert(5%);">
+      <div class="textfield-box">
+        <label class="label-class mb-1">Email</label>
+        <div class="form-control">
+          {{this.projectGeneral.get("coEmail").value}}&nbsp;
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-3" style="filter: invert(5%);">
+      <div class="textfield-box">
+        <label class="label-class mb-1">Phone Number</label>
+        <!-- <input class="form-control" formControlName="coPhone" type="text"> -->
+        <div class="form-control">
+          {{this.projectGeneral.get("coPhone").value}} &nbsp;
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <hr> -->
+<div [hidden]="this.role == 'Program Officer'">
+  <div class="form-group mt-3" style="margin-left: 20px;">
+    <label class="label-class" style="font-weight: 700;">Program Manager</label>
+  </div>
+  <div class="form-group col-md-7" style="filter: invert(5%);">
+    <div class="textfield-box">
+      <label class="label-class mb-1">Name</label>
+      <div class="form-control">{{this.projectGeneral.get("rName").value}}&nbsp;</div>
+    </div>
+  </div>
+  <div class="form-group col-md-7" style="filter: invert(5%);">
+    <div class="textfield-box">
+      <label class="label-class mb-1">Contact Information</label>
+      <div class="form-control">{{this.projectGeneral.get("rAddress").value}}&nbsp;</div>
+    </div>
+  </div>
+  <div class="row" style="margin-left: 2px;">
+    <div class="form-group col-md-4" style="filter: invert(5%);">
+      <div class="textfield-box">
+        <label class="label-class mb-1">Email</label>
+        <div class="form-control">{{this.projectGeneral.get("rEmail").value}}&nbsp;</div>
+      </div>
+    </div>
+    <div class="form-group col-md-3">
+      <div class="textfield-box" style="filter: invert(5%);">
+        <label class="label-class mb-1">Phone Number</label>
+        <div class="form-control">{{this.projectGeneral.get("rPhone").value}}&nbsp;</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="mt-4"><span class="ap-detail-title sowTitle" style="font-size: 13.5px; color:#1a355d;">Collaborators</span></div>
+
+
+
+<button  class="btn btn-primary btn-sm-primary mt-3 mb-4" data-toggle="modal" data-target="#exampleModal"
+(click)="loadData()"
+[hidden]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'">Add
+Collaborators</button>
+<div formArrayName="collaborators">
+<div *ngFor="let users of getCollaborators(projectGeneral); let i = index">
+  <div [formGroupName]="i">
+    <div class="form-group mt-3" style="margin-left: 20px;">
+      <label class="label-class" style="font-weight: 700;">Collaborator {{i+1}} &nbsp; &nbsp;<i
+        [hidden]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'" class="fa fa-trash-o" style="cursor: pointer" aria-hidden="true"
+          (click)="removeCollaborators(i)"></i></label>
+    </div>
+    <div class="form-group col-md-7" style="filter: invert(5%);">
+      <div class="textfield-box">
+        <label class="label-class mb-1">Name</label>
+        <div class="form-control" type="text">{{users.get('value').value}}&nbsp;</div>
+      </div>
+    </div>
+    <div class="form-group col-md-7" style="filter: invert(5%);">
+      <div class="textfield-box">
+        <label class="label-class mb-1">Contact Information</label>
+        <div class="form-control" type="text">{{users.get('Address').value}}&nbsp;</div></div>
+    </div>
+    <div class="row" style="margin-left: 2px;" >
+      <div class="form-group col-md-4" style="filter: invert(5%);">
+        <div class="textfield-box">
+          <label class="label-class mb-1">Email</label>
+          <div class="form-control" type="text">{{users.get('email').value}}&nbsp;</div>
+        </div>
+      </div>
+      <div class="form-group col-md-3" style="filter: invert(5%);">
+        <div class="textfield-box">
+          <label class="label-class mb-1">Phone Number</label>
+          <div class="form-control" type="text">{{users.get('Phone').value}}&nbsp;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-header">
+    <img src="assets/hhs-accelerate-logo.png" height="30">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-content">
+    <!-- <div class="modal-footer">
+          <button  class="close" (click)="pushData()" class="btn btn-success float-right">Collaborate</button>
+      </div> -->
+
+
+
+
+    <div class="card border">
+      <div class="card-header p-3">
+        <h5 class="card-title"
+          style="color: #0844a4;font-weight: bold;font-size: 14px;font-family: Arial, SansSerif"><i
+            class="fa fa-tags" style="color: grey" aria-hidden="true"></i> &nbsp; Add Collaborator
+        </h5>
+      </div>
+      <div class="card-body p-5">
+        <ng-select [items]="collaborateUsers" #select bindLabel="fullCode" dropdownPosition="auto"
+          bindValue="fullCode" labelForId="selectusercollab" formControlName="clearValue"
+          placeholder="Collaborate with Users" [virtualScroll]="true">
+          <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+            <div (click)="addCollaborators(item)">
+              <div><span>Name:</span>&nbsp;
+                <span *ngIf="item.firstName != 'Not'">{{item.firstName}}&nbsp;{{item.lastName}}</span>
+                <span
+                  *ngIf="item.firstName == 'Not'">{{(item.email.split('@')[0].split('.'))[0].charAt(0).toUpperCase() +  (item.email.split('@')[0].split('.'))[0].slice(1)}}</span>
+              </div>
+              <!-- <small><b>Role:</b> {{item.roles[0].pkType}} | <b>Location:</b> {{item.address}}</small> -->
+              <small><b>Location:</b> {{item.address}}</small>
+            </div>
+          </ng-template>
+        </ng-select>
+        <!-- <p class="card-text" [innerHTML]="this.scosow"></p> -->
+      </div>
+      <div class="card-footer">
+        <button class="close" (click)="pushData()" class="card-link btn-sm btn btn-success"
+          style="color: white">Collaborate</button>
+        <button type="button" class="btn btn-sm btn-light card-link ml-2"
+          data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+</form>
+</div>

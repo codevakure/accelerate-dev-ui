@@ -1,0 +1,56 @@
+<div class="col-sm-12 col-md-12 cl-lg-11 col-xl-11">
+  <span class="mt-2 ap-detail-title">Summary of Changes</span>
+  <div class="float-right" style="margin-top: -20px">
+  </div>
+
+<div id="contractadmindata" class="mb-3">
+
+  <div class="soc" style="margin-top: 20px;">
+    <div class="changecontainer">
+
+      <div class="change" 
+    *ngFor="let change of allformchanges"
+    [innerHTML]="change"
+    ></div>
+
+    
+    <div class="change" 
+    *ngFor="let change of allclauseschanges"
+    [innerHTML]="change"
+    ></div>
+
+    <div class="change" 
+    *ngFor="let change of manualchanges"
+    [innerHTML]="change"
+    ></div>
+
+    </div>
+    <form name="Form" #f="ngForm">
+      <div class="row" style="margin-top: 10px">
+        <div class="col-12">
+
+
+          <div *ngIf="hideEditor" >
+            <quill-editor 
+            
+            id="editor" [(ngModel)]="this.data" 
+            name="description" format="html"
+              [styles]="{height: '10vh'}" 
+              placeholder="" >
+            </quill-editor>
+          </div>
+
+        </div>
+      </div>
+    </form>
+    <button 
+    *ngIf="hideEditor"
+    class="updatebtn hover"
+    (click)="onContentChanged()"
+    >Update</button>
+  </div>
+  
+  
+  <!-- <pre>{{ f.value | json }}</pre> -->
+</div>
+</div>

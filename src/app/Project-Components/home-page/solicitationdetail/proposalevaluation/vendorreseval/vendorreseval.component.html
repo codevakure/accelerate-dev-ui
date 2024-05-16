@@ -1,0 +1,211 @@
+<div class="header ml-1">
+  <div style="white-space:nowrap; color:#1a355d; 
+              font-weight:bold; font-size:16px;  
+              text-align:left;">
+    Evaluation - {{this.volumename}}
+  </div>
+</div>
+
+
+<nav aria-label="breadcrumb mt-2" style="background-color: none !important;">
+  <ol class="breadcrumb">
+    <li><a (click)="proposals()">Proposals &nbsp; / &nbsp;</a></li>
+    <li><a (click)="back()">Vendor Files &nbsp; / &nbsp;</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Evaluation</li>
+  </ol>
+</nav>
+
+<div class="mt-1">
+
+  <div>
+
+    <button id="clauseLibrary" style="color: #2e73dc" class="btn btn-sm btn-primary shadow-none text-white float-right"
+      data-toggle="modal" data-target=".bd-example-modal-lg">
+      Review Evaluation
+    </button>
+
+    <ul class="nav nav-tabs" id="justifiedTab" role="tablist">
+      <li class="nav-item nav-item1 text-center">
+        <a aria-controls="home" aria-selected="true" class="nav-link active" data-toggle="tab" href="#home"
+          id="home-tab" role="tab">Evaluation</a>
+      </li>
+      <li class="nav-item nav-item1 text-center">
+        <a aria-controls="contact" aria-selected="false" class="nav-link" data-toggle="tab" href="#contact"
+          id="contact-tab" role="tab">Vendor Response Documents</a>
+      </li>
+    </ul>
+
+    <!--loading Table-->
+    <div class="tab-content" id="justifiedTabContent">
+      <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home" role="tabpanel"
+        style="margin-bottom: -16px;
+        z-index:200px;
+        padding: 20px !Important;
+              background:rgb(243, 246, 249) !Important;border-bottom-style:none !Important; border: 1px solid rgb(230, 230, 230)">
+        <form [formGroup]="vendorEvaluation" style="padding: 20px !Important;
+          
+            background: rgb(243, 246, 249) !Important;border-bottom-style:none !Important;margin-top:-15px">
+          <div class="card" style="background-color:rgb(243, 246, 249);">
+
+            <div class="card-body">
+
+              <div *ngFor="let factors of this.factorRows; let i =index">
+
+                <div class="mb-3" style=" color: #2e73dc; padding: 1px; font-weight: 500;">&nbsp; {{i+1}}.
+                  &nbsp;{{factors.factorName}}</div>
+
+
+
+                <div class="form-group">
+                  <label for="strengths">Strengths</label>
+                  <textarea class="form-control bg-white" id="strengths+{{i}}" rows="2"
+                    [readonly]="this.status == 'Complete'" placeholder="Type vendor strengths"
+                    (click)="getIndex(i,'strengths')" (keyup)="getValue($event)" value={{factors.strengths}}></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="weakness">Weakness</label>
+                  <textarea class="form-control bg-white" id="weekness+{{i}}" rows="2"
+                    [readonly]="this.status == 'Complete'" placeholder="Type vendor weakness"
+                    (click)="getIndex(i,'weekness')" (keyup)="getValue($event)" value={{factors.weekness}}></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="Deficiencies">Deficiencies</label>
+                  <textarea class="form-control bg-white" id="Deficiencies+{{i}}" rows="2"
+                    [readonly]="this.status == 'Complete'" placeholder="Type vendor deficiencies"
+                    (click)="getIndex(i,'Deficiencies')" (keyup)="getValue($event)"
+                    value={{factors.Deficiencies}}></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="Remarks">Remarks</label>
+                  <textarea class="form-control bg-white" id="Remarks+{{i}}" rows="2"
+                    [readonly]="this.status == 'Complete'" placeholder="Type vendor remarks"
+                    (click)="getIndex(i,'Remarks')" (keyup)="getValue($event)" value={{factors.Remarks}}></textarea>
+                </div>
+
+
+                <div class="mb-4" style="font-size: 13px; font-weight: 500;">
+                  Score: &nbsp; <span>{{factors.factorPoints || factors.factorScore}}</span>
+                </div>
+              </div>
+
+
+
+
+            </div>
+            <div class="mt-3">
+              <button class="close nav-link btn btn-sm btn-primary" (click)="saveComplete()">Save & Complete</button>
+              <!-- <button class="close nav-link btn btn-sm btn-primary mr-3" (click)="savePending()">Save</button> -->
+            </div>
+          </div>
+
+
+          <!-- <pre class="mt-5"> {{vendorEvaluation.value | json}} </pre> -->
+
+        </form>
+
+
+      </div>
+      <div aria-labelledby="contact-tab" class="tab-pane fade" id="contact" role="tabpanel">
+        <div>
+          <div [class.d-none]="this.attachments != ''" class="alert alert-info" role="alert">
+            <i style="font-size: 140%; color: #1a355d" class="fa fa-info-circle" aria-hidden="true"></i>&nbsp; There are
+            no Attachments
+          </div>
+          <table [class.d-none]="this.attachments == ''" class="table table-striped mb-0 border">
+
+
+            <thead>
+              <tr>
+                <th scope="col">Filename</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let res of this.attachments; let i = index">
+                <td>{{res.fileName}}</td>
+                <td><a style="min-width: 2.5rem;" class="btn" [href]='res.fileLocation' target="_blank"><i
+                      class="fa fa-download" aria-hidden="true"></i></a></td>
+              </tr>
+
+            </tbody>
+
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="assets/hhs-accelerate-logo.png" height="27" style="margin-top: -30px;">
+        <button style="margin-top: -35px;" type="button" id="closeModalPmdashboard" class="close" data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="mt-1 pl-3 pr-3">
+        <div class="ard" style="height: 400px; overflow-y:scroll">
+          <!-- <h5 class="ml-3 mt-2"><b>Mandatory Criteria</b></h5>
+
+            <div class="card p-3">
+                <span [innerHtml]="this.evaluationFactors?.mandatoryCriterias"></span>
+            </div> -->
+          <div class="mb-2">
+            <h5 class="mt-1"><b>Evaluation Criteria</b></h5>
+            <div *ngFor="let eval of this.evalutionPreview?.evaluationCriteria; let i = index">
+              <div class="card p-3">
+                <span style="font-size: 16px; color: #2e73dc">{{i+1}}. &nbsp;{{eval.volumeName}}</span>
+                <div *ngFor="let evalFactors of eval.factorRows">
+                  <div class="p-2 pl-4">
+                    <span><b>{{evalFactors.factorName}}</b></span><br>
+                    <span [innerHtml]="evalFactors.factorText"></span>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="mb-2">
+            <h5 class="mt-1"><b>Instructions</b></h5>
+            <span class="mt-1" [innerHtml]="this.instructionPreview"></span>
+              
+          </div>
+
+          <div class="mb-2">
+            <h5 class="mt-1"><b>Attachments</b></h5>
+            <table *ngIf="attachmentsdata != ''" class="table table-striped mt-3 mb-0 border mt-1">
+              <thead>
+                <tr>
+                  <th scope="col">File Name</th>
+                  <th scope="col">File Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let at of attachmentsdata; let i = index">
+                  <td>{{at.file_name}}</td>
+                  <td>{{at.file_type }}</td>
+                </tr>
+        
+              </tbody>
+        
+            </table>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

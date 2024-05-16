@@ -1,0 +1,322 @@
+ @media (min-width: 1600px){
+    .custom-height4 {
+        height: 343px !IMPORTANT;
+        overflow-y: auto;
+    }
+}
+
+@media (min-width: 1300px){
+  .custom-height4 {
+    height: 303px  ;
+    overflow-y: auto;
+  }
+}
+
+
+@Media screen and (min-width : 1300px){
+  .nav-tabs{
+    top: 35%;
+    z-index: 2;
+    position: relative; 
+  }
+}
+
+.badge {
+  font-size: 90%;
+}
+
+/* .card-body{
+  background-color: #e0ebf3;
+} */
+.card-title {
+  font-size: 1rem;
+  font-weight: 350;
+  letter-spacing: 0;
+  line-height: 1.333334;
+  color: #006fbe;
+  text-transform: uppercase;
+
+  /* margin-bottom: 1rem; */
+}
+
+.table tr:first-child>td{
+  position: sticky;
+  top: 0;
+}
+
+.trclass{
+  background: white;
+  font-weight: 700;
+}
+
+/* .card {
+  border-top: 4px solid #20295b;
+  border-top: 4px solid grey;
+
+} */
+
+.bullet {
+  display: list-item;          /* This has to be "list-item"                                               */
+  list-style-type: disc;       /* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type     */
+  list-style-position: inside;
+  color: red/* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position */
+}
+
+.card::-webkit-scrollbar {
+  width: .4em; 
+}
+.card::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.card::-webkit-scrollbar,
+.card::-webkit-scrollbar-thumb {
+overflow:visible;
+border-radius: 4px;
+}
+.card::-webkit-scrollbar-thumb {
+background: rgba(0,0,0,.2); 
+}
+
+
+.mat-acc {
+  font-size: 12px;
+  color: navy;
+  font-weight: 430;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.mat-acc1 {
+  font-size: 12px;
+  color: rgba(0,0,0,.87);
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+
+.dot {
+height: 9px;
+width: 9px;
+background-color: red;
+border-radius: 50%;
+display: inline-block;
+}
+
+.table tbody {
+top: 455px;
+left: 240px;
+color: #929292;
+font-family: "Arial"," SansSerif";
+text-align: left;
+line-height: 2.8;
+}
+
+.table-class tr:first-child>td{
+  position: sticky;
+  top: 0;
+}
+
+.table thead td, .table thead th {
+top: 428px;
+left: 710px;
+white-space: nowrap;
+color: #404040;
+font-weight: normal;
+font-size: 12.9px;
+font-family: "Arial"," SansSerif";
+text-align: left;
+}
+
+
+.table thead tr {
+  color: rgba(0, 0, 0, 0.54);
+  position: sticky !important;
+  top: 0;
+}
+
+.table tbody td, .table tbody th {
+font-size: 12.9px;
+font-weight: 400;
+height: 3rem;
+padding-top: 0.919643rem;
+padding-bottom: 0.919643rem;
+}
+
+.table th {
+border-top: 1px solid #e1e1e1;
+line-height: 1.228572;
+padding-right: 0.65rem;
+padding-left: 0.65rem;
+vertical-align: top;
+}
+.table td {
+  color: rgb(77, 76, 76);
+  line-height: 1.228572;
+  padding-right: 0.65rem;
+  padding-left: 0.65rem;
+  vertical-align: top;
+  }
+  
+
+
+  
+
+@-webkit-keyframes dyinglight {
+  15% {
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+  }
+  50% {
+    -webkit-transform: rotate(-89deg);
+            transform: rotate(-89deg);
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+
+@keyframes dyinglight {
+  15% {
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+  }
+  50% {
+    -webkit-transform: rotate(-89deg);
+            transform: rotate(-89deg);
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+.dl {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: inline-block;
+}
+
+.dl__square {
+  display: block;
+  width: 75px;
+  height: 75px;
+  background-color: #4285F4;
+  /* background: url("../../../assets/logos/roboyellowclosed.png"); */
+}
+
+.dl__container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-transform-origin: 50% 50% 0;
+          transform-origin: 50% 50% 0;
+  -webkit-animation: dyinglight 1s ease infinite;
+          animation: dyinglight 1s ease infinite;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.dl__corner--top:before,
+.dl__corner--top:after,
+.dl__corner--bottom:before,
+.dl__corner--bottom:after {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  color: #4285F4;
+  content: "";
+}
+
+.dl__corner--top:before {
+  border-left: 1px solid;
+  border-top: 1px solid;
+  top: -6px;
+  left: -6px;
+}
+.dl__corner--top:after {
+  border-right: 1px solid;
+  border-top: 1px solid;
+  top: -6px;
+  right: -6px;
+}
+
+.dl__corner--bottom:before {
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  bottom: -6px;
+  left: -6px;
+}
+.dl__corner--bottom:after {
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  bottom: -6px;
+  right: -6px;
+}
+
+.btn-accept {
+  top:459px; left:540px; color:#000000; font-size:12px; background-color:white; font-family:Arial, SansSerif; padding:6px; border-width:1px; border-style:solid; border-color:#006fbe; width:71px; height:null; border-radius: 5px;
+}
+
+.btn-initiate {
+  top:459px; left:540px; color:#ffffff; font-size:12px; background-color:#006fbe; font-family:Arial, SansSerif; padding:6px; border-width:1px; border-style:solid; border-color:#006fbe; width:71px; height:null; border-radius: 5px;
+}
+
+.nav-tabs .nav-link.active {
+  color: rgb(24, 62, 103);
+  background-color: white;
+  border: 1px solid #d6d6d6;  
+  border-bottom: none;
+  margin-top: 0px;
+  
+
+}
+
+.nav-tabs{
+  top: .4%;
+  z-index: 2;
+  position: relative; 
+}
+
+.iconName{
+  padding: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    text-align: center;
+    right: 11px;
+    top: -4px;
+    font-weight: bold;
+    position: relative;
+    background-color: rgb(214, 212, 233);
+}
+
+.question{
+  left: 12px;
+  position: relative;
+
+}
+
+.question::before{
+  content: '?';
+  position: absolute;
+  left: -24px;
+  top: -2px;
+  border: 2px solid #008db1;
+  color: #008db1;
+  font-weight: 700;
+  font-family: "FontAwesome"," SansSerif";
+  border-radius: 100%;
+  width: 21px;
+  height: 23px;
+  padding: 5px;
+  padding-top: 0px;
+}
+
+/* .ard{
+  height:322px
+} */

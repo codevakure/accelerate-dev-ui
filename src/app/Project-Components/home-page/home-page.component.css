@@ -1,0 +1,458 @@
+
+
+.mont {font-family: montserrat;font-style: bold;}
+.navbar-custom {
+    /* background-color: #20295b; */
+    /* background-color: #112e51; */
+    background: linear-gradient(135deg, #00125b 0%,#00125b 0%,#15396b 28%,#2275ad 60%,#003b89 100%);
+     margin-right: 0!important;  padding-right: 0px !important;}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255,.8);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+}
+.dropdown-item {
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+}
+.footer {
+    bottom: 0;
+    width: 100%;
+  }
+ 
+
+.w3-animate-left{position:relative;animation:animateleft 0.4s; margin-left: 30%}
+@keyframes animateleft{from{left:-10px;opacity:0} to{left:0;opacity:1}}
+.w3-input{padding:9px;display:block;border:none;border-bottom:1px solid #ccc;width:100%; margin-top: -20.5%;}
+.w3-round-xxlarge{border-radius:32px}
+input:focus,select:focus,textarea:focus,button:focus {outline: none;}
+
+.user {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+/* 
+  .containerbg{
+      background-color: rgb(249, 250, 251); 
+      background-color: #ebf3fa;
+      height: 100%;
+  } */
+
+
+
+  /* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+/* select::-ms-expand {
+    display: none;
+} */
+
+.navdrawer-content {
+    background: linear-gradient(45deg, #2e73dc 0%, #1a355d 80%);
+}
+
+.navdrawer-header {
+    background: none;
+    text-align: center;
+    margin-left: -2%;
+    padding: 5%;
+}
+.nav-item{
+    color: white;
+}
+.nav-link{
+    color: white;
+}
+
+.navdrawer-subheader {
+    color: #398bf7;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    /* background-color: #ff4081; */
+    color: #ffc107 !important;
+  }
+  
+  .custom-control-input:checked ~ .custom-control-label::after {
+    /* color: #ff4081; */
+    color: #ffc107 !important;
+  }
+  
+  
+  /* .container {
+    height: 100vh;
+    width: 100vw;
+    font-family: Helvetica;
+  } */
+  
+  .loader {
+    height: 20px;
+    width: 600px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  
+    margin-top: -180px;
+    margin-left: 180px;
+  }
+  .loader--dot {
+    animation-name: loader;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    position: absolute;
+    border: 2px solid white;
+  }
+  .loader--dot:first-child {
+    background-color: #8cc759;
+    animation-delay: 0.5s;
+  }
+  .loader--dot:nth-child(2) {
+    background-color: #8c6daf;
+    animation-delay: 0.4s;
+  }
+  .loader--dot:nth-child(3) {
+    background-color: #ef5d74;
+    animation-delay: 0.3s;
+  }
+  .loader--dot:nth-child(4) {
+    background-color: #f9a74b;
+    animation-delay: 0.2s;
+  }
+  .loader--dot:nth-child(5) {
+    background-color: #60beeb;
+    animation-delay: 0.1s;
+  }
+  .loader--dot:nth-child(6) {
+    background-color: #fbef5a;
+    animation-delay: 0s;
+  }
+  .loader--text {
+    position: absolute;
+    top: 200%;
+    left: 0;
+    right: 0;
+    width: 4rem;
+    margin: auto;
+  }
+  .loader--text:after {
+    /* content: "Loading"; */
+    font-weight: bold;
+    animation-name: loading-text;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes loader {
+    15% {
+      transform: translateX(0);
+    }
+    45% {
+      transform: translateX(230px);
+    }
+    65% {
+      transform: translateX(230px);
+    }
+    95% {
+      transform: translateX(0);
+    }
+  }
+  /* @keyframes loading-text {
+    0% {
+      content: "Loading";
+    }
+    25% {
+      content: "Loading.";
+    }
+    50% {
+      content: "Loading..";
+    }
+    75% {
+      content: "Loading...";
+    }
+  } */
+  
+  .load {
+    width: 100px;
+    height: 80px;
+  }
+  
+  .gear {
+    position: absolute;
+    z-index: -10;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: spin 5s infinite;
+            animation: spin 5s infinite;
+  }
+  
+  .two {
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    -webkit-animation: spin-reverse 5s infinite;
+            animation: spin-reverse 5s infinite;
+  }
+  
+  .three {
+    top: 25px;
+    left: -10px;
+    width: 60px;
+    height: 60px;
+  }
+  
+  @-webkit-keyframes spin {
+    50% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  
+  
+  @keyframes spin {
+    50% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes spin-reverse {
+    50% {
+      -webkit-transform: rotate(-360deg);
+              transform: rotate(-360deg);
+    }
+  }
+  @keyframes spin-reverse {
+    50% {
+      -webkit-transform: rotate(-360deg);
+              transform: rotate(-360deg);
+    }
+  }
+  .lil-circle {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px 2px gray, 0 0 50px white;
+    width: 100px;
+    height: 100px;
+    opacity: .65;
+  }
+  
+  .blur-circle {
+    position: absolute;
+    top: -19px;
+    left: -19px;
+  }
+  
+  .text {
+    color: rgba(1, 13, 48, 0.89);
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+  }
+  
+  
+
+  @-webkit-keyframes dyinglight {
+    15% {
+      -webkit-transform: scale(1.6);
+              transform: scale(1.6);
+    }
+    50% {
+      -webkit-transform: rotate(-89deg);
+              transform: rotate(-89deg);
+    }
+    100% {
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg);
+    }
+  }
+  
+  @keyframes dyinglight {
+    15% {
+      -webkit-transform: scale(1.6);
+              transform: scale(1.6);
+    }
+    50% {
+      -webkit-transform: rotate(-89deg);
+              transform: rotate(-89deg);
+    }
+    100% {
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg);
+    }
+  }
+  .dl {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    display: inline-block;
+  }
+  
+  .dl__square {
+    display: block;
+    width: 75px;
+    height: 75px;
+    background-color: #4285F4;
+    /* background: url("../../../assets/logos/roboyellowclosed.png"); */
+  }
+  
+  .dl__container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-transform-origin: 50% 50% 0;
+            transform-origin: 50% 50% 0;
+    -webkit-animation: dyinglight 1s ease infinite;
+            animation: dyinglight 1s ease infinite;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  
+  .dl__corner--top:before,
+  .dl__corner--top:after,
+  .dl__corner--bottom:before,
+  .dl__corner--bottom:after {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    color: #4285F4;
+    content: "";
+  }
+  
+  .dl__corner--top:before {
+    border-left: 1px solid;
+    border-top: 1px solid;
+    top: -6px;
+    left: -6px;
+  }
+  .dl__corner--top:after {
+    border-right: 1px solid;
+    border-top: 1px solid;
+    top: -6px;
+    right: -6px;
+  }
+  
+  .dl__corner--bottom:before {
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    bottom: -6px;
+    left: -6px;
+  }
+  .dl__corner--bottom:after {
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    bottom: -6px;
+    right: -6px;
+  }
+  
+  @keyframes zoominoutsinglefeatured {
+    0% {
+        transform: scale(.7,.7);
+    }
+    50% {
+        transform: scale(.9,.9);
+    }
+    100% {
+        transform: scale(.7,.7);
+    }
+}
+
+.cardcontainer{
+	animation: zoominoutsinglefeatured 1s infinite ;
+}
+
+.title-background {
+  
+  
+  background: #00125b;
+  background: -moz-linear-gradient(-45deg, #005b40 0%, #00125b 0%, #15396b 28%, #2275ad 60%, #003b89 100%);
+  background: -webkit-linear-gradient(-45deg, #00125b 0%,#00125b 0%,#15396b 28%,#2275ad 60%,#003b89 100%);
+  background: linear-gradient(135deg, #00125b 0%,#00125b 0%,#15396b 28%,#2275ad 60%,#003b89 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00125b', endColorstr='#003b89',GradientType=1 );
+}
+
+
+.card-body2::-webkit-scrollbar {
+  width: .2em !important; 
+}
+.card-body2::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+}
+
+.card-body2::-webkit-scrollbar,
+.card-body2::-webkit-scrollbar-thumb {
+overflow:visible !important;
+border-radius: 2px !important;
+}
+.card-body2::-webkit-scrollbar-thumb {
+background: #2e73dc !important; 
+}
+
+.badge-custom {
+  border-radius: 2px;
+  align-items: center;
+  display: inline-flex;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+  margin-left: -8px;
+  position: absolute;
+  margin-top:-9px;
+}
+
+.fa-share{
+  color: #0844a4 !important;
+}
+.fa-user-plus {
+  color: #0844a4 !important;
+} 
+.fa-commenting-o {
+  color: #0844a4 !important;
+}
+.fa-check-circle-o{
+  color: #0844a4 !important;
+}
+
+.fa-check-square-o {
+  color: #0844a4 !important;
+}
+
+.fa-question-circle-o{
+  color: #0844a4 !important;
+}
+
+.fa-info{
+  color: #0844a4 !important;
+}

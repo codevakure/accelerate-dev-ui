@@ -1,0 +1,588 @@
+<div class="container">
+
+
+    <div>
+
+        <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 custom-top1">
+            <div class="row">
+                <div style="margin-left: 9px" class="col-md-12 col-sm-12 col-lg-8 col-xl-8 grey mt-3 mb-3">
+                    <div>
+                        <h4>{{message}}&nbsp;{{this.username}}!</h4>
+                    </div>
+                    <span style="font-size:105%">Welcome to your Procurement Dashboard</span>
+                </div>
+                <div  class="mx-auto mt-4" 
+                style="z-index: 10 !important;margin-right:0px !Important;
+                padding-right:2%;padding-bottom:10px">
+
+                        <a style="cursor: pointer; margin-right: 10px;" tooltip="Conduct Market Research" flow="left"
+                                    href="{{this.UNITEDs_URL}}/market/search?token={{this.token}}" target="_blank">
+                                <button type="button" class="btn btn-sm btn-primary"
+                                    style="background-color: #009999 ; color: whitesmoke" id="market">
+                                    Access Market Research
+                                </button>
+                            </a>
+
+                    <a *ngIf="createButton" style="cursor: pointer" tooltip="Create new Acquisition Plan" flow="left">
+                        <button (click)="createAcqplan()" type="button" class="btn btn-sm btn-primary"
+                            data-toggle="modal" data-target="#exampleModal"
+                            style="background-color:#2e73dc; color: whitesmoke" id="createnew">
+                            <!-- <i class="fa fa-plus" aria-hidden="true"></i>&nbsp; -->
+                            Create New AP
+                        </button>
+                    </a>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12">
+            <div style="margin-left: 10px" class="row" id="MonthlyAnalysis">
+
+                <div class="card col-8" style="background: white;border-width: 1px;
+                border-style: solid;
+                border-color: #d6d6d6;
+                border-right-width: 1px;
+                border-right-style: solid;
+                border-right-color: #d6d6d6;
+                border-left-width: 1px;
+                border-left-style: solid;
+                border-left-color: #d6d6d6;
+                border-bottom-width: 2px;
+                border-bottom-style: solid;
+                border-bottom-color: #c0c0c0;
+                border-top-width: 1px;
+                border-top-style: solid;
+                border-top-color: #d6d6d6;">
+
+
+                    <div class="card-body">
+                        <h5 class="font2"><span><i style="color: #2e73dc;" class="fa fa-area-chart"
+                                    aria-hidden="true"></i>&nbsp;Monthly
+                                Analysis</span></h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="col-12 p-3" style="display: block;">
+                                <canvas baseChart width="670" height="300" [datasets]="[
+                                { data: this.acqDashArray, label: 'Acquisition' },
+                                { data: this.solDashArray, label: 'Solicitation' },
+                                { data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], label: 'Contracts' }
+                              ]"
+                                    [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
+                                    [legend]="lineChartLegend" [chartType]="lineChartType"
+                                    [plugins]="lineChartPlugins"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-3" style="margin-left: -24px;">
+
+                            <div style="margin-top: 40px;">
+                                <div class="row mb-2">
+                                    <a class="mr-2 text-center" style=" width: 150px; height: 33.33%">
+                                        <div style="background: #154E7E;" class="pr-5 pl-5 pt-1 pb-2">
+                                            <div class="row mt-1">
+                                                <div class="float-right ml-3 text-center">
+                                                    <span class="acqcount ">&nbsp;{{this.acqcount}}</span>
+                                                </div>
+                                            </div>
+                                            <span class="row font2 text-white text-center">Acquisitions</span>
+                                        </div>
+
+                                    </a>
+
+                                    <span class="mr-2 text-center routerbutton"
+                                        style="background: rgba(28, 78, 128, 0.288);">
+                                        <a [routerLink]="['/home/acquisitions']" style="position:relative;top:34%">
+                                            <i class="fa fa-arrow-right" aria-hidden="true" style="color:white"></i>
+                                        </a>
+                                    </span>
+
+                                </div>
+
+
+                                <div class="row mb-2">
+                                    <a class="mr-2 text-center"
+                                        style="background: #2072D9; width: 150px; height: 33.33%">
+                                        <div class="pr-5 pl-5 pt-1 pb-2">
+                                            <div class="row mt-1">
+                                                <div class="float-right ml-3 text-center">
+                                                    <span class="acqcount ">&nbsp;{{this.solcount}}</span>
+                                                </div>
+                                            </div>
+                                            <span class="row font-2 text-white text-center">Solicitations</span>
+
+                                        </div>
+                                    </a>
+
+                                    <span class="mr-2 text-center routerbutton" style="background: #0d53af73;">
+                                        <a [routerLink]="['/home/solicitations']" style="position:relative;top:34%">
+                                            <i class="fa fa-arrow-right" aria-hidden="true" style="color:white"></i>
+                                        </a>
+                                    </span>
+                                </div>
+
+
+
+                                <div class="row mb-2">
+                                    <a class="mr-2 text-center"
+                                        style="background: #2072D9; width: 150px; height: 33.33%">
+                                        <div class="pr-5 pl-5 pt-1 pb-2">
+                                            <div class="row mt-1">
+                                                <div class="float-right ml-3 text-center">
+                                                    <span class="acqcount ">&nbsp;{{this.contractCount}}</span>
+                                                </div>
+                                            </div>
+                                            <span class="row font2 text-white text-center">Contracts</span>
+
+
+                                        </div>
+                                    </a>
+
+                                    <span class="mr-2 text-center routerbutton" style="background: #2e74dc71;">
+                                        <a [routerLink]="['/home/contracts']" style="position:relative;top:34%">
+                                            <i class="fa fa-arrow-right" aria-hidden="true" style="color:white"></i>
+                                        </a>
+
+                                    </span>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="TotalAnalysis" class="col-3 col-md-2 col-sm-12 col-xl-3 col-lg-3 card p-2" style="
+                background: white !important; margin-left: 2%;border-width: 1px;
+                    border-style: solid;
+                    border-color: #d6d6d6;
+                    border-right-width: 1px;
+                    border-right-style: solid;
+                    border-right-color: #d6d6d6;
+                    border-left-width: 1px;
+                    border-left-style: solid;
+                    border-left-color: #d6d6d6;
+                    border-bottom-width: 2px;
+                    border-bottom-style: solid;
+                    border-bottom-color: #c0c0c0;
+                    border-top-width: 1px;
+                    border-top-style: solid;
+                    border-top-color: #d6d6d6;
+                    min-width: 26.2% !important">
+
+                    <div class="card-title" style="border-bottom: 1px solid silver">
+                        <h5 class="p-1"><span><i style="color: #2e73dc" class="fa fa-pie-chart"
+                                    aria-hidden="true"></i>&nbsp; Total
+                                Analysis</span></h5>
+                    </div>
+                    <div>
+                        <div class="col-12" style="     
+                        background: transparent;
+                        margin:auto;
+                        width: 91%;
+                        height: 150px;
+                    ">
+                            <canvas width="220" height="220" baseChart
+                                [data]="[this.acqcount, this.solcount, this.contractCount]" [labels]="pieChartLabels"
+                                [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins"
+                                [colors]="pieChartColors" [legend]="pieChartLegend">
+                            </canvas>
+                        </div>
+                       
+                    </div>
+
+                    <div id="legend">
+                            <div  style="display: inline-block">
+                                    <label class="box" 
+                                    style="background-color: rgba(28, 78, 128, 0.288);"></label> 
+                                    <label class="text"> Acquisitions</label>
+                            </div>
+                            <div style="display: inline-block">
+                                    <label class="box"
+                                    style="background-color:#0d53af73;"></label> 
+                                    <label class="text">Solicitations</label>
+                            </div>
+                            <div  style="display: inline-block">
+                                    <label class="box"
+                                    style="background-color: #2e74dc71;"></label> 
+                                    <label class="text">Contracts</label>
+                            </div>
+                            
+                        </div>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="row mt-4">
+
+
+
+                <div style="margin-left: 9px" id="Questions" class="col-3">
+                    <app-dash-active></app-dash-active>
+                </div>
+
+                <div style="margin-left: -19px" class="col-md-12 col-sm-9 col-lg-9 col-xl-9">
+                    <app-dash-acquisition></app-dash-acquisition>
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="row mt-4">
+                <!-- DropDown Card pannel for Active in dashboard -->
+                <div style="margin-left: 9px" class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                    <app-dash-solicitation></app-dash-solicitation>
+                </div>
+                <!-- DropDown Card pannel for Expired in dashboard -->
+                <div style="margin-left: -19px" class="col-md-12 col-sm-12 col-lg-6 col-xl-6">
+                    <app-dash-expired></app-dash-expired>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="mb-5"></div>
+
+
+
+        <!-- Modal -->
+        <!-- Modal -->
+        <div class="modal fade p-4" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" style="margin-top: 8%" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="assets/hhs-accelerate-logo.png" height="27" style="margin-top: -30px;">
+                        <button style="margin-top: -35px;" type="button" id="closeModalPmdashboard" class="close"
+                            data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+
+                        <ul class="nav nav-justified nav-tabs" id="justifiedTab" role="tablist" style="display: none">
+                            <li class="nav-item active">
+                                <a aria-controls="home" aria-selected="true" class="nav-link active" data-toggle="tab"
+                                    href="#tab1" role="tab">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a aria-controls="contact" aria-selected="false" class="nav-link" data-toggle="tab"
+                                    href="#tab3" role="tab">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a aria-controls="contact" aria-selected="false" class="nav-link" data-toggle="tab"
+                                    href="#tab4" role="tab">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a aria-controls="contact" aria-selected="false" class="nav-link" data-toggle="tab"
+                                    href="#tab5" role="tab">Contact</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a aria-controls="profile" aria-selected="false" class="nav-link" data-toggle="tab"
+                                    href="#tab2" role="tab">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a aria-controls="contact" aria-selected="false" class="nav-link" data-toggle="tab"
+                                    href="#tab7" role="tab">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a aria-controls="contact" aria-selected="false" class="nav-link" data-toggle="tab"
+                                    href="#tab6" role="tab">Contact</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a aria-controls="contact" aria-selected="false" class="nav-link" data-toggle="tab"
+                                    href="#tab8" role="tab">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a aria-controls="contact" aria-selected="false" class="nav-link" data-toggle="tab"
+                                    href="#tab9" role="tab">Contact</a>
+                            </li>
+                        </ul>
+                        <form [formGroup]="projectGeneral" novalidate (keydown.enter)="$event.preventDefault()"
+                            (ngSubmit)="onSubmit(projectGeneral);">
+                            <div class="tab-content p-0" id="justifiedTabContent">
+                                <div aria-labelledby="tab1" class="tab-pane fade show active" id="tab1" role="tabpanel">
+                                    <h5 id="q1header">Hi {{this.username}}! Let's get started on
+                                        drafting your
+                                        acquisition plan.
+                                    </h5>
+                                    <h5 id="q1header2">Is this a new requirement or follow on?</h5>
+                                    <div class="custom-control custom-radio mt-3">
+                                        <input type="radio" (click)="newRequirement()" id="customRadio2"
+                                            formControlName="selection" value="NewRequirement"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio2" id="newreq">New
+                                            Requirement</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" (click)="followOn()" id="customRadio1"
+                                            formControlName="selection" value="FollowOn" class="custom-control-input"
+                                            [attr.disabled]='this.followons'>
+                                        <label class="custom-control-label" for="customRadio1">Follow On</label>
+                                    </div>
+                                    <hr *ngIf="followOnbtn">
+                                    <div class="form-group row p-2" *ngIf="contractnumbers">
+                                        <hr>
+                                        <label for="contractNumber" class="col-5 col-form-label"
+                                            style="font-size: 110%;">Insert existing contract #</label>
+                                        <div class="col-7">
+                                            <input type="text" class="form-control" formControlName="contractNumber"
+                                                placeholder="Enter Contract Number" (keyup)="onKey($event)">
+
+                                        </div>
+
+                                    </div>
+                                    <button type="button" *ngIf="followOnbtn"
+                                        class="btn float-right btn-primary btnNext text-white mt-4 ml-3"
+                                        (click)="searchAp()" disabled>Submit</button>
+                                    <button type="button" id="btnNext1" [disabled]="!newrequirement" (click)="next()"
+                                        class="btn float-right btn-primary btnNext text-white mt-4">Next</button>
+                                </div>
+
+                                <div aria-labelledby="tab3" class="tab-pane fade" id="tab3" role="tabpanel">
+
+                                    <h5 id="q2header1">If known, please select one of the following
+                                        that best
+                                        suits your requirement.</h5>
+                                    <div class="pt-3 pb-3">
+                                        <ng-select [items]="pscList" #select bindLabel="full" bindLabel="full"
+                                            dropdownPosition="auto" bindValue="Acronym" (click)="product()"
+                                            labelForId="productService" placeholder="Select PSC" [virtualScroll]="true"
+                                            formControlName="productService">
+                                            <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+                                                <div >
+                                                    <span (click)="product()">{{item.full}}</span>
+                                                </div>
+
+                                            </ng-template>
+                                        </ng-select>
+                                    </div>
+
+
+                                    <button type="button" id="btnNext2" [disabled]="!btnNext" (click)="next()"
+                                        class="btn float-right mr-3 btn-primary btnNext text-white mt-4">Next</button>
+                                    <button type="button" id="btnPrev1" [disabled]="!btnPrev" (click)="prev()"
+                                        class="btn float-right mr-3 btn-primary btnPrevious text-white mt-4">Previous</button>
+                                </div>
+
+
+                                <div aria-labelledby="tab4" class="tab-pane fade" id="tab4" role="tabpanel">
+
+                                    <h5 id="q2header1">Select the Category of Contracting that best suits your requirement</h5>
+                                    <div class="pt-3">
+                                        <div class="form-group">
+                                            <div>
+                                                <ng-select (click)="categoryPsc()" [items]="categoryManagement" #select bindLabel="full" bindLabel="full"
+                                                dropdownPosition="auto" bindValue="Acronym"
+                                                labelForId="categoryManagement" placeholder="Select Categories" [virtualScroll]="true"
+                                                formControlName="categoryManagement">
+                                                <div (click)="categoryPsc()">
+                                                    <ng-template  ng-option-tmp let-item="item" let-search="searchTerm">
+                                                
+                                                        <div (click)="categoryPsc()">
+                                                            <span>{{item.full}}</span>
+                                                        </div>
+                                        
+                                                    </ng-template>
+                                                </div>
+
+                                              </ng-select>
+                                              </div>
+                                          </div>
+                                    </div>
+
+
+                                    <button type="button" id="btnNext3" [disabled]="!productsNext" (click)="next()"
+                                        class="btn float-right mr-3 btn-primary btnNext text-white mt-4">Next</button>
+                                    <button type="button" id="btnPrev1" [disabled]="!btnPrev" (click)="prev()"
+                                        class="btn float-right mr-3 btn-primary btnPrevious text-white mt-4">Previous</button>
+                                </div>
+
+                                <div aria-labelledby="tab5" class="tab-pane fade" id="tab5" role="tabpanel">
+                                    <h5 class="mb-2" for="catalogue">If
+                                        known, please select a code from the Product and Service Code (PSC)
+                                        list.</h5>
+                                    <div class="pt-3 pb-3" style="margin-top: 1px">
+                                        <ng-select [items]="pscResults" #select bindLabel="fullCode"
+                                            dropdownPosition="auto" bindValue="fullCode" (click)="getPscname()" (click)="searchPsc()" (keyup)="selectPsc($event)"
+                                            labelForId="catalogue" placeholder="Select PSC" [virtualScroll]="true"
+                                            formControlName="catalogue">
+                                            <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+                                                <div (click)="getPscname()">
+                                                    <span>{{item.full_name}}</span></div>
+
+                                            </ng-template>
+                                        </ng-select>
+                                    </div>
+
+
+                                    <button type="button" id="btnNext4" [disabled]="!productsNext" (click)="next()"
+                                        class="btn float-right mr-3 btn-primary btnNext text-white mt-4">Next</button>
+                                    <button type="button" id="btnPrev3" [disabled]="!btnPrev" (click)="prev()"
+                                        class="btn float-right mr-3 btn-primary btnPrevious text-white mt-4">Previous</button>
+
+                                </div>
+
+
+
+
+
+                                <div aria-labelledby="tab2" class="tab-pane fade" id="tab2" role="tabpanel">
+
+                                    <div class="form-group">
+                                        <h5 for="similarNumber" style="margin-bottom: 25px !important">Please
+                                            enter a few keywords or phrases
+                                            that best describe your requirement.</h5>
+                                        <input type="text" id="similarNumber" class="form-control"
+                                            formControlName="similarNumber"
+                                            placeholder="(e.g. type of work, statement of need, vendor, products, services, etc.)"
+                                            tabindex="1" (keyup)="onKeys($event)" required autofocus>
+                                    </div>
+                                    
+                                    <button type="button" id="btnNext5" [disabled]="!inputboolean" (click)="next()"
+                                        class="btn float-right mr-3 btn-primary btnNext text-white mt-4">Next</button>
+                                    <button type="button" id="btnPrev4" [disabled]="!btnPrev" (click)="prev()"
+                                        class="btn float-right mr-3 btn-primary btnPrevious text-white mt-4">Previous</button>
+
+                                </div>
+
+
+                                <div aria-labelledby="tab7" class="tab-pane fade" id="tab7" role="tabpanel">
+                                    <div *ngIf="dateboolean">
+
+                                        <h5>What is your anticipated award date?</h5>
+                                        <div class="pt-2 pb-2">
+                                            <div style="margin-top: 5px" class="col-6">
+
+                                                <input type="date" class="form-control" formControlName="anticipatedPop"
+                                                    id="anticipatedPop" (change)="dateValidation()" (ngModelChange)="dateSelect()"
+                                                    min="{{this.strDateTime}}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button type="button" id="btnNext6" [disabled]="!btnDate" (click)="next()"
+                                        class="btn float-right mr-3 btn-primary btnNext text-white mt-4"
+                                        id="next">Next</button>
+                                    <button type="button" id="btnPrev5" [disabled]="!btnPrev" (click)="prev()"
+                                        class="btn float-right mr-3 btn-primary btnPrevious text-white mt-4">Previous</button>
+
+
+                                </div>
+
+                                <div aria-labelledby="tab6" class="tab-pane fade" id="tab6" role="tabpanel">
+
+                                    <h5 class="mb-3"> Does your requirement possess unusual and
+                                        compelling
+                                        urgency (or other special requirements)? </h5>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" (click)="followOnn()" id="moremoremore"
+                                            class="custom-control-input">
+                                        <label id="test" class="custom-control-label " for="moremoremore">Yes</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" (click)="newRequirementt()" id="usususu"
+                                            class="custom-control-input">
+                                        <label id="test2" class="custom-control-label" for="usususu">No</label>
+                                    </div>
+
+                                    <div class="form-group row p-2" *ngIf="contractnumbers">
+                                        <hr>
+                                        <label for="contractNumber" class="col-5 col-form-label"
+                                            style="font-size: 110%;">Provide brief explanation</label>
+                                        <div class="col-7">
+                                            <input type="text" id="briefExplanation" class="form-control"
+                                                formControlName="contractNumber" placeholder="Brief Explanation">
+
+                                        </div>
+
+                                    </div>
+                                    <button type="button" id="btnNext7" [disabled]="!btnNext" (click)="next()"
+                                        class="btn float-right mr-3 btn-primary btnNext text-white mt-2">Next</button>
+                                    <button type="button" id="btnPrev6" [disabled]="!btnPrev" (click)="prev()"
+                                        class="btn float-right mr-3 btn-primary btnPrevious text-white mt-2">Previous</button>
+                                </div>
+
+
+
+                                <div aria-labelledby="tab8" class="tab-pane fade" id="tab8" role="tabpanel">
+
+                                    <div>
+                                        <h5>Please enter your estimated budget </h5>
+                                        <div class="pt-3 pb-3">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text ml-1">$</span>
+                                                </div>
+                                                <input class="form-control col-5" style="margin-left: -10px" type="text"
+                                                    id="estimatedbudgett" autocomplete="off" (keyup)="onKeysss($event)"  (keypress)="keyPress($event)">
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                    <button type="button" id="btnNext8" [disabled]="!estimatedBudgets" (click)="next()"
+                                        class="btn float-right mr-3 btn-primary btnNext text-white mt-4">Next</button>
+                                    <button type="button" id="btnPrev7" [disabled]="!btnPrev" (click)="prev()"
+                                        class="btn float-right mr-3 btn-primary btnPrevious text-white mt-4">Previous</button>
+
+                                </div>
+
+                                <div aria-labelledby="tab9" class="tab-pane fade" id="tab9" role="tabpanel">
+
+                                    <div>
+                                        <h5 class="mt-2">Last thing! Please insert your project
+                                            title.</h5>
+                                        <div class="pt-2 pb-3">
+                                            <input class="form-control" type="text" formControlName="projectTitle"
+                                                id="projecttitle"></div>
+
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="btn btn-primary mt-4 float-right mr-3 "
+                                            id="submit">Submit</button>
+                                    </div>
+                                    <button type="button" id="btnPrev8" [disabled]="!btnPrev" (click)="prev()"
+                                        class="btn float-right mr-3 btn-primary btnPrevious text-white mt-4">Previous</button>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+
+
+                
+                    <div class="mt-5 modal-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

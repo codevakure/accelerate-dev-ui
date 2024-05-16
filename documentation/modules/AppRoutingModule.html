@@ -1,0 +1,525 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>hhs_pacd-frontend-phase2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">hhs_pacd-frontend-phase2 documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content module">
+                   <div class="content-data">
+
+
+
+<ol class="breadcrumb">
+    <li>Modules</li>
+    <li>AppRoutingModule</li>
+</ol>
+
+
+<ul class="nav nav-tabs" role="tablist">
+    <li  class="active" >
+        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+    <li >
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/app-routing.module.ts</code>
+        </p>
+
+
+
+
+        <div class="container-fluid module">
+            <div class="row">
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &quot;@angular/core&quot;;
+import { LoginPageComponent } from &quot;./Project-Components/login-page/login-page.component&quot;;
+import { HomePageComponent } from &quot;./Project-Components/home-page/home-page.component&quot;;
+import { DashboardComponent } from &quot;./Project-Components/home-page/dashboard/dashboard.component&quot;;
+
+import { RegisterComponent } from &quot;./Project-Components/register/register.component&quot;;
+import { SolicitationdetailComponent } from &quot;./Project-Components/home-page/solicitationdetail/solicitationdetail.component&quot;;
+import { CodeValidateComponent } from &quot;./Project-Components/register/code-validate/code-validate.component&quot;;
+import { FormdetailComponent } from &quot;./Project-Components/home-page/solicitationdetail/formdetail/formdetail.component&quot;;
+import { AuthGuard } from &quot;./Services/auth-guard.service&quot;;
+import { RoleGuard } from &quot;./Services/role-guard.service&quot;;
+import { LogoutComponent } from &quot;./Project-Components/login-page/logout.component&quot;;
+import { ProfileComponent } from &quot;./Project-Components/home-page/profile/profile.component&quot;;
+
+import { PmacquisitionsComponent } from &quot;./Project-Components/home-page/Acquisitions/pmacquisitions.component&quot;;
+import { ApdetailComponent } from &quot;./Project-Components/home-page/apdetail/apdetail.component&quot;;
+import { GeneralComponent } from &quot;./Project-Components/home-page/apdetail/general/general.component&quot;;
+import { SowComponent } from &quot;./Project-Components/home-page/apdetail/sow/sow.component&quot;;
+import { PreviewComponent } from &quot;./Project-Components/home-page/solicitationdetail/preview/preview.component&quot;;
+import { IgceComponent } from &quot;./Project-Components/home-page/apdetail/igce/igce.component&quot;;
+import { ReqformComponent } from &quot;./Project-Components/home-page/apdetail/reqform/reqform.component&quot;;
+
+import { QandaComponent } from &quot;./Project-Components/home-page/solicitationdetail/qanda/qanda.component&quot;;
+import { ProposalevaluationComponent } from &quot;./Project-Components/home-page/solicitationdetail/proposalevaluation/proposalevaluation.component&quot;;
+import { CornominationComponent } from &quot;./Project-Components/home-page/solicitationdetail/cornomination/cornomination.component&quot;;
+import { EvaluationsComponent } from &quot;./Project-Components/home-page/apdetail/evaluations/evaluations.component&quot;;
+import { AttachmentsComponent } from &quot;./Project-Components/home-page/apdetail/attachments/attachments.component&quot;;
+
+import { TradeoffsComponent } from &quot;./Project-Components/home-page/apdetail/tradeoffs/tradeoffs.component&quot;;
+import { EstimateComponent } from &quot;./Project-Components/home-page/apdetail/estimate/estimate.component&quot;;
+import { CompetetionComponent } from &quot;./Project-Components/home-page/apdetail/competetion/competetion.component&quot;;
+import { CompatibilityComponent } from &quot;./Project-Components/home-page/apdetail/compatibility/compatibility.component&quot;;
+import { ConstraintsComponent } from &quot;./Project-Components/home-page/apdetail/constraints/constraints.component&quot;;
+import { Routes, RouterModule } from &quot;@angular/router&quot;;
+
+/*Sections B-M*/
+
+import { SuppliesandservicesComponent } from &quot;./Project-Components/home-page/solicitationdetail/Sections-B2M/suppliesandservices/suppliesandservices.component&quot;;
+import { StatementofworkComponent } from &quot;./Project-Components/home-page/solicitationdetail/Sections-B2M/statementofwork/statementofwork.component&quot;;
+import { PackagingandmarketingComponent } from &quot;./Project-Components/home-page/solicitationdetail/Sections-B2M/packagingandmarketing/packagingandmarketing.component&quot;;
+import { InspectionandacceptanceComponent } from &quot;./Project-Components/home-page/solicitationdetail/Sections-B2M/inspectionandacceptance/inspectionandacceptance.component&quot;;
+import { DeleveriesandperformanceComponent } from &quot;./Project-Components/home-page/solicitationdetail/Sections-B2M/deleveriesandperformance/deleveriesandperformance.component&quot;;
+import { ContractadmindataComponent } from &quot;./Project-Components/home-page/solicitationdetail/Sections-B2M/contractadmindata/contractadmindata.component&quot;;
+import { SpecialcontractreqComponent } from &quot;./Project-Components/home-page/solicitationdetail/Sections-B2M/specialcontractreq/specialcontractreq.component&quot;;
+import { ContractComponent } from &quot;./Project-Components/home-page/solicitationdetail/Sections-B2M/contract/contract.component&quot;;
+import { AttachmentsinfoComponent } from &quot;./Project-Components/home-page/solicitationdetail/Sections-B2M/attachmentsinfo/attachmentsinfo.component&quot;;
+import { RepresentationcertsComponent } from &quot;./Project-Components/home-page/solicitationdetail/Sections-B2M/representationcerts/representationcerts.component&quot;;
+import { InstructionsComponent } from &quot;./Project-Components/home-page/solicitationdetail/Sections-B2M/instructions/instructions.component&quot;;
+import { EvaluationfactorsComponent } from &quot;./Project-Components/home-page/solicitationdetail/Sections-B2M/evaluationfactors/evaluationfactors.component&quot;;
+
+
+import { PmsolComponent } from &quot;./Project-Components/home-page/Solicitations/pmsol.component&quot;;
+import { EvaluatevendorComponent } from &quot;./Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component&quot;;
+import { ProposalevalhomeComponent } from &quot;./Project-Components/home-page/solicitationdetail/proposalevaluation/proposalevalhome/proposalevalhome.component&quot;;
+import { MarketresearchComponent } from &quot;./Project-Components/home-page/apdetail/marketresearch/marketresearch.component&quot;;
+import { ContractGenerationComponent } from &quot;./Project-Components/home-page/solicitationdetail/contract-generation/contract-generation.component&quot;;
+
+//Contract Detail Components
+import { ContractdetailComponent } from &quot;./Project-Components/home-page/contractdetail/contractdetail.component&quot;;
+import { ContactAdminComponent } from &quot;./Project-Components/home-page/contractdetail/contact-admin/contact-admin.component&quot;;
+import { ModifyContractComponent } from &quot;./Project-Components/home-page/contractdetail/modify-contract/modify-contract.component&quot;;
+import { CloseOutComponent } from &quot;./Project-Components/home-page/contractdetail/close-out/close-out.component&quot;;
+import { ContractFileComponent } from &quot;./Project-Components/home-page/contractdetail/contract-file/contract-file.component&quot;;
+import { ContractPreviewComponent } from &quot;./Project-Components/home-page/contractdetail/contract-preview/contract-preview.component&quot;;
+import { ContractsdisplayComponent } from &quot;./Project-Components/home-page/contractsdisplay/contractsdisplay.component&quot;;
+import { VendorresponseComponent } from &#x27;./Project-Components/home-page/solicitationdetail/proposalevaluation/vendorresponse/vendorresponse.component&#x27;;
+import { VendorresevalComponent } from &#x27;./Project-Components/home-page/solicitationdetail/proposalevaluation/vendorreseval/vendorreseval.component&#x27;;
+
+// Add routes to this array //
+var routes: Routes &#x3D; [
+  //{ path: &#x27;login&#x27;, component: LoginPageComponent },
+  { path: &quot;register&quot;, component: RegisterComponent },
+  { path: &quot;validate&quot;, component: CodeValidateComponent },
+  {
+    path: &quot;home&quot;,
+    component: HomePageComponent,
+    canActivate: [AuthGuard],
+    runGuardsAndResolvers: &quot;always&quot;,
+    children: [
+      { path: &quot;&quot;, canActivate: [AuthGuard], 
+      component: DashboardComponent },
+
+      {
+        path: &quot;acquisitions&quot;,
+        canActivate: [AuthGuard],
+        component: PmacquisitionsComponent
+      },
+      {
+        path: &quot;solicitations&quot;,
+        canActivate: [AuthGuard],
+        component: PmsolComponent
+      },
+      {
+        path: &quot;contracts&quot;,
+        canActivate: [AuthGuard],
+        component: ContractsdisplayComponent
+      },
+      {
+        path: &quot;profile&quot;,
+        canActivate: [AuthGuard],
+        component: ProfileComponent
+      },
+      {
+        path: &quot;sol/:sid&quot;,
+        component: SolicitationdetailComponent,
+        canActivate: [AuthGuard],
+        children: [
+          {
+            path: &quot;&quot;,
+            canActivate: [AuthGuard],
+            component: FormdetailComponent,
+            pathMatch: &#x27;full&#x27;,
+          },
+          // Sections B to M
+          {
+            path: &quot;suppliesandservices&quot;,
+            canActivate: [AuthGuard],
+            component: SuppliesandservicesComponent
+          },
+          {
+            path: &quot;statementofwork&quot;,
+            canActivate: [AuthGuard],
+            component: StatementofworkComponent
+          },
+          {
+            path: &quot;packagingandmarking&quot;,
+            canActivate: [AuthGuard],
+            component: PackagingandmarketingComponent
+          },
+          {
+            path: &quot;inspectionandacceptance&quot;,
+            canActivate: [AuthGuard],
+            component: InspectionandacceptanceComponent
+          },
+          {
+            path: &quot;deliveriesandperformance&quot;,
+            canActivate: [AuthGuard],
+            component: DeleveriesandperformanceComponent
+          },
+          {
+            path: &quot;contractadmindata&quot;,
+            canActivate: [AuthGuard],
+            component: ContractadmindataComponent
+          },
+          {
+            path: &quot;specialcontractreq&quot;,
+            canActivate: [AuthGuard],
+            component: SpecialcontractreqComponent
+          },
+          {
+            path: &quot;contractclauses&quot;,
+            canActivate: [AuthGuard],
+            component: ContractComponent
+          },
+          {
+            path: &quot;attachmentsinfo&quot;,
+            canActivate: [AuthGuard],
+            component: AttachmentsinfoComponent
+          },
+          {
+            path: &quot;representationandcerts&quot;,
+            canActivate: [AuthGuard],
+            component: RepresentationcertsComponent
+          },
+          {
+            path: &quot;instructions&quot;,
+            canActivate: [AuthGuard],
+            component: InstructionsComponent
+          },
+          {
+            path: &quot;evluationfactors&quot;,
+            canActivate: [AuthGuard],
+            component: EvaluationfactorsComponent
+          },
+
+          {
+            path: &quot;preview&quot;,
+            canActivate: [AuthGuard],
+            component: PreviewComponent
+          },
+          {
+            path: &quot;qanda&quot;,
+            canActivate: [AuthGuard],
+            component: QandaComponent
+          },
+          {
+            path: &quot;cor&quot;,
+            canActivate: [AuthGuard],
+            component: CornominationComponent
+          },
+          {
+            path: &quot;contract&quot;,
+            canActivate: [AuthGuard],
+            component: ContractGenerationComponent
+          },
+          {
+            path: &quot;proposalevaluation&quot;,
+            canActivate: [AuthGuard],
+            component: ProposalevaluationComponent,
+            children: [
+              {
+                path: &quot;&quot;,
+                canActivate: [AuthGuard],
+                component: ProposalevalhomeComponent
+              },
+              {
+                path: &quot;:vendorName&quot;,
+                canActivate: [AuthGuard],
+                component: VendorresponseComponent
+              },
+              {
+                path: &quot;:vendorName/:evaluationId&quot;,
+                canActivate: [AuthGuard],
+                component: VendorresevalComponent
+              }
+            ]
+          }
+        ]
+      },
+      {
+        path: &quot;contracts/:contractid&quot;,
+        component: ContractdetailComponent,
+        canActivate: [AuthGuard],
+        children: [
+          {
+            path: &quot;&quot;,
+            canActivate: [AuthGuard],
+            component: ContractPreviewComponent
+          },
+          {
+            path: &quot;contractadmin&quot;,
+            canActivate: [AuthGuard],
+            component: ContactAdminComponent
+          },
+          {
+            path: &quot;modifycontract&quot;,
+            canActivate: [AuthGuard],
+            component: ModifyContractComponent
+          },
+          {
+            path: &quot;closeout&quot;,
+            canActivate: [AuthGuard],
+            component: CloseOutComponent
+          },
+          {
+            path: &quot;contractfile&quot;,
+            canActivate: [AuthGuard],
+            component: ContractFileComponent
+          }
+        ]
+      },
+
+      {
+        path: &quot;:apid&quot;,
+        component: ApdetailComponent,
+        // canActivate: [RoleGuard],
+        canActivate: [AuthGuard],
+        children: [
+          { path: &quot;&quot;, canActivate: [AuthGuard], 
+          component: GeneralComponent },
+          {
+            path: &quot;market_research&quot;,
+            canActivate: [AuthGuard],
+            component: MarketresearchComponent
+          },
+          { path: &quot;sow&quot;, canActivate: [AuthGuard], 
+          component: SowComponent },
+          { path: &quot;igce&quot;, canActivate: [AuthGuard], 
+          component: IgceComponent },
+          {
+            path: &quot;tradeoffs&quot;,
+            canActivate: [AuthGuard],
+            component: TradeoffsComponent
+          },
+          {
+            path: &quot;estimate&quot;,
+            canActivate: [AuthGuard],
+            component: EstimateComponent
+          },
+          {
+            path: &quot;competition&quot;,
+            canActivate: [AuthGuard],
+            component: CompetetionComponent
+          },
+          {
+            path: &quot;compatibility&quot;,
+            canActivate: [AuthGuard],
+            component: CompatibilityComponent
+          },
+          {
+            path: &quot;constraints&quot;,
+            canActivate: [AuthGuard],
+            component: ConstraintsComponent
+          },
+          {
+            path: &quot;evaluations&quot;,
+            canActivate: [AuthGuard],
+            component: EvaluationsComponent
+          },
+          {
+            path: &quot;attachments&quot;,
+            canActivate: [AuthGuard],
+            component: AttachmentsComponent
+          },
+          {
+            path: &quot;reqform&quot;,
+            canActivate: [AuthGuard],
+            component: ReqformComponent
+          }
+        ]
+      }
+    ]
+  },
+  { path: &quot;logout&quot;, component: LogoutComponent },
+  { path: &quot;**&quot;, redirectTo: &quot;home&quot;, pathMatch: &quot;full&quot; },
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
+
+/* By importing this routingComponets into the appmodule there is no need
+   to import the components seperately. Everytime we create a new route 
+   we just need to add the Component to the export routingComponents */
+
+export const routingComponents &#x3D; [
+  LoginPageComponent,
+  HomePageComponent,
+
+  DashboardComponent,
+  PmsolComponent,
+
+  RegisterComponent,
+  SolicitationdetailComponent,
+  CodeValidateComponent,
+  FormdetailComponent,
+  LogoutComponent,
+  ProfileComponent,
+  PmacquisitionsComponent,
+  ApdetailComponent,
+  GeneralComponent,
+  SowComponent,
+  PreviewComponent,
+  IgceComponent,
+  ReqformComponent,
+  EvaluationsComponent,
+  QandaComponent,
+  ProposalevaluationComponent,
+  CornominationComponent,
+  AttachmentsComponent,
+  TradeoffsComponent,
+  EstimateComponent,
+  CompetetionComponent,
+  CompatibilityComponent,
+  ConstraintsComponent,
+
+  SuppliesandservicesComponent,
+  StatementofworkComponent,
+  PackagingandmarketingComponent,
+  InspectionandacceptanceComponent,
+  DeleveriesandperformanceComponent,
+  ContractadmindataComponent,
+  SpecialcontractreqComponent,
+  ContractComponent,
+  RepresentationcertsComponent,
+  InstructionsComponent,
+  EvaluationfactorsComponent,
+  AttachmentsinfoComponent,
+  EvaluatevendorComponent,
+  VendorresponseComponent,
+  ProposalevalhomeComponent,
+  VendorresevalComponent,
+  //VendorresponseContainerComponent,
+  MarketresearchComponent,
+  ContractGenerationComponent,
+  ContractdetailComponent,
+  ContactAdminComponent,
+  ModifyContractComponent,
+  CloseOutComponent,
+  ContractFileComponent,
+  ContractPreviewComponent,
+  ContractsdisplayComponent
+];
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

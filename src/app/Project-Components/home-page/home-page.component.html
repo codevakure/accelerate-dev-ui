@@ -1,0 +1,171 @@
+<div class="containerbg">
+
+
+  <nav class="navbar navbar-expand-lg navbar-custom shadow-md fixed-top">
+    <!-- <div data-target="#navdrawerDefault" data-toggle="navdrawer"> <i class="fa fa-align-left" style="color: white"></i></div> -->
+    <a class="navbar-brand" [routerLink]="['/home']"><img src="assets/img1/acceleratelogoa.png" height="35"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active" id="gohome">
+          <a class="nav-link" style="font-size: 140%" [routerLink]="['/home']"><i class="fa fa-home"
+              aria-hidden="true"></i></a>
+
+        </li>
+        <!-- <li class="nav-item active">
+          <a class="nav-link" style="font-size: 140%" [routerLink]="['/home']"><i class="fa fa-bell-o"
+              aria-hidden="true"></i></a>
+
+        </li> -->
+     
+      <li class="nav-item active">
+        <div class="dropdown text-white active">
+          <a class="nav-link active dropdown-toggles text-white" href="#" role="button" id="dropdownMenuLink"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+              class="fa fa-bell-o" style="font-size: 140%" aria-hidden="true"></i><span
+              class="badge-custom badge-danger">{{this.countNotifications}}</span></a>
+
+          <div *ngIf="notifications != ''" class="dropdown-menu dropdown-menu-center" style="width: 350px; z-index: 9999;" aria-labelledby="dropdownMenuLink">
+            <div class="card" style="margin-top: -8px">
+              <div class="card-body2 custom-height2">
+                <div *ngFor="let alert of notifications?.slice().reverse()" style="border-top: .5px solid silver; border-bottom: .5px solid silver">
+                  <a (click)="getNotificationpage(alert)" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div>
+                      <div class="row">
+                        <div class="col-1 mr-2">
+                            <i class="fa {{alert.iconstyle}} float-left mr-2" style="color: #2e73dc; margin-top:-2px"
+                            aria-hidden="true"></i>
+                        </div>
+                        <div class="col-10">
+                          <div class="row">
+                              <div style="font-size: 13.5px; font-weight:500;margin-top:-6px; color: rgb(33, 36, 37)"><span class="float-left"
+                                style="color: #0e49a1">{{alert.textUser}}</span>&nbsp;{{alert.text}}
+                                <div class="row">
+                                    <small class="float-left" style="color: grey; margin-left: 17px">&nbsp;&nbsp;{{alert.message}}</small>
+                                </div>
+
+                            </div>
+                          </div>
+                          <div class="row">
+                              <small class="float-right" style="color: grey; margin-left: 5px">{{alert.date | date:'medium'}}</small>
+                          </div>
+
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+        <li class="nav-item active">
+            <a id="applogout" class="nav-link" [routerLink]="['/logout']"><i style="font-size: 120%" class="fa fa-sign-out" aria-hidden="true"></i>
+            &nbsp;<span>Logout&nbsp;</span></a>
+  
+          </li>
+
+        <!-- <li class="nav-item active">
+          <a class="nav-link" style="font-size: 140%"><i
+            class="fa fa-bell-o" aria-hidden="true"></i></a>
+
+        </li> -->
+        <!-- <li class="nav-item active">
+          <div class="dropdown text-white active">
+            <a class="nav-link active dropdown-toggles text-white" href="#" role="button" id="dropdownMenuLink"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                class="fa fa-bell-o" style="font-size: 140%" aria-hidden="true"></i><span
+                class="badge-custom badge-danger">{{this.countNotifications}}</span></a>
+
+            <div class="dropdown-menu dropdown-menu-center" style="width: 350px;" aria-labelledby="dropdownMenuLink">
+              <div class="card" style="margin-top: -8px">
+                <div class="card-body2 custom-height2">
+                  <div *ngFor="let alert of notifications?.slice().reverse()" style="border-top: .5px solid silver; border-bottom: .5px solid silver">
+                    <a (click)="getNotificationpage(alert)" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div>
+                        <i class="fa {{alert.iconstyle}} fa-2x float-left mr-2" style="color: #2e73dc; margin-top:-2px"
+                          aria-hidden="true"></i>
+                        <div style="font-size: 13.5px; font-weight:500;margin-top:-6px; color: rgb(33, 36, 37)"><span class="float-left"
+                            style="color: #0e49a1">{{alert.textUser}}</span>&nbsp;{{alert.text}}
+                          <small class="float-right">{{alert.date | date:'medium'}}</small>
+                          <small class="float-left">&nbsp;&nbsp;{{alert.message}}</small>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li> -->
+        <!-- <li class="nav-item active dropdown">
+          <a *ngIf="this.username != 'Not'" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYm-KcyvHy3PDkmh0V9KzkUk26255h0RwthshiaoanTnfH2B_IRg"
+              class="user">
+            &nbsp;{{this.username}}
+          </a>
+
+          <a *ngIf="this.username == 'Not'" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYm-KcyvHy3PDkmh0V9KzkUk26255h0RwthshiaoanTnfH2B_IRg"
+              class="user">
+            &nbsp;{{this.emailUser}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" id="profile" [routerLink]="['/home/profile']">Profile</a>
+            <a class="dropdown-item" href="#">Settings</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" id="logout" [routerLink]="['/logout']">Logout <i class="fa fa-sign-out"></i></a>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <div class="modal fade" id="exampleModal90" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img src="assets/hhs-accelerate-logo.png" height="25">
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+        </div>
+        <div class="modal-body">
+          <div id="r" class="p-4">
+              Due to the Inactivity, app will log out in 1min.  If you want to continue press Continue.
+              <div class="col p-3">
+                  <h1 style="color: #2e73dc;" class="text-center">{{countDown | async | formatTime}}</h1>
+              </div>
+       
+            
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="refreshTokenTimer()" class="btn btn-success">Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+  <!-- <div class=" mt-4" style="background-color:silver">
+  
+  </div> -->
+</div>

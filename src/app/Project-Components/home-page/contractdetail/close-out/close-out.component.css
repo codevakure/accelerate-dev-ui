@@ -1,0 +1,163 @@
+#container{
+    position:relative;
+    float:left;
+    margin-left:5px;
+    height:720px;
+    width:800px;
+    background:white;
+    padding:40px;
+    padding-bottom:0px
+}
+
+.header_column{
+    position: relative;
+    color: #1a355d;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "Arial"," SansSerif";
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.5;
+    font-style: normal;
+    text-transform: none;
+    width: 230px;
+    background:rgb(170, 170, 170);
+    padding:15px;
+    margin-left:2px !Important;
+    text-align:center;
+    border-spacing:5px
+  
+}
+
+.rowheader{
+    width:100%;
+    text-transform: none;
+    color: #0844a4;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "Arial"," SansSerif";
+    font-style: normal;
+    background-color: #eff2f5;
+    font-family: "Arial"," SansSerif";
+    border-spacing:0px;
+    padding:10px;
+    border-collapse: collapse;
+    margin:0px !important
+    
+}
+
+
+.row_p{
+    color: #183e67;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: "Arial"," SansSerif";
+    text-decoration: none;
+    line-height: 1.5;
+    font-style: normal;
+    text-transform: none;
+    margin:0px
+}
+
+.btnmodify{
+    position: relative;
+    right:20px;
+    float: right;
+    color: #ffffff;
+    font-size: 14px;
+    background-color: #006fbe;
+    font-family: "Arial"," SansSerif";
+    padding: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #006fbe;
+    width: 125px;
+    border-radius:5px
+}
+
+#hamburger{
+    position:relative;
+    float:right;
+    right:24px;
+   font-size:30px;
+   color:#006fbe;
+   width: 10px;
+   z-index: 20;
+   
+}
+
+::ng-deep .hamburgerdropdown{
+    background-color: rgb(212, 227, 252) !Important; 
+    overflow: hidden; border-width: 0px;
+     border-style: none; width: 234px; height: auto; 
+     box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 6px 0px; 
+     z-index: 20;
+}
+
+.hamburgerdropdown:before{
+    display:none
+}
+.hamburgerdropdown a{
+    position: relative;
+    float:left;
+    color:#183e67; 
+    font-weight:normal; 
+    font-size:14px; font-family:"Arial"," SansSerif"; 
+    text-decoration:none; line-height:1.7; font-style:normal; 
+    text-transform:none; 
+    padding: 0px;
+    padding-left: 9px;
+}
+.bottomButtonContainer{
+    position: relative;float:left;height:50px;
+width:800px;margin-top:10px
+}
+
+.closeout{
+    position: relative;
+    float:right;
+    color: #ffffff;
+    font-size: 14px;
+    background-color: #629c44;
+    font-family: "Arial"," SansSerif";
+    padding: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #629c44;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #629c44;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: #629c44;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #629c44;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #629c44;
+    width: 125px;
+    border-radius:5px
+}
+
+.draw{
+  stroke-dasharray: 497;
+  stroke-dashoffset: 497;
+ 
+}
+
+.draw:hover{
+    animation: draw 1400ms ease-in-out 4ms forwards
+}
+
+@keyframes draw{
+  from{
+    stroke-dashoffset: 1000
+  }
+  to{
+    stroke-dashoffset: 0
+  }
+}
+
+

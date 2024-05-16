@@ -1,0 +1,38 @@
+<div class="col-sm-12 col-md-12 cl-lg-11 col-xl-11">
+  <span class="mt-2 ap-detail-title">Representation and Certifications</span>
+  <div class="float-right" style="margin-top: -20px">
+  </div>
+  <form name="Form" #f="ngForm">
+    <div class="row" style="margin-top: 20px">
+      <div class="col-12">
+          <div *ngIf="hideEditor">
+              <quill-editor id="editor" 
+              [(ngModel)]="this.data" name= "description" 
+              format="html" [styles]="{height: '50vh'}" placeholder="" 
+              (onContentChanged)="onContentChanged($event)"
+              >
+              </quill-editor>
+          </div>
+  
+    
+            <!-- [modules]="this.toolbar" -->
+            
+            <div id="noedit" *ngIf="hideDiv"
+            [innerHTML]="this.data"
+            style="width: 70vw;
+            overflow-y:scroll;
+            overflow-x:hidden;
+            height: 50vh;
+            background: white;
+            border: 1px solid lightgray;
+            padding:30px">
+            </div>
+      </div>
+    </div>
+  </form>
+  <!-- <pre>{{ f.value | json }}</pre> -->
+  <app-clausesections *ngIf="hideclauses" [clauseInfo]="clauseString"></app-clausesections>
+</div>
+<div class="mb-5" style="margin-bottom: 90px !important">
+
+</div>

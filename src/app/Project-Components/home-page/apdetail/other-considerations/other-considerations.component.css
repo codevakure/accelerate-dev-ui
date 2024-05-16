@@ -1,0 +1,25 @@
+.label-class {
+    white-space: none;
+    color: #1f5fbd;
+    font-weight: normal;
+    line-height: 140%;
+    font-size: 14px;
+    font-weight: 550;
+    text-decoration: none;
+    font-style: normal;
+    text-transform: none;
+    display: inline-block;
+  }
+
+
+  .textfield-box .form-control, .textfield-box .custom-select, .textfield-box .form-control-file {
+    background-color: #ffffff;
+    border-radius: 4px;
+    font-weight: 550;
+    padding: .6rem .6rem calc(.6rem - .6px);
+    color: #000000;
+    font-size: 14px;
+    border-style: none;
+    border-bottom-style: solid;
+    border-bottom-color: #2e73dc;
+  }

@@ -1,0 +1,130 @@
+<div class="col-sm-12 col-md-12 cl-lg-11 col-xl-11">
+  <span class="mt-2 ap-detail-title">Attachments</span>
+  <div *ngIf="yesAttachments">
+    <table class="table table-striped mt-3 mb-0 border">
+      <thead>
+        <tr>
+          <th scope="col">File Name</th>
+          <th scope="col">File Type</th>
+          <th scope="col">Upload Date</th>
+          <th scope="col">Download</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let at of attachmentsdata; let i = index">
+          <td>{{at.file_name}}</td>
+          <td>{{at.file_type }}</td>
+          <td>{{at.creation_date | date}}</td>
+          <td><a [class.disabled]="yesDisabled" style="min-width: 2.5rem;" class="btn"
+              (click)="downloadFile(at.attachment_no, at.file_name)"><i class="fa fa-download"
+                aria-hidden="true"></i></a></td>
+          <td><a [class.disabled]="yesDisabled" style="min-width: 2.5rem;" class="btn" (click)="deleteFile(at.id, i)"><i
+                class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+    <div class="float-right mt-2">
+      <a [class.disabled]="yesDisabled" class="btn btn-primary btn-sm shadow-0 text-white" data-toggle="modal"
+        data-target="#exampleModal"><i class="fa fa-upload" aria-hidden="true"></i> &nbsp;Upload</a>
+    </div>
+  </div>
+
+  <div *ngIf="noAttachments" class="mt-4">
+    <p>There are no files in the Attachments.</p>
+    <button [disabled]="yesDisabled" class="btn btn-primary btn-sm shadow-0 text-white" data-toggle="modal"
+      data-target="#exampleModal"><i class="fa fa-upload" aria-hidden="true"></i> &nbsp;Upload</button>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <img src="assets/hhs-accelerate-logo.png" height="30">
+        <button (click)="stepper.reset()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-content pr-5 pl-5 pb-3 pt-3">
+        <div class="mb-1">
+          <div class="mx-auto upload-text">Upload File</div>
+        </div>
+
+        <mat-horizontal-stepper #stepper>
+          <ng-template matStepperIcon="edit">
+            <mat-icon class="mat-icon1">done</mat-icon>
+          </ng-template>
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel id="selectType">Select Type</ng-template>
+              <div class="form-group col-10 mx-auto p-5">
+                <div class="textfield-box">
+                  <select type="text" class="form-control dropdown" (change)="addFactors($event)">
+                    <option value="">Select Type</option>
+                    <option *ngFor="let c of requirementsType" [ngValue]="c">{{c}}</option>
+                  </select>
+                </div>
+
+
+              </div>
+
+
+              <button mat-button matStepperNext>Next</button>
+
+
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Upload File</ng-template>
+              <div class="textfield-box col-12">
+
+              </div>
+              <div class="form-group col-12 mx-auto">
+                <label for="exampleFormControlFile1" class="btn btn-sm btn-outline-primary"><img
+                    src="assets/uploadimage.PNG" height="185"></label>
+
+
+              </div>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext id="next">Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Confirm</ng-template>
+            <form [formGroup]="secondFormGroup">
+              <div class="col-10 mx-auto p-5">
+                <input style="display: none" type="file" name="input-file" formControlName="secondCtrl"
+                  class="form-control-file float-right mr-auto" id="exampleFormControlFile1"
+                  (change)="onFileSelected($event)">
+                <div>
+                  {{this.filename}}
+                </div>
+              </div>
+              <div class="mt-5">
+                <button (click)="uploadFile(); stepper.reset()" mat-button>Save</button>
+                <button mat-button matStepperPrevious>Back</button>
+                <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
+              </div>
+            </form>
+          </mat-step>
+        </mat-horizontal-stepper>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="mb-5" style="margin-bottom: 90px !important">
+
+  </div>

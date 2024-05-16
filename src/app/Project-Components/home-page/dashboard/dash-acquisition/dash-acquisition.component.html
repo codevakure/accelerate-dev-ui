@@ -1,0 +1,183 @@
+<div class="card" style="background: white !important;border-width: 1px;
+border-style: solid;
+border-color: #d6d6d6;
+border-right-width: 1px;
+border-right-style: solid;
+border-right-color: #d6d6d6;
+border-left-width: 1px;
+border-left-style: solid;
+border-left-color: #d6d6d6;
+border-bottom-width: 2px;
+border-bottom-style: solid;
+border-bottom-color: #c0c0c0;
+border-top-width: 1px;
+border-top-style: solid;
+border-top-color: #d6d6d6;">
+  <div class="card-body">
+      
+    <h5 class="font2"><i class="fa fa-handshake-o" aria-hidden="true" style="margin-right:10px"></i>Acquisition Plan<a [routerLink]="['/home/acquisitions']"><i class="fa fa-external-link float-right"  style="cursor: pointer; font-weight: 800; color: #2e73dc;"></i></a></h5>
+  </div>
+  <div class="ard custom-height3">
+    <table class="table mb-0">
+
+      <div class="col-4 text-center" *ngIf="this.getacq == ''" style="margin-top: 12%; margin-left: 40%">
+        <div class="row">
+            <i  aria-hidden="true"><img src="assets/nodata.png" height="100"></i>
+      
+        </div>
+        <div class="row mt-3">
+          <div style="margin-left: -10%">No Acquisition Plans to Display</div>
+        </div>
+      </div>
+      <tbody *ngIf="this.getacq != ''">
+        <tr>
+          <td scope="col" class="trclass" style="color: #404040 !important;
+          font-weight: normal !important;
+          font-size: 12px !important;
+          font-family: Arial, SansSerif !important"><b>Acquisition#</b></td>
+          <td scope="col" class="trclass" style="color: #404040 !important;
+          font-weight: normal !important;
+          font-size: 12px !important;
+          font-family: Arial, SansSerif !important"> <b>Project Title</b></td>
+          <td *ngIf="this.role == 'Program Officer'" scope="col" class="trclass" style="color: #404040 !important;
+          font-weight: normal !important;
+          font-size: 12px !important;
+          font-family: Arial, SansSerif !important"><b>Contracting POC</b></td>
+
+<td *ngIf="this.role != 'Program Officer'" scope="col" class="trclass" style="color: #404040 !important;
+font-weight: normal !important;
+font-size: 12px !important;
+font-family: Arial, SansSerif !important"><b>Program POC</b></td>
+          <td scope="col" class="trclass" style="color: #404040 !important;
+          font-weight: normal !important;
+          font-size: 12px !important;
+          font-family: Arial, SansSerif !important"><b>Date Created</b></td>
+          <td scope="col" class="trclass" style="color: #404040 !important;
+          font-weight: normal !important;
+          font-size: 12px !important;
+          font-family: Arial, SansSerif !important"><b>Status</b></td>
+          <td scope="col" class="trclass" style="color: #404040 !important;
+          font-weight: normal !important;
+          font-size: 12px !important;
+          font-family: Arial, SansSerif !important"></td>
+          <!-- <td scope="col" class="trclass"></td> -->
+        </tr>
+        <tr *ngFor="let acq of getacq?.reverse(); let i = index">
+          <td scope="row" style="color: #006fbe; font-size: 13px; width: 180px"><span
+              class="dot" style="background-color: #006fbe !important"></span>&nbsp;{{ acq?.ap_no }}</td>
+          <td>{{ acq?.projectTitle }}</td>
+          <td style="width: 180px">
+            <div *ngIf="this.hidepm">
+              <span *ngIf="acq.coName == ''"><i style="color: #007bff; margin-right: 5%; font-size: 115%;" class="fa fa-times-circle-o" aria-hidden="true"></i>Unassigned</span>
+              <a *ngIf="acq.coName != ''" style="cursor: pointer" (click)="sendEmailCo(acq)"><i style="color: #007bff; margin-right: 5%; font-size: 115%;"
+                class="fa fa-envelope"></i>
+              <span>{{ acq?.coName}}</span></a>
+            </div>
+            <div *ngIf="this.hideco">
+                <a style="cursor: pointer" (click)="sendEmailPm(acq)"><i style="color: #007bff; margin-right: 5%; font-size: 115%;"
+                  class="fa fa-envelope"></i>
+                <span>{{ acq?.rName }}</span></a>
+            </div>
+          </td>
+          <td>{{ acq?.createdDate | date }}</td>
+          <td><span class="badge mt-1"
+              [ngClass]="{'badge-shared':acq.status == 'Shared','badge-draft':acq.status == 'Draft','badge-accepted':acq.status == 'Accepted'}">{{acq?.status}}</span>
+          </td>
+          <!-- <td style="font-size: 13px; width: 5px">
+            <button (click)="review(acq)" type="button" class="btn btn-sm btn-vsm btn-primary">Review</button>
+          </td> -->
+          <!-- <td [hidden]="this.role == 'Program Officer' || !acq?.pointsofContact.includes(this.userid)"
+            style="font-size: 13px; width: 5px">
+            <button [disabled]="this.disable" *ngIf="acq.status == 'Accepted'" (click)="onInitiate(acq)" type="button"
+              class="btn btn-sm btn-vsm btn-primary btn-border">Initiate</button>
+            <button *ngIf="acq.status == 'Shared'" (click)="onAccept(acq);" class="btn btn-sm btn-vsm btn-primary"
+              type="button">Accept</button></td> -->
+              <td>
+                  <div class="btn-group dropdown" [attr.id]="'btn_dropdown' + i"
+                  style="    background: transparent;
+                  border: none;
+                  box-shadow: none;
+                  height: 28.67px;
+                  width: 90px;
+                  ">
+
+                  <button 
+                  [ngStyle]="{'width':this.role == 'Program Officer' || !acq?.pointsofContact.includes(this.userid)?'92%':''}"
+                  (click)="review(acq)" 
+                  style="
+                  border-radius: 5px !Important;
+                  padding: 8px;
+                  font-size: 12px;
+                  font-family: 'Poppins', sans-serif;  "
+                    type="button" class="btn btn-primary  btn-sm action">
+                    Review
+                  </button>
+
+
+                  <!-- <button *ngIf="element.status == 'Completed'" style="margin-left:-5px" type="button" -->
+                  <button [hidden]="this.role == 'Program Officer' || !acq?.pointsofContact.includes(this.userid)"
+                    style="margin-left:-5px" type="button"
+                    class="actiondropdown btn btn-primary  btn-sm dropdown-toggle dropdown-toggle-split"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+
+
+                  <div class="dropdown-menu" style="padding:10px;height:auto; font-size: 14px;box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.33)">
+
+
+                      <button [disabled]="this.disable" *ngIf="acq.status == 'Accepted'" (click)="onInitiate(acq)" type="button"
+                      class="dropdown-item dropmenubutton hover" [attr.data-target]="'#rejectmodel'+i">Initiate</button>
+
+                      <button [attr.data-target]="'#awardmodel'+i" *ngIf="acq.status == 'Shared'" (click)="onAccept(acq);" class="dropdown-item dropmenubutton hover"
+                      type="button">Accept</button>
+                  </div>
+
+
+                </div>
+
+
+                
+              </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+<!-- <div class="modal fade bd-example-modal-lg acquisitionsModal" tabindex="-1" role="dialog"
+  aria-labelledby="acquisitionsModal" aria-hidden="true" id="acquisitionsModal">
+  <div class="modal-dialog modal-lg" style="max-width: 70rem !important">
+    <div class="modal-header">
+      <img src="assets/hhs-accelerate-logo.png" height="30">
+      <button type="button" id="closeModal" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-content p-2">
+      <app-pmacquisitions></app-pmacquisitions>
+    </div>
+  </div>
+</div> -->
+<ngx-spinner bdColor="#93C0E1" size="large" color="#fff" type="false">
+
+    <div class="div-animation">
+        <h1 class="cssanimation sequence fadeInBottom">accelerate</h1>
+    </div>
+
+    <div [hidden]="this.role=='Program Officer'" class="div-animation2">
+        <h2 class="cssanimation1 sequence fadeInBottom">Initiating Solicitation</h2>
+    </div>
+
+    <div [hidden]="this.role !='Program Officer'" class="div-animation2">
+        <h2 class="cssanimation1 sequence fadeInBottom">Building Acquisition</h2>
+    </div>
+
+  <div style="margin-top: -160px; margin-left: 20px;">
+    <img height="450" src="assets/LoadingScreen/AniamtedSequence.gif">
+  </div>
+
+
+</ngx-spinner>

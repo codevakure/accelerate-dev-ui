@@ -1,0 +1,949 @@
+@media print {
+
+    .print-button{
+        display: none !important;
+    }
+
+    .data{
+        background: white;
+        color: black !important;
+        font-family: Arial;
+    }
+
+    /* .preview-form {
+      position: relative;
+      margin-top:1000px
+    } */
+
+
+    /*.preview-sections {
+      width:800px;padding:22px; left: -50px;
+    } */
+    
+
+    #savebutton{
+      display:none;
+  }
+
+     #newpdf{
+      color: black !important;
+      font-family: Arial;
+        -ms-transform: scale(2);
+         transform: scale(2);
+         transform-origin: 0px 0px;
+         -ms-transform-origin: 0px 0px ;
+        position: absolute !important;
+        top:-150px;
+        left:-220px;
+        overflow: visible !important;
+       
+
+        
+    } 
+
+    .container-fluid{
+      overflow:visible !IMPORTANT
+    }
+
+    
+    nav{
+    display:none
+    }
+
+    #mCSB_1{
+        display: none
+    }
+
+    #sidebar{
+        display:none;
+    }
+
+    #mCSB_1_container{
+        display:none
+    }
+
+  
+    
+
+        
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+   textarea{
+       resize: none;
+       overflow: hidden;
+       line-height: 5px !important;
+   }
+   .preview-form{
+    overflow: hidden;
+    box-shadow: 0px 0px 5px lightgrey;
+    background: white;
+}
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 100%;
+}
+
+button.print-button {
+    width: 20px;
+    height: 50px;
+  }
+  span.print-icon, span.print-icon::before, span.print-icon::after, button.print-button:hover .print-icon::after {
+      
+    border: solid 2px #333;
+  }
+  span.print-icon::after {
+    border-width: 2px;
+  }
+  
+  button.print-button {
+    position: relative;
+    padding: 0;
+    border: 0;
+    
+    border: none;
+    background: transparent;
+  }
+  
+  span.print-icon, span.print-icon::before, span.print-icon::after, button.print-button:hover .print-icon::after {
+    box-sizing: border-box;
+    background-color: #fff;
+  }
+  
+  span.print-icon {
+    position: relative;
+    display: inline-block;  
+    padding: 0;
+    margin-top: 10px;
+  
+    width: 30%;
+    height: 30%;
+    background: #fff;
+    border-radius: 20% 20% 0 0;
+  }
+  
+  span.print-icon::before {
+    content: " ";
+    position: absolute;
+    bottom: 80%;
+    left: 12%;
+    right: 12%;
+    height: 110%;
+  
+    transition: height .2s .15s;
+  }
+  
+  span.print-icon::after {
+    content: " ";
+    position: absolute;
+    top: 55%;
+    left: 12%;
+    right: 12%;
+    height: 0%;
+    background: #fff;
+    background-repeat: no-repeat;
+    background-size: 70% 90%;
+    background-position: center;
+    background-image: linear-gradient(
+      to top,
+      #fff 0, #fff 14%,
+      #333 14%, #333 28%,
+      #fff 28%, #fff 42%,
+      #333 42%, #333 56%,
+      #fff 56%, #fff 70%,
+      #333 70%, #333 84%,
+      #fff 84%, #fff 100%
+    );
+  
+    transition: height .2s, border-width 0s .2s, width 0s .2s;
+  }
+
+  button.print-button:hover {
+    cursor: pointer;
+  }
+  
+  button.print-button:hover .print-icon::before {
+    height:0px;
+    transition: height .2s;
+  }
+  button.print-button:hover .print-icon::after {
+    height:120%;
+    transition: height .2s .15s, border-width 0s .16s;
+  }
+  
+  
+
+   
+   img{
+       position: relative;
+       float:left
+   }
+   
+  
+
+   p{
+     margin:0px !important
+   }
+   .main { 
+     display: block; 
+     position: relative; 
+     padding-left: 45px; 
+     margin-bottom: 15px; 
+     cursor: pointer; 
+     font-size: 20px; 
+ } 
+   
+ /* Hide the default checkbox */ 
+ input[type=checkbox] { 
+     visibility: hidden; 
+ } 
+   
+ 
+ 
+   /* Creating a custom checkbox 
+   based on demand */ 
+   .geekmark { 
+       position: absolute; 
+       top: 0; 
+       left: 0; 
+       height: 25px; 
+       width: 25px; 
+       background-color: #312626; 
+       border-radius:5px
+   } 
+     
+   /* Specify the background color to be 
+   shown when hovering over checkbox */ 
+   .main:hover input ~ .geekmark { 
+       background-color: #3c0f0f; 
+   } 
+     
+   /* Specify the background color to be 
+   shown when checkbox is active */ 
+   /* .main input:active ~ .geekmark { 
+       background-color: red; 
+   }  */
+     
+   /* Specify the background color to be 
+   shown when checkbox is checked */ 
+   .main input:checked ~ .geekmark { 
+       background-color: #3c0f0f; 
+   } 
+     
+   /* Checkmark to be shown in checkbox */ 
+   /* It is not be shown when not checked */ 
+   .geekmark:after { 
+       content: ""; 
+       position: absolute; 
+       display: none; 
+   } 
+     
+   /* Display checkmark when checked */ 
+   .main input:checked ~ .geekmark:after { 
+       display: block; 
+   } 
+     
+   /* Styling the checkmark using webkit */ 
+   /* Rotated the rectangle by 45 degree and  
+   showing only two border to make it look 
+   like a tickmark */ 
+   .main .geekmark:after { 
+       left: 50%; 
+       top: 50%; 
+       width: 6px; 
+       height: 12px; 
+       border: solid black; 
+       border-width: 0 4px 4px 0; 
+       -webkit-transform: translate(-50%, -62%) rotate(45deg); 
+       -ms-transform: translate(-50%, -62%) rotate(45deg); 
+       transform: translate(-50%, -62%) rotate(45deg); 
+       border-radius:2px
+   } 
+ 
+   .radio { 
+     display: block; 
+     position: relative; 
+     padding-left: 45px; 
+     margin-bottom: 15px; 
+     cursor: pointer; 
+     font-size: 20px; 
+   } 
+   
+   /* Hide the default checkbox */ 
+   input[type=radio] { 
+     visibility: hidden; 
+   } 
+   
+   
+   
+   /* Creating a custom checkbox 
+   based on demand */ 
+   .customradio { 
+       position: absolute; 
+       top: 0; 
+       left: 0; 
+       height: 25px; 
+       width: 25px; 
+       border:2px solid #312626; 
+       border-radius:100%
+   } 
+     
+   .customradio:after { 
+       content: ""; 
+       position: absolute; 
+       display: none; 
+   } 
+     
+   /* Display checkmark when checked */ 
+   .radio input:checked ~ .customradio:after { 
+       display: block; 
+   } 
+     
+   /* Styling the checkmark using webkit */ 
+   /* Rotated the rectangle by 45 degree and  
+   showing only two border to make it look 
+   like a tickmark */ 
+   .radio .customradio:after { 
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -58%);
+     width: 12px;
+     height: 12px;
+     border: solid white;
+     background: white;
+     /* border-width: 0 4px 4px 0; */
+     /* transform: rotate(45deg); */
+     border-radius: 100%;
+   } 
+
+   .dropdownwrapper {
+     display: block;
+   position: relative;
+   float:left;
+   margin-bottom: 0px;
+   cursor: pointer;
+   font-size: 20px;
+   width: 100%;
+   height: auto;
+ }
+
+ .dropdowntitle{
+   position: relative;
+   float: left;
+   width: 100% !important;
+   z-index: 0;
+   background: lightblue;
+   padding:10px;
+   margin:0px;
+ }
+
+ /* Hide the default checkbox */
+.dropdownwrapper .hiddenaction {
+   position: absolute;
+   left: 0px;
+   width: 100%;
+   z-index: 2;
+   opacity: 0;
+   height: 69px;
+   visibility: visible !important;
+   box-shadow: 0px 0px 5px green;
+ }
+
+ .dropdownwrapper input:hover{
+ cursor:pointer
+ }
+
+ /* Creating a custom dropdownbody */
+ .dropdownbody {
+   position: relative;
+   float:left;
+   height: 0px;
+   width: calc(100%);
+   background-color: transparent;
+   transition: max-height 1s;
+   overflow: hidden;
+   max-height: 0px;
+}
+
+
+
+   /* Display dropdownbox */
+   .dropdownwrapper input:checked ~ .dropdownbody {
+       display: block;
+       max-height:1000px;
+       height:auto;
+   }
+
+   .indicator{
+   position: absolute;
+   top: 21px;
+   right: 3%;
+   width: 8px;
+   height: 8px;
+   border: 2px solid gray;
+   border-bottom: none;
+   border-left: none;
+   background: transparent;
+   transform: rotate(135deg);
+   transition: transform 500ms;
+
+   }
+
+   .dropdownwrapper input:checked ~.indicator{
+   transform: rotate(-45deg);
+   }
+
+   .artboardmarker{
+     position:relative;
+     float:left;
+     width:100%;
+     height:0px
+   }
+ 
+   /*YOur added styles*/
+
+   
+   .SF30Image_png_0{
+ 
+               position:absolute !important;
+               padding-left:0px;
+             padding-top:0px;
+             padding-bottom:0px;
+             padding-right:0px;
+               top:0px;
+               left:0px;
+               border-style:solid;
+               border-radius:0px;
+               border-color:transparent;
+               background:transparent;
+               border-left-color:transparent;
+               border-top-color:transparent;
+               border-right-color:transparent;
+               border-bottom-color:transparent;
+               border-width:1px;
+               width:720px;
+               height:910px;
+               transform:translate(0px,0px)  rotate(0deg) skewX(0deg) skewY(0deg)  ;
+               box-shadow:0px 0px 0px transparent  ;
+               line-height:18px;
+               text-align:left;
+               font-size: 12px;
+               font-family:Quicksand;
+               font-weight:400;
+               font-style: normal;
+               z-index:0;
+               opacity:1;
+               color:black;
+               overflow:visible
+ 
+    }
+   .SF30page2_png_1{
+ 
+               position:absolute !important;
+               padding-left:0px;
+             padding-top:0px;
+             padding-bottom:0px;
+             padding-right:0px;
+               top:0px;
+               left:0px;
+               border-style:solid;
+               border-radius:0px;
+               border-color:transparent;
+               background:transparent;
+               border-left-color:transparent;
+               border-top-color:transparent;
+               border-right-color:transparent;
+               border-bottom-color:transparent;
+               border-width:1px;
+               width:720px;
+               height:910px;
+               transform:translate(0px,934px)  rotate(0deg) skewX(0deg) skewY(0deg)  ;
+               box-shadow:0px 0px 0px transparent  ;
+               line-height:18px;
+               text-align:left;
+               font-size: 12px;
+               font-family:Quicksand;
+               font-weight:400;
+               font-style: normal;
+               z-index:0;
+               opacity:1;
+               color:black;
+               overflow:visible
+ 
+    }
+   .Input_903_2{
+ 
+               position:absolute !important;
+               padding-left:0px;
+             padding-top:0px;
+             padding-bottom:0px;
+             padding-right:0px;
+               top:0px;
+               left:0px;
+               border-style:solid;
+               border-radius:0px;
+               border-color:transparent;
+               background:;
+               border-left-color:black;
+               border-top-color:black;
+               border-right-color:black;
+               border-bottom-color:black;
+               border-width:0px;
+               width:127px;
+               height:16px;
+               transform:translate(464px,35px)  rotate(0deg) skewX(0deg) skewY(0deg)  ;
+               box-shadow:0px 0px 0px transparent  ;
+               line-height:18px;
+               text-align:left;
+               font-size: 12px;
+               font-family:Quicksand;
+               font-weight:400;
+               font-style: normal;
+               z-index:1;
+               opacity:1;
+               color:black;
+               overflow:visible
+ 
+    }
+   .contractidCopy_3{
+ 
+               position:absolute !important;
+               padding-left:0px;
+             padding-top:0px;
+             padding-bottom:0px;
+             padding-right:0px;
+               top:0px;
+               left:0px;
+               border-style:solid;
+               border-radius:0px;
+               border-color:transparent;
+               background:transparent;
+               border-left-color:black;
+               border-top-color:black;
+               border-right-color:black;
+               border-bottom-color:black;
+               border-width:0px;
+               width:168px;
+               height:27px;
+               transform:translate(524px,41px)  rotate(0deg) skewX(0deg) skewY(0deg)  ;
+               box-shadow:0px 0px 0px transparent  ;
+               line-height:18px;
+               text-align:left;
+               font-size: 14px;
+               font-family:Quicksand;
+               font-weight:400;
+               font-style: normal;
+               z-index:0;
+               opacity:1;
+               color:rgba(96,96,96,1);
+               overflow:visible
+ 
+    }
+   .amendid_4{
+ 
+               position:absolute !important;
+               padding-left:0px;
+             padding-top:0px;
+             padding-bottom:0px;
+             padding-right:0px;
+               top:0px;
+               left:0px;
+               border-style:solid;
+               border-radius:0px;
+               border-color:transparent;
+               background:;
+               border-left-color:black;
+               border-top-color:black;
+               border-right-color:black;
+               border-bottom-color:black;
+               border-width:0px;
+               width:191px;
+               height:16px;
+               transform:translate(36px,60px)  rotate(0deg) skewX(0deg) skewY(0deg)  ;
+               box-shadow:0px 0px 0px transparent  ;
+               line-height:18px;
+               text-align:left;
+               font-size: 12px;
+               font-family:Quicksand;
+               font-weight:400;
+               font-style: normal;
+               z-index:0;
+               opacity:1;
+               color:black;
+               overflow:visible
+ 
+    }
+   .Textarea_1093_5{
+ 
+               position:absolute !important;
+               padding-left:0px;
+             padding-top:0px;
+             padding-bottom:0px;
+             padding-right:0px;
+               top:0px;
+               left:0px;
+               border-style:solid;
+               border-radius:0px;
+               border-color:transparent;
+               background:;
+               border-left-color:transparent;
+               border-top-color:transparent;
+               border-right-color:transparent;
+               border-bottom-color:transparent;
+               border-width:0px;
+               width:210px;
+               height:68px;
+               transform:translate(37px,89px)  rotate(0deg) skewX(0deg) skewY(0deg)  ;
+               box-shadow:0px 0px 0px transparent  ;
+               line-height:18px;
+               text-align:left;
+               font-size: 12px;
+               font-family:Quicksand;
+               font-weight:400;
+               font-style: normal;
+               z-index:0;
+               opacity:1;
+               color:black;
+               overflow:visible
+ 
+    }
+   .Date_1542_6{
+ 
+               position:absolute !important;
+               padding-left:0px;
+             padding-top:0px;
+             padding-bottom:0px;
+             padding-right:0px;
+               top:0px;
+               left:0px;
+               border-style:solid;
+               border-radius:0px;
+               border-color:transparent;
+               background:;
+               border-left-color:black;
+               border-top-color:black;
+               border-right-color:black;
+               border-bottom-color:black;
+               border-width:0px;
+               width:150px;
+               height:20px;
+               transform:translate(253px,58px)  rotate(0deg) skewX(0deg) skewY(0deg)  ;
+               box-shadow:0px 0px 0px transparent  ;
+               line-height:18px;
+               text-align:left;
+               font-size: 12px;
+               font-family:Quicksand;
+               font-weight:400;
+               font-style: normal;
+               z-index:0;
+               opacity:1;
+               color:black;
+               overflow:visible
+ 
+    }
+   .Input_1708_7{
+ 
+               position:absolute !important;
+               padding-left:0px;
+             padding-top:0px;
+             padding-bottom:0px;
+             padding-right:0px;
+               top:0px;
+               left:0px;
+               border-style:solid;
+               border-radius:0px;
+               border-color:transparent;
+               background:;
+               border-left-color:black;
+               border-top-color:black;
+               border-right-color:black;
+               border-bottom-color:black;
+               border-width:0px;
+               width:182px;
+               height:17px;
+               transform:translate(386px,59px)  rotate(0deg) skewX(0deg) skewY(0deg)  ;
+               box-shadow:0px 0px 0px transparent  ;
+               line-height:18px;
+               text-align:left;
+               font-size: 12px;
+               font-family:Quicksand;
+               font-weight:400;
+               font-style: normal;
+               z-index:0;
+               opacity:1;
+               color:black;
+               overflow:visible
+ 
+    }
+   .admennotes_8{
+ 
+               position:absolute !important;
+               padding-left:0px;
+             padding-top:0px;
+             padding-bottom:0px;
+             padding-right:0px;
+               top:0px;
+               left:0px;
+               border-style:solid;
+               border-radius:0px;
+               border-color:transparent;
+               background:;
+               border-left-color:black;
+               border-top-color:black;
+               border-right-color:black;
+               border-bottom-color:black;
+               border-width:0px;
+               width:630px;
+               height:80px;
+               transform:translate(30px,635px)  rotate(0deg) skewX(0deg) skewY(0deg)  ;
+               box-shadow:0px 0px 0px transparent  ;
+               line-height:18px;
+               text-align:left;
+               font-size: 12px;
+               font-family:Quicksand;
+               font-weight:400;
+               font-style: normal;
+               z-index:0;
+               opacity:1;
+               color:black;
+               overflow:visible
+ 
+    }
+   .isextended_9{
+ 
+               position:absolute !important;
+               padding-left:0px;
+             padding-top:0px;
+             padding-bottom:0px;
+             padding-right:0px;
+               top:0px;
+               left:0px;
+               border-style:solid;
+               border-radius:5px;
+               border-color:transparent;
+               background:transparent;
+               border-left-color:transparent;
+               border-top-color:transparent;
+               border-right-color:transparent;
+               border-bottom-color:transparent;
+               border-width:1px;
+               width:22px;
+               height:21px;
+               transform:translate(475px,317px)  rotate(0deg) skewX(0deg) skewY(0deg)  ;
+               box-shadow:0px 0px 0px transparent  ;
+               line-height:18px;
+               text-align:left;
+               font-size: 12px;
+               font-family:Quicksand;
+               font-weight:400;
+               font-style: normal;
+               z-index:0;
+               opacity:1;
+               color:black;
+               overflow:visible
+ 
+    }
+   .isnotextended_10{
+ 
+               position:absolute !important;
+               padding-left:0px;
+             padding-top:0px;
+             padding-bottom:0px;
+             padding-right:0px;
+               top:0px;
+               left:0px;
+               border-style:solid;
+               border-radius:5px;
+               border-color:transparent;
+               background:transparent;
+               border-left-color:transparent;
+               border-top-color:transparent;
+               border-right-color:transparent;
+               border-bottom-color:transparent;
+               border-width:1px;
+               width:20px;
+               height:20px;
+               transform:translate(563px,318px)  rotate(0deg) skewX(0deg) skewY(0deg)  ;
+               box-shadow:0px 0px 0px transparent  ;
+               line-height:18px;
+               text-align:left;
+               font-size: 12px;
+               font-family:Quicksand;
+               font-weight:400;
+               font-style: normal;
+               z-index:0;
+               opacity:1;
+               color:black;
+               overflow:visible
+ 
+    }
+   .amensol_11{
+ 
+               position:absolute !important;
+               padding-left:0px;
+             padding-top:0px;
+             padding-bottom:0px;
+             padding-right:0px;
+               top:0px;
+               left:0px;
+               border-style:solid;
+               border-radius:0px;
+               border-color:transparent;
+               background:transparent;
+               border-left-color:black;
+               border-top-color:black;
+               border-right-color:black;
+               border-bottom-color:black;
+               border-width:0px;
+               width:168px;
+               height:31px;
+               transform:translate(488px,170px)  rotate(0deg) skewX(0deg) skewY(0deg)  ;
+               box-shadow:0px 0px 0px transparent  ;
+               line-height:18px;
+               text-align:left;
+               font-size: 14px;
+               font-family:Quicksand;
+               font-weight:400;
+               font-style: normal;
+               z-index:0;
+               opacity:1;
+               color:rgba(96,96,96,1);
+               overflow:visible
+ 
+    }
+   .Date_2079_12{
+ 
+               position:absolute !important;
+               padding-left:0px;
+             padding-top:0px;
+             padding-bottom:0px;
+             padding-right:0px;
+               top:0px;
+               left:0px;
+               border-style:solid;
+               border-radius:0px;
+               border-color:transparent;
+               background:;
+               border-left-color:black;
+               border-top-color:black;
+               border-right-color:black;
+               border-bottom-color:black;
+               border-width:0px;
+               width:207px;
+               height:19px;
+               transform:translate(485px,210px)  rotate(0deg) skewX(0deg) skewY(0deg)  ;
+               box-shadow:0px 0px 0px transparent  ;
+               line-height:18px;
+               text-align:left;
+               font-size: 12px;
+               font-family:Quicksand;
+               font-weight:400;
+               font-style: normal;
+               z-index:0;
+               opacity:1;
+               color:black;
+               overflow:visible
+ 
+    }
+
+
+
+
+
+
+
+
+    
+    .btns {
+        border-radius: 2px;
+        transition-duration: 0.3s;
+        transition-property: box-shadow;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: transparent;
+        background-image: none;
+        border: 0;
+        font-family: Arial, sans-serif;
+        /* box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.14), 0 3px 4px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); */
+        color: #0844a4;
+        display: inline-block;
+        font-size: 0.875rem;
+        font-weight: 700;
+        line-height: 1;
+        margin: 0;
+        max-width: 100%;
+        min-width: 5.5rem;
+        padding: 0.6875rem 1rem;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+    
+    
+    .btns:focus {
+        outline-width: 0 !important;
+    }
+
+    .hover:hover{
+        cursor: pointer;
+    }
+    
+    
+    .btns:hover {
+      color: black;
+    }
+    .modal-content .right{
+        position:relative;
+        float:right;
+        margin-left:3px;
+        border:none;
+        border-radius: 5px;
+        color:white;
+        padding:5px;
+        width:80px;
+        margin-bottom:10px;
+        
+    }
+
+    .image-header{
+        height: 25px !important;
+        width: 100px !important;
+      
+      }
+
+      #yes{
+        background: rgba(0,110,186,255);  
+    }
+    
+    #no{
+        background: rgba(121,121,121,255);
+    }
+
+    input{
+        background:transparent
+    }
+      
+/** remove datepicker Icon**/
+    ::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+    }

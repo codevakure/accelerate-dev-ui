@@ -1,0 +1,24 @@
+version: 0.2
+environment_variables:
+    plaintext:
+        S3_BUCKET: "accelerate-dev.com"
+        BUILD_ENV: "develop"
+phases:
+    install:
+        commands:
+            - echo Installing source NPM dependencies...
+            - npm install -g @angular/cli
+            - npm install
+    build:
+        commands:
+            - echo Build started on `date`
+            - ng build --base-href ./
+    post_build:
+         commands:
+            - aws s3 cp dist/HHS-PACD-FRONTEND s3://${S3_BUCKET} --recursive
+            - echo Build completed on `date` Deployed to S3 bucket
+artifacts:
+    files:
+        - '**/*'
+    base-directory: 'dist*'
+    discard-paths: yes

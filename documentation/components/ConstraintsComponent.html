@@ -1,0 +1,830 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>hhs_pacd-frontend-phase2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">hhs_pacd-frontend-phase2 documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ConstraintsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Project-Components/home-page/apdetail/constraints/constraints.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-constraints</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./constraints.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./constraints.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#description">description</a>
+                            </li>
+                            <li>
+                                <a href="#getapno">getapno</a>
+                            </li>
+                            <li>
+                                <a href="#id">id</a>
+                            </li>
+                            <li>
+                                <a href="#status">status</a>
+                            </li>
+                            <li>
+                                <a href="#userexists">userexists</a>
+                            </li>
+                            <li>
+                                <a href="#userid">userid</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getConstraints">getConstraints</a>
+                            </li>
+                            <li>
+                                <a href="#getDecodedAccessToken">getDecodedAccessToken</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onContentChanged">onContentChanged</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, toastr: ToastrService, ap: <a href="../injectables/AcquisitionService.html">AcquisitionService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/Project-Components/home-page/apdetail/constraints/constraints.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastr</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ap</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AcquisitionService.html" target="_self" >AcquisitionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getConstraints"></a>
+                    <span class="name">
+                        <b>
+                            getConstraints
+                        </b>
+                        <a href="#getConstraints"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getConstraints()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/Project-Components/home-page/apdetail/constraints/constraints.component.ts:66</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDecodedAccessToken"></a>
+                    <span class="name">
+                        <b>
+                            getDecodedAccessToken
+                        </b>
+                        <a href="#getDecodedAccessToken"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDecodedAccessToken(token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/Project-Components/home-page/apdetail/constraints/constraints.component.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>token</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/Project-Components/home-page/apdetail/constraints/constraints.component.ts:30</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onContentChanged"></a>
+                    <span class="name">
+                        <b>
+                            onContentChanged
+                        </b>
+                        <a href="#onContentChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onContentChanged(event)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/Project-Components/home-page/apdetail/constraints/constraints.component.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="description"></a>
+                        <span class="name">
+                            <b>
+                            description</b>
+                            <a href="#description"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/Project-Components/home-page/apdetail/constraints/constraints.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getapno"></a>
+                        <span class="name">
+                            <b>
+                            getapno</b>
+                            <a href="#getapno"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/Project-Components/home-page/apdetail/constraints/constraints.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="id"></a>
+                        <span class="name">
+                            <b>
+                            id</b>
+                            <a href="#id"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/Project-Components/home-page/apdetail/constraints/constraints.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="status"></a>
+                        <span class="name">
+                            <b>
+                            status</b>
+                            <a href="#status"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/Project-Components/home-page/apdetail/constraints/constraints.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userexists"></a>
+                        <span class="name">
+                            <b>
+                            userexists</b>
+                            <a href="#userexists"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/Project-Components/home-page/apdetail/constraints/constraints.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userid"></a>
+                        <span class="name">
+                            <b>
+                            userid</b>
+                            <a href="#userid"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/Project-Components/home-page/apdetail/constraints/constraints.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
+import { AcquisitionService } from &quot;../../../../Services/acquisition.service&quot;;
+import { ActivatedRoute } from &quot;@angular/router&quot;;
+import { ToastrService } from &quot;ngx-toastr&quot;;
+import { Cookie } from &#x27;ng2-cookies/ng2-cookies&#x27;;
+import * as jwt_decode from &quot;jwt-decode&quot;;
+declare var $: any;
+
+
+@Component({
+  selector: &#x27;app-constraints&#x27;,
+  templateUrl: &#x27;./constraints.component.html&#x27;,
+  styleUrls: [&#x27;./constraints.component.css&#x27;]
+})
+export class ConstraintsComponent implements OnInit {
+
+  getapno;
+  description;
+  id;
+  userexists;
+  userid;
+  status;
+
+  constructor(
+    private route: ActivatedRoute,
+    private toastr: ToastrService,
+    private ap: AcquisitionService,
+  ) {}
+
+  ngOnInit() {
+    this.getapno &#x3D; this.route.snapshot.parent.params.apid;
+    this.ap.getUserprofile().subscribe(response &#x3D;&gt; {
+      //console.log(response);
+    //  this.userid &#x3D; response.pkId
+    })
+    this.getConstraints();
+    var tokenInformation &#x3D; Cookie.get(&#x27;hhs-a-token&#x27;);
+    var decodedValue &#x3D; this.getDecodedAccessToken(tokenInformation);
+    this.userid &#x3D; decodedValue.pkId
+  }
+  getDecodedAccessToken(token: string): any {
+    try{
+        return jwt_decode(token);
+    }
+    catch(Error){
+        return null;
+    }
+  }
+
+  onContentChanged(event) {
+    //  console.log(event.html);
+      this.ap.patchConstraints(this.id, event.html).subscribe(response &#x3D;&gt; {
+        if (response) {
+          setTimeout(() &#x3D;&gt;
+            this.toastr.success(&quot;Error Occured&quot;, &quot;Server Error&quot;, {
+              timeOut: 2000
+            })
+          );
+        } else {
+          //console.log(&quot;Updated Successfully&quot;);
+        }
+      });
+    }
+
+
+    getConstraints() {
+      this.ap.getApdappids(this.getapno).subscribe(response &#x3D;&gt; {
+        this.id &#x3D; response.constraintId;
+        this.ap.getApdata(response.apId).subscribe(response &#x3D;&gt; {
+          this.status &#x3D; response.status;
+          this.userexists &#x3D; response.pointsofContact.includes(this.userid);
+        });
+        this.ap.getConstraints(this.id).subscribe(response &#x3D;&gt; {
+          this.description &#x3D; response.description;
+        });
+      });
+    }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;col-sm-12 col-md-12 cl-lg-11 col-xl-11&quot;&gt;
+  &lt;span class&#x3D;&quot;mt-2 ap-detail-title&quot;&gt;Constraints&lt;/span&gt;
+  &lt;div class&#x3D;&quot;float-right&quot; style&#x3D;&quot;margin-top: -20px&quot;&gt;
+ &lt;/div&gt;
+ &lt;form name&#x3D;&quot;Form&quot; #f&#x3D;&quot;ngForm&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;margin-top: 30px&quot;&gt;
+    &lt;div class&#x3D;&quot;col-12&quot;&gt;
+      &lt;quill-editor [disabled]&#x3D;&quot;this.status &#x3D;&#x3D; &#x27;Shared&#x27; &amp;&amp; this.userexists &#x3D;&#x3D; false || this.status &#x3D;&#x3D; &#x27;Accepted&#x27; || this.status&#x3D;&#x3D;&#x27;Initiated&#x27; || this.status&#x3D;&#x3D;&#x27;Generated&#x27;&quot; [(ngModel)]&#x3D;&quot;this.description&quot; name&#x3D; &quot;description&quot; format&#x3D;&quot;html&quot; [styles]&#x3D;&quot;{height: &#x27;50vh&#x27;}&quot; placeholder&#x3D;&quot;&quot; (onContentChanged)&#x3D;&quot;onContentChanged($event)&quot;&gt;
+      &lt;/quill-editor&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+
+  &lt;!-- &lt;pre&gt;{{ f.value | json }}&lt;/pre&gt; --&gt;
+  
+
+  &lt;/div&gt;
+
+
+
+  &lt;div class&#x3D;&quot;mb-5&quot; style&#x3D;&quot;margin-bottom: 90px !important&quot;&gt;
+
+  &lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./constraints.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="col-sm-12 col-md-12 cl-lg-11 col-xl-11">  <span class="mt-2 ap-detail-title">Constraints</span>  <div class="float-right" style="margin-top: -20px"> </div> <form name="Form" #f="ngForm">  <div class="row" style="margin-top: 30px">    <div class="col-12">      <quill-editor [disabled]="this.status == \'Shared\' && this.userexists == false || this.status == \'Accepted\' || this.status==\'Initiated\' || this.status==\'Generated\'" [(ngModel)]="this.description" name= "description" format="html" [styles]="{height: \'50vh\'}" placeholder="" (onContentChanged)="onContentChanged($event)">      </quill-editor>    </div>  </div></form>  <!-- <pre>{{ f.value | json }}</pre> -->    </div>  <div class="mb-5" style="margin-bottom: 90px !important">  </div></div>'
+    var COMPONENTS = [{'name': 'ApdetailComponent', 'selector': 'app-apdetail'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AttachmentsComponent', 'selector': 'app-attachments'},{'name': 'AttachmentsinfoComponent', 'selector': 'app-attachmentsinfo'},{'name': 'ClausesectionsComponent', 'selector': 'app-clausesections'},{'name': 'CloseOutComponent', 'selector': 'app-close-out'},{'name': 'CodeValidateComponent', 'selector': 'app-code-validate'},{'name': 'CommentBoxComponent', 'selector': 'app-comment-box'},{'name': 'CompatibilityComponent', 'selector': 'app-compatibility'},{'name': 'CompetetionComponent', 'selector': 'app-competetion'},{'name': 'ConstraintsComponent', 'selector': 'app-constraints'},{'name': 'ContactAdminComponent', 'selector': 'app-contact-admin'},{'name': 'ContractadmindataComponent', 'selector': 'app-contractadmindata'},{'name': 'ContractComponent', 'selector': 'app-contract'},{'name': 'ContractdetailComponent', 'selector': 'app-contractdetail'},{'name': 'ContractFileComponent', 'selector': 'app-contract-file'},{'name': 'ContractGenerationComponent', 'selector': 'app-contract-generation'},{'name': 'ContractPreviewComponent', 'selector': 'app-contract-preview'},{'name': 'ContractsdisplayComponent', 'selector': 'app-contractsdisplay'},{'name': 'CoprofileComponent', 'selector': 'app-coprofile'},{'name': 'CornominationComponent', 'selector': 'app-cornomination'},{'name': 'DashAcquisitionComponent', 'selector': 'app-dash-acquisition'},{'name': 'DashActiveComponent', 'selector': 'app-dash-active'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DashExpiredComponent', 'selector': 'app-dash-expired'},{'name': 'DashSolicitationComponent', 'selector': 'app-dash-solicitation'},{'name': 'DeleveriesandperformanceComponent', 'selector': 'app-deleveriesandperformance'},{'name': 'EstimateComponent', 'selector': 'app-estimate'},{'name': 'EvaluatevendorComponent', 'selector': 'app-evaluatevendor'},{'name': 'EvaluationfactorsComponent', 'selector': 'app-evaluationfactors'},{'name': 'EvaluationsComponent', 'selector': 'app-evaluations'},{'name': 'FormdetailComponent', 'selector': 'app-formdetail'},{'name': 'GeneralComponent', 'selector': 'app-general'},{'name': 'HomePageComponent', 'selector': 'app-home-page'},{'name': 'IgceComponent', 'selector': 'app-igce'},{'name': 'InspectionandacceptanceComponent', 'selector': 'app-inspectionandacceptance'},{'name': 'InstructionsComponent', 'selector': 'app-instructions'},{'name': 'LoginPageComponent', 'selector': 'app-login-page'},{'name': 'LogoutComponent', 'selector': ''},{'name': 'MarketresearchComponent', 'selector': 'app-marketresearch'},{'name': 'ModifyContractComponent', 'selector': 'app-modify-contract'},{'name': 'PackagingandmarketingComponent', 'selector': 'app-packagingandmarketing'},{'name': 'PmacquisitionsComponent', 'selector': 'app-pmacquisitions'},{'name': 'PmdashComponent', 'selector': 'app-pmdash'},{'name': 'PmprofileComponent', 'selector': 'app-pmprofile'},{'name': 'PmsolComponent', 'selector': 'app-pmsol'},{'name': 'PreviewComponent', 'selector': 'app-preview'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProposalevalhomeComponent', 'selector': 'app-proposalevalhome'},{'name': 'ProposalevaluationComponent', 'selector': 'app-proposalevaluation'},{'name': 'QandaComponent', 'selector': 'app-qanda'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RepresentationcertsComponent', 'selector': 'app-representationcerts'},{'name': 'ReqformComponent', 'selector': 'app-reqform'},{'name': 'SolCommentBoxComponent', 'selector': 'app-sol-comment-box'},{'name': 'SolicitationdetailComponent', 'selector': 'app-solicitationdetail'},{'name': 'SowComponent', 'selector': 'app-sow'},{'name': 'SpecialcontractreqComponent', 'selector': 'app-specialcontractreq'},{'name': 'StatementofworkComponent', 'selector': 'app-statementofwork'},{'name': 'SuppliesandservicesComponent', 'selector': 'app-suppliesandservices'},{'name': 'TradeoffsComponent', 'selector': 'app-tradeoffs'},{'name': 'VendorresevalComponent', 'selector': 'app-vendorreseval'},{'name': 'VendorresponseComponent', 'selector': 'app-vendorresponse'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ConstraintsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ConstraintsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

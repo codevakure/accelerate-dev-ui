@@ -1,0 +1,59 @@
+.badge {
+    font-size: 90%;
+    /* background-color: #20295b;
+    color: white; */
+}
+
+.header2 {
+    font-size: 130%;
+}
+.btn-flat-primary, .btn-flat-primary:active, .btn-flat-primary:focus, .btn-flat-primary:hover, .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary:focus, .btn-outline-primary:hover {
+    color: #1f5fbd;
+    border: 1px solid #2e73dc;
+    border-radius: 5% !important;
+    font-size: 85%;
+}
+
+.btn-primary {
+    /* background-color: #9c27b0; */
+    background-color: #2e73dc;
+    color: white;
+    border-radius: 5px;
+    font-size: 85%;
+}
+
+.bd-example-modal-lg {
+    max-width: 70.5rem !important;
+}
+
+
+h1 {
+    font-size: 4.3em;
+    letter-spacing: -4px;
+    font-weight: 700;
+    color: #0B3555;
+    text-align: center;
+  }
+  
+  .cssanimation1, .cssanimation1 span {
+    animation-duration: 3s;
+    animation-fill-mode: both;
+  }
+  
+  .cssanimation1 span { display: inline-block }
+  
+  .cssanimation, .cssanimation span {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .cssanimation span { display: inline-block }
+  
+  .fadeInBottom { animation-name: fadeInBottom }
+  @keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to { opacity: 1 }
+  }

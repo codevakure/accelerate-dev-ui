@@ -1,0 +1,59 @@
+
+<div class="header ml-1">
+  <div style="white-space:nowrap; color:#1a355d; 
+                font-weight:bold; font-size:16px;  
+                text-align:left;">
+    Proposal Evaluation - {{this.vendorName}}
+  </div>
+</div>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li><a (click)="back()">Proposals &nbsp; / &nbsp;</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Vendor Files</li>
+  </ol>
+</nav>
+
+
+<div class="mt-2">
+  <form [formGroup]="evaluations" (change)="onChange(evaluations)">
+    <table class="table table-striped mt-3 mb-0 border">
+
+
+      <thead>
+        <tr>
+          <th scope="col">Volume Name</th>
+          <th scope="col">Created Date</th>
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eval of getVolumes(evaluations); let i = index">
+          <td>{{eval.get('volumeName').value}}</td>
+          <td>{{this.timeStamp | date }}</td>
+          <td>
+            <div *ngIf="eval.get('status').value == ''" class="textupdate">
+              &nbsp;<i class="fa fa-hourglass-start" style="color:#0844a4 " aria-hidden="true"></i>
+              &nbsp;<span style="color: grey">Not Started</span></div>
+            <div *ngIf="eval.get('status').value == 'Pending'" class="textupdate">
+              &nbsp;<i class="fa fa-hourglass-start" style="color:#0844a4 " aria-hidden="true"></i>
+              &nbsp;<span style="color: grey">Pending</span></div>
+            <div *ngIf="eval.get('status').value == 'Complete'" class="textupdate">
+              &nbsp;<i style="color: #629c44;" class="fa fa-check-circle-o" aria-hidden="true"></i>
+              &nbsp;<span style="color: #629c44">Complete</span></div>
+          </td>
+          <td>
+            <a *ngIf="eval.get('status').value == ''" style="min-width: 2.5rem;" class="btn btn-sm btn-primary text-white"
+              (click)="Evaluate(eval, i)">Evaluate</a>
+            <a *ngIf="eval.get('status').value == 'Pending'" style="min-width: 2.5rem;" class="btn btn-sm btn-primary text-white"
+              (click)="Evaluate(eval, i)">Evaluate</a>
+            <a *ngIf="eval.get('status').value == 'Complete'" style="min-width: 2.5rem;" class="btn btn-sm btn-primary text-white"
+              (click)="Evaluate(eval, i)">Review</a></td>
+        </tr>
+
+      </tbody>
+
+    </table>
+  </form>
+</div>

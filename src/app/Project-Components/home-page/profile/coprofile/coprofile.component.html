@@ -1,0 +1,66 @@
+<div class="container-fluid custom-top">
+  <div class="card p-5 col-sm-12 col-md-9 col-lg-9 col-xl-9  shadow-md mt-3 gradient-primary1" style="margin-left: 14%">
+
+    <div class="row">
+      <div class="col-sm-12 col-md-4 col-lg-4 border border-top-0 border-left-0 border-bottom-0">
+        <div class="row text-center mb-4">
+          <div class="profilenameheader"></div>
+        </div>
+        <div class="row ml-5 d-none d-sm-block">
+          <img class="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYm-KcyvHy3PDkmh0V9KzkUk26255h0RwthshiaoanTnfH2B_IRg" class="user" alt="">
+        </div>
+        <div class="row ml-5 mt-4">
+          <!-- <div class="profilename">{{this.firstname}} {{this.lastname}}</div> -->
+          <div class="profilename">{{this.profileData?.firstName}} {{this.profileData?.lastName}}</div>
+        </div>
+        <div class="row  ml-5">
+          <div class="role">{{this.profileData?.roles[0].roleName}}</div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-6">
+        <div class="card-body">
+          <div>
+            <span class="montserrat">Profile</span>
+          </div>
+
+
+          <div>
+            <span>Address:</span> <br> <span style="color:white">{{this.profileData?.address}}</span>
+          </div>
+          <div>
+            <span>Office Code:</span> <br> <span style="color:white">{{this.profileData?.officeCode}}</span>
+          </div>
+
+
+          <div>
+            <span>Email:</span> <br> <span style="color:white">{{this.profileData?.email}}</span>
+          </div>
+
+          <div>
+            <span>Phone:</span> <br> <span style="color:white">{{this.profileData?.phone}}</span>
+          </div>
+          <div>
+
+              <div>
+                  <span>Warrant Level:</span> <br> <span style="color:white">{{this.profileData?.warrantLevel}}</span>
+                </div>
+                <div>
+                    <span>FACs Level 1-3:</span> <br> <span style="color:white">Not Applicable</span>
+                  </div>
+                  <div>
+                      <span>Warrant Amount:</span> <br> <span style="color:white">{{this.profileData?.warrantAmount}}</span>
+                    </div>
+            <span>Applicable PM offices:</span> <br> <span style="color:white">{{this.profileData?.applicablePmOffices}}</span>
+          </div>
+          <div>
+            <span>Applicable BA offices:</span> <br> <span style="color:white">Mehul <br> HHS <br> Washington, DC</span>
+          </div>
+
+
+        </div>
+          
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,248 @@
+<div style="background-color:rgb(249, 250, 251)">
+  <div>
+    <div class="col-md-5 col-sm-12 col-lg-12 col-xl-12">
+      <div class="row">
+        <div class="col-md-11 col-sm-11 col-lg-11 col-xl-11">
+
+
+          <div style="white-space:nowrap; color:#1a355d; 
+          font-weight:bold; font-size:16px;
+          text-align:left;">
+            Question and Answers
+          </div>
+
+
+
+          <div class="row">
+            <div class="col mt-3">
+              <div
+                style="color: #0844a4;  font-weight: bold; font-size: 14px;text-align: left;background-color:#eff2f5; padding:6px; width: 350px"
+                data-toggle="tooltip" data-placement="left" title="Period of Performance can be changed in Genral page">
+                Due Date &nbsp; {{qandadate | date:'LLL dd, yyyy h:mm a'}} EST
+              </div>
+
+              <div style="margin-top: 20px" [class.d-none]="response != ''" class="alert alert-info" role="alert">
+                <i style="font-size: 140%; color: #1a355d" class="fa fa-info-circle" aria-hidden="true"></i>&nbsp; There are
+                no Questions to display!
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="showassign" id="showassign">
+  Test
+</div>
+
+<div [class.d-none]="response == ''" id="content-container" >
+  <div id="header-container">
+    <p id="question" class="bold">
+      Question
+    </p>
+    <p id="vendor" class="bold">
+      Vendor
+    </p>
+    <div id="action" class="bold">
+      Action
+    </div>
+  </div>
+
+  <div id="table_container">
+    <div id="question_table">
+      <!-- start of row template-->
+      <ng-container *ngFor="let vend of response; index as i">
+        <div class="row_container" style="position: relative;float:left" id="{{'container'+i}}"
+          [attr.data-assigned]="vend.assigned">
+          <div id="{{'checked'+i}}" class="ellipse_1" style="position: relative;float:left" 
+          [ngStyle]="{'border-color':vend.response? 'green':'lightgray',
+                  'color':vend.response? 'green':'lightgray','opacity':vend.response?'0.9':'0.5'}">&#10003;</div>
+          <div class="question hover" id="{{+i}}" (click)="click($event)">
+            {{vend.question}}
+          </div>
+
+
+          <div class="hovershow" [attr.data-before]="vend.vendor">
+            <p class="vendor ">{{vend.vendor}} </p>
+
+          </div>
+
+          <button type="button"
+          id="{{i}}" (click)="click($event)" 
+          class="btn-small btn-primary action respond_button" 
+          style="color: white;font-size: 14px;box-shadow: none;border:none;position: absolute;"
+           >{{vend.status =='Open'?'Respond':'View' }}</button>
+
+          
+
+
+          <div class="assign_button hover"
+          *ngIf="vend.status == 'Open'"
+          id="{{'assign'+i}}" 
+          (click)="assign($event)" attr-collapse="false"
+            [attr.data-assigned]="vend.assigned">
+
+            <!--<div class="arrow" id="{{'arrow_assign'+i}}"></div>
+             (click)="click($event)"
+            -->
+            <button type="button"
+            [ngClass]="{'assignbtn':vend.assigned != undefined}"
+            (click)="vend.drop = true" 
+            [ngStyle]="{'background-color':vend.assigned != undefined?'green':'#7a7a7a'}"
+            [attr.data-assigned]="vend.assigned"
+            id='{{i}}'  
+            class="btn-small btn-primary action respond_button " 
+            style="color: white;font-size: 14px;
+            box-shadow: none;
+            border-width: 0px !important;margin-left:10px"
+             ><span>{{vend.assigned != undefined?'Assigned':'Assign' }}</span></button>
+
+          </div>
+
+          <!--[ngStyle]="{'height':vend.drop?'180px':'0px'}"-->
+
+          <div class="dropdown" id="{{'dropdown'+i}}"
+          
+          >
+            <div class="respond_container">
+              <textarea 
+              [ngStyle]="{'pointer-events':vend.status !='Open'?'none':'all'}"
+              (keyup)="keyup($event.target.value,i)" id="{{'textarea'+i}}"
+                placeholder="Please Type Your Answer" ngmodal="textvalidate">{{vend.response}}</textarea>
+
+              <!-- <button class="buttonstyle1 hover" style="top: 120px;left: 390px;">Tag</button>" -->
+              <button id="{{'completed'+i}}"
+              *ngIf="vend.status =='Open'"
+              (click)="validateComplete(i)" 
+              class="buttonstyle1 hover"
+              [ngStyle]="{'opacity':vend.response !='' && vend.response != undefined?'1':'0.5'}"
+                style="top: 120px;left: 479px;" 
+                [attr.data-ques-id]='vend.id'
+                >Complete</button>
+
+
+              <p class="previoustab" id="{{i}}" (click)="click($event);next($event,'previous',i)">Previous</p>
+              <p class="next" id="{{i}}" (click)="click($event);next($event,'next',i)">Next</p>
+              <p class="exit hover" id="{{i}}" (click)="click($event)">X</p>
+
+              <!--Assign Curtin-->
+              <div id="{{'curtain_assign'+i}}" class="curtain" 
+              [attr.data-index]='i'>
+                <div *ngFor="let name of assignlist.names, index as p "
+                  style="position: relative;border-bottom:1px solid #cad2db;overflow:hidden ">
+                  <p id="{{p}}" class="assign_select hover underline " [attr.data-ques-id]='vend.id'
+                    (click)="assigned($event,name.email, name.name,i)">{{name.name}}</p>
+                  <i class="fa fa-share arrrowshare"></i>
+                </div>
+              </div>
+
+              
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <!-- end of row template-->
+    </div>
+  </div>
+  <!--End of table_container-->
+  <div id="footer">
+    <select id="page_select_drop_down" [(ngModel)]="pageamount" (change)="pagesize(pageamount)">
+      <option *ngFor="let count of this.counter" value="{{count}}">{{count}}</option>
+    </select>
+    <div id="items_of" class="bold" style="width:fit-content">
+      OF
+    </div>
+    <div id="previous" class="bold hover" (click)="previouspage()">
+      PREVIOUS
+    </div>
+    <div id="pagecount"></div>
+
+    <div id="next" class="bold hover" (click)="nextpage()">
+      NEXT
+    </div>
+
+  </div>
+
+
+  <!-- Button trigger modal -->
+
+  <button type="button" class="btn  btn-primary action  " data-toggle="modal" data-target="#exampleModal" style="position:relative;float:left;top: 85px;
+         margin-left: 840px;text-transform:none"
+    (click)="pdfsaveview($event)">Preview</button>
+
+    <!---->
+  <button *ngIf="this.published == false"  type="button" class="btn  btn-primary action " 
+  style="position:relative;float:left;top: 50px;
+         margin-left: 740px;text-transform:none;border-width: 0px !important;"
+         [disabled]=" this.qandaStatus =='Closed' " 
+         [class.disabled]="this.qandaStatus =='Closed'"
+          (click)="publish()"
+    >Publish</button>
+
+    <button *ngIf="this.published == true"  type="button" class="btn  btn-primary action " 
+  style="position:relative;float:left;top: 50px;
+         margin-left: 740px;text-transform:none;border-width: 0px !important;"
+          (click)="publish()"
+         [disabled]=" this.qandaStatus =='Closed' " 
+         [class.disabled]="this.qandaStatus =='Closed'"
+    >Publish</button>
+
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div style="width:800px;position:static" class="modal-dialog" role="document">
+
+    <div class="modal-content">
+      <div class="modal-header" style="position:static">
+        <button (click)="print()" class="printsave hover"
+          style="background:url('assets/save-icon.png');width:25px;"></button>
+        <span>
+          <p id="printheader" style="
+                font-weight: bold;
+                font-size: 16px;">{{this.projectTitle}}</p>
+          <p id="printheader" style="
+                 font-weight: bold;
+                 font-size: 16px;">{{this.projectTitle}}</p>
+          <br>
+          {{"Solicitation # " +this.solid}}
+
+        </span>
+
+        <button type="button" id="closemodal" class="btn btn-secondary" data-dismiss="modal"
+          style="display:none">X</button>
+        <p style="margin-bottom:-56px;
+              right: 40px;position: static">{{this.date}}</p>
+      </div>
+      <div id="pdfview" class="modal-body" style="height:1000px;padding:5px">
+
+        <div class="centered" style="position:static;border-top:2px solid #0844a4;">
+
+          <span *ngFor="let obj of response, index as i" class="qandaresponse">
+            <div>{{i+1 +".    Question:" + obj.question}}</div>
+            <div style="color:#0844a4">{{"Answer:"+obj.response}}</div>
+          </span>
+          <br>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mt-4">
+
+  </div>  
+</div>
+
+

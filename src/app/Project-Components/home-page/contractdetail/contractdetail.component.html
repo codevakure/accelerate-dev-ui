@@ -1,0 +1,68 @@
+
+
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar" class="shadow-1">
+    <ul class="list-unstyled components">
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a id="general" *ngIf="this.navtabdata" [routerLink]="['/home/contracts', this.navtabdata?.id]">
+          <i class="fa fa-desktop" aria-hidden="true"></i>
+          &nbsp; &nbsp; Contract
+        </a>
+      </li>
+
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a id="SOW" *ngIf="this.navtabdata" [routerLink]="['/home/contracts', this.navtabdata?.id,'contractadmin']">
+
+          <i class="fa fa-bar-chart" aria-hidden="true"></i>
+          &nbsp; &nbsp; Contract Admin
+        </a>
+      </li>
+
+      <li disabled [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a id="SOW" *ngIf="this.navtabdata" [routerLink]="['/home/contracts', this.navtabdata?.id,'modifycontract']">
+
+          <i class="fa fa-file-text" aria-hidden="true"></i>
+          &nbsp; &nbsp; Modify Contract
+        </a>
+      </li>
+
+
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a id="general" *ngIf="this.navtabdata" [routerLink]="['/home/contracts', this.navtabdata?.id,'closeout']">
+          <i class="fa fa-table" aria-hidden="true"></i>
+          &nbsp; &nbsp; Close Out
+        </a>
+      </li>
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a id="Evaluations" *ngIf="this.navtabdata" [routerLink]="['/home/contracts', this.navtabdata?.id,'contractfile']">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          &nbsp; &nbsp; Contract File
+        </a>
+      </li>
+
+    </ul>
+
+
+  </nav>
+
+
+  <!-- Page Content  -->
+  <div id="content" style="margin-top: 135px;">
+    <div class="col-md-11 col-xl-11 col-lg-11 col-xl-11 position-fixed row"
+      style="background-color: #f7f6f6;; margin-top: -81px; height: 64px; z-index: 2; border-bottom: 1px solid #ebebeb">
+
+      <div class="p-2 pl-2">
+        <span class="projecttitle">{{this.navtabdata?.CONTRACT?.projectTitle}}
+
+        </span><br>
+        <span class="projectsub">
+          Contract # {{this.navtabdata?.id}}
+        </span>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+    <div class="mb-5"></div>
+  </div>
+</div>

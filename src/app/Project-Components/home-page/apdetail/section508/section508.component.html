@@ -1,0 +1,30 @@
+<div class="col-sm-12 col-md-12 cl-lg-11 col-xl-11">
+    <span class="mt-2 ap-detail-title sowTitle">Statement of Work</span><br>  
+    
+    <form name="Form" #f="ngForm">
+      <div class="mt-3">  <span class="ap-detail-title sowTitle" style="font-size: 13.5px; color:#1a355d;">Section 508*</span></div>
+      <div class="mb-2">
+          <a class="tooltips" href="#">FAR 39.201<span class="classic">Scope of Subpart<br>
+            •	This subpart implements Section508 of the Rehabilitation Act of1973 (29 U.S.C.794d), and the Architectural and Transportation Barriers Compliance Board Electronic and Information Technology (EIT) Accessibility Standards (36 CFR Part1194).<br>
+            •	Further information on Section508 is available via the Internet at http://www.section508.gov.<br>
+            •	When acquiring EIT, agencies must ensure that-<br>
+            o	Federal employees with disabilities have access to and use of information and data that is comparable to the access and use by Federal employees who are not individuals with disabilities; and<br>
+            o	Members of the public with disabilities seeking information or services from an agency have access to and use of information and data that is comparable to the access to and use of information and data by members of the public who are not individuals with disabilities.<br>
+            
+            </span></a>
+      </div>
+      <label class="label-class">For information technology acquisitions, discuss how the capital planning and investment control (CPIC) requirements of 40 U.S.C. 11312 and OMB Circular A-130 will be met (see 7.103(v) and Part 39); and discuss why this action benefits the Government, such as when --</label> <br><br>
+
+          <label class="label-class">The agency can accomplish its mission more efficiently and effectively (e.g., take advantage of the servicing agency's specialized expertise; or gain access to contractors with needed expertise); or Ordering through an indefinite delivery contract facilitates access to small business concerns, including small disadvantaged business concerns, 8(a) contractors, women-owned small business concerns, HUBZone small business concerns, veteran-owned small business concerns, or service-disabled veteran-owned small business concerns. 
+              ​</label><br><br>
+              <label class="label-class">For information technology acquisitions using Internet Protocol, discuss whether the requirements documents include the Internet Protocol compliance requirements specified in 11.002(g) or a waiver of these requirements has been granted by the agency's Chief Information Officer.
+                  ​</label><br>
+      <div class="row" style="margin-top: 12px">
+          <div class="col-12">
+            <quill-editor customToolbarPosition="bottom" [disabled]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status=='Initiated' || this.status=='Generated'" [(ngModel)]="this.sectionData" name="description" format="html"
+              [styles]="{height: '50vh'}" placeholder="" (onContentChanged)="onSection508($event)"></quill-editor>
+          </div>
+        </div>
+    </form>
+  
+</div>

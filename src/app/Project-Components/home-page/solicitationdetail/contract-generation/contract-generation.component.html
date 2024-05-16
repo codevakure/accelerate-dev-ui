@@ -1,0 +1,165 @@
+<button data-toggle="modal" data-target="#modal7" class="savebutton hover"  style="background:url('../../../assets/save-icon.png');width:25px;
+height:25px;
+border:none;
+background-repeat: no-repeat;
+background-size: cover" *ngIf="boo == false" ></button>
+
+<button  class="savebutton hover"  style="background:url('assets/save-icon.png');width:25px;
+height:25px;
+border:none;
+background-repeat: no-repeat;
+background-size: cover" *ngIf="boo == true" (click)="makepdf('lock')"></button>
+
+
+<div class="container-fluid" style="position:absolute;left:100px;width:800px;
+">
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"  aria-labelledby="myLargeModalLabel" id="modal7" aria-hidden="true">
+    <div class="modal-dialog modal-lg hello" style="position:relative;margin:auto;top:20vh;width:600px">
+          <div class="modal-header" style="height:50px">
+                  <!-- <h5 class="modal-title">Market Research</h5> -->
+                  <img src="assets/hhs-accelerate-logo.png" style="width:100px;height:20px">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+      <div id="phrase" class="modal-content" style="padding:20px">
+              <p style="
+              color: rgb(24, 62, 103);
+              font-weight: normal;
+              font-size: 15px;
+    font-family: Arial,SansSerif;line-height:1.5">Please confirm if this is the final version of your solicitation and it is ready for final export. If yes, then no further edits can be made to this file and your solicitation status will update to "Exported".</p>
+              <div style="position:relative;float:left;height:30px;width:100%">
+                <input  class=" right hover" data-dismiss="modal" aria-label="Close"  id="no" type="button" value="Cancel" >
+                <input (click)="makepdf('lock')" 
+                class="right hover" id="yes"
+                 value="Publish" type="button"  >
+              </div>
+              
+      </div>
+    </div>
+  </div>
+
+  <div class="printable" id="newpdf">
+    <div id="overlay">
+      <div class="loader"></div>
+    </div>
+
+    <p id="requisitionNumber" class="data" style=" top: 60px;
+      left: 500px;"></p>
+
+      <p id="requisitionNumber" class="data" style=" top: 60px;
+      left: 500px;"></p> 
+      
+      <p id="requisitionNumber" class="data" style=" top: 60px;
+      left: 500px;">{{this.soldata.requisitionNumber}}</p> 
+
+<p (click)="edit($event)" (blur)="unedit($event)" id="solicitationNumber" class="data" style=" top: 100px;
+left: 500px;">{{this.soldata.sol_no}}</p> 
+
+<p id="orderNumber" class="data" style=" top: 100px;
+left: 350px;"></p> 
+<p id="orderNumber" class="data" style=" top: 100px;
+left: 350px;">{{this.soldata.orderNumber}}</p> 
+
+<p id="contractNumber" class="data" style=" top: 100px;
+left: 80px;">{{this.soldata.contractNumber}}</p> 
+
+<p id="" class="data" style=" top: 155px;
+left: 250px;">{{this.soldata.coName}}</p> 
+
+<p id="phone1" class="data" style=" top: 155px;
+left: 499px;">{{this.soldata.coPhone}}</p> 
+
+<p id="startdate" class="data" style=" top: 110px;
+left: 681px;"></p> 
+<p id="startdate" class="data" style=" top: 110px;
+left: 681px;">{{this.soldata.startdate}}</p> 
+
+<p id="dueDate" class="data" style=" top: 155px;
+left: 680px; width:100px;height:fit-content">{{this.date}}</p> 
+
+<p id="NAICS" *ngIf="this.soldata.naicscode" class="data" style=" top: 233px;
+left: 726px;">{{this.soldata.naicscode.substring(0,6)}}</p> 
+
+<p id="sizestandard" class="data" style=" top: 279px;
+left: 710px;">{{"$"+this.soldata.size_standards_dollars + "M"}}</p> 
+
+
+<p id="issuededby" class="data" style="top: 210px;
+left: 113px;">{{this.soldata.coName}}<br>{{this.soldata.coAddress}}
+</p>
+
+<p id="deliveryaddress" class="data" style="top: 400px;
+left: 80px;">{{this.soldata.baAddress}}
+</p>
+
+
+<p id="unrestricted" class="data box" style="top: 195px;
+left: 532px;">{{this.soldata.unrestricted}}</p>
+
+<p id="setaside" class="data box" style="top: 195px;
+left: 645px;">{{this.soldata.setAside}}</p>
+
+    <p id="percent" class="data box" style="top: 195px;
+left: 726px;font-size:15px;width:fit-content;height:16px"></p>
+    <p id="percent" class="data box" style="top: 195px;
+    left: 728px;font-size:15px;width:fit-content;height:16px">{{this.soldata.percent}}</p>
+
+    <p id="smallBusiness" class="data box" style="top: 215px;
+left: 417px;">{{SB}}</p>
+<p id="hubzoneSB" class="data box" style="top: 239px;
+left: 418px;">{{HZ}}</p>
+<p id="SDVOB" class="data box" style="top: 267px;
+left: 418px;">{{SD}}</p>
+<p id="womenSB" class="data box" style="top: 222px;
+left: 530px;">{{WSB}}</p>
+<p id="EDWOSB" class="data box" style="top: 253px;
+left: 530px;">{{ED}}</p>
+
+<p id="eightA" class="data box sel" style="top: 283px;
+left: 530px;">{{a8}}</p> 
+
+<p id="RFQ" class="data box sel" style="top: 351px;
+left: 592px;"></p> 
+
+<p id="IFB" class="data box sel" style="top: 351px;
+left: 652px;"></p> 
+
+
+<p id="RFP" class="data box sel" style="top: 351px;
+left: 724px;"></p> 
+
+<p id="adminby" class="data" style="top: 390px;
+left: 413px;">{{this.soldata.coName}}<br> {{this.soldata.coAddress}}
+</p>
+
+<p id="paymentby" class="data" style="top: 460px;
+left: 413px;">{{this.soldata.coName}}<br>{{this.soldata.coAddress}}
+</p>
+
+<p id="a27_yes" class="data box" style="top: 823px;
+left: 635px;">{{this.soldata.a27_yes}}
+</p>
+
+
+<p id="a27_no" class="data box" style="top: 823px;
+left: 678px;">{{this.soldata.a27_no}}
+</p>
+
+
+<div class="signature" (touchstart)="draw($event)" (touchmove)="setPosition($event)"  (mousemove)="draw($event)" (mousedown)="setPosition($event)" (mouseenter)="setPosition($event)">
+<svg id="signature" width="340" height="30"
+ >
+   <path id="write" d='' stroke="red" stroke-linecap="round"
+   stroke-width="3" fill="none" />
+
+</svg>
+</div>
+   <img id="image"  style="top:0px;left:0px;height:1100px" src="" alt="">
+  
+   <section id ="pdfadd" style="width:800px">
+
+   </section>
+    
+  </div>
+</div>

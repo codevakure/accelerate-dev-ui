@@ -1,0 +1,298 @@
+<div class="col-md-12 col-lg-12 col-xl-12 col-sm-12">
+  <span class="mt-2 ap-detail-title">Other Considerations</span>
+  <form [formGroup]="otherConsiderations" novalidate (change)="onChange(otherConsiderations);">
+
+    <div class="form-group col-md-10 mt-4" style="margin-left:22px;">
+      <div class="form-group">
+        <label class="label-class" style="font-weight: 600;">Contract Administration*</label>
+      </div>
+      <div style="margin-top: -10px;">
+        <a class="tooltips">FAR 7.105(b)(19)<span class="classic">
+          Describe how the contract will be administered. In contracts for services, include how inspection and acceptance corresponding to the work statement’s performance criteria will be enforced.</span></a>
+      </div>
+      <label class="label-class mb-1" style="font-style: italic; font-size:13px">Describe how the contract will be administered. In contracts for services, include how inspection and acceptance corresponding to the work statement's performance criteria will be enforced along with plans to ensure separation of duties between the CO and the COR. Please include information on the role that the CO will have in administering the contracts for this P/P and information on the proposed COR's FAC-COR certification level.</label>
+
+      <div class="form-group col-md-5 mt-3">
+        <div class="textfield-box">
+          <ng-select [items]="pmFilter" #select bindLabel="fullCode" dropdownPosition="auto"
+          bindValue="fullCode" labelForId="proposedCOR" placeholder="Select COR Nominee" [virtualScroll]="true"
+          formControlName="proposedCOR" (click)="updateClick()">
+          <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+  
+              <span (click)="updateClick()" *ngIf="item.firstName != 'Not'">{{item.firstName}}&nbsp;{{item.lastName}}</span>
+              <span (click)="updateClick()"
+                *ngIf="item.firstName == 'Not'">{{(item.email.split('@')[0].split('.'))[0].charAt(0).toUpperCase() +  (item.email.split('@')[0].split('.'))[0].slice(1)}}</span>
+         
+          </ng-template>
+        </ng-select>
+        </div>
+
+
+
+      </div>
+
+
+      <hr>
+
+      <div class="form-group col-md-10 mt-4">
+        <div class="textfield-box">
+          <label class="label-class mb-1" style="font-weight: 600;">Trade-Offs</label>
+          <div class="mb-2">
+            <a class="tooltips">FAR 7.105(a)(6)<span class="classic">Discuss the expected consequences of trade-offs among the various cost, capability or performance, and schedule goals.</span></a>
+          </div>
+          <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss the expected consequences of trade-offs among the various cost, capability or performance, and schedule goals. For IT investments, include or reference the applicable portion of the alternatives analysis section of the required HHS EPLC business case. For major construction/facilities capital investments, include or reference the applicable portion of the current HHS business case, reviewed and approved by an appropriate governance structure, and the supporting acquisition strategy. 
+            Note: This section should not discuss trade-offs in relation to source selection.
+          </label> <br><br>
+          <label class="label-class mb-1" style="font-style: italic; font-size:13px; color: 	#696969">​This section should
+            not discuss trade-offs in relation to source selection.
+          </label>
+          <textarea class="form-control" rows="3" formControlName="tradeOff" type="text"
+            placeholder="Please discuss Trade-Offs"></textarea>
+        </div>
+      </div>
+
+
+
+      
+      <div class="form-group col-md-10 mt-4">
+          <div class="textfield-box">
+            <label class="label-class mb-1" style="font-weight: 600;">Priorities, Allocations and Allotments</label>
+            <div class="mb-2">
+              <a class="tooltips">FAR 7.105(b)(8)<span class="classic">When urgency of the requirement dictates a particularly short delivery or
+                performance schedule, certain priorities may apply. If so, specify the method for obtaining and using priorities, allocations, and allotments, and the reasons for them (see subpart 11.6).
+                </span></a>
+            </div>
+            <label class="label-class mb-1" style="font-style: italic; font-size:13px">Specify the method for obtaining and using priorities, allocations, and allotments, and the reasons for them (see FAR Part 11.6). If the program is authorized under the Defense Productions Act of 1950, as amended (FAR Subpart 11.6), and will be using a preferential or priority rating, identify the applicable information.
+            </label> 
+            <textarea class="form-control" rows="3" formControlName="priorities" type="text"
+              placeholder="Please discuss Priorities, Allocations and Allotments"></textarea>
+          </div>
+        </div>
+
+
+
+      <div class="form-group col-md-10 mt-4">
+        <div class="textfield-box">
+          <label class="label-class mb-1" style="font-weight: 600;">Major Components or Subsystems Competition</label>
+          <div class="mb-2">
+            <a class="tooltips" >FAR 7.105(b)(2)(ii)<span class="classic">Identify the major components or subsystems. Discuss component breakout plans relative to these major
+              components or subsystems. Describe how competition will be sought, promoted, and sustained for these components or subsystems.
+              </span></a>
+          </div>
+          <label class="label-class mb-1" style="font-style: italic; font-size:13px">Identify the major components or
+            subsystems. Discuss component breakout plans relative to these major components or subsystems. Describe how
+            ​competition will be sought, promoted, and sustained for these components or subsystems.
+          </label>
+
+          <textarea class="form-control" rows="3" formControlName="majorComponents" type="text"
+            placeholder="Please discuss Major Components or Subsystems Competition"></textarea>
+        </div>
+      </div>
+
+
+
+
+      <div class="form-group col-md-10 mt-4">
+        <div class="textfield-box">
+          <label class="label-class mb-1" style="font-weight: 600;">Contractor versus Government Performance
+            Consideration </label>
+          <div class="mb-2">
+            <a class="tooltips" >FAR 7.105(b)(9)<span class="classic">Address the consideration given to OMB Circular No.A-76 (see subpart 7.3).</span></a>
+          </div>
+          <label class="label-class mb-1" style="font-style: italic; font-size:13px">Address the consideration given to OMB Circular No. A-76 (See FAR Part 7.3) and HHS SAI guidance.
+          </label>
+
+          <textarea class="form-control" rows="3" formControlName="govtPerformance" type="text"
+            placeholder="Please discuss Contractor versus Government Performance Consideration "></textarea>
+        </div>
+      </div>
+
+
+
+
+
+      <div *ngIf="productService != 'svc'" class="form-group col-md-10 mt-4">
+        <div class="textfield-box">
+          <label class="label-class mb-1" style="font-weight: 600;">Make or Buy Program Considerations*</label>
+          <div class="mb-2">
+            <a class="tooltips" >FAR 7.105(b)(12)<span class="classic">Discuss any consideration given to make-or-buy programs (see 15.407-2).</span></a>
+          </div>
+          <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss any consideration given to
+            make-or-buy programs.
+          </label>
+
+          <textarea class="form-control" rows="3" formControlName="makeBuy" type="text"
+            placeholder="Please discuss Contractor versus Make or Buy"></textarea>
+        </div>
+      </div>
+
+
+      <div class="form-group col-md-10 mt-4">
+          <div class="textfield-box">
+            <label class="label-class mb-1" style="font-weight: 600;">Test and Evaluation</label>
+            <div class="mb-2">
+              <a class="tooltips" >FAR 7.105(b)(13)<span class="classic">To the extent applicable, describe the test program of the contractor and the Government. Describe the test program for each major phase of a major system acquisition. If concurrency is planned, discuss the extent of testing to be accomplished before production release.</span></a>
+            </div>
+            <label class="label-class mb-1" style="font-style: italic; font-size:13px">To the extent applicable, describe
+              the test program of the contractor and the Government. Describe the test program for each major phase of a
+              major
+              ​system acquisition. If concurrency is planned, discuss the extent of testing to be accomplished before
+              production release.
+            </label>
+    
+            <textarea class="form-control" rows="3" formControlName="testEvaluation" type="text"
+              placeholder="Please discuss Test and Evaluation"></textarea>
+          </div>
+        </div>
+    
+    
+    
+        <div class="form-group col-md-10 mt-4">
+          <div class="textfield-box">
+            <label class="label-class mb-1" style="font-weight: 600;">Contractor Data Requirements</label>
+            <div class="mb-2">
+              <a class="tooltips" >FAR Part 27<span class="classic">27.102 General guidance.<br>
+                (a) The Government encourages the maximum practical commercial use of inventions made under Government contracts.<br>
+                (b) Generally, the Government will not refuse to award a contract on the grounds that the prospective contractor may infringe a patent. The Government may authorize and consent to the use of inventions in the performance of certain contracts, even though the inventions may be covered by U.S. patents.<br>
+                (c) Generally, contractors providing commercial items should indemnify the Government against liability for the infringement of U.S. patents.<br>
+                (d) The Government recognizes rights in data developed at private expense, and limits its demands for delivery of that data. When such data is delivered, the Government will acquire only those rights essential to its needs.<br>
+            (e) Generally, the Government requires that contractors obtain permission from copyright owners before including copyrighted works, owned by others, in data to be delivered to the Government.<br>
+          </span></a>
+            </div>
+            <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss the requirements for contractor data (including repurchase data) and data rights, their estimated cost, and the use to be made of the data (see Part 27).
+            </label>
+    
+            <textarea class="form-control" rows="3" formControlName="contractorData" type="text"
+              placeholder="Please discuss Contractor Data Requirements"></textarea>
+          </div>
+        </div>
+    
+    
+        <div class="form-group col-md-10 mt-4">
+          <div class="textfield-box">
+            <label class="label-class mb-1" style="font-weight: 600;">Contractor or Agency Maintenance Support</label>
+            <div class="mb-2">
+              <a class="tooltips" >FAR 7.105(b)(14)(i)            <span class="classic">7.302	Policy.<br>
+                (a)	The Circular provides that it is the policy of the Government to-<br>
+                (1)	Perform inherently governmental activities with Government personnel; and<br>
+                (2)	Subject commercial activities to the forces of competition.<br>
+                (b)	As provided in the Circular, agencies shall-<br>
+                (1)	Not use contractors to perform inherently governmental activities;<br>
+                (2)	Conduct public-private competitions in accordance with the provisions of the Circular and, as applicable, these regulations;<br>
+                (3)	Give appropriate consideration relative to cost when making performance decisions between agency and contractor performance in public-private competitions;<br>
+                (4)	Consider the Agency Tender Official an interested party in accordance with 31 U.S.C. 3551 to 3553 for purposes of filing a protest at the Government Accountability Office; and<br>
+                (5)	Hear contests in accordance with OMB Circular A-76, Attachment B, Paragraph F.<br>
+                (c)	When using sealed bidding in public-private competitions under OMB Circular A-76, contracting officers shall not hold discussions to correct deficiencies <br>
+              </span></a>
+            </div>
+            <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss the assumptions determining contractor or agency support, both initially and over the life of the acquisition, including consideration of contractor or agency maintenance and servicing (see Subpart 7.3); support for contracts to be performed in a designated operational area or supporting a diplomatic or consular mission (see 25.301-3); and distribution of commercial items.
+            </label>
+    
+            <textarea class="form-control" rows="3" formControlName="contractorAgency" type="text"
+              placeholder="Please discuss Contractor or Agency Maintenance Support"></textarea>
+          </div>
+        </div>
+    
+    
+    
+    
+        <div class="form-group col-md-10 mt-4">
+          <div class="textfield-box">
+            <label class="label-class mb-1" style="font-weight: 600;">Reliability, Maintainability, and Quality Assurance
+              Requirements</label>
+            <div class="mb-2">
+              <a class="tooltips" >FAR 7.105(b)(14)(ii)<span class="classic">The reliability, maintainability, and quality assurance requirements, including any planned use of warranties (see part 46)</span></a>
+            </div>
+            <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss the reliability,
+              maintainability, and quality assurance requirements, including any planned use of warranties (Far Part 46).
+              Discuss whether support
+              ​both in the beginning and over the life of the acquisition must be by the contractor (i.e. sole source) or
+              the agency.
+            </label>
+    
+            <textarea class="form-control" rows="3" formControlName="assuranceRequirements" type="text"
+              placeholder="Please discuss Reliability, Maintainability, and Quality Assurance Requirements"></textarea>
+          </div>
+        </div>
+    
+    
+    
+        <div class="form-group col-md-10 mt-4">
+          <div class="textfield-box">
+            <label class="label-class mb-1" style="font-weight: 600;">Standardization Concepts</label>
+            <div class="mb-2">
+              <a class="tooltips" >FAR 7.105(b)(14)(iv)<span class="classic">Standardization concepts, including the necessity to designate, in accordance with agency procedures, technical equipment as “standard” so that future purchases of the equipment can be made from the same manufacturing source.</span></a>
+            </div>
+            <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss the need for standardization
+              concepts, including the necessity to designate, in accordance with agency procedures, technical equipment as
+              ​"standard" so that future purchases of the equipment can be made from the same manufacturing source.
+            </label>
+    
+            <textarea class="form-control" rows="3" formControlName="standardizationConcepts" type="text"
+              placeholder="Please discuss Standardization Concepts"></textarea>
+          </div>
+        </div>
+    
+    
+    
+        <div class="form-group col-md-10 mt-4">
+          <div class="textfield-box">
+            <label class="label-class mb-1" style="font-weight: 600;">Environmental and Energy Conservation
+              Objectives*</label>
+            <div class="mb-2">
+              <a class="tooltips" >FAR 7.105(b)(17)<span class="classic">Discuss all applicable environmental and energy conservation objectives associated with the acquisition (FAR Part 23), the applicability of an environmental assessment or environmental impact statement (40 CFR 1502), the proposed resolution of environmental issues, and any environmentally-related requirements to be included in solicitations and contracts (FAR Part 11.002, FAR Part 11.303).</span></a>
+            </div>
+            <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss all applicable environmental
+              and energy conservation objectives associated with the acquisition (FAR Part 23), the applicability of an
+              environmental
+              ​assessment or environmental impact statement (40 CFR 1502), the proposed resolution of environmental issues,
+              and any environmentally-related
+              ​requirements to be included in solicitations and contracts (FAR Part 11.002, FAR Part 11.303).<br>
+              Review APM 2011-05 to verify if the acquisition is subject to the requirements.
+
+              If applicable, discuss how the acquisition will meet the requirements of APM 2011-05. Additionally, specifically discuss the acquisition of products containing recovered materials, including the special requirements for printing and writing paper, and the requirements of FAR Part 23 with regards to the purchase and use of green products and services to the maximum extent practicable.
+            </label>
+    
+            <textarea class="form-control" rows="3" formControlName="conservationObjectives" type="text"
+              placeholder="Please discuss Environmental and Energy Conservation Objectives*"></textarea>
+          </div>
+        </div>
+    
+    
+    
+        <div class="form-group col-md-10 mt-4">
+          <div class="textfield-box">
+            <label class="label-class mb-1" style="font-weight: 600;">Other Considerations*</label>
+            <div class="mb-2">
+              <a class="tooltips">FAR 7.105(b)(20)<span class="classic">Discuss, as applicable:<br>
+                •	Standardization concepts;<br>
+                •	The industrial readiness program;<br>
+                •	The Defense Production Act;<br>
+                •	The Occupational Safety and Health Act;<br>
+                •	Support Anti-terrorism by Fostering Effective Technologies Act of 2002 (SAFETY Act) (see subpart 50.2);<br>
+                •	Foreign sales implications;<br>
+                •	Special requirements for contracts to be performed in a designated operational area or supporting a diplomatic or consular mission; and<br>
+                •	Any other matters germane to the plan not covered elsewhere.<br>
+                </span></a>
+            </div>
+            <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss as applicable (i)
+              Standardization concepts, (ii) Industrial readiness program, (iii) The Defense Production Act, (iv) The
+              Occupational Safety
+              ​and Health Act, (v) Support Anti-terrorism by Fostering Effective Technologies Act of 2002 (SAFETY Act, FAR Part
+              50.2); (vi) Foreign sales implications,
+              ​(vii) Special Requirements for contracts to be performed in a designated operational area or supporting a
+              diplomatic or consular mission, and (viii) Any
+              ​other matters germane to the plan not covered elsewhere.
+            </label>
+    
+            <textarea class="form-control" rows="3" formControlName="otherConsiderations" type="text"
+              placeholder="Please discuss Other Considerations"></textarea>
+          </div>
+        </div>
+
+    </div>
+
+
+
+  </form>
+</div>

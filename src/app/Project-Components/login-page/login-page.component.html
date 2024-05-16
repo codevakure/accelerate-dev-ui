@@ -1,0 +1,57 @@
+<div class="containerbg align-items-center">
+  <div class="container">
+    <div class="card col-md-6 col-xl-6 col-lg-6 offset-md-3 col-sm-12 shadow-lg">
+      <div class="row">
+      <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4 background-layer p-2 d-none d-xl-block" >
+          <img class="ml-3" style="margin-top: 80%" src="assets/hhs-accelerate-logo.png" height="33" alt="">
+      </div>
+      <div class="col-md-8 col-sm-8 col-lg-6 col-xl-6 m-5">
+          <h4 class="text-center login-text mb-4 ml-5">LOGIN</h4>
+          <form  [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)" *ngIf="confirmVerification" novalidate autocomplete="off">
+
+
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
+                  </div>
+                  <input type="text" [formControl]="username"  name="username" id="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <!-- <div class="text-danger" *ngIf="loginForm.get('username').dirty && loginForm.get('username').invalid">
+                    Enter your Username
+                  </div> -->
+
+
+                  <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>
+                      </div>
+                      <input type="password" [formControl]="password"  name="username" id="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                    </div>
+
+                <!-- <div class="text-danger" *ngIf="loginForm.get('password').dirty && loginForm.get('password').invalid">
+                    Enter your password
+                  </div> -->
+    
+            <div class="form-group">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" (change)="rememberMe($event)" id="remember-me">
+                <label class="custom-control-label" for="remember-me">Remember Me</label>
+              </div>
+            </div>
+            <div class="form-group float-right">
+              <div class="row">
+                <button type="submit" id="login" class="button" style="text-transform: none">Login</button>
+              </div>
+                      <!-- <a href="forgot.html" style="color: #2e73dc">
+                        Forgot Password?
+                      </a>
+      -->
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+</div>

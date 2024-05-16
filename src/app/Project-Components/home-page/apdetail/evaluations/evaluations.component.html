@@ -1,0 +1,454 @@
+<div class="col-md-12 col-lg-12 col-xl-12 col-sm-12">
+  <div class="col-11">
+    <span class="mt-2 ap-detail-title">Evaluations</span>
+    <div class="float-right" style="margin-top: -20px">
+      <a *ngIf="historicalReference"
+        [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'" data-target="#navdrawerRight" data-toggle="navdrawer"><img src="assets/HR.png"
+          height="73" width="180"></a>
+
+      <div aria-hidden="true" class="navdrawer navdrawer-right" id="navdrawerRight" tabindex="-1">
+        <div class="navdrawer-content">
+          <div class="navdrawer-header">
+            <span style="margin-top: 20px">Historical Reference</span>
+            <img style="margin-top: -100px; margin-left: 260px" src="assets/hhs-accelerate-logo.png" height="20" alt="">
+          </div>
+
+
+          <div class="p-3">
+            <div class="col-12 mt-2 mb-2 ">
+                   <div class="ard custom-height1">
+              <table *ngIf="this.simNumber" class="table table-striped mb-0 border">
+                <thead>
+                  <tr style="background-color: white">
+                    <th class="trclass" scope="col">Contract Title</th>
+                    <th class="trclass" scope="col">Feedback</th>
+                    <!-- <th scope="col">Score</th> -->
+                  </tr>
+                </thead>
+                <thead>
+                  <tr *ngFor="let sco of similarContractss | paginate: this.config; let i = index">
+                    <!-- <th class="simid" scope="row" id="title+{{(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1}}" (click)="clickSimilar(sco, (this.config.currentPage - 1) * this.config.itemsPerPage + i + 1)">Reference {{(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1}}</th> -->
+                    <th class="simid" scope="row" id="title+{{(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1}}" (click)="clickSimilar(sco, (this.config.currentPage - 1) * this.config.itemsPerPage + i + 1)">{{sco.publicDescription}} </th>
+                    <!-- <th class="simid" scope="row" (click)="clickSimilar(sco)">{{sco.acqNumber}}</th> -->
+                    <td class="text-center">
+                      <a (click)="addFeedbacklike(sco, (this.config.currentPage - 1) * this.config.itemsPerPage + i + 1)"> <i
+                          [ngClass]="{'color-green':this.aiFeedbackForm.get('eval').controls[(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1].value.feedback_status == 'Like','color-greyy':this.aiFeedbackForm.get('eval').controls[(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1].value.feedback_status == '','color-greyy':this.aiFeedbackForm.get('eval').controls[(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1].value.feedback_status == undefined}"
+                          class="fa fa-thumbs-up" style="font-size: 150%;" aria-hidden="true"></i> </a> &nbsp; &nbsp;
+                      <a (click)="addFeedbackdislike(sco, (this.config.currentPage - 1) * this.config.itemsPerPage + i + 1)"> <i
+                          [ngClass]="{'color-red':this.aiFeedbackForm.get('eval').controls[(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1].value.feedback_status == 'dislike','color-greyy':this.aiFeedbackForm.get('eval').controls[(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1].value.feedback_status == '','color-greyy':this.aiFeedbackForm.get('eval').controls[(this.config.currentPage - 1) * this.config.itemsPerPage + i + 1].value.feedback_status == undefined}"
+                          class="fa fa-thumbs-down" style="font-size: 150%;" aria-hidden="true"></i></a>
+                    </td>
+                    <!-- <td>
+                      <span style="font-size: 14px"
+                        class="badge badge-pill badge-success">{{sco.score | number:'1.0-0'}}%</span>
+                      <div class="progress blue" style="height: 20px;">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">{{sco.score | number:'1.0-0'}}%</div>
+                      </div>
+  
+                    </td> -->
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="mt-3 ml-2">
+              <pagination-controls (pageChange)="pageChanged($event)" previousLabel="" nextLabel=""></pagination-controls>
+            </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-sm btn-primary card-link ml-2" style="position: absolute;
+          right: 34px;" (click)="closeModals()" aria-label="Close" data-dismiss="navdrawer">Cancel</button>
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <form [formGroup]="evaluations" novalidate (change)="onChange(evaluations)" (keyup)="onKeyy($event)">
+    <div class="list-group p-2 col-md-12 col-lg-11 col-xl-11" id="accordionOne">
+      <div class="expansion-panel mb-2 list-group-item">
+        <a aria-expanded="false" class="expansion-panel-toggler btn-primar collapsed" data-toggle="collapse"
+          data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="headingOne"
+          (click)="sourceSelectionPlan($event)">
+          <span style="color: #1a355d;">Source Selection Procedures</span>
+          <div class="expansion-panel-icon ml-3 text-black-secondary">
+            <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+            <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+          </div>
+        </a>
+        <div aria-labelledby="headingOne" class="collapse" data-parent="#accordionOne" id="collapseOne">
+          <div class="expansion-panel-body">
+            <quill-editor class="sourceSelectionPlan" id="sourceSelectionPlan" name="sourceSelectionPlan" format="html"
+              formControlName="sourceSelectionPlan" [styles]="{height: '250px'}" placeholder=""
+              (onSelectionChanged)="sourceSelectionPlan($event)">
+            </quill-editor>
+          </div>
+        </div>
+      </div>
+
+      <div class="expansion-panel mb-2 list-group-item">
+        <a aria-controls="collapseFour" aria-expanded="false" class="btn-primar expansion-panel-toggler collapsed"
+          data-toggle="collapse" href="#collapseFour" id="headingFour" (click)="mandatoryCriteria($event)">
+          Mandatory Criteria
+          <div class="expansion-panel-icon ml-3 text-black-secondary">
+            <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+            <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+          </div>
+        </a>
+        <div aria-labelledby="headingFour" class="collapse" data-parent="#accordionOne" id="collapseFour">
+          <div class="expansion-panel-body">
+            <quill-editor class="mandatoryCriteria" format="html" formControlName="mandatoryCriterias"
+              [styles]="{height: '250px'}" placeholder="" (onSelectionChanged)="mandatoryCriteria($event)">
+            </quill-editor>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="expansion-panel mb-2 list-group-item">
+        <a aria-controls="collapseThree" aria-expanded="false" class="btn-primar expansion-panel-toggler collapsed"
+          data-toggle="collapse" href="#collapseThree" id="headingThree" (click)="evalCriteria()">
+          Evaluation Criteria
+          <div class="expansion-panel-icon ml-3 text-black-secondary">
+            <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+            <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+          </div>
+        </a>
+        <div aria-labelledby="headingThree" class="collapse collapseThree" data-parent="#accordionOne" id="collapseThree">
+          <div class="expansion-panel-body">
+
+            <div class="col-12">
+              <div class="mt-3">
+                <button
+                  [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                  class="btn btn-sm btn-outline-primary" id="createVolume" (click)="addVolume($event)">
+                  <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Create Volume
+                </button>
+              </div>
+            </div>
+
+            <!---Evaluations Volumes -->
+            <div formArrayName="evaluationCriteria">
+              <div
+                *ngFor="let evaluationCriteria of getVolumes(evaluations); let i = index; let f = first; let l = last;">
+
+                <div class="pl-4 pr-4" [formGroupName]="i">
+                  <div id="getIndexeval"></div>
+                  <div style="border-bottom:2px solid #1c6cbf;">
+                    <div class="float-right mr-2" style=" margin-top: 21px;">
+                      <a [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                        (click)="removeVolumes(i)" style="color: grey; font-size: 130%"><i class="fa fa-trash"
+                          aria-hidden="true"></i></a>
+                    </div>
+
+                    <div *ngIf="l" class="float-right mr-2" style="margin-top: 23px; color: #1c6cbf">
+                      |
+                    </div>
+                    <div *ngIf=" evaluationCriteria.get('volumeName').value !=''" class="float-right mr-2"
+                      style=" margin-top: 24px;">
+                      <a [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                        *ngIf="l" style="color: #1c6cbf " (click)="addVolume($event)"> Create Volume </a>
+                    </div>
+
+
+                    <div class="enter float-left mt-3" style="width: 290px; height: 32px; background: #1c6cbf;">
+                      <span class="float-left"
+                        style="text-transform:none; color:#ffffff; font-weight:bold; text-decoration:none; font-size:13px; font-family:Arial, SansSerif; font-style:normal; width:null; height:null; margin-left: 6px; margin-top: 8px">Volume
+                        {{i+1}}: &nbsp;</span>
+                      <div class="form-group float-right" style="width: 200px; margin-top: 3px">
+                        <div class="textfield-box col-12">
+                          <input
+                            [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                            type="text" class="mb-2" formControlName="volumeName" id="volumeName"
+                            (keyup)="textV($event)">
+                        </div>
+                      </div>
+
+                    </div>
+                    <button (click)="volumeClose()" class="btnn btn-sm mt-3 shadow-none ml-0" id="showVolume"
+                      style="height: 32px; background: #1c6cbf; margin-left: -20px; color: white;" type="button"
+                      data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                      [disabled]=" evaluationCriteria.get('volumeName').value ==''"
+                      [ngStyle]="{'background': evaluationCriteria.get('volumeName').value ==''?'lightgray':'#1c6cbf'}"
+                      aria-controls="collapseExample" [attr.data-target]="'#' + 'prefix' + m + i">
+                      <i class="fa fa-angle-down float-right" aria-hidden="true"></i>
+                    </button>
+
+                    <!-- <a class="p-1" (click)="removeVolumes(i)"><i class="fa fa-times" aria-hidden="true"></i></a> -->
+
+                  </div>
+                  <div class="collapse collapseExample" id="collapseExample" [attr.id]=" 'prefix' + m + i">
+                    <div class="col-3">
+                      <div class="mt-3">
+
+                        <!-- <label class="label-class mb-1">Add More</label> --> 
+                        <select
+                          [disabled]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status=='Initiated' || this.status=='Generated' || this.status=='Initiated' || this.status=='Generated'"
+                          *ngIf="this.textVolume[textVolumeIndex] == true || evaluationCriteria.get('volumeName').value"
+                          (change)="addFactors(i,$event)" type="text" class="form-control dropdown" id="product">
+                          <option *ngFor="let c of getacq" [ngValue]="c">{{c.description}}
+                          </option>
+                        </select>
+
+                      </div>
+                    </div>
+
+
+
+
+                    <!-- Factors segment -->
+                    <div class="product-container mt-3 col-12" formArrayName="factorRows">
+                      <div *ngFor="let factors of getFactors(evaluationCriteria); let j = index; trackBy: factorsSet"
+                        [formGroupName]="j">
+
+
+
+                        <div class="list-group" id="accordionFive">
+                          <div class="expansion-panel mb-2 list-group-item">
+                            <a aria-controls="collapseSix" aria-expanded="false"
+                              class="btn-primar expansion-panel-toggler collapsed"
+                              style="height: 15px; background: #F0F0F0;" data-toggle="collapse"
+                              [attr.data-target]="'#' + 'active' + j + i" href="#collapseSix" id="headingSix">
+                              <span style="color: #1c6cbf; font-weight: 600">Factor {{j+1}}: </span>
+
+                              <input
+                                [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                                type="text" class="form-control input-factor col-9" formControlName="factorName" placeholder="Type Factor Name"
+                                [ngClass]="{'disInput':factors.controls.factorName.value =='Technical Capabilities' || factors.controls.factorName.value =='Key Personnel' ||
+                                factors.controls.factorName.value =='Organizational Experience' || factors.controls.factorName.value =='Pricing'||
+                                factors.controls.factorName.value =='Past Performance'}">
+
+
+
+                              <div class="expansion-panel-icon ml-3 text-black-secondary">
+                                <a (click)="getIndexs()"> <i class="collapsed-show material-icons">keyboard_arrow_down</i></a>
+                                <a (click)="getIndexs()" id="hideCollapse"> <i class="collapsed-hide material-icons">keyboard_arrow_up</i></a>
+                              </div>
+                              <a [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                                (click)="removeFactors(evaluationCriteria.controls.factorRows, j)"><i
+                                  class="fa fa-times" aria-hidden="true"></i></a>
+                            </a>
+                            <div aria-labelledby="headingSix" class="collapse collapseSix" [attr.id]=" 'active' + j + i"
+                              data-parent="#accordionFive" id="collapseSix">
+                              <div class="expansion-panel-body">
+
+                                <quill-editor
+                                  [disabled]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status=='Initiated' || this.status=='Generated' || this.status=='Initiated' || this.status=='Generated'"
+                                  name="factorText" format="html" (click)="getFactorsText(i,j)" [attr.id]="'quill' + n + j" formControlName="factorText"
+                                  [styles]="{height: '250px'}" placeholder="" (onContentChanged)="factorText($event)">
+                                </quill-editor>
+
+
+                                <div class="mt-3"
+                                  style="color:#1c6cbf; font-weight:normal; font-size:15px; font-family:Arial, SansSerif; text-align:left;">
+                                  Scoring</div>
+                                <div
+                                  style="font-weight:normal; font-size:14px; font-family:Arial, SansSerif; text-align:left;">
+                                  <div class="mt-3">
+                                    <div class="custom-control custom-radio">
+                                      <input
+                                        [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                                        type="radio" id="adjectival+{{i}}+{{j}}" class="custom-control-input"
+                                        formControlName="factorScore" value="Acceptable">
+                                      <label
+                                        [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                                        class="custom-control-label" for="adjectival+{{i}}+{{j}}">Adjectival</label>
+                                    </div>
+
+
+                                    <div class="ml-3 mt-3 mb-2"
+                                      [ngStyle]="{'display':factors.controls.factorScore.value =='Acceptable'?'block':'none'}">
+                                      <div class="custom-control custom-radio">
+                                        <input
+                                          [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                                          type="radio" id="option1+{{i}}+{{j}}" class="custom-control-input"
+                                          formControlName="factorScoreUpdate" value="factorScoreUpdateYes">
+                                        <label
+                                          [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                                          class="custom-control-label" for="option1+{{i}}+{{j}}"> Excellent,
+                                          Satisfactory, Poor, etc.</label>
+                                      </div>
+
+                                      <div class="custom-control custom-radio">
+                                        <input
+                                          [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                                          type="radio" id="option2+{{i}}+{{j}}" class="custom-control-input"
+                                          formControlName="factorScoreUpdate" value="factorScoreUpdateNo">
+                                        <label
+                                          [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                                          class="custom-control-label" for="option2+{{i}}+{{j}}">Acceptable,
+                                          Non-Acceptable</label>
+                                      </div>
+                                    </div>
+
+
+                                    <div class="row mt-3">
+
+                                      <div class="none" style="margin-left: 20px">
+                                        <div class="custom-control custom-radio">
+                                          <input
+                                            [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                                            type="radio" id="poinscale+{{i}}+{{j}}" class="custom-control-input"
+                                            formControlName="factorScore" value="Points" (keypress)="keyPress($event)">
+                                          <label
+                                            [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                                            class="custom-control-label" for="poinscale+{{i}}+{{j}}">Point
+                                            Scale</label>
+                                        </div>
+                                      </div>
+
+                                      <div
+                                        [ngStyle]="{'display':factors.controls.factorScore.value =='Points'?'block':'none'}"
+                                        class="none " style="margin-left: 5px;
+                                        margin-top: -13px;display:none;">
+                                        <div class="form-group">
+                                          <div class="textfield-box">
+                                            <input
+                                              [class.disabledDiv]="this.status == 'Shared' && this.userexists == false || this.status == 'Accepted' || this.status == 'Initiated' || this.status == 'Published'"
+                                              class="form-control inputtext" type="text" placeholder="Insert Points"
+                                              formControlName="factorPoints" (keypress)="keyPress($event)">
+                                          </div>
+                                        </div>
+
+                                      </div>
+
+                                      <!-- {{factors.controls.factorScore.value | json}} -->
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+                    <!-- End Factors -->
+                  </div>
+
+
+                </div>
+
+
+              </div>
+            </div>
+            <!-- End Evaluations -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="expansion-panel mb-2 list-group-item">
+        <a aria-controls="collapseFive" aria-expanded="false" class="btn-primar expansion-panel-toggler collapsed"
+          data-toggle="collapse" href="#collapseFive" id="headingFive" (click)="scoringMechanism($event)">
+          Scoring Guidelines
+          <div class="expansion-panel-icon ml-3 text-black-secondary">
+            <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+            <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+          </div>
+        </a>
+        <div aria-labelledby="headingFive" class="collapse" data-parent="#accordionOne" id="collapseFive">
+          <div class="expansion-panel-body">
+            <quill-editor class="scoringMechanism" id="scoringMechanism" name="scoringMechanism" format="html"
+              formControlName="scoringMechanism" [styles]="{height: '250px'}" placeholder=""
+              (onSelectionChanged)="scoringMechanism($event)"></quill-editor>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- <pre> {{evaluations.value | json}} </pre> -->
+</div>
+
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true" id="bd-example-modal-lg">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-header d-none">
+      <img src="assets/hhs-accelerate-logo.png" height="30">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-content">
+      <div class="card border">
+
+
+
+        <div class="card-header row">
+          <div class="col-12">
+            
+            <div class="float-left row">
+              <h5 class="card-title ml-3 mt-2"
+                style="color: #0844a4;font-weight: bold;font-size: 15px;font-family: Arial, SansSerif;  white-space: nowrap; 
+                max-width: 630px; 
+                overflow: hidden;
+                text-overflow: ellipsis; ">
+                <i class="fa fa-tags" style="color: grey" aria-hidden="true"></i> &nbsp;{{this.scosolid}}
+                
+              </h5>
+
+              <div class="ml-4 mt-1">
+                <a (click)="addFeedbacklike(this.historicalArray, this.index)"> <i class="fa fa-thumbs-up"
+                  [ngClass]="{'color-green':this.feedbackIndividual == 'Like'}"
+                    style="font-size: 170%;" aria-hidden="true"></i> </a> &nbsp; &nbsp;
+                <a (click)="addFeedbackdislike(this.historicalArray, this.index)"> <i class="fa fa-thumbs-down"
+                  [ngClass]="{'color-red':this.feedbackIndividual == 'dislike'}"
+                    style="font-size: 170%;" aria-hidden="true"></i></a>
+              </div>
+            </div>
+
+
+
+            <div class="float-right mr-2">
+              <button type="button" style="color: grey; font-weight:600; font-size: 35px;" data-dismiss="modal" class="close"
+                 aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div id="cardScroll" class="card-body custom-height2 p-5">
+          <p class="card-text" [innerHTML]="scosow"></p>
+          <!-- <p class="card-text" style="white-space: pre-wrap">{{scosow}}</p> -->
+          <!-- <div *ngFor="let sowcontent of scosow">
+            <p class="card-text">{{sowcontent.content}}</p>
+
+          </div> -->
+          <!-- <p class="card-text" [innerHTML]="this.scosow"></p> -->
+        </div>
+        <div class="card-footer">
+
+          <button type="button" class="card-link btn-sm btn btn-success  float-left mr-5" style="color: white"
+            (click)="add()">&nbsp; Add &nbsp;</button>
+
+            <button [disabled]='this.index == 15' class="btn btn-sm btn-primary float-right ml-2" (click)="nextHR()">></button>
+            <button [disabled]='this.index == 1' class="btn btn-sm btn-primary mr-2 float-right" (click)="prevHR()"><</button>
+
+          
+
+          <!-- <button type="button" class="btn btn-sm btn-light card-link ml-2" (click)="closeModals()">Cancel</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="mb-5" style="margin-bottom: 90px !important">
+
+</div>

@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: dist/HHS-PACS-mine
+    destination: /tmp/hhs-frontend
+hooks:
+  BeforeInstall:
+    - location: scripts/cleanup.sh
+      timeout: 600
+      runas: ec2-user
+  AfterInstall:
+    - location: scripts/upload_s3_bucket.sh
+      timeout: 600
+      runas: ec2-user

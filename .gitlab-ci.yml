@@ -1,0 +1,5 @@
+include:
+  - project: 'hhs-accelerate/server.au-config'
+    file: '/Angular-CI-Build.yaml'
+  - project: 'hhs-accelerate/server.au-config'
+    file: 'AU-Angular-Deploy.yaml'

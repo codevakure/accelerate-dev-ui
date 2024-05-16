@@ -1,0 +1,300 @@
+<div class="col-sm-12 col-md-12 cl-lg-11 col-xl-11">
+
+
+  <div id="contractadmindata" class="mb-3">
+    <span class="mt-2 ap-detail-title">Summary of Changes</span>
+
+    <div class="soc" style="margin-top: 20px;">
+      <div class="changecontainer">
+
+        <div class="change" *ngFor="let change of allformchanges" [innerHTML]="change"></div>
+
+
+        <div class="change" *ngFor="let change of allclauseschanges" [innerHTML]="change"></div>
+
+        <div class="change" *ngFor="let change of manualchanges" [innerHTML]="change"></div>
+
+      </div>
+
+
+      <div>
+        <form name="Form" #f="ngForm">
+          <div class="row" style="margin-top: 10px">
+            <div class="col-12">
+  
+  
+              <div *ngIf="hideEditor">
+                <quill-editor id="editor" [(ngModel)]="this.data5" name="description" format="html"
+                  [styles]="{height: '10vh'}" placeholder="">
+                </quill-editor>
+              </div>
+
+  
+              <div id="noedit" *ngIf="hideDiv" [innerHTML]="this.data5" style="width: 70vw;
+                 overflow-y:scroll;
+                overflow-x:hidden;
+                height: 30vh;
+                background: white;
+                border: 1px solid lightgray;
+                padding:30px">
+              </div>
+  
+  
+  
+  
+            </div>
+          </div>
+        </form>
+        <button class="updatebtn hover" (click)="onContentChanged5()">Update</button>
+      </div>
+
+    </div>
+
+
+    <!-- <pre>{{ f.value | json }}</pre> -->
+  </div>
+
+
+
+  <div id="contractadmindata" class="mb-3">
+    <span class="mt-2 ap-detail-title">Contract Administration Data</span>
+    <div class="float-right" style="margin-top: -20px">
+    </div>
+    <form name="Form" #f="ngForm">
+      <div class="row" style="margin-top: 10px">
+        <div class="col-12">
+
+
+          <div *ngIf="hideEditor">
+            <quill-editor id="cad" [(ngModel)]="this.data" name="description" format="html"
+              [styles]="{height: '30vh'}" placeholder="" (onContentChanged)="onContentChanged($event)"
+              (mouseout)="onContentChanged($event)">
+            </quill-editor>
+          </div>
+
+
+          <!-- [modules]="this.toolbar" -->
+
+          <div id="noedit" *ngIf="hideDiv" [innerHTML]="this.data" style="width: 70vw;
+             overflow-y:scroll;
+            overflow-x:hidden;
+            height: 30vh;
+            background: white;
+            border: 1px solid lightgray;
+            padding:30px">
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </form>
+    <!-- <pre>{{ f.value | json }}</pre> -->
+  </div>
+
+  <div id="sow" class="mt-4 mb-3">
+    <span class="mt-2 ap-detail-title">Statement of Work</span>
+    <div class="float-right" style="margin-top: -20px">
+    </div>
+    <form name="Form" #f="ngForm">
+      <div class="row" style="margin-top: 10px">
+        <div class="col-12">
+          <div *ngIf="hideEditor">
+            <quill-editor id="sow" [(ngModel)]="this.data2" name="description" format="html"
+              [styles]="{height: '30vh'}" placeholder="" (mouseout)="onContentChanged2($event)"
+              (onContentChanged)="onContentChanged2($event)">
+            </quill-editor>
+          </div>
+
+
+          <!-- [modules]="this.toolbar" -->
+
+          <div id="noedit" *ngIf="hideDiv" [innerHTML]="this.data2" style="width: 70vw;
+           overflow-y:scroll;
+            overflow-x:hidden;
+          height: 30vh;
+          background: white;
+          border: 1px solid lightgray;
+          padding:30px">
+          </div>
+
+
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div id="deliverables" class="mt-4 mb-3">
+    <span class="mt-2 ap-detail-title">Deliverables</span>
+    <div class="float-right" style="margin-top: -20px">
+    </div>
+    <form name="Form" #f="ngForm">
+      <div class="row" style="margin-top: 10px">
+        <div class="col-12">
+
+          <div *ngIf="hideEditor">
+            <quill-editor id="deliverables" [(ngModel)]="this.data3" name="description" format="html"
+              [styles]="{height: '30vh'}" placeholder="" (onContentChanged)="onContentChanged3($event)"
+              (mouseout)="onContentChanged3($event)">
+            </quill-editor>
+          </div>
+
+
+          <!-- [modules]="this.toolbar" -->
+
+          <div id="noedit" *ngIf="hideDiv" [innerHTML]="this.data3" style="width: 70vw;
+             overflow-y:scroll;
+            overflow-x:hidden;
+            height: 30vh;
+            background: white;
+            border: 1px solid lightgray;
+            padding:30px">
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <div id="SpecialContractRequirement" class="mt-4 mb-3">
+    <span class="mt-2 ap-detail-title">Special Contract Requirements</span>
+    <div class="float-right" style="margin-top: -20px">
+    </div>
+    <form name="Form" #f="ngForm">
+      <div class="row" style="margin-top: 10px">
+        <div class="col-12">
+          <div *ngIf="hideEditor">
+            <quill-editor id="scr" [(ngModel)]="this.data4" name="description" format="html"
+              [styles]="{height: '30vh'}" placeholder="" (onContentChanged)="onContentChanged4($event)"
+              (mouseout)="onContentChanged4($event)">
+            </quill-editor>
+          </div>
+
+
+          <!-- [modules]="this.toolbar" -->
+
+          <div id="noedit" *ngIf="hideDiv" [innerHTML]="this.data4" style="width: 70vw;
+              overflow-y:scroll;
+              overflow-x:hidden;
+              height: 30vh;
+              background: white;
+              border: 1px solid lightgray;
+              padding:30px">
+          </div>
+
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!--Schedule and Clauses Table-->
+<!-- <div class="mt-4 mb-3">
+  <div class="expansion-panel-body">
+    <div  class="card custom-height update">
+      <label 
+      style="color: #1f5fbd;font-weight: normal;font-size: 14px;font-family: 'Arial',' SansSerif';"
+      name='are_attached' >Solicitation Incorporates by Reference FAR 52.212-1, 52-212.4. FAR 52.212-3 and 52.212-5 are attached. Addenda</label>
+      <div style="margin:10px;font-size:20px;position:relative:float:left">
+        <input id="a27_yes" 
+        (click)='this.datag("X","a27_yes");this.datag("","a27_no")'
+        style="margin:10px;font-size:20px" 
+        name="drone"  class="radio" type="radio"  
+        >
+        <label
+      style="color: #183e67;font-weight: normal;font-size: 14px;font-family: 'Arial',' SansSerif';"
+      for="are_attached" >Are Attached</label>
+      
+      <input id="a27_no" 
+      (click)='this.datag("","a27_yes");this.datag("X","a27_no")'
+      style="margin:10px;font-size:20px" 
+      name="drone" class="radio" type="radio"  
+      >
+      <label  style="color: #183e67;font-weight: normal;font-size: 14px;font-family: 'Arial',' SansSerif';">Are Not Attached</label>
+      
+    </div>
+    </div>
+
+    <table id="SITable" [ngStyle]="{'pointer-events':uservalidate?'all':'none'}">
+      <tbody>
+        <tr style="background:white">
+          <th>Item</th>
+          <th>Schedule of Supplies</th>
+          <th>Quantity</th>
+          <th>Unit</th>
+          <th>Unit Price</th>
+          <th>Amount</th>
+          <th>Action</th>
+        </tr>
+
+        <tr *ngFor=" let item of itemsarray; let i = index" style="pointer-events:none">
+          <th style="pointer-events: none;">
+            <input value="{{item.item}}"></th>
+          <th style="pointer-events: none;">
+            <input value="{{item.schedule}}"></th>
+          <th style="pointer-events: none;">
+            <input value="{{item.quanity}}"></th>
+          <th style="pointer-events: none;">
+            <input value="{{item.unit}}"></th>
+          <th style="pointer-events: none;">
+            <input value="{{item.unitprice}}"></th>
+          <th style="pointer-events: none;">
+            <input value="${{item.amount| number:'2.2-2'}}"></th>
+          <th (click)="removerow(i)" class="hover" style="font-size:20px;font-weight:bold;color:darkgray"><i
+              class="fa fa-trash"></i></th>
+        </tr>
+
+        <tr>
+          <th>
+
+            <input type="text" [(ngModel)]="item">
+          </th>
+
+
+          <th>
+            <input [(ngModel)]="schedule">
+          </th>
+
+          <th>
+            <input [(ngModel)]="quanity" (keypress)="keyPress($event)">
+          </th>
+          <th>
+            <select [(ngModel)]="unit" style="border-radius:0px;height:22.5px">
+              <option value="EA">EA</option>
+              <option value="T&M">T&M</option>
+              <option value="LH">LH</option>
+
+            </select>
+
+          </th>
+          <th>
+            <input [(ngModel)]="unitprice" (keypress)="keyPress($event);"
+              value="${{unitprice?.replace('$','')}}">
+          </th>
+
+
+          <th style="pointer-events: none;">
+            <input *ngIf="unitprice?true:false"
+              value="${{quanity*unitprice.replace('$','') | number:'1.2-2' }}">
+            <input *ngIf="unitprice?false:true" value=''>
+          </th>
+          <th (click)="addrow()" class="hover" style="font-size:20px;font-weight:bold;color:darkgray">+</th>
+        </tr>
+
+
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div> -->
+<div class="mb-5" style="margin-bottom: 90px !important">
+
+</div>

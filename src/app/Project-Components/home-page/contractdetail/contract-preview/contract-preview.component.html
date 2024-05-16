@@ -1,0 +1,690 @@
+<!-- <div id="hamburger" class="dropdown">
+    <button 
+    style ="border:none;background:transparent;color:#006fbe"
+    class=" hover" 
+    type="button" 
+    id="dropdownMenuButton" 
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        &#9776;
+    </button>
+
+    
+  </div> -->
+
+  <div class=" hamburgerdropdown  " 
+  style="
+  position: fixed;
+  top: 130px;
+  left: 80%;width:216px"
+     >
+     <div></div>
+     <svg width="100%" height="24" viewBox="0 0 216.0 24.0" 
+     style='top:0px;left:0px;overflow:visible;position: relative; '>
+       <g class="">
+       <path d="M0.0,0.0 L216.0,0.0 L216.0,24.0 L0.0,24.0 Z" 
+       style="stroke:#000000;stroke-width:0;fill:#96BFE4;fill-opacity:255.0;" 
+       transform="rotate(0.0, 108.0, 12.0) scale(1,1) translate(0.0,0.0)"></path>
+       <text x="80" y="17" 
+       Style="color:rgb(24,62,103); font-weight:bold; font-size:13px; 
+       font-family:Arial, SansSerif; text-align:center; vertical-align:middle;width:100%;height:100%">Jump to:</text>
+      </g>
+      
+    </svg>
+    <a class="dropdown-item" (click)="findsection('formview')" >Form</a>
+      <a *ngIf="this.allsoldata?.FORM.productKind !='half'" 
+      class="dropdown-item" (click)="findsection('suppliesandservices')" >Supplies & Services</a>
+      <a *ngIf="this.allsoldata?.FORM.productKind =='half'" 
+      class="dropdown-item" (click)="findsection('continuation')" >B. Continuation of SF1449</a>
+      <a  
+      class="dropdown-item" (click)="findsection('statementofwork')">Statement of Work</a>
+      <a *ngIf="this.allsoldata?.FORM.productKind !='half'" 
+      class="dropdown-item" (click)="findsection('packingandmarking')">Packaging & Marking</a>
+      <a *ngIf="this.allsoldata?.FORM.productKind !='half'" 
+      class="dropdown-item" (click)="findsection('inspection')" >Inspection & Acceptance</a>
+      <a 
+      class="dropdown-item" (click)="findsection('deliveries')" >Deliveries & Performance</a>
+      <a *ngIf="this.allsoldata?.FORM.productKind !='half'" 
+      class="dropdown-item" (click)="findsection('contract')" >Contract Administration Data</a>
+      <a 
+      *ngIf="this.allsoldata?.FORM.productKind !='half'" 
+      class="dropdown-item" (click)="findsection('certs')" >Representatons, Certs</a>
+      <a *ngIf="this.allsoldata.FORM?.productKind !='half'" 
+      class="dropdown-item" (click)="findsection('instructions')" >Instructions</a>
+      <a *ngIf="this.allsoldata.FORM?.productKind !='half'" 
+      class="dropdown-item" (click)="findsection('eval')" >Evaluation Factors</a>
+      <a 
+      class="dropdown-item" (click)="findsection('specialcontract')" >Special Contract Requirements</a>
+      <a class="dropdown-item" (click)="findsection('contractclause')" >Clauses</a>
+      <a class="dropdown-item" (click)="findsection('attachtable')" >Attachments</a>
+      <a *ngIf="this.allsoldata?.FORM.productKind =='half'"
+      class="dropdown-item" (click)="findsection('solprovisions')" >Solicitation Provisions</a>
+      
+    
+    </div>
+
+
+
+<div id="outercontainer">
+    
+
+  
+<!--style="margin-left: 50%;
+    transform: translateX(-50%);width:100%"-->
+
+     
+    <div id="overlay">
+      <div class="loader"></div>
+    </div>
+  
+  <form  [formGroup]="SF1449"
+  [ngStyle]="{'pointer-events':edit2?'all':'none'}"
+  id="formview" 
+  style="position:relative !important;
+  height:1303px; transform: scale(0.95);
+    transform-origin: 0px 0px;background:white;width:791px">
+  
+  <img 
+  id="sf1449_pngCopy"
+  class="sf1449_pngCopy_0 " 
+  src="assets/SF1449image.jpg"
+  
+  > 
+
+  <input 
+  placeholder=""
+  id="requisitionNumber"
+  type="text"
+  class="requisitionNumber_1 " 
+  formControlName="requisitionNumber"
+
+
+  >
+  
+
+  <input 
+  placeholder=""
+  id="contractno"
+  type="text"
+  class="contractno_2 " 
+  formControlName="contract_no"
+
+  >
+  
+
+  <input 
+  placeholder=""
+  id="sol_no"
+  type="text"
+  class="sol_no_3 " 
+  formControlName="sol_no"
+
+  >
+  
+
+  <input 
+  placeholder=""
+  id="coName"
+  type="text"
+  class="coName_4 " 
+  formControlName="coName"
+
+  >
+  
+
+  <input 
+  placeholder=""
+  id="coPhone"
+  type="text"
+  class="coPhone_5 " 
+  formControlName="coPhone"
+
+  >
+  
+
+  <textarea 
+  placeholder=""
+  id="issuededby"
+  type="text"
+  class="issuedby_6 " 
+  formControlName="issuededby"
+
+  ></textarea>
+  
+
+  <input 
+  placeholder=""
+  id="officeCode"
+  type="text"
+  class="officeCode_7 " 
+  formControlName="officeCode"
+
+  >
+  
+ 
+  <label 
+  style="background-color:transparent !important;border:none !important"
+  class="main unrestricted_8 " 
+  
+
+      >
+        <input id="unrestricted" type="checkbox"
+        name=""
+        formControlName="unrestricted"
+        > 
+        <span 
+        style="width:14px;
+        border-radius:0px;
+        height:13px;
+        background-color:transparent;border: 1px solid transparent;
+        --tooltip-circle:rgba(31,95,189,1)"
+        class="geekmark"
+        
+        ></span> 
+</label>
+  
+ 
+  <label 
+  style="background-color:transparent !important;border:none !important"
+  class="main setAside_9 " 
+  
+
+      >
+        <input id="setAside" type="checkbox"
+        name=""
+        formControlName="setAside"
+        > 
+        <span 
+        style="width:14px;
+        border-radius:0px;
+        height:13px;
+        background-color:transparent;border: 1px solid transparent;
+        --tooltip-circle:rgba(31,95,189,1)"
+        class="geekmark"
+        
+        ></span> 
+</label>
+  
+ 
+  <label 
+  style="background-color:transparent !important;border:none !important"
+  class="main smallBusiness_10 " 
+  
+  
+      >
+        <input id="smallBusiness" type="checkbox"
+        name=""
+        formControlName="smallBusiness"
+        > 
+        <span 
+        style="width:15px;
+        border-radius:0px;
+        height:14px;
+        background-color:transparent;border: 1px solid transparent;
+        --tooltip-circle:rgba(31,95,189,1)"
+        class="geekmark"
+        
+        ></span> 
+</label>
+  
+ 
+  <label 
+  style="background-color:transparent !important;border:none !important"
+  class="main hubzoneSB_11 " 
+ 
+
+      >
+        <input id="hubzoneSB" type="checkbox"
+        name=""
+        formControlName="hubzoneSB"
+        > 
+        <span 
+        style="width:15px;
+        border-radius:0px;
+        height:14px;
+        background-color:transparent;border: 1px solid transparent;
+        --tooltip-circle:rgba(31,95,189,1)"
+        class="geekmark"
+        
+        ></span> 
+</label>
+  
+ 
+  <label 
+  style="background-color:transparent !important;border:none !important"
+  class="main SDVOB_12 " 
+  
+
+      >
+        <input id="SDVOB" type="checkbox"
+        name=""
+        formControlName="SDVOB"
+        > 
+        <span 
+        style="width:13px;
+        border-radius:0px;
+        height:13px;
+        background-color:transparent;border: 1px solid transparent;
+        --tooltip-circle:rgba(31,95,189,1)"
+        class="geekmark"
+        
+        ></span> 
+</label>
+  
+ 
+  <label 
+  style="background-color:transparent !important;border:none !important"
+  class="main womenSB_13 " 
+  
+
+      >
+        <input id="womenSB" type="checkbox"
+        name=""
+        formControlName="womenSB"
+        > 
+        <span 
+        style="width:15px;
+        border-radius:0px;
+        height:15px;
+        background-color:transparent;border: 1px solid transparent;
+        --tooltip-circle:rgba(31,95,189,1)"
+        class="geekmark"
+        
+        ></span> 
+</label>
+  
+ 
+  <label 
+  style="background-color:transparent !important;border:none !important"
+  class="main EDWOSB_14 "
+  
+      >
+        <input id="EDWOSB" type="checkbox"
+        name=""
+        formControlName="EDWOSB"
+        > 
+        <span 
+        style="width:15px;
+        border-radius:0px;
+        height:14px;
+        background-color:transparent;border: 1px solid transparent;
+        --tooltip-circle:rgba(31,95,189,1)"
+        class="geekmark"
+        
+        ></span> 
+</label>
+  
+ 
+  <label 
+  style="background-color:transparent !important;border:none !important"
+  class="main eightA_15 "
+  
+      >
+        <input id="eightA" type="checkbox"
+        name=""
+        formControlName="eightA"
+        > 
+        <span 
+        style="width:15px;
+        border-radius:0px;
+        height:14px;
+        background-color:transparent;border: 1px solid transparent;
+        --tooltip-circle:rgba(31,95,189,1)"
+        class="geekmark"
+        
+        ></span> 
+</label>
+  
+
+  <input 
+  placeholder=""
+  id="percent"
+  type="text"
+  class="percent_16 " 
+  formControlName="percent"
+
+  >
+  
+
+  <input 
+  placeholder=""
+  id="sizestandard"
+  type="text"
+  class="sizestandard_17 " 
+  formControlName="sizestandard"
+
+  >
+  
+
+  <input 
+  placeholder=""
+  id="naicscode"
+  type="text"
+  class="naicscode_18 " 
+  formControlName="naicscode"
+
+  >
+  
+
+  <input 
+  id="startdate"
+  type="date" 
+  class="soldate_19 " 
+  formControlName="startdate"
+
+type="date-time"
+  >
+  
+
+  <input 
+  id="qandaDate"
+  type="date-time" 
+  class="offerDueDate_20 " 
+  formControlName="qandaDate"
+  
+  >
+  
+ 
+  <label 
+  style="background-color:transparent !important;border:none !important"
+  class="main RFQ_21 " 
+  [ngStyle]="{'pointer-events':edit2?'all':'none'}"
+  
+      >
+        <input id="RFQ" type="checkbox"
+        [checked]="this.SF1449.get('method_of_solicitation').value == 'RFQ'"
+        (click)="this.SF1449.get('method_of_solicitation').value = 'RFQ'"
+        > 
+        <span 
+        style="width:15px;
+        border-radius:0px;
+        height:14px;
+        background-color:transparent;border: 1px solid transparent;
+        --tooltip-circle:rgba(31,95,189,1)"
+        class="geekmark"
+        
+        ></span> 
+</label>
+  
+ 
+  <label 
+  style="background-color:transparent !important;border:none !important"
+  class="main IFB_22 " 
+  [ngStyle]="{'pointer-events':edit2?'all':'none'}"
+  
+      >
+        <input id="IFB" type="checkbox"
+        [checked]="this.SF1449.get('method_of_solicitation').value == 'IFB'"
+        (click)="this.SF1449.get('method_of_solicitation').value = 'IFB'"
+        > 
+        <span 
+        style="width:15px;
+        border-radius:0px;
+        height:15px;
+        background-color:transparent;border: 1px solid transparent;
+        --tooltip-circle:rgba(31,95,189,1)"
+        class="geekmark"
+        
+        ></span> 
+</label>
+  
+ 
+  <label 
+  style="background-color:transparent !important;border:none !important"
+  class="main RFP_23 " 
+  [ngStyle]="{'pointer-events':edit2?'all':'none'}"
+  
+      >
+        <input id="RFP" type="checkbox"
+        value="RFP"
+        [checked]="this.SF1449.get('method_of_solicitation').value == 'RFP'"
+        (click)="this.SF1449.get('method_of_solicitation').value = 'RFP'"
+        > 
+        <span 
+        style="width:15px;
+        border-radius:0px;
+        height:15px;
+        background-color:transparent;border: 1px solid transparent;
+        --tooltip-circle:rgba(31,95,189,1)"
+        class="geekmark"
+        
+        ></span> 
+</label>
+  
+
+  <input 
+  placeholder=""
+  id="administredby"
+  type="text"
+  class="administredby_24 " 
+  formControlName="aco1"
+  
+  >
+  
+
+  <textarea 
+  placeholder=""
+  id="contractor"
+  type="text"
+  class="contractor_25 " 
+  formControlName="contractor"
+  
+
+  ></textarea>
+  
+
+  <textarea 
+  placeholder=""
+  id="paymentby"
+  type="text"
+  class="paymentby_26 " 
+  formControlName="cori1"
+  
+  ></textarea>
+  
+
+  <textarea 
+  placeholder=""
+  id="deliverto"
+  type="text"
+  class="deliverto_27 " 
+  formControlName="deliverto"
+  
+  ></textarea>
+  
+  <!--Table Row-->
+<div
+class="Group_tablerow_28" 
+>
+  <div id="tablerow"
+  style="overflow:hidden;overflow:visible;position: relative;float:left;width: 100%;
+  height: 30px;"
+  *ngFor="let item of myDataArray" >
+
+
+  <input 
+  placeholder=""
+  id="Input_207"
+  type="text"
+  class="Input_207_0 " 
+  value="{{item.item}}"
+  >
+  
+
+  <input 
+  placeholder=""
+  id="Input_325"
+  type="text"
+  class="Input_325_1 " 
+  value="{{item.schedule}}"
+  >
+  
+
+  <input 
+  placeholder=""
+  id="Input_633"
+  type="text"
+  class="Input_633_2 " 
+  value="{{item.quanity}}"
+  >
+  
+
+  <input 
+  placeholder=""
+  id="Input_700"
+  type="text"
+  class="Input_700_3 " 
+  value="{{item.unit}}"
+  >
+  
+
+  <input 
+  placeholder=""
+  id="Input_760"
+  type="text"
+  class="Input_760_4 " 
+  value="{{item.unitprice}}"
+  >
+  
+
+  <input 
+  placeholder=""
+  id="Input_867"
+  type="text"
+  class="Input_867_5 " 
+  value="${{item.amount | number: '2.2-2'}}"
+  >
+   
+  </div>
+</div>
+ 
+ 
+  <label 
+  style="background-color:transparent !important;border:none !important"
+  class="main a27_yes_29 "
+  [ngStyle]="{'pointer-events':edit2?'all':'none'}"
+      >
+        <input id="a27_yes" type="checkbox"
+        name=""
+        formControlName="a27_yes"
+        > 
+        <span 
+        style="width:13px;
+        border-radius:0px;
+        height:13px;
+        background-color:transparent;border: 1px solid transparent;
+        --tooltip-circle:rgba(31,95,189,1)"
+        class="geekmark"
+        
+        ></span> 
+</label>
+  
+ 
+  <label 
+  style="background-color:transparent !important;border:none !important"
+  class="main a27_no_30 " 
+  [ngStyle]="{'pointer-events':edit2?'all':'none'}"
+      >
+        <input id="a27_no" type="checkbox"
+        name=""
+        formControlName="a27_no"
+        > 
+        <span 
+        style="width:13px;
+        border-radius:0px;
+        height:13px;
+        background-color:transparent;border: 1px solid transparent;
+        --tooltip-circle:rgba(31,95,189,1)"
+        class="geekmark"
+        
+        ></span> 
+</label>
+  
+
+  <input 
+  id="Date_271"
+  class="Date_271_31 " 
+  formControlName="awardateclone"
+  
+  type="date-time"
+  >
+
+  <section id="pdfadd" [innerHTML]="formHTML" 
+  [attr.contenteditable]="edit2"
+  ></section> 
+  
+  </form>
+
+ 
+
+</div>
+
+<div class="footer">
+  <div style="position: relative;
+  width: 75%;
+  height:20px;
+  max-width: 800px;
+  left: calc(36% - 15px);
+  transform: translateX(-50%);">
+    <button 
+    class=" btn  btn-primary action btnmodify hover" data-toggle="modal" data-target="#modal7" 
+    style="position: relative;float:right;margin-top:5px;margin-right: 5px;" 
+    *ngIf="!this.disable">Finalize</button>
+    
+      <button 
+      (click)="makepdf()" 
+      class=" btn  btn-primary action btnmodify hover" style="position: relative;float:right;margin-top:5px;margin-right: 5px;">Print</button>
+    
+      
+      <button 
+      *ngIf="!this.disable"
+      (click)="edit2?updatesection():''; edit2 = edit2?false:true" 
+      class="btn  btn-primary action btnmodify hover" 
+      style="position: relative;float:right;margin-top:5px;margin-right: 5px;">{{edit2?'Save':'Edit'}}</button>
+  </div>
+ 
+  
+  </div>
+
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"  aria-labelledby="myLargeModalLabel" id="modal7" aria-hidden="true">
+    <div class="modal-dialog modal-lg hello" style="position:relative;margin:auto;top:20vh;width:600px">
+          <div class="modal-header" style="height:50px">
+                  <!-- <h5 class="modal-title">Market Research</h5> -->
+                  <img src="assets/hhs-accelerate-logo.png" style="width:100px;height:20px">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+      <div id="phrase" class="modal-content" style="padding:20px">
+              <!-- <input style="
+              color: rgb(24, 62, 103);
+              font-weight: normal;
+              font-size: 15px;
+    font-family: Arial,SansSerif;line-height:1.5">-->
+    Please confirm if this is the final version of your contract and it is ready for final export. If yes, then no further edits can be made to this file and your contract status will update to "Exported". 
+              <div style="position:relative;float:left;height:30px;width:100%">
+                <input  class=" right hover" data-dismiss="modal" aria-label="Close"  id="no" type="button" value="Cancel" >
+                
+                <input (click)="makepdf();finialize()" 
+                class="right hover" id="yes"
+                value="Finalize" type="button"  >
+              </div>
+              
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+<!-- <div class="signature" (touchstart)="draw($event)" (touchmove)="setPosition($event)"  (mousemove)="draw($event)" (mousedown)="setPosition($event)" (mouseenter)="setPosition($event)">
+<svg id="signature" width="340" height="30" style="background:rgba(0,0,0,0.4)">
+   <path id="write" d='' stroke="black" 
+   stroke-linecap="round"
+   stroke-width="1" fill="none" />
+</svg>
+</div> -->
+
+

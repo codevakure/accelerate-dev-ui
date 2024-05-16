@@ -1,0 +1,2555 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>hhs_pacd-frontend-phase2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">hhs_pacd-frontend-phase2 documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>SolCommentBoxComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-sol-comment-box</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./sol-comment-box.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./sol-comment-box.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#commentMessage">commentMessage</a>
+                            </li>
+                            <li>
+                                <a href="#commentService">commentService</a>
+                            </li>
+                            <li>
+                                <a href="#commentText">commentText</a>
+                            </li>
+                            <li>
+                                <a href="#commentUserName">commentUserName</a>
+                            </li>
+                            <li>
+                                <a href="#commentUsers">commentUsers</a>
+                            </li>
+                            <li>
+                                <a href="#commentUservalue">commentUservalue</a>
+                            </li>
+                            <li>
+                                <a href="#content">content</a>
+                            </li>
+                            <li>
+                                <a href="#editor">editor</a>
+                            </li>
+                            <li>
+                                <a href="#emailUser">emailUser</a>
+                            </li>
+                            <li>
+                                <a href="#id">id</a>
+                            </li>
+                            <li>
+                                <a href="#modules">modules</a>
+                            </li>
+                            <li>
+                                <a href="#replyBoolean">replyBoolean</a>
+                            </li>
+                            <li>
+                                <a href="#replyMessage">replyMessage</a>
+                            </li>
+                            <li>
+                                <a href="#replyTextvalue">replyTextvalue</a>
+                            </li>
+                            <li>
+                                <a href="#solno">solno</a>
+                            </li>
+                            <li>
+                                <a href="#username">username</a>
+                            </li>
+                            <li>
+                                <a href="#username1">username1</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addComments">addComments</a>
+                            </li>
+                            <li>
+                                <a href="#addReplies">addReplies</a>
+                            </li>
+                            <li>
+                                <a href="#getComments">getComments</a>
+                            </li>
+                            <li>
+                                <a href="#getCommentsdata">getCommentsdata</a>
+                            </li>
+                            <li>
+                                <a href="#getReplies">getReplies</a>
+                            </li>
+                            <li>
+                                <a href="#initComments">initComments</a>
+                            </li>
+                            <li>
+                                <a href="#initReplies">initReplies</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnChanges">ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onChange">onChange</a>
+                            </li>
+                            <li>
+                                <a href="#onContentChanged">onContentChanged</a>
+                            </li>
+                            <li>
+                                <a href="#removeComments">removeComments</a>
+                            </li>
+                            <li>
+                                <a href="#removeReply">removeReply</a>
+                            </li>
+                            <li>
+                                <a href="#replyMessageevent">replyMessageevent</a>
+                            </li>
+                            <li>
+                                <a href="#replyReply">replyReply</a>
+                            </li>
+                            <li>
+                                <a href="#setReplies">setReplies</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#data">data</a>
+                            </li>
+                            <li>
+                                <a href="#routeHeader">routeHeader</a>
+                            </li>
+                            <li>
+                                <a href="#sectionHeader">sectionHeader</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, formsService: <a href="../injectables/FormsService.html">FormsService</a>, acqService: <a href="../injectables/AcquisitionService.html">AcquisitionService</a>, toastr: ToastrService, auth: <a href="../injectables/AuthenticationService.html">AuthenticationService</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, ap: <a href="../injectables/AcquisitionService.html">AcquisitionService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:64</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>formsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FormsService.html" target="_self" >FormsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>acqService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AcquisitionService.html" target="_self" >AcquisitionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastr</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthenticationService.html" target="_self" >AuthenticationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ap</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AcquisitionService.html" target="_self" >AcquisitionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="data"></a>
+                        <b>data</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:56</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="routeHeader"></a>
+                        <b>routeHeader</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:57</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sectionHeader"></a>
+                        <b>sectionHeader</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:41</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addComments"></a>
+                    <span class="name">
+                        <b>
+                            addComments
+                        </b>
+                        <a href="#addComments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addComments()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="187"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:187</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addReplies"></a>
+                    <span class="name">
+                        <b>
+                            addReplies
+                        </b>
+                        <a href="#addReplies"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addReplies(i)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="218"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:218</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>i</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getComments"></a>
+                    <span class="name">
+                        <b>
+                            getComments
+                        </b>
+                        <a href="#getComments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getComments(form)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="264"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:264</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>form</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCommentsdata"></a>
+                    <span class="name">
+                        <b>
+                            getCommentsdata
+                        </b>
+                        <a href="#getCommentsdata"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCommentsdata(x)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="282"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:282</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>x</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getReplies"></a>
+                    <span class="name">
+                        <b>
+                            getReplies
+                        </b>
+                        <a href="#getReplies"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getReplies(form)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="322"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:322</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>form</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initComments"></a>
+                    <span class="name">
+                        <b>
+                            initComments
+                        </b>
+                        <a href="#initComments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initComments()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="169"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:169</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initReplies"></a>
+                    <span class="name">
+                        <b>
+                            initReplies
+                        </b>
+                        <a href="#initReplies"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initReplies()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="179"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:179</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnChanges"></a>
+                    <span class="name">
+                        <b>
+                            ngOnChanges
+                        </b>
+                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnChanges(changes: <a href="https://angular.io/api/core/SimpleChanges" target="_blank">SimpleChanges</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:149</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>changes</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/core/SimpleChanges" target="_blank" >SimpleChanges</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onChange"></a>
+                    <span class="name">
+                        <b>
+                            onChange
+                        </b>
+                        <a href="#onChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onChange(commentService)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="326"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:326</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>commentService</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onContentChanged"></a>
+                    <span class="name">
+                        <b>
+                            onContentChanged
+                        </b>
+                        <a href="#onContentChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onContentChanged(event)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="157"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:157</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeComments"></a>
+                    <span class="name">
+                        <b>
+                            removeComments
+                        </b>
+                        <a href="#removeComments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeComments(i)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="254"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:254</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>i</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeReply"></a>
+                    <span class="name">
+                        <b>
+                            removeReply
+                        </b>
+                        <a href="#removeReply"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeReply(control, index)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="259"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:259</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>control</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>index</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="replyMessageevent"></a>
+                    <span class="name">
+                        <b>
+                            replyMessageevent
+                        </b>
+                        <a href="#replyMessageevent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>replyMessageevent(event)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:163</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="replyReply"></a>
+                    <span class="name">
+                        <b>
+                            replyReply
+                        </b>
+                        <a href="#replyReply"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>replyReply(i)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="341"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:341</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>i</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setReplies"></a>
+                    <span class="name">
+                        <b>
+                            setReplies
+                        </b>
+                        <a href="#setReplies"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setReplies(x)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="268"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:268</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>x</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="commentMessage"></a>
+                        <span class="name">
+                            <b>
+                            commentMessage</b>
+                            <a href="#commentMessage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="commentService"></a>
+                        <span class="name">
+                            <b>
+                            commentService</b>
+                            <a href="#commentService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="commentText"></a>
+                        <span class="name">
+                            <b>
+                            commentText</b>
+                            <a href="#commentText"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:61</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="commentUserName"></a>
+                        <span class="name">
+                            <b>
+                            commentUserName</b>
+                            <a href="#commentUserName"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:64</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="commentUsers"></a>
+                        <span class="name">
+                            <b>
+                            commentUsers</b>
+                            <a href="#commentUsers"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Array()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:58</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="commentUservalue"></a>
+                        <span class="name">
+                            <b>
+                            commentUservalue</b>
+                            <a href="#commentUservalue"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:59</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="content"></a>
+                        <span class="name">
+                            <b>
+                            content</b>
+                            <a href="#content"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:50</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="editor"></a>
+                        <span class="name">
+                            <b>
+                            editor</b>
+                            <a href="#editor"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>QuillEditorComponent</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(QuillEditorComponent)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:55</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="emailUser"></a>
+                        <span class="name">
+                            <b>
+                            emailUser</b>
+                            <a href="#emailUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:62</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="id"></a>
+                        <span class="name">
+                            <b>
+                            id</b>
+                            <a href="#id"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:53</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="modules"></a>
+                        <span class="name">
+                            <b>
+                            modules</b>
+                            <a href="#modules"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="replyBoolean"></a>
+                        <span class="name">
+                            <b>
+                            replyBoolean</b>
+                            <a href="#replyBoolean"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:54</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="replyMessage"></a>
+                        <span class="name">
+                            <b>
+                            replyMessage</b>
+                            <a href="#replyMessage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="replyTextvalue"></a>
+                        <span class="name">
+                            <b>
+                            replyTextvalue</b>
+                            <a href="#replyTextvalue"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:60</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="solno"></a>
+                        <span class="name">
+                            <b>
+                            solno</b>
+                            <a href="#solno"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:52</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="username"></a>
+                        <span class="name">
+                            <b>
+                            username</b>
+                            <a href="#username"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="username1"></a>
+                        <span class="name">
+                            <b>
+                            username1</b>
+                            <a href="#username1"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/sol-comment-box/sol-comment-box.component.ts:63</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {   Component,
+  OnInit,
+  ViewChild,
+  Input,
+  Output,
+  OnChanges,
+  EventEmitter,
+  SimpleChanges } from &quot;@angular/core&quot;;
+import { ActivatedRoute, Router, ParamMap } from &quot;@angular/router&quot;;
+import { FormsService } from &quot;../../../../Services/forms.service&quot;;
+import { AcquisitionService } from &quot;../../../../Services/acquisition.service&quot;;
+import { AuthenticationService } from &quot;../../../../Services/authentication.service&quot;;
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+  FormArray
+} from &quot;@angular/forms&quot;;
+import { ToastrService } from &quot;ngx-toastr&quot;;
+import { NgxSpinnerService } from &quot;ngx-spinner&quot;;
+declare var $: any;
+import { SanitizeHtmlPipe } from &#x27;../../../../sanitize-html.pipe&#x27;;
+import &#x27;quill-emoji/dist/quill-emoji.js&#x27;;
+import Quill from &#x27;quill&#x27;
+import &#x27;quill-mention&#x27;
+
+import { QuillEditorComponent } from &#x27;ngx-quill&#x27;
+
+@Component({
+  selector: &#x27;app-sol-comment-box&#x27;,
+  templateUrl: &#x27;./sol-comment-box.component.html&#x27;,
+  styleUrls: [&#x27;./sol-comment-box.component.css&#x27;]
+})
+export class SolCommentBoxComponent implements OnInit {
+
+  commentService;
+  commentMessage;
+  replyMessage;
+  modules &#x3D; {};
+  @Input() sectionHeader;
+//   data1 &#x3D; [{
+// value: &quot;Varun Kumar Reddy&quot;,
+// lastName: &quot;Muppidi&quot;,
+//   },
+//   {
+//     value: &quot;Daren&quot;,
+//     lastName: &quot;Muppidi&quot;,
+//       }];
+  content &#x3D; &#x27;&#x27;;
+  username;
+  solno;
+  id;
+  replyBoolean: boolean &#x3D; true;
+  @ViewChild(QuillEditorComponent) editor: QuillEditorComponent
+  @Input() data: any[];
+  @Input() routeHeader;
+  commentUsers &#x3D;  new Array();
+  commentUservalue;
+  replyTextvalue;
+  commentText;
+  emailUser;
+  username1;
+  commentUserName;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private formsService: FormsService,
+    private acqService: AcquisitionService,
+    private toastr: ToastrService,
+    private auth: AuthenticationService,
+    private fb: FormBuilder,
+    private ap: AcquisitionService
+  ) {
+    this.modules &#x3D; {
+      &#x27;emoji-shortname&#x27;: true,
+      &#x27;emoji-textarea&#x27;: true,
+      &#x27;emoji-toolbar&#x27;: true,
+      mention: {
+        allowedChars: /^[A-Za-z\sÅÄÖåäö]*$/,
+        onSelect: (item, insertItem) &#x3D;&gt; {
+          const editor &#x3D; this.editor.quillEditor as Quill
+          insertItem(item)
+          //////console.log(item.value);
+          this.commentUsers.push(item.value);
+          this.commentUservalue &#x3D; item.value;
+          // necessary because quill-mention triggers changes as &#x27;api&#x27; instead of &#x27;user&#x27;
+          editor.insertText(editor.getLength() - 1, &#x27;&#x27;, &#x27;user&#x27;)
+        },
+        source: (searchTerm, renderList) &#x3D;&gt; {
+          // const values &#x3D; [
+          //   { value: &#x27;Mehul&#x27; },
+          //   { value: &#x27;Imneet&#x27; }
+          // ]
+
+  
+          if (searchTerm.length &#x3D;&#x3D;&#x3D; 0) {
+            renderList(this.data, searchTerm)
+          } else {
+            const matches &#x3D; []
+  
+            this.data.forEach((entry) &#x3D;&gt; {
+              ////////console.log(entry)
+              if (entry.value.toLowerCase().indexOf(searchTerm.toLowerCase()) !&#x3D;&#x3D; -1) {
+                matches.push(entry)
+              }
+            })
+           // //////console.log(matches);
+            renderList(matches, searchTerm)
+          }
+        }
+      },
+      toolbar: { container: [ &#x27;emoji&#x27; ] },
+    }
+
+
+  }
+
+  ngOnInit() {
+   // //////console.log(&quot;Solicitation Numbersasa&quot; +this.route.snapshot.parent.params);
+    ////////console.log(&quot;Solicitation Number&quot; +this.solno);
+
+    this.commentService &#x3D; new FormGroup({
+      typeSection: new FormControl(&quot;&quot;),
+      description: new FormControl(&#x27;&#x27;),
+      comments: new FormArray([])
+    });
+
+
+    this.ap.getUserprofile().subscribe(response &#x3D;&gt; {
+     // //////console.log(response.firstName);
+      this.username &#x3D; response.firstName;
+      var fullName &#x3D; response.email.split(&#x27;@&#x27;)[0].split(&#x27;.&#x27;);
+      var firstName &#x3D; fullName[0].charAt(0).toUpperCase() + fullName[0].slice(1);
+      var lastName &#x3D; fullName[ fullName.length-1 ].charAt(0).toUpperCase() + fullName[ fullName.length-1 ].slice(1);
+      this.emailUser &#x3D; firstName;
+      console.log(this.emailUser);
+      this.username &#x3D; response.firstName + &quot; &quot; +response.lastName;
+      this.username1 &#x3D; response.firstName;
+      if(this.username1 &#x3D;&#x3D; &#x27;Not&#x27;) {
+        this.commentUserName&#x3D; this.emailUser; 
+      } else if (this.username1 !&#x3D; &#x27;Not&#x27;) {
+        this.commentUserName&#x3D; this.username; 
+      }
+    })
+    ////////console.log(this.data);
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    this.solno &#x3D; this.route.snapshot.params.sid;
+    console.log(&quot;Testing Route header from comments&quot;,this.routeHeader);
+    //////console.log(&quot;Solicitation Number from Comments&quot; +this.solno);
+    //////console.log(this.sectionHeader);
+    this.getCommentsdata(this.sectionHeader);
+  }
+
+  onContentChanged(event) {
+    this.commentMessage &#x3D; event.html;
+    this.onChange(this.commentService);
+    this.commentText &#x3D; event.text;
+  }
+
+  replyMessageevent(event) {
+    this.replyMessage &#x3D; event.html;
+    this.onChange(this.commentService);
+    this.replyTextvalue &#x3D; event.text;
+  }
+
+  initComments() {
+    return new FormGroup({
+      replyDescription: new FormControl(&#x27;&#x27;),
+      commentText: new FormControl(this.commentMessage),
+      commentDate: new FormControl(new Date()),
+      commentUser: new FormControl(this.commentUserName),
+      replyGroup: new FormArray([])
+    });
+  }
+
+  initReplies() {
+    return new FormGroup({
+      replyText: new FormControl(this.replyMessage),
+      replyDate: new FormControl(new Date()),
+      replyUser: new FormControl(this.commentUserName),
+    });
+  }
+
+  addComments() {
+    const control &#x3D; &lt;FormArray&gt;this.commentService.get(&quot;comments&quot;);
+    control.push(this.initComments());
+
+    var data1 &#x3D; {
+      //  ap_no: selectedSol.ap_no,
+      ap_no: this.solno,
+      users: this.commentUsers,
+      textUser: this.commentUserName,
+      commentText: this.commentText,
+      sectionHeaders: this.sectionHeader,
+      routeHeaders: this.routeHeader,
+      text: &quot;tagged you in the comment for&quot;+&quot; &quot;+this.sectionHeader,
+      message: &quot;for Sol&quot; + &quot; &quot; + &quot;#&quot; + this.solno,
+      iconstyle: &quot;fa-commenting-o&quot;,
+      date: new Date(),
+      type: &quot;Comment&quot;,
+      status: &quot;Initiated&quot;,
+      }
+      this.ap.postAttnotifications(data1).subscribe(Response &#x3D;&gt; {
+        ////////console.log(Response);
+        //////console.log(&quot;Commented in Solicitation&quot;);
+      })
+    this.commentService.get(&#x27;description&#x27;).setValue(&#x27;&#x27;);
+    this.commentService.get(&#x27;typeSection&#x27;).setValue(this.sectionHeader);
+    setTimeout(()&#x3D;&gt;{
+      this.commentUsers.splice(0,this.commentUsers.length);
+    },3000)
+    this.onChange(this.commentService);
+  }
+
+  addReplies(i) {
+   // //////console.log(i);
+    const control &#x3D; &lt;FormArray&gt;(this.commentService.get(&quot;comments&quot;).controls[i].get(&quot;replyGroup&quot;));
+    control.push(this.initReplies());
+   // //////console.log(&quot;length&quot;+control.length);
+  var data1 &#x3D; {
+  //  ap_no: selectedSol.ap_no,
+    ap_no: this.solno,
+    users: this.commentUsers,
+    textUser: this.commentUserName,
+    commentText: this.replyTextvalue,
+    sectionHeaders: this.sectionHeader,
+    routeHeaders: this.routeHeader,
+    text: &quot;tagged you in the reply for&quot;+&quot; &quot;+this.sectionHeader,
+    message: &quot;for Sol&quot; + &quot; &quot; + &quot;#&quot; + this.solno,
+    iconstyle: &quot;fa-commenting-o&quot;,
+    date: new Date(),
+    type: &quot;Comment&quot;,
+    status: &quot;Initiated&quot;,
+  }
+  this.ap.postAttnotifications(data1).subscribe(Response &#x3D;&gt; {
+    ////////console.log(Response);
+    //////console.log(&quot;Commented in Solicitation&quot;);
+  })
+  ////////console.log(data);
+  this.commentService.get(&quot;comments&quot;).controls[i].get(&quot;replyDescription&quot;).setValue(&#x27;&#x27;);
+  setTimeout(()&#x3D;&gt;{
+    this.commentUsers.splice(0,this.commentUsers.length);
+  },3000)
+
+    $(&quot;#prefix&quot; + i).addClass(&quot;show&quot;);
+    this.onChange(this.commentService);
+    //(&lt;HTMLInputElement&gt;document.getElementById(&quot;collapseExample&quot;)).classList.add(&#x27;show&#x27;);
+   // (&lt;HTMLInputElement&gt;document.getElementById(&quot;replyClick&quot;)).click();
+    //(&lt;HTMLInputElement&gt;document.getElementById(&quot;replyText&quot;)).value &#x3D; &quot;&quot;;
+  }
+  removeComments(i) {
+    const control &#x3D; &lt;FormArray&gt;this.commentService.get(&quot;comments&quot;);
+    control.removeAt(i);
+    this.onChange(this.commentService)
+  }
+  removeReply(control, index) {
+    control.removeAt(index);
+    this.onChange(this.commentService)
+  }
+
+  getComments(form) {
+    return form.controls.comments.controls;
+  }
+
+  setReplies(x) {
+    let array &#x3D; new FormArray([]);
+    x.replyGroup.forEach(y &#x3D;&gt; {
+      array.push(
+        this.fb.group({
+          replyText: y.replyText,
+          replyDate: y.replyDate,
+          replyUser: y.replyUser,
+        })
+      );
+    });
+    return array;
+  }
+
+  getCommentsdata(x) {
+    this.ap.getsoldappids(this.solno).subscribe(response &#x3D;&gt; {
+      //////console.log(this.solno);
+      //////console.log(&quot;resposnse from comments&quot; );
+      //////console.log(response);
+      this.ap.getSolicitation(response.solId).subscribe(response &#x3D;&gt; {
+          //////console.log(response);
+         // this.data &#x3D; response.commentMention;
+          if(this.username1 &#x3D;&#x3D; &#x27;Not&#x27;) {
+            this.data &#x3D; response.commentMention.filter(v &#x3D;&gt; v.value !&#x3D;&#x3D; this.emailUser); 
+          } else if (this.username1 !&#x3D; &#x27;Not&#x27;) {
+            this.data &#x3D; response.commentMention.filter(v &#x3D;&gt; v.value !&#x3D;&#x3D; this.username); 
+          }
+      });
+      this.ap.getAcqcomments(this.solno, x).subscribe(response &#x3D;&gt; {
+        this.ngOnInit();
+        //////console.log(response);
+
+        if(response[0] !&#x3D; undefined) {
+          this.id &#x3D; response[0].id
+          this.commentService.get(&quot;typeSection&quot;).setValue(response.typeSection);
+          let control &#x3D; &lt;FormArray&gt;this.commentService.controls.comments;
+          if (response[0].comments !&#x3D; undefined) {
+          response[0].comments.forEach(postComments &#x3D;&gt; {
+            control.push(
+              this.fb.group({
+                replyDescription: postComments.replyDescription,
+                commentText:  postComments.commentText,
+                commentDate:  postComments.commentDate,
+                commentUser: postComments.commentUser,
+                replyGroup: this.setReplies(postComments)
+              })
+            );
+          });
+        }
+      }
+      });
+     });
+  }
+
+  getReplies(form) {
+    return form.controls.replyGroup.controls;
+  }
+
+  onChange(commentService) {
+    ////////console.log(commentService.value);
+    this.ap.patchComments(this.id, commentService.value).subscribe(response &#x3D;&gt; {
+      if (response) {
+        setTimeout(() &#x3D;&gt;
+          this.toastr.success(&quot;Error Occured&quot;, &quot;Server Error&quot;, {
+            timeOut: 2000
+          })
+        );
+      } else {
+        ////////console.log(&quot;Updated Successfully&quot;);
+      }
+    });
+  }
+
+  replyReply(i) {
+  // this.replyBoolean &#x3D; false;
+  const control &#x3D; &lt;FormArray&gt;this.commentService.get(&quot;comments&quot;);
+   ////////console.log(i);
+  // //////console.log(&quot;reply&quot;);
+  // var k &#x3D; i-1;
+ // //////console.log(&quot;#prefix&quot; + k);
+  // var startHeader &#x3D; control.length[i- 1];
+  for(var k&#x3D;1; k&lt;&#x3D;control.length; k++) {
+      var n &#x3D; k-1
+      $(&quot;#prefix&quot; + n).removeClass(&quot;show&quot;);
+      $(&quot;#suffix&quot; + n).removeClass(&quot;show&quot;);
+    ////////console.log(k);
+  }
+  this.onChange(this.commentService)
+}
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;margin-top: -10px&quot;&gt;
+  &lt;form [formGroup]&#x3D;&quot;commentService&quot; novalidate (change)&#x3D;&quot;onChange(commentService)&quot;&gt;
+
+
+
+
+    &lt;div class&#x3D;&quot;mb-2&quot;&gt;
+      &lt;!-- &lt;quill-editor name&#x3D;&quot;commentText&quot; id&#x3D;&quot;commentText&quot; format&#x3D;&quot;html&quot; [styles]&#x3D;&quot;{height: &#x27;10vh&#x27;}&quot; placeholder&#x3D;&quot;&quot;
+        (onContentChanged)&#x3D;&quot;onContentChanged($event)&quot;&gt;
+      &lt;/quill-editor&gt; --&gt;
+      &lt;div class&#x3D;&quot;p-2 shadow-0&quot;&gt;
+
+        &lt;quill-editor class&#x3D;&quot;shadow-1&quot; id&#x3D;&quot;commentText&quot; format&#x3D;&quot;html&quot;
+          [styles]&#x3D;&quot;{height: &#x27;8vh&#x27;, background: &#x27;white&#x27;, &#x27;border-bottom&#x27;: &#x27;2px solid #2873dc&#x27;}&quot; placeholder&#x3D;&quot;&quot;
+          (onContentChanged)&#x3D;&quot;onContentChanged($event)&quot; customToolbarPosition&#x3D;&quot;bottom&quot; trackChanges&#x3D;&quot;all&quot;
+          [modules]&#x3D;&quot;modules&quot; format&#x3D;&quot;object&quot; placeholder&#x3D;&quot;Type a new comment&quot; formControlName&#x3D;&quot;description&quot;&gt;
+          &lt;div quill-editor-toolbar&gt;
+            &lt;span class&#x3D;&quot;ql-formats&quot;&gt;
+              &lt;button class&#x3D;&quot;ql-image&quot;&gt;&lt;/button&gt;
+            &lt;/span&gt;
+            &lt;span class&#x3D;&quot;ql-formats&quot;&gt;
+              &lt;button class&#x3D;&quot;ql-bold&quot;&gt;&lt;/button&gt;
+              &lt;button class&#x3D;&quot;ql-italic&quot;&gt;&lt;/button&gt;
+              &lt;button class&#x3D;&quot;ql-underline&quot;&gt;&lt;/button&gt;
+              &lt;button class&#x3D;&quot;ql-strike&quot;&gt;&lt;/button&gt;
+            &lt;/span&gt;
+            &lt;span class&#x3D;&quot;ql-formats&quot;&gt;
+              &lt;select class&#x3D;&quot;ql-color&quot;&gt;&lt;/select&gt;
+              &lt;select class&#x3D;&quot;ql-background&quot;&gt;&lt;/select&gt;
+            &lt;/span&gt;
+            &lt;span class&#x3D;&quot;ql-formats&quot;&gt;
+              &lt;button class&#x3D;&quot;ql-list&quot; value&#x3D;&quot;ordered&quot;&gt;&lt;/button&gt;
+              &lt;button class&#x3D;&quot;ql-list&quot; value&#x3D;&quot;bullet&quot;&gt;&lt;/button&gt;
+              &lt;select class&#x3D;&quot;ql-align&quot;&gt;
+                &lt;option selected&gt;&lt;/option&gt;
+                &lt;option value&#x3D;&quot;center&quot;&gt;&lt;/option&gt;
+                &lt;option value&#x3D;&quot;right&quot;&gt;&lt;/option&gt;
+                &lt;option value&#x3D;&quot;justify&quot;&gt;&lt;/option&gt;
+              &lt;/select&gt;
+              &lt;button class&#x3D;&quot;ql-video&quot;&gt;&lt;/button&gt;
+            &lt;/span&gt;
+            &lt;a class&#x3D;&quot;btn btn-sm btn-primary&quot; style&#x3D;&quot;color: #2e73dc&quot; class&#x3D;&quot;float-right&quot; (click)&#x3D;&quot;addComments()&quot;&gt;&lt;i
+              class&#x3D;&quot;fa fa-paper-plane&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&amp;nbsp;Send&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/quill-editor&gt;
+
+      &lt;/div&gt;
+      &lt;!-- &lt;textarea type&#x3D;&quot;text&quot; class&#x3D;&quot;form-controls&quot; id&#x3D;&quot;commentText&quot; (keyup)&#x3D;&quot;commentText($event)&quot;&gt;&lt;/textarea&gt; --&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;product-container&quot; formArrayName&#x3D;&quot;comments&quot;&gt;
+      &lt;div class&#x3D;&quot;col-12 cards&quot; style&#x3D;&quot;overflow-y: scroll; height: 70vh&quot;&gt;
+        &lt;div class&#x3D;&quot;mt-3&quot;&gt;
+          &lt;div *ngFor&#x3D;&quot;let comment of getComments(commentService); let i &#x3D; index&quot; [attr.data-index]&#x3D;&quot;i&quot; [formGroupName]&#x3D;&quot;i&quot;&gt;
+
+            &lt;div class&#x3D;&quot;rounded mb-4 card shadow-1&quot; style&#x3D;&quot;background: white&quot;&gt;
+              &lt;div class&#x3D;&quot;p-2&quot;&gt;
+                &lt;div&gt;&lt;span style&#x3D;&quot;font-size: 13px; font-weight: 500;&quot;&gt;{{comment.get(&#x27;commentUser&#x27;).value}}&lt;/span&gt; &lt;span
+                    style&#x3D;&quot;font-size: 13px; color: #2e73dc&quot; class&#x3D;&quot;float-right&quot;&gt;
+                    {{comment.get(&#x27;commentDate&#x27;).value | date: &#x27;medium&#x27;}} &amp;nbsp; &lt;i (click)&#x3D;&quot;removeComments(i)&quot;
+                      class&#x3D;&quot;fa fa-trash-o&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt; &lt;/div&gt;
+                &lt;div style&#x3D;&quot;font-size: 13px;&quot; class&#x3D;&quot;mt-1&quot;
+                  [innerHTML]&#x3D;&quot;comment.get(&#x27;commentText&#x27;).value | sanitizeHtml&quot;&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;input class&#x3D;&quot;d-none&quot; formControlName&#x3D;&quot;commentText&quot;&gt;
+              &lt;input class&#x3D;&quot;d-none&quot; formControlName&#x3D;&quot;commentDate&quot;&gt;
+              &lt;input class&#x3D;&quot;d-none&quot; formControlName&#x3D;&quot;commentUser&quot;&gt;
+              &lt;div style&#x3D;&quot;background: #eae9f1&quot;&gt;
+                &lt;a *ngIf&#x3D;&quot;comment.get(&#x27;replyGroup&#x27;).length !&#x3D; 0&quot; class&#x3D;&quot;coll ml-3 mb-1&quot;
+                  style&#x3D;&quot;font-size: 12px; color: #2873dc&quot; data-toggle&#x3D;&quot;collapse&quot; href&#x3D;&quot;#collapseExample&quot; role&#x3D;&quot;button&quot;
+                  aria-expanded&#x3D;&quot;false&quot; aria-controls&#x3D;&quot;collapseExample&quot; [attr.data-target]&#x3D;&quot;&#x27;#&#x27; + &#x27;prefix&#x27; + i&quot;&gt;
+                  &lt;span style&#x3D;&quot;font-weight: 400&quot;&gt;&lt;i class&#x3D;&quot;fa fa-chevron-down&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; {{comment.get(&#x27;replyGroup&#x27;).length}} Replies&lt;/span&gt;
+                &lt;/a&gt;
+
+                &lt;div class&#x3D;&quot;collapse mt-1&quot; id&#x3D;&quot;collapseExample&quot; style&#x3D;&quot;border-top:1px solid silver&quot;
+                  [attr.id]&#x3D;&quot;&#x27;prefix&#x27; + i&quot;&gt;
+                  &lt;div formArrayName&#x3D;&quot;replyGroup&quot;&gt;
+                    &lt;div *ngFor&#x3D;&quot;let reply of getReplies(comment); let j &#x3D; index&quot; [formGroupName]&#x3D;&quot;j&quot;&gt;
+                      &lt;input class&#x3D;&quot;d-none&quot; formControlName&#x3D;&quot;replyText&quot;&gt;
+                      &lt;input class&#x3D;&quot;d-none&quot; formControlName&#x3D;&quot;replyDate&quot;&gt;
+                      &lt;input class&#x3D;&quot;d-none&quot; formControlName&#x3D;&quot;replyUser&quot;&gt;
+
+                      &lt;div class&#x3D;&quot;col-12 mb-2 mt-2&quot;&gt;
+                        &lt;div&gt;&lt;span style&#x3D;&quot;font-size: 13px; font-weight: 500;&quot;&gt;{{reply.get(&#x27;replyUser&#x27;).value}}&lt;/span&gt;
+                          &amp;nbsp; &amp;nbsp; &lt;span style&#x3D;&quot;font-size: 13px; color: #2e73dc&quot;&gt;
+                            {{reply.get(&#x27;replyDate&#x27;).value | date: &#x27;medium&#x27;}} &amp;nbsp; &lt;i (click)&#x3D;&quot;removeReply(comment.controls.replyGroup, j)&quot;
+                              class&#x3D;&quot;fa fa-trash-o&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt; &lt;/div&gt;
+                        &lt;div style&#x3D;&quot;font-size: 13px;&quot; class&#x3D;&quot;mt-1&quot;
+                          [innerHTML]&#x3D;&quot;reply.get(&#x27;replyText&#x27;).value | sanitizeHtml&quot;&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &amp;nbsp; &amp;nbsp;
+                &lt;a class&#x3D;&quot;mb-2&quot; style&#x3D;&quot;font-size: 12px; color: #2873dc&quot; data-toggle&#x3D;&quot;collapse&quot; href&#x3D;&quot;#reply&quot;
+                  role&#x3D;&quot;button&quot; aria-expanded&#x3D;&quot;false&quot; aria-controls&#x3D;&quot;reply&quot;
+                  [attr.data-target]&#x3D;&quot;&#x27;#&#x27; + &#x27;suffix&#x27; + i&quot; (click)&#x3D;&quot;replyReply(i)&quot;&gt;
+                  &lt;span style&#x3D;&quot;font-weight: 400&quot;&gt;&lt;i class&#x3D;&quot;fa fa-reply&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&amp;nbsp; Reply&lt;/span&gt;
+                &lt;/a&gt;
+
+
+                &lt;div class&#x3D;&quot;collapse&quot; id&#x3D;&quot;reply&quot; [attr.id]&#x3D;&quot; &#x27;suffix&#x27; + i&quot;&gt;
+                  &lt;quill-editor id&#x3D;&quot;replyText&quot; format&#x3D;&quot;html&quot; formControlName&#x3D;&quot;replyDescription&quot;
+                    [styles]&#x3D;&quot;{height: &#x27;7vh&#x27;, background: &#x27;white&#x27;, &#x27;border-bottom&#x27;: &#x27;2px solid #2873dc&#x27;}&quot; placeholder&#x3D;&quot;&quot;
+                    (onContentChanged)&#x3D;&quot;replyMessageevent($event)&quot; customToolbarPosition&#x3D;&quot;bottom&quot; trackChanges&#x3D;&quot;all&quot;
+                    [modules]&#x3D;&quot;modules&quot; format&#x3D;&quot;object&quot; placeholder&#x3D;&quot;Reply&quot;&gt;
+                    &lt;div quill-editor-toolbar&gt;
+                      &lt;span class&#x3D;&quot;ql-formats&quot;&gt;
+                        &lt;button class&#x3D;&quot;ql-image&quot;&gt;&lt;/button&gt;
+                      &lt;/span&gt;
+                      &lt;span class&#x3D;&quot;ql-formats&quot;&gt;
+                        &lt;button class&#x3D;&quot;ql-bold&quot;&gt;&lt;/button&gt;
+                        &lt;button class&#x3D;&quot;ql-italic&quot;&gt;&lt;/button&gt;
+                        &lt;button class&#x3D;&quot;ql-underline&quot;&gt;&lt;/button&gt;
+                        &lt;button class&#x3D;&quot;ql-strike&quot;&gt;&lt;/button&gt;
+                      &lt;/span&gt;
+                      &lt;span class&#x3D;&quot;ql-formats&quot;&gt;
+                        &lt;select class&#x3D;&quot;ql-color&quot;&gt;&lt;/select&gt;
+                        &lt;select class&#x3D;&quot;ql-background&quot;&gt;&lt;/select&gt;
+                      &lt;/span&gt;
+                      &lt;span class&#x3D;&quot;ql-formats&quot;&gt;
+                        &lt;button class&#x3D;&quot;ql-list&quot; value&#x3D;&quot;ordered&quot;&gt;&lt;/button&gt;
+                        &lt;button class&#x3D;&quot;ql-list&quot; value&#x3D;&quot;bullet&quot;&gt;&lt;/button&gt;
+                        &lt;select class&#x3D;&quot;ql-align&quot;&gt;
+                          &lt;option selected&gt;&lt;/option&gt;
+                          &lt;option value&#x3D;&quot;center&quot;&gt;&lt;/option&gt;
+                          &lt;option value&#x3D;&quot;right&quot;&gt;&lt;/option&gt;
+                          &lt;option value&#x3D;&quot;justify&quot;&gt;&lt;/option&gt;
+                        &lt;/select&gt;
+                        &lt;button class&#x3D;&quot;ql-video&quot;&gt;&lt;/button&gt;
+                      &lt;/span&gt;
+                      &lt;a class&#x3D;&quot;btn btn-sm btn-primary&quot; style&#x3D;&quot;color: #2e73dc&quot; class&#x3D;&quot;float-right&quot;  (click)&#x3D;&quot;addReplies(i)&quot;&gt;&lt;i
+                        class&#x3D;&quot;fa fa-paper-plane&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&amp;nbsp;Send&lt;/a&gt;
+                    &lt;/div&gt;
+                  &lt;/quill-editor&gt;
+                &lt;/div&gt;
+
+
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+
+            &lt;!-- 
+            &lt;textarea type&#x3D;&quot;text&quot; class&#x3D;&quot;form-controls&quot; id&#x3D;&quot;replyText&quot; (keyup)&#x3D;&quot;replyText($event)&quot;&gt;&lt;/textarea&gt;
+            &lt;button (click)&#x3D;&quot;addReplies(i)&quot;&gt;Reply{{i}}&lt;/button&gt; --&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+
+
+
+    &lt;/div&gt;
+    
+  &lt;!-- &lt;pre class&#x3D;&quot;mt-5&quot;&gt; {{commentService.value | json}} &lt;/pre&gt; --&gt;
+
+  &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./sol-comment-box.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* .ql-toolbar.ql-snow {
+    border: 1px solid green !important;
+    box-sizing: border-box;
+    font-family: &#x27;Helvetica Neue&#x27;, &#x27;Helvetica&#x27;, &#x27;Arial&#x27;, sans-serif;
+    padding: 8px;
+} */
+
+.ql-toolbar.ql-snow {
+    border:none;
+    box-sizing: border-box;
+    font-family: &#x27;Helvetica Neue&#x27;, &#x27;Helvetica&#x27;, &#x27;Arial&#x27;, sans-serif;
+    padding: 8px;
+}
+.ql-snow .ql-picker.ql-font {
+    width: 108px;
+}
+
+.ql-snow .ql-picker {
+    color: #444;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    height: 20px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.btnn {
+    border-radius: 2px;
+    transition-duration: 0.3s;
+    transition-property: box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    font-family: Arial, sans-serif;
+    /* box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.14), 0 3px 4px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); */
+    color: rgba(0, 0, 0, 0.87);
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0;
+    max-width: 100%;
+    min-width: 5.5rem;
+    padding: 0.6875rem 1rem;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.hide-reply {
+    display: none;
+}
+
+.cards::-webkit-scrollbar {
+    width: .4em; 
+  }
+  .cards::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+  
+  .cards::-webkit-scrollbar,
+  .cards::-webkit-scrollbar-thumb {
+  overflow:visible;
+  border-radius: 4px;
+  }
+  .cards::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.2); 
+  }
+  
+  </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div style="margin-top: -10px">  <form [formGroup]="commentService" novalidate (change)="onChange(commentService)">    <div class="mb-2">      <!-- <quill-editor name="commentText" id="commentText" format="html" [styles]="{height: \'10vh\'}" placeholder=""        (onContentChanged)="onContentChanged($event)">      </quill-editor> -->      <div class="p-2 shadow-0">        <quill-editor class="shadow-1" id="commentText" format="html"          [styles]="{height: \'8vh\', background: \'white\', \'border-bottom\': \'2px solid #2873dc\'}" placeholder=""          (onContentChanged)="onContentChanged($event)" customToolbarPosition="bottom" trackChanges="all"          [modules]="modules" format="object" placeholder="Type a new comment" formControlName="description">          <div quill-editor-toolbar>            <span class="ql-formats">              <button class="ql-image"></button>            </span>            <span class="ql-formats">              <button class="ql-bold"></button>              <button class="ql-italic"></button>              <button class="ql-underline"></button>              <button class="ql-strike"></button>            </span>            <span class="ql-formats">              <select class="ql-color"></select>              <select class="ql-background"></select>            </span>            <span class="ql-formats">              <button class="ql-list" value="ordered"></button>              <button class="ql-list" value="bullet"></button>              <select class="ql-align">                <option selected></option>                <option value="center"></option>                <option value="right"></option>                <option value="justify"></option>              </select>              <button class="ql-video"></button>            </span>            <a class="btn btn-sm btn-primary" style="color: #2e73dc" class="float-right" (click)="addComments()"><i              class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;Send</a>          </div>        </quill-editor>      </div>      <!-- <textarea type="text" class="form-controls" id="commentText" (keyup)="commentText($event)"></textarea> -->    </div>    <div class="product-container" formArrayName="comments">      <div class="col-12 cards" style="overflow-y: scroll; height: 70vh">        <div class="mt-3">          <div *ngFor="let comment of getComments(commentService); let i = index" [attr.data-index]="i" [formGroupName]="i">            <div class="rounded mb-4 card shadow-1" style="background: white">              <div class="p-2">                <div><span style="font-size: 13px; font-weight: 500;">{{comment.get(\'commentUser\').value}}</span> <span                    style="font-size: 13px; color: #2e73dc" class="float-right">                    {{comment.get(\'commentDate\').value | date: \'medium\'}} &nbsp; <i (click)="removeComments(i)"                      class="fa fa-trash-o" aria-hidden="true"></i></span> </div>                <div style="font-size: 13px;" class="mt-1"                  [innerHTML]="comment.get(\'commentText\').value | sanitizeHtml">                </div>              </div>              <input class="d-none" formControlName="commentText">              <input class="d-none" formControlName="commentDate">              <input class="d-none" formControlName="commentUser">              <div style="background: #eae9f1">                <a *ngIf="comment.get(\'replyGroup\').length != 0" class="coll ml-3 mb-1"                  style="font-size: 12px; color: #2873dc" data-toggle="collapse" href="#collapseExample" role="button"                  aria-expanded="false" aria-controls="collapseExample" [attr.data-target]="\'#\' + \'prefix\' + i">                  <span style="font-weight: 400"><i class="fa fa-chevron-down" aria-hidden="true"></i> {{comment.get(\'replyGroup\').length}} Replies</span>                </a>                <div class="collapse mt-1" id="collapseExample" style="border-top:1px solid silver"                  [attr.id]="\'prefix\' + i">                  <div formArrayName="replyGroup">                    <div *ngFor="let reply of getReplies(comment); let j = index" [formGroupName]="j">                      <input class="d-none" formControlName="replyText">                      <input class="d-none" formControlName="replyDate">                      <input class="d-none" formControlName="replyUser">                      <div class="col-12 mb-2 mt-2">                        <div><span style="font-size: 13px; font-weight: 500;">{{reply.get(\'replyUser\').value}}</span>                          &nbsp; &nbsp; <span style="font-size: 13px; color: #2e73dc">                            {{reply.get(\'replyDate\').value | date: \'medium\'}} &nbsp; <i (click)="removeReply(comment.controls.replyGroup, j)"                              class="fa fa-trash-o" aria-hidden="true"></i></span> </div>                        <div style="font-size: 13px;" class="mt-1"                          [innerHTML]="reply.get(\'replyText\').value | sanitizeHtml">                        </div>                      </div>                    </div>                  </div>                </div>                &nbsp; &nbsp;                <a class="mb-2" style="font-size: 12px; color: #2873dc" data-toggle="collapse" href="#reply"                  role="button" aria-expanded="false" aria-controls="reply"                  [attr.data-target]="\'#\' + \'suffix\' + i" (click)="replyReply(i)">                  <span style="font-weight: 400"><i class="fa fa-reply" aria-hidden="true"></i>&nbsp; Reply</span>                </a>                <div class="collapse" id="reply" [attr.id]=" \'suffix\' + i">                  <quill-editor id="replyText" format="html" formControlName="replyDescription"                    [styles]="{height: \'7vh\', background: \'white\', \'border-bottom\': \'2px solid #2873dc\'}" placeholder=""                    (onContentChanged)="replyMessageevent($event)" customToolbarPosition="bottom" trackChanges="all"                    [modules]="modules" format="object" placeholder="Reply">                    <div quill-editor-toolbar>                      <span class="ql-formats">                        <button class="ql-image"></button>                      </span>                      <span class="ql-formats">                        <button class="ql-bold"></button>                        <button class="ql-italic"></button>                        <button class="ql-underline"></button>                        <button class="ql-strike"></button>                      </span>                      <span class="ql-formats">                        <select class="ql-color"></select>                        <select class="ql-background"></select>                      </span>                      <span class="ql-formats">                        <button class="ql-list" value="ordered"></button>                        <button class="ql-list" value="bullet"></button>                        <select class="ql-align">                          <option selected></option>                          <option value="center"></option>                          <option value="right"></option>                          <option value="justify"></option>                        </select>                        <button class="ql-video"></button>                      </span>                      <a class="btn btn-sm btn-primary" style="color: #2e73dc" class="float-right"  (click)="addReplies(i)"><i                        class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;Send</a>                    </div>                  </quill-editor>                </div>              </div>            </div>            <!--             <textarea type="text" class="form-controls" id="replyText" (keyup)="replyText($event)"></textarea>            <button (click)="addReplies(i)">Reply{{i}}</button> -->          </div>        </div>      </div>    </div>      <!-- <pre class="mt-5"> {{commentService.value | json}} </pre> -->  </form></div></div>'
+    var COMPONENTS = [{'name': 'ApdetailComponent', 'selector': 'app-apdetail'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AttachmentsComponent', 'selector': 'app-attachments'},{'name': 'AttachmentsinfoComponent', 'selector': 'app-attachmentsinfo'},{'name': 'ClausesectionsComponent', 'selector': 'app-clausesections'},{'name': 'CloseOutComponent', 'selector': 'app-close-out'},{'name': 'CodeValidateComponent', 'selector': 'app-code-validate'},{'name': 'CommentBoxComponent', 'selector': 'app-comment-box'},{'name': 'CompatibilityComponent', 'selector': 'app-compatibility'},{'name': 'CompetetionComponent', 'selector': 'app-competetion'},{'name': 'ConstraintsComponent', 'selector': 'app-constraints'},{'name': 'ContactAdminComponent', 'selector': 'app-contact-admin'},{'name': 'ContractadmindataComponent', 'selector': 'app-contractadmindata'},{'name': 'ContractComponent', 'selector': 'app-contract'},{'name': 'ContractdetailComponent', 'selector': 'app-contractdetail'},{'name': 'ContractFileComponent', 'selector': 'app-contract-file'},{'name': 'ContractGenerationComponent', 'selector': 'app-contract-generation'},{'name': 'ContractPreviewComponent', 'selector': 'app-contract-preview'},{'name': 'ContractsdisplayComponent', 'selector': 'app-contractsdisplay'},{'name': 'CoprofileComponent', 'selector': 'app-coprofile'},{'name': 'CornominationComponent', 'selector': 'app-cornomination'},{'name': 'DashAcquisitionComponent', 'selector': 'app-dash-acquisition'},{'name': 'DashActiveComponent', 'selector': 'app-dash-active'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DashExpiredComponent', 'selector': 'app-dash-expired'},{'name': 'DashSolicitationComponent', 'selector': 'app-dash-solicitation'},{'name': 'DeleveriesandperformanceComponent', 'selector': 'app-deleveriesandperformance'},{'name': 'EstimateComponent', 'selector': 'app-estimate'},{'name': 'EvaluatevendorComponent', 'selector': 'app-evaluatevendor'},{'name': 'EvaluationfactorsComponent', 'selector': 'app-evaluationfactors'},{'name': 'EvaluationsComponent', 'selector': 'app-evaluations'},{'name': 'FormdetailComponent', 'selector': 'app-formdetail'},{'name': 'GeneralComponent', 'selector': 'app-general'},{'name': 'HomePageComponent', 'selector': 'app-home-page'},{'name': 'IgceComponent', 'selector': 'app-igce'},{'name': 'InspectionandacceptanceComponent', 'selector': 'app-inspectionandacceptance'},{'name': 'InstructionsComponent', 'selector': 'app-instructions'},{'name': 'LoginPageComponent', 'selector': 'app-login-page'},{'name': 'LogoutComponent', 'selector': ''},{'name': 'MarketresearchComponent', 'selector': 'app-marketresearch'},{'name': 'ModifyContractComponent', 'selector': 'app-modify-contract'},{'name': 'PackagingandmarketingComponent', 'selector': 'app-packagingandmarketing'},{'name': 'PmacquisitionsComponent', 'selector': 'app-pmacquisitions'},{'name': 'PmdashComponent', 'selector': 'app-pmdash'},{'name': 'PmprofileComponent', 'selector': 'app-pmprofile'},{'name': 'PmsolComponent', 'selector': 'app-pmsol'},{'name': 'PreviewComponent', 'selector': 'app-preview'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProposalevalhomeComponent', 'selector': 'app-proposalevalhome'},{'name': 'ProposalevaluationComponent', 'selector': 'app-proposalevaluation'},{'name': 'QandaComponent', 'selector': 'app-qanda'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RepresentationcertsComponent', 'selector': 'app-representationcerts'},{'name': 'ReqformComponent', 'selector': 'app-reqform'},{'name': 'SolCommentBoxComponent', 'selector': 'app-sol-comment-box'},{'name': 'SolicitationdetailComponent', 'selector': 'app-solicitationdetail'},{'name': 'SowComponent', 'selector': 'app-sow'},{'name': 'SpecialcontractreqComponent', 'selector': 'app-specialcontractreq'},{'name': 'StatementofworkComponent', 'selector': 'app-statementofwork'},{'name': 'SuppliesandservicesComponent', 'selector': 'app-suppliesandservices'},{'name': 'TradeoffsComponent', 'selector': 'app-tradeoffs'},{'name': 'VendorresevalComponent', 'selector': 'app-vendorreseval'},{'name': 'VendorresponseComponent', 'selector': 'app-vendorresponse'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SolCommentBoxComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SolCommentBoxComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

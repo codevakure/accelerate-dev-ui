@@ -1,0 +1,610 @@
+<button
+*ngIf="this.username != this.allsoldata?.FORM?.pointsofContact[1]?false:true"
+id="savebutton1" data-toggle="modal" 
+[attr.data-target]="boo?'':'#modal7'"
+(click)="boo?printPDF():''"
+  style="position: fixed;
+  right: 0;
+  margin-top: -70px;
+  z-index: 20;
+  margin-right: 50px;
+  width: 100px;"
+  class="print-button btns float-right">
+  <span class="print-icon"></span><span></span> &nbsp;Export/Print </button>
+
+  <button
+*ngIf="this.username == this.allsoldata?.FORM?.pointsofContact[1]?false:true"
+(click)="printPDF()"
+  style="position: fixed;
+  right: 0;
+  margin-top: -70px;
+  z-index: 20;
+  margin-right: 50px;
+  width: 100px;"
+  class="print-button btns float-right">
+  <span class="print-icon"></span><span></span> &nbsp;Export/Print </button>
+
+
+
+<div class="container-fluid preview-form">
+
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true"  id="modal7">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <img src="assets/hhs-accelerate-logo.png" class="image-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-content p-4">
+        <div id="phrase">
+            <p style="
+                  color: rgb(24, 62, 103);
+                  font-weight: normal;
+                  font-size: 15px;
+        font-family: Arial,SansSerif;line-height:1.5">Please confirm if this is the final version of your solicitation and
+              it is ready for final export. If yes, then no further edits can be made to this file and your solicitation
+              status will update to "Exported".</p>
+            <div style="position:relative;float:left;height:30px;width:100%">
+              <input class="right hover" data-dismiss="modal" aria-label="Close" id="no" type="button" value="Cancel">
+              <input (click)="makepdf('lock')" class="right hover" id="yes" value="Publish" type="button">
+            </div>
+    
+          </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="printable" id="newpdf">
+
+    <form  [formGroup]="SF1449"
+    [ngStyle]="{'pointer-events':edit2?'all':'none'}"
+    id="formview" 
+    style="position:relative !important;
+    height:1303px; transform: scale(0.95);
+      transform-origin: 0px 0px;background:white;width:791px">
+    
+    <img 
+    id="sf1449_pngCopy"
+    class="sf1449_pngCopy_0 " 
+    src="assets/SF1449image.jpg"
+    
+    > 
+  
+    <input 
+    placeholder=""
+    id="requisitionNumber"
+    type="text"
+    class="requisitionNumber_1 " 
+    formControlName="requisitionNumber"
+  
+  
+    >
+    
+  
+    <input 
+    placeholder=""
+    id="contractno"
+    type="text"
+    class="contractno_2 " 
+    formControlName="contract_no"
+  
+    >
+    
+  
+    <input 
+    placeholder=""
+    id="sol_no"
+    type="text"
+    class="sol_no_3 " 
+    formControlName="sol_no"
+  
+    >
+    
+  
+    <input 
+    placeholder=""
+    id="coName"
+    type="text"
+    class="coName_4 " 
+    formControlName="coName"
+  
+    >
+    
+  
+    <input 
+    placeholder=""
+    id="coPhone"
+    type="text"
+    class="coPhone_5 " 
+    formControlName="coPhone"
+  
+    >
+    
+  
+    <textarea 
+    placeholder=""
+    id="issuededby"
+    type="text"
+    class="issuedby_6 " 
+    formControlName="issuededby"
+  
+    ></textarea>
+    
+  
+    <input 
+    placeholder=""
+    id="officeCode"
+    type="text"
+    class="officeCode_7 " 
+    formControlName="officeCode"
+  
+    >
+    
+   
+    <label 
+    style="background-color:transparent !important;border:none !important"
+    class="main unrestricted_8 " 
+    
+  
+        >
+          <input id="unrestricted" type="checkbox"
+          name=""
+          formControlName="unrestricted"
+          > 
+          <span 
+          style="width:14px;
+          border-radius:0px;
+          height:13px;
+          background-color:transparent;border: 1px solid transparent;
+          --tooltip-circle:rgba(31,95,189,1)"
+          class="geekmark"
+          
+          ></span> 
+  </label>
+    
+   
+    <label 
+    style="background-color:transparent !important;border:none !important"
+    class="main setAside_9 " 
+    
+  
+        >
+          <input id="setAside" type="checkbox"
+          name=""
+          formControlName="setAside"
+          > 
+          <span 
+          style="width:14px;
+          border-radius:0px;
+          height:13px;
+          background-color:transparent;border: 1px solid transparent;
+          --tooltip-circle:rgba(31,95,189,1)"
+          class="geekmark"
+          
+          ></span> 
+  </label>
+    
+   
+    <label 
+    style="background-color:transparent !important;border:none !important"
+    class="main smallBusiness_10 " 
+    
+    
+        >
+          <input id="smallBusiness" type="checkbox"
+          name=""
+          formControlName="smallBusiness"
+          > 
+          <span 
+          style="width:15px;
+          border-radius:0px;
+          height:14px;
+          background-color:transparent;border: 1px solid transparent;
+          --tooltip-circle:rgba(31,95,189,1)"
+          class="geekmark"
+          
+          ></span> 
+  </label>
+    
+   
+    <label 
+    style="background-color:transparent !important;border:none !important"
+    class="main hubzoneSB_11 " 
+   
+  
+        >
+          <input id="hubzoneSB" type="checkbox"
+          name=""
+          formControlName="hubzoneSB"
+          > 
+          <span 
+          style="width:15px;
+          border-radius:0px;
+          height:14px;
+          background-color:transparent;border: 1px solid transparent;
+          --tooltip-circle:rgba(31,95,189,1)"
+          class="geekmark"
+          
+          ></span> 
+  </label>
+    
+   
+    <label 
+    style="background-color:transparent !important;border:none !important"
+    class="main SDVOB_12 " 
+    
+  
+        >
+          <input id="SDVOB" type="checkbox"
+          name=""
+          formControlName="SDVOB"
+          > 
+          <span 
+          style="width:13px;
+          border-radius:0px;
+          height:13px;
+          background-color:transparent;border: 1px solid transparent;
+          --tooltip-circle:rgba(31,95,189,1)"
+          class="geekmark"
+          
+          ></span> 
+  </label>
+    
+   
+    <label 
+    style="background-color:transparent !important;border:none !important"
+    class="main womenSB_13 " 
+    
+  
+        >
+          <input id="womenSB" type="checkbox"
+          name=""
+          formControlName="womenSB"
+          > 
+          <span 
+          style="width:15px;
+          border-radius:0px;
+          height:15px;
+          background-color:transparent;border: 1px solid transparent;
+          --tooltip-circle:rgba(31,95,189,1)"
+          class="geekmark"
+          
+          ></span> 
+  </label>
+    
+   
+    <label 
+    style="background-color:transparent !important;border:none !important"
+    class="main EDWOSB_14 "
+    
+        >
+          <input id="EDWOSB" type="checkbox"
+          name=""
+          formControlName="EDWOSB"
+          > 
+          <span 
+          style="width:15px;
+          border-radius:0px;
+          height:14px;
+          background-color:transparent;border: 1px solid transparent;
+          --tooltip-circle:rgba(31,95,189,1)"
+          class="geekmark"
+          
+          ></span> 
+  </label>
+    
+   
+    <label 
+    style="background-color:transparent !important;border:none !important"
+    class="main eightA_15 "
+    
+        >
+          <input id="eightA" type="checkbox"
+          name=""
+          formControlName="eightA"
+          > 
+          <span 
+          style="width:15px;
+          border-radius:0px;
+          height:14px;
+          background-color:transparent;border: 1px solid transparent;
+          --tooltip-circle:rgba(31,95,189,1)"
+          class="geekmark"
+          
+          ></span> 
+  </label>
+    
+  
+    <input 
+    placeholder=""
+    id="percent"
+    type="text"
+    class="percent_16 " 
+    formControlName="percent"
+  
+    >
+    
+  
+    <input 
+    placeholder=""
+    id="sizestandard"
+    type="text"
+    class="sizestandard_17 " 
+    formControlName="sizestandard"
+  
+    >
+    
+  
+    <input 
+    placeholder=""
+    id="naicscode"
+    type="text"
+    class="naicscode_18 " 
+    formControlName="naicscode"
+  
+    >
+    
+  
+    <input 
+    id="startdate"
+    type="date" 
+    class="soldate_19 " 
+    formControlName="startdate"
+  
+  type="date-time"
+    >
+    
+  
+    <input 
+    id="qandaDate"
+    type="date-time" 
+    class="offerDueDate_20 " 
+    formControlName="qandaDate"
+    
+    >
+    
+   
+    <label 
+    style="background-color:transparent !important;border:none !important"
+    class="main RFQ_21 " 
+    [ngStyle]="{'pointer-events':edit2?'all':'none'}"
+    
+        >
+          <input id="RFQ" type="checkbox"
+          [checked]="this.SF1449.get('method_of_solicitation').value == 'RFQ'"
+          (click)="this.SF1449.get('method_of_solicitation').value = 'RFQ'"
+          > 
+          <span 
+          style="width:15px;
+          border-radius:0px;
+          height:14px;
+          background-color:transparent;border: 1px solid transparent;
+          --tooltip-circle:rgba(31,95,189,1)"
+          class="geekmark"
+          
+          ></span> 
+  </label>
+    
+   
+    <label 
+    style="background-color:transparent !important;border:none !important"
+    class="main IFB_22 " 
+    [ngStyle]="{'pointer-events':edit2?'all':'none'}"
+    
+        >
+          <input id="IFB" type="checkbox"
+          [checked]="this.SF1449.get('method_of_solicitation').value == 'IFB'"
+          (click)="this.SF1449.get('method_of_solicitation').value = 'IFB'"
+          > 
+          <span 
+          style="width:15px;
+          border-radius:0px;
+          height:15px;
+          background-color:transparent;border: 1px solid transparent;
+          --tooltip-circle:rgba(31,95,189,1)"
+          class="geekmark"
+          
+          ></span> 
+  </label>
+    
+   
+    <label 
+    style="background-color:transparent !important;border:none !important"
+    class="main RFP_23 " 
+    [ngStyle]="{'pointer-events':edit2?'all':'none'}"
+    
+        >
+          <input id="RFP" type="checkbox"
+          value="RFP"
+          [checked]="this.SF1449.get('method_of_solicitation').value == 'RFP'"
+          (click)="this.SF1449.get('method_of_solicitation').value = 'RFP'"
+          > 
+          <span 
+          style="width:15px;
+          border-radius:0px;
+          height:15px;
+          background-color:transparent;border: 1px solid transparent;
+          --tooltip-circle:rgba(31,95,189,1)"
+          class="geekmark"
+          
+          ></span> 
+  </label>
+    
+  
+    <input 
+    placeholder=""
+    id="administredby"
+    type="text"
+    class="administredby_24 " 
+    formControlName="aco1"
+    
+    >
+    
+  
+    <textarea 
+    placeholder=""
+    id="contractor"
+    type="text"
+    class="contractor_25 " 
+    formControlName="contractor"
+    
+  
+    ></textarea>
+    
+  
+    <textarea 
+    placeholder=""
+    id="paymentby"
+    type="text"
+    class="paymentby_26 " 
+    formControlName="cori1"
+    
+    ></textarea>
+    
+  
+    <textarea 
+    placeholder=""
+    id="deliverto"
+    type="text"
+    class="deliverto_27 " 
+    formControlName="deliverto"
+    
+    ></textarea>
+    
+    <!--Table Row-->
+  <div
+  class="Group_tablerow_28" 
+  >
+    <div id="tablerow"
+    style="overflow:hidden;overflow:visible;position: relative;float:left;width: 100%;
+    height: 30px;"
+    *ngFor="let item of myDataArray" >
+  
+  
+    <input 
+    placeholder=""
+    id="Input_207"
+    type="text"
+    class="Input_207_0 " 
+    value="{{item.item}}"
+    >
+    
+  
+    <input 
+    placeholder=""
+    id="Input_325"
+    type="text"
+    class="Input_325_1 " 
+    value="{{item.schedule}}"
+    >
+    
+  
+    <input 
+    placeholder=""
+    id="Input_633"
+    type="text"
+    class="Input_633_2 " 
+    value="{{item.quanity}}"
+    >
+    
+  
+    <input 
+    placeholder=""
+    id="Input_700"
+    type="text"
+    class="Input_700_3 " 
+    value="{{item.unit}}"
+    >
+    
+  
+    <input 
+    placeholder=""
+    id="Input_760"
+    type="text"
+    class="Input_760_4 " 
+    value="{{item.unitprice}}"
+    >
+    
+  
+    <input 
+    placeholder=""
+    id="Input_867"
+    type="text"
+    class="Input_867_5 " 
+    value="${{item.amount | number: '2.2-2'}}"
+    >
+     
+    </div>
+  </div>
+   
+   
+    <label 
+    style="background-color:transparent !important;border:none !important"
+    class="main a27_yes_29 "
+    [ngStyle]="{'pointer-events':edit2?'all':'none'}"
+        >
+          <input id="a27_yes" type="checkbox"
+          name=""
+          formControlName="a27_yes"
+          > 
+          <span 
+          style="width:13px;
+          border-radius:0px;
+          height:13px;
+          background-color:transparent;border: 1px solid transparent;
+          --tooltip-circle:rgba(31,95,189,1)"
+          class="geekmark"
+          
+          ></span> 
+  </label>
+    
+   
+    <label 
+    style="background-color:transparent !important;border:none !important"
+    class="main a27_no_30 " 
+    [ngStyle]="{'pointer-events':edit2?'all':'none'}"
+        >
+          <input id="a27_no" type="checkbox"
+          name=""
+          formControlName="a27_no"
+          > 
+          <span 
+          style="width:13px;
+          border-radius:0px;
+          height:13px;
+          background-color:transparent;border: 1px solid transparent;
+          --tooltip-circle:rgba(31,95,189,1)"
+          class="geekmark"
+          
+          ></span> 
+  </label>
+    
+  
+    <input 
+    id="Date_271"
+    class="Date_271_31 " 
+    formControlName="awarddate"
+    
+    type="date-time"
+    >
+  
+    <section id="pdfadd" [innerHTML]="formHTML" 
+    [attr.contenteditable]="edit2"
+    ></section> 
+    
+    </form>
+
+    <section id="pdfadd" class="preview-sections">
+     
+    </section>
+    <!-- <embed id="embed"> -->
+
+    <!-- <object id="attachments"  style="width:100%;height:1500px;">
+  </object> -->
+
+  </div>
+</div>

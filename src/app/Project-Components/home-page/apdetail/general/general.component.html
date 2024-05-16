@@ -1,0 +1,984 @@
+<div class="col-md-12 col-lg-12 col-xl-12 col-sm-12">
+  <span class="mt-2 mb-3 ap-detail-title p-3">General</span>
+  <form [formGroup]="projectGeneral" novalidate (change)="onChange(projectGeneral);">
+    <div class="list-group p-2 col-md-12 col-lg-11 col-xl-11" id="accordionOne">
+      <div class="expansion-panel mb-2 list-group-item">
+        <a aria-expanded="false" class="expansion-panel-toggler btn-primar collapsed" data-toggle="collapse"
+          data-target="#collapseOne" href="javascript:void(0);" aria-expanded="true" aria-controls="collapseOne" id="acquisitionInformation">
+          <span style="color: #1a355d;">General Details</span>
+          <div class="expansion-panel-icon ml-3 text-black-secondary">
+            <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+            <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+          </div>
+        </a>
+        <div aria-labelledby="headingOne" class="collapse show" data-parent="#accordionOne" id="collapseOne">
+          <div class="expansion-panel-body">
+            <div class="form-group col-md-5">
+              <div class="textfield-box">
+                <label class="label-class" style="font-weight: 600;">Project Title*</label><br>
+                <input class="form-control" id="projectTitle" formControlName="projectTitle" type="text">
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+
+
+          <div class="row" style="margin-left: 22px;">
+
+            <div class="form-group col-md-10">
+              <div class="textfield-box">
+                <label class="label-class mb-1" style="font-weight: 600;">Statement of Need*</label><br>
+                <div class="mb-2">
+                  <a class="tooltips tu">FAR 7.105(a)(1)<span class="classic">Introduce the plan by a brief statement of need.  Summarize the technical and contractual history of the acquisition.  Discuss feasible acquisition alternatives, the impact of prior acquisitions on those alternatives, and any related in-house effort.</span></a>
+                </div>
+                <label class="label-class mb-1" style="font-style: italic; font-size:13px">
+                  Briefly describe the purpose of and need for the proposed requirement as defined in the approved AS.
+                </label>
+                <textarea class="form-control" id="statementofneed" rows="3" formControlName="statementofNeed" type="text"
+                  placeholder="Please type your statement of need"></textarea>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row" style="margin-left: 20px;">
+
+
+
+            <div class="form-group col-md-4">
+              <div class="form-group mt-3">
+                <label class="label-class" style="font-weight: 600;">Period of Performance*</label>
+              </div>
+
+              <div class="input-group input-group-sm mb-1" style="margin-top: -10px">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Start Date</span>
+                </div>
+                <div class="textfield-box">
+                  <input type="date" class="form-control mb-2" id="queststartDate" formControlName="popstartDate"
+                    min="{{this.strDateTime}}" (click)="startDatess();" aria-label="Small"
+                    aria-describedby="inputGroup-sizing-sm">
+                </div>
+              </div>
+
+
+              <div class="input-group input-group-sm mb-1">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">End Date&nbsp;&nbsp;</span>
+                </div>
+                <div class="textfield-box" [class.disabledDiv]="this.endDatess == false"> 
+                  <input type="date" class="form-control" id="questendDate" formControlName="popendDate"
+                    min="{{this.projectGeneral.get('popstartDate').value}}" aria-label="Small"
+                    aria-describedby="inputGroup-sizing-sm">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="form-group col-md-4" style="margin-left: 20px;">
+            <div class="form-group mt-3">
+              <label class="label-class" style="font-weight: 600;">Anticipated Award Date</label>
+            </div>
+            <div class="textfield-box" style="margin-top: -10px">
+              <input type="date" class="form-control mb-2" id="anticipatedAward" formControlName="anticipatedPop"
+                min="{{this.strDateTime}}">
+            </div>
+          </div>
+
+          <div class="form-group col-md-4 mt-3" style="margin-left: 20px;">
+            <div class="textfield-box">
+
+              <label class="label-class mb-1" style="font-weight: 600;">Estimated Budget</label>
+              <div class="input-group" style="background: #1f5fbd; border-radius: 4px; color: white">
+                <div class="input-group-prepend">
+                  <span class="input-group-text ml-1">$</span>
+                </div>
+                <input class="form-control" style="margin-left: -10px" formControlName="estimatedBudgett"
+                  (change)="onKeysss($event)" (keypress)="keyPress($event)" type="text" id="estimatedbudgett">
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="form-group col-md-4 mt-3" style="margin-left: 20px;">
+            <div class="form-group" style="margin-top: 30px;">
+              <label class="label-class" style="font-weight: 600;">Commercial Purchase*</label>
+            </div>
+            <div style="margin-top: -10px;">
+              <a class="tooltipss">FAR Part 12</a>
+            </div>
+            <div class="custom-control custom-radio" style="margin-top: 14px;">
+              <input (click)="commercial()" type="radio" id="sorceYes" formControlName="Source" class="custom-control-input" [value]="true">
+              <label class="custom-control-label" for="sorceYes" value="commercialYes" id="commercialYes">Commercial</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input (click)="nonCommercial()" type="radio" id="sorceNo" formControlName="Source" class="custom-control-input" [value]="false">
+              <label class="custom-control-label" for="sorceNo" value="commercialNo">Non-Commercial</label>
+            </div>
+          </div>
+
+
+          <div *ngIf="commercialYes" style="margin-left: 35px;">
+
+            <div class="form-group col-md-11 mt-4 mb-4">
+              <div class="form-group" style="margin-top: 30px;">
+                <label class="label-class" style="font-weight: 500;">Select one of the following:*
+                </label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="fullSolicitation" formControlName="productKind" class="custom-control-input"
+                  value="half">
+                <label class="custom-control-label" for="fullSolicitation" id="fullSolicitation">Streamlined</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="halfSol" formControlName="productKind" class="custom-control-input"
+                  value="full">
+                <label class="custom-control-label" for="halfSol" id="UCF">UCF</label>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group col-md-4 " style="margin-left: 20px;">
+
+            <div class="textfield-box" style="margin-top: 30px;">
+              <label class="label-class mb-1" style="font-weight: 600;">Categories of Contracting</label>
+              <div class="mb-2">
+                <a class="tooltipss">FAR Subp⁠art F</a>
+              </div>
+              <div>
+                  <ng-select [items]="pscList" #select bindLabel="full" bindLabel="full"
+                      dropdownPosition="auto" bindValue="Acronym"
+                      labelForId="productService" placeholder="Select Categories" [virtualScroll]="true"
+                      formControlName="productService">
+                      <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+                          <div (click)="updateClick()">
+                              <span>{{item.full}}</span>
+                          </div>
+                      </ng-template>
+                  </ng-select>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group col-md-4" style="margin-left: 20px;">
+
+
+
+          
+          <div class="textfield-box">
+            <label class="label-class mb-1" style="font-weight: 600;">Category Management</label>
+            <div>
+              <ng-select (click)="categoryPsc()" [items]="categoryManagement" #select bindLabel="full" bindLabel="full"
+              dropdownPosition="auto" bindValue="Acronym"
+              labelForId="categoryManagement" placeholder="Select Categories" [virtualScroll]="true"
+              formControlName="categoryManagement">
+              <div>
+                <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+                  <div (click)="categoryPsc()">
+                      <span>{{item.full}}</span>
+                  </div>
+  
+              </ng-template>
+              </div>
+
+            </ng-select>
+            </div>
+          </div>
+            <!-- <div class="textfield-box">
+              <label class="label-class mb-1" style="font-weight: 600;">Category Management</label>
+              <select (change)="categoryPsc(c)" class="form-control" formControlName="categoryManagement">
+                <option *ngFor="let c of categoryManagement" [ngValue]="c">{{c}}</option>
+              </select></div> -->
+          </div>
+
+
+
+          <div class="form-group col-md-4" style="margin-left: 20px;">
+            <div class="textfield-box">
+              <label class="label-class mb-1" style="font-weight: 600;">NAICS Codes</label>
+              <ng-select id="NAICS" [items]="naicsresults" #select bindLabel="Value" dropdownPosition="auto" bindValue="Value"
+                labelForId="naicscode" placeholder="Select NAICS" [virtualScroll]="true" formControlName="naicscode">
+                <ng-template ng-option-tmp let-item="item" let-search="searchTerm" >
+                  <div (click)="updateClick()"><span>{{item.naics_code}}</span>&nbsp;<span>{{item.naics_title}}</span>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+          </div>
+
+
+
+          <div class="col-md-4 form-group" style="margin-left: 20px;">
+            <div class="textfield-box">
+              <label class="label-class mb-1" style="font-weight: 600;">Product Service Code</label>
+              <ng-select [items]="pscResults" #select bindLabel="fullCode" (click)="searchPsc()" dropdownPosition="auto" bindValue="fullCode"
+                labelForId="catalogue" placeholder="Select PSC" [virtualScroll]="true" formControlName="catalogue">
+                <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+                  <div (click)="updateClick()"><span>{{item.full_name}}</span></div>
+                </ng-template>
+              </ng-select>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="expansion-panel mb-2 list-group-item">
+        <a (click)="scrollTop()" aria-controls="collapseFour" aria-expanded="false" class="btn-primar expansion-panel-toggler collapsed"
+          data-toggle="collapse" data-target="#collapseFour" id="headingFour" aria-controls="collapseFour" href="javascript:void(0);">
+          Acquisition Method & Background
+          <div class="expansion-panel-icon ml-3 text-black-secondary">
+            <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+            <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+          </div>
+        </a>
+        <div aria-labelledby="headingFour" class="collapse" data-parent="#accordionOne" id="collapseFour">
+          <div class="expansion-panel-body">
+            <div>
+
+
+              <div class="form-group col-md-10">
+                <div class="textfield-box">
+                  <label class="label-class mb-1" style="font-weight: 600;">Technical and Contractual History</label>
+                  <div class="mb-2">
+                    <a class="tooltips tu">FAR 7.105(a)(1)<span class="classic">Introduce the plan by a brief statement of need.  Summarize the technical and contractual history of the acquisition.  Discuss feasible acquisition alternatives, the impact of prior acquisitions on those alternatives, and any related in-house effort.</span></a>
+                  </div>
+                  <label class="label-class mb-1" style="font-style: italic; font-size:13px">Provide a brief factual summary of the history of the requirement, including any legislative history. Discuss the scientific/ technical context of the requirement and provide relevant prior acquisition information, including names of previous/incumbent contractor(s), periods of performance, contract numbers, and performance problems.
+
+                  </label>
+                  <textarea class="form-control" rows="3" formControlName="technicalHistory" type="text" id="technicalHistory"
+                    placeholder="Please type your Technical and Contractual History"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group col-md-4">
+                <div class="textfield-box">
+                  <label class="label-class mb-1" style="font-weight: 600;">Acquisition Method</label>
+                  <div class="mb-2">
+                    <a class="tooltips tu">FAR 7.402<span class="classic">
+                      <b>Purchase Method</b><br>
+                      1. Generally, the purchase method is appropriate if the equipment will be used beyond the point in time when cumulative leasing costs exceed the purchase costs.<br>
+                      2. Agencies should not rule out the purchase method of equipment acquisition in favor of leasing merely because of the possibility that future technological advances might make the selected equipment less desirable.<br>
+                      
+                      <b>Lease Method</b><br>
+                      1. The lease method is appropriate if it is to the Government’s advantage under the circumstances. The lease method may also serve as an interim measure when the circumstances-<br>
+                      •	- Require immediate use of equipment to meet program or system goals; but<br>
+                      •	- Do not currently support acquisition by purchase.<br>
+                      2.If a lease is justified, a lease with option to purchase is preferable.<br>
+                      3.Generally, a long-term lease should be avoided, but may be appropriate if an option to purchase or other favorable terms are included.<br>
+                      4. If a lease with option to purchase is used, the contract shall state the purchase price or provide a formula which shows how the purchase price will be established at the time of purchase.<br>
+                      </span></a>
+                  </div>
+                  <select class="form-control" formControlName="method_of_solicitation"
+                    aria-placeholder="Select Acquisition Method" id="method_of_solicitation">
+                    <option *ngFor="let c of acqMethod" [ngValue]="c">{{c}}</option>
+                  </select>
+                </div>
+              </div>
+
+
+
+
+              <div class="form-group col-md-8 mt-3">
+                <div class="form-group" style="margin-top: 30px;">
+                  <label class="label-class" style="font-weight: 500;">The Proposed Action is:<span style="color: grey;">(Please select one
+                      of the following)</span></label>
+                </div>
+                <div class="mb-2" style="margin-top: -10px;">
+                  <a class="tooltips tu">FAR 7.105(b)(2)/FAR 7.102<span class="classic">
+                    Competition. <br>
+                    (i) Describe how competition will be sought, promoted, and sustained throughout the course of the acquisition. If full and open competition is not contemplated, cite the authority in 6.302, discuss the basis for the application of that authority, identify the source(s), and discuss why full and open competition cannot be obtained.<br>
+(ii) Identify the major components or subsystems. Discuss component breakout plans relative to these major components or subsystems. Describe how competition will be sought, promoted, and sustained for these components or subsystems.<br>
+(iii) Describe how competition will be sought, promoted, and sustained for spares and repair parts. Identify the key logistic milestones, such as technical data delivery schedules and acquisition method coding conferences, that affect competition.<br>
+(iv) When effective subcontract competition is both feasible and desirable, describe how such subcontract competition will be sought, promoted, and sustained throughout the course of the acquisition. Identify any known barriers to increasing subcontract competition and address how to overcome them. Update FAR number as well. <br>
+
+                    </span></a>
+                </div>
+                <div
+                
+                 class="custom-control custom-radio" style="margin-top: 14px;">
+                  <input type="radio" id="Competetive" formControlName="proposedAction" class="custom-control-input"
+                    value="Competitive">
+                  <label [class.disabledDiv]="this.role == 'Program Officer'" class="custom-control-label" for="Competetive" value="Yes"
+                    (click)="competetive()">Competitive</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="Non-Competitive" formControlName="proposedAction" class="custom-control-input"
+                    value="non-competitive">
+                  <label [class.disabledDiv]="this.role == 'Program Officer'" class="custom-control-label" for="Non-Competitive" value="No"
+                    (click)="noncompetetive()">Non-Competitive</label>
+                </div>
+              </div>
+
+              <div *ngIf="competetiveYes" style="margin-left: 35px;">
+
+                <div class="form-group col-md-11 mt-4 mb-4" style="margin-left: -30px;">
+                  <div class="form-group" style="margin-top: 30px;">
+                    <label class="label-class" style="font-weight: 500;">This acquisition is unrestricted full and open:
+                    </label>
+                  </div>
+                  <div class="custom-control custom-radio ml-3">
+                    <input type="radio" id="UnrestrictedYes" formControlName="unrestricted" class="custom-control-input"
+                      value="X">
+                    <label class="custom-control-label" for="UnrestrictedYes" value=" ">Yes</label>
+                  </div>
+                  <div class="custom-control custom-radio ml-3">
+                    <input type="radio" id="UnrestrictedNo" formControlName="unrestricted" class="custom-control-input"
+                      value=" ">
+                    <label class="custom-control-label" for="UnrestrictedNo" value=" ">No</label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div *ngIf="insertpercentage" style="margin-left: 35px;">
+                <label class="label-class mb-3" style="margin-left: 20px;">Select one of the following options to
+                  justify non-competitive selection:</label>
+                <div style="margin-left: 35px;">
+
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1"
+                      formControlName="noncomoption1" name="noncomoption1">
+                    <label class="custom-control-label" for="customCheck1">8(a) Program Direct Award (FAR 19.8)</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck22"
+                      formControlName="noncomoption2" name="noncomoption2">
+                    <label class="custom-control-label" for="customCheck22">Acquisition from nonprofit agencies
+                      employing people who are blind or severely disabled (AbilityOne, FAR 8.7)
+                      Business</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck23"
+                      formControlName="noncomoption3" name="noncomoption3">
+                    <label class="custom-control-label" for="customCheck23">Federal Prison Industries (UNICOR) Direct
+                      Award (FAR 8.6)</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck24"
+                      formControlName="noncomoption4" name="noncomoption4">
+                    <label class="custom-control-label" for="customCheck24">Justification for Other than Full and Open
+                      Competition (JUFOC, FAR 6.3)</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck25"
+                      formControlName="noncomoption5" name="noncomoption5">
+                    <label class="custom-control-label" for="customCheck25">Sole Source Justification (J&A)</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck26"
+                      formControlName="noncomoption6" name="noncomoption6">
+                    <label class="custom-control-label" for="customCheck26">Use of Brand Name Characteristics (BNC, FAR
+                      6.302-1(c))</label>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <hr>
+                <div class="form-group" style="margin-top: 20px; margin-left:20px">
+                  <label class="label-class" style="font-weight: 600;">Set Aside Selection</label>
+                </div>
+                <div class="form-group col-md-5 mt-4">
+                  <div class="textfield-box">
+                    <label class="label-class mb-1">Insert Set-Aside Percentage</label>
+                    <input (keypress)="keyPress($event)" id="percent" (keyup)="keyPercentage($event)" min="0" max="100" class="form-control" autocomplete="off" formControlName="percent" type="text" placeholder="(e.g. 50%)">
+                  </div>
+                </div>
+                <label class="label-class mb-3" style="margin-left: 20px;">Select all socioeconomic categories that
+                  apply:</label>
+                <div style="margin-left: 35px;">
+
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1990" formControlName="eightA" name="eightA">
+                    <label class="custom-control-label" for="customCheck1990">8(a)</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1220" formControlName="SDVOB" name="SDVOB">
+                    <label class="custom-control-label" for="customCheck1220" id="customCheck1220">Service-Disabled Veteran-Owned Small
+                      Business</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck993"
+                      formControlName="smallBusiness" name="smallBusiness">
+                    <label class="custom-control-label" for="customCheck993" id="customCheck993">Small Business</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck14" formControlName="EDWOSB" name="EDWOSB">
+                    <label class="custom-control-label" for="customCheck14" id="customCheck14">EDWOSB</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck15" formControlName="hubzoneSB" name="hubzoneSB">
+                    <label class="custom-control-label" for="customCheck15" id="customCheck15">Hub Zone Small Business</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck16" formControlName="womenSB" name="womenSB">
+                    <label id="customCheck16" class="custom-control-label" for="customCheck16">Women-Owned Small Business(WOSB) Eligible
+                      Under the Women-Owned Small Business Program</label>
+                  </div>
+                </div>
+              </div>
+
+
+              <hr>
+
+              <div class="form-group col-md-10">
+                <div class="textfield-box">
+                  <label class="label-class mb-1" style="font-weight: 600;">Small Business*</label>
+                  <div class="mb-2">
+                    <a class="tooltipss">FAR 19.5</a>
+                  </div>
+                  <label class="label-class mb-1" style="font-style: italic; font-size:13px"> Describe the consideration of small business as required by FAR Part 19. Ensure consultation with the Division-servicing Small Business Advisor. Address, at a minimum, compliance with HHS Federal Procurement Forecasting requirements (HHS PFDR), planned set-aside(s), and document consideration of small business, veteran-owned business, service-disabled veteran- owned small business, HUBZone small business, small disadvantaged business, and women-owned small business concerns (FAR Part 19), and the impact of any bundling that might affect their participation in the acquisition. In accordance with FAR 7.105(b) (1), when the proposed AS involves bundling, identify the incumbent contractors and contracts affected by the bundling </label>
+
+                  <textarea class="form-control" rows="3" id="smallBusiness" formControlName="smallBusines" type="text"
+                    placeholder="Please type your Small Business"></textarea>
+                </div>
+              </div>
+
+
+              <div class="form-group col-md-10">
+                <div class="textfield-box">
+                  <label class="label-class mb-1" style="font-weight: 600;">Acquisition Alternatives</label>
+                  <br>
+                  <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss acquisition alternatives considered and the impact of prior acquisitions as they relate to the alternatives considered. This discussion should include any existing internal or Government-wide contracts that satisfy the same or similar needs, the results of the market research conducted that substantiate the need for the alternative chosen, and the potential for using Federal or HHS' Strategic Sourcing Vehicles, such as Government Wide Acquisition Contracts (GWACs), indefinite- delivery contracts, and General Services Administration Federal Supply Schedules to acquire the required supplies or services.</label>
+
+                  <textarea class="form-control" rows="3" id="acqAlternative" formControlName="acqAlternative" type="text"
+                    placeholder="Please type your Acquisition Alternatives"></textarea>
+                </div>
+              </div>
+
+              <!-- <div class="form-group col-md-10 mt-4 mb-2" style="margin-left: -30px;">
+                <label class="label-class mb-3 col-3">Bundling Determination </label>
+                <div class="custom-control custom-radio custom-control-inline ml-3">
+                  <input type="radio" id="BundlingYes" formControlName="Bundling" class="custom-control-input"
+                    value="Yes">
+                  <label class="custom-control-label" for="BundlingYes" value="Yes">Yes</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline ml-3">
+                  <input type="radio" id="BundlingNo" formControlName="Bundling" class="custom-control-input"
+                    value="No">
+                  <label class="custom-control-label" for="BundlingNo" value="No">No</label>
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="expansion-panel mb-2 list-group-item">
+        <a (click)="scrollTop2()" aria-controls="collapseThree" aria-expanded="false" class="btn-primar expansion-panel-toggler collapsed"
+          data-toggle="collapse" data-target="#collapseThree" id="headingThree" href="javascript:void(0);">
+          Contract Information
+          <div class="expansion-panel-icon ml-3 text-black-secondary">
+            <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+            <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+          </div>
+        </a>
+        <div aria-labelledby="headingThree" class="collapse" data-parent="#accordionOne" id="collapseThree">
+          <div class="expansion-panel-body">
+
+            <div class="" style="margin-left: 18px;">
+
+              <div class="form-group col-md-4">
+                <div class="textfield-box">
+                  <label class="label-class mb-1" style="font-weight: 600;">Special Contracting Methods*</label>
+                  <div class="mb-2">
+                    <a class="tooltipss">FAR 17⁠</a>
+                  </div>
+                  <select (change)="textContractingMethods()" class="form-control" id="specialcontractingmethod" formControlName="specialcontractingmethod">
+                    <option  *ngFor="let c of specialcontractingmethod" [ngValue]="c.Acronym">{{c.full}}</option>
+                  </select>
+                </div>
+
+              </div>
+              <div *ngIf="specialcontractingmethodBoolean" class="form-group col-md-10 mt-2" style="margin-left: 22px">
+                <div class="textfield-box">
+                  <label class="label-class mb-1">Discuss use of multi-year contracting, options, or other special contracting methods.</label>
+  
+                  <textarea class="form-control" rows="3" id="specialcontractingmethodText" formControlName="specialcontractingmethodText" type="text"></textarea>
+                </div>
+              </div>
+              <div class="form-group col-md-4">
+                <div class="textfield-box">
+                  <label class="label-class mb-1" style="font-weight: 600;">Contracting Methods</label>
+                  <div class="mb-2">
+                    <a class="tooltipss">FAR Part 17</a>
+                  </div>
+                  <select (change)="textContracting()" class="form-control" id="contractingmethod" formControlName="contractingmethod">
+                    <option *ngFor="let c of contractingmethod" [ngValue]="c.Acronym">{{c.full}}</option>
+                  </select>
+                </div>
+              </div>
+              <div *ngIf="contractingmethodBoolean" class="form-group col-md-10 mt-2" style="margin-left: 22px">
+                <div class="textfield-box">
+                  <label class="label-class mb-1">Discuss whether sealed bidding or negotiation will be used and why.</label>
+  
+                  <textarea class="form-control" rows="3" id="contractingmethodText" formControlName="contractingmethodText" type="text"></textarea>
+                </div>
+              </div>
+              <hr>
+
+              <div class="form-group col-md-10">
+                <div class="textfield-box">
+                  <label class="label-class mb-1" style="font-weight: 600;">Contract Type*</label>
+                  <div class="mb-2">
+                    <a class="tooltipss">FAR 16⁠</a>
+                  </div>
+                  <label class="label-class mb-1" style="font-style: italic; font-size:13px"> In accordance with FAR, Subpart 7.102 the AP should promote and provide details which support the selection of an appropriate contract type in accordance with FAR Part 16. Firm-fixed-price contracts are preferred. If considering any other contract type, include details to justify the type of contract chosen. Additionally, discuss the techniques, process, and/or procedures that will be used to manage the additional risks associated with the selection of other than a firm-fixed-price contract type.</label>
+                  <div class="pt-2 pb-2 col-md-5">
+                    <ng-select [items]="contractType" #select bindLabel="full" bindLabel="full"
+                        dropdownPosition="auto" bindValue="Acronym"
+                        labelForId="contractType" placeholder="Select Categories" [virtualScroll]="true"
+                        formControlName="contractType">
+                        <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+                            <div >
+                                <span>{{item.full}}</span>
+                            </div>
+  
+                        </ng-template>
+                    </ng-select>
+                </div>
+                  <!-- <select class="form-control" formControlName="contractType" (change)="selectFFP($event.target.value)">
+                    <option *ngFor="let c of contractType" [ngValue]="c.Acronym">{{c.full}}</option>
+                  </select> -->
+                </div>
+              </div>
+
+              <!-- <div *ngIf="ffp" class="form-group col-md-10 mt-3" style="margin-left: 30px;">
+                <div class="textfield-box">
+
+                  <div class="label-class mb-1" style="font-style: italic; font-size:13px"> Please provide justification why FFP was
+                    not selected for this acquisition including the techniques, process,
+                    and procedures that will be used to manage additional risks associated with the contract selected.*
+                    Attachments</div>
+
+                  <textarea class="form-control" rows="3" formControlName="securityConsiderationsText" type="text"
+                    placeholder="Please type Acquisition explanation Alternatives"></textarea>
+                </div>
+              </div> -->
+
+              <div class="form-group col-md-11 mb-4" style="margin-left: 30px; margin-top: -30px;">
+                <div class="form-group" style="margin-top: 30px;">
+                  <label class="label-class" style="font-weight: 500;">This acquisition is an Indefinite Delivery,
+                    Indefinite Quantity (IDIQ)*: </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="idiqYes" name="idiq" formControlName="idiq" class="custom-control-input"
+                    value="Yes">
+                  <label class="custom-control-label" for="idiqYes" id="idiqYes" value="Yes">Yes</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="idiqNo" name="idiq" formControlName="idiq" class="custom-control-input"
+                    value="No">
+                  <label class="custom-control-label" for="idiqNo" value="No" id="idiqNo">No</label>
+                </div>
+              </div>
+
+
+              <hr>
+
+
+
+              <div class="form-group col-md-4">
+                <div class="textfield-box">
+                  <label class="label-class mb-1" style="font-weight: 600;">Contract Vehicle</label>
+                  <select class="form-control" id="contractVehicle" formControlName="contractVehicle">
+                    <option *ngFor="let c of contractVehicle" [ngValue]="c">{{c}}</option>
+                  </select></div>
+              </div>
+
+              <div class="form-group col-md-10">
+                <div class="textfield-box">
+                  <label class="label-class mb-1" style="font-weight: 600;">Subcontract Competition*</label>
+                  <div class="mb-2">
+                    <a class="tooltipss">FAR 44</a>
+                  </div>
+                  <label class="label-class mb-1" style="font-style: italic; font-size:13px">When effective subcontract competition is both feasible and desirable, describe how such subcontract competition will be sought, promoted, and sustained throughout the course of the acquisition. Identify any known barriers to increasing subcontract competition and address how to overcome them.</label>
+
+                  <textarea class="form-control" rows="3" id="subcontractCompetition" formControlName="subcontractCompetition" type="text"
+                    placeholder="Please type your Subcontract Competition"></textarea>
+                </div>
+              </div>
+
+              <hr>
+
+
+              <div class="form-group col-md-10">
+                <div class="textfield-box">
+                  <label class="label-class mb-1" style="font-weight: 600;">Unique Solicitation Clauses or
+                    Provisions*</label>
+                  <br>
+                  <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss any special clauses, special
+                    solicitation provisions, or FAR deviations required (see Subpart 1.4) that will be required
+                    for this acquisition.</label>
+
+                  <textarea class="form-control" id="uniqueSolicitationClauses" rows="3" formControlName="uniqueSolicitationClauses" type="text"
+                    placeholder="Please type your Unique Solicitation Clauses or Provisions"></textarea>
+                </div>
+              </div>
+
+              <!-- <div class="form-group col-md-4">
+                <div class="textfield-box">
+                  <label class="label-class mb-1">Proposed Acquisition Funding Approach</label>
+                  <select class="form-control" formControlName="awardType">
+                    <option *ngFor="let c of awardType" [ngValue]="c">{{c}}</option>
+                  </select></div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="expansion-panel mb-2 list-group-item">
+        <a (click)="scrollTop3()" aria-controls="collapseFive" aria-expanded="false" class="btn-primar expansion-panel-toggler collapsed"
+          data-toggle="collapse" data-target="#collapseFive" id="headingFive" href="javascript:void(0);">
+          Inherently Governmental & GFI/GFP
+          <div class="expansion-panel-icon ml-3 text-black-secondary">
+            <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+            <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+          </div>
+        </a>
+        <div aria-labelledby="headingFive" class="collapse" data-parent="#accordionOne" id="collapseFive">
+          <div class="expansion-panel-body">
+              <div class="form-group col-md-10 mt-4">
+                  <div class="textfield-box">
+                    <label class="label-class mb-1" style="font-weight: 600;">Government-Furnished Property*</label>
+                    <div class="mb-2">
+                      <a class="tooltips tu" >FAR ⁠7.105(b⁠)(15)<span class="classic">Indicate any Government property to be furnished to contractors, and discuss any associated considerations, such as its availability or the schedule for its acquisition (see 45.102).</span></a>
+                    </div>
+                    <label class="label-class mb-1" style="font-style: italic; font-size:13px">Indicate any Government property to be furnished to contractors, and discuss any associated considerations, such as its availability or the schedule for its acquisition (see FAR Part 45.102). Ensure that any Government-furnished property, including materials, facilities, equipment, and information that are to be provided under the contract are clearly identified. Consult the OPDIV Property Management Officer, as appropriate, to ensure that the proposed acquisition meets HHS personal property requirements for cannibalization, accountability, sensitivity, reporting, re-utilization, and disposal. Review the HHS Contracting Guide for Control of Government Property. Finally, address how furnishing the property is in the Government’s best interest and how the overall benefit to the Government significantly outweighs the increased cost of administration including ultimate property disposal, discuss how furnishing the property does not substantially increase the risk to the Government, and why the Government requirements cannot otherwise be met. </label>
+    
+                    <textarea class="form-control" rows="3" id="governmentFurnishedProperty" formControlName="governmentFurnishedProperty" type="text"
+                      placeholder="Please type your Government-Furnished Property"></textarea>
+                  </div>
+              </div>
+
+
+
+              <div class="form-group col-md-10 mt-4">
+                  <div class="textfield-box">
+                    <label class="label-class mb-1" style="font-weight: 600;">Government-Furnished Information*</label>
+                    <div class="mb-2">
+                      <a class="tooltips tu" >FAR 7.105(b)(16)<span class="classic">Discuss any Government information, such as manuals, drawings, and test data, to be provided to prospective offerors and contractors. Indicate which information that requires additional controls to monitor access and distribution (e.g., technical specifications, maps, building designs, schedules, etc.), as determined by the agency, is to be posted via the enhanced controls of the GPE at https://www.fbo.gov (see 5.102(a)).</span></a>
+                    </div>
+                    <label class="label-class mb-1" style="font-style: italic; font-size:13px">Identify any Government information, such as manuals, drawings, and test data, to be provided to prospective offerors and contractors. Indicate which information that requires additional controls to monitor access and distribution (e.g., technical specifications, maps, building designs, schedules, etc.), as determined by the agency, is to be posted via the enhanced controls of the Governmentwide Point of Entry (GPE) at http://www.fedbizopps.gov (see FAR Part 5.102(a)). Furthermore, describe how this data will be provided during the competitive process, such as through individual copies to offerors, providing data on the agency web site, or by establishing a reading library, and discuss the schedule and means for providing the information to the successful contractor after award and the impact that any delays by the Government in providing the data might have upon contract performance.</label>
+    
+                    <textarea class="form-control" rows="3" id="governmentFurnishedInformation" formControlName="governmentFurnishedInformation" type="text"
+                      placeholder="Please type your Government-Furnished Information"></textarea>
+                  </div>
+              </div>
+
+
+
+              <div *ngIf="productService == 'svc'" class="form-group col-md-10 mt-4">
+                  <div class="form-group">
+                    <label class="label-class" style="font-weight: 600;">Inherently Governmental Functions</label>
+                  </div>
+                  <div style="margin-top: -10px;">
+                    <a class="tooltipss">FAR 7.503</a>
+                  </div>
+                  <label class="label-class mt-2">As it pertains to this procurement, I hereby certify that this service requirement is for an inherently governmental function which is defined as a function that 
+                      is so intimately related to the public interest, it requires performance by Federal Government employees. </label>
+                  <div class="custom-control custom-radio ml-3" style="margin-top: 14px;">
+                    <input type="radio" id="igce1Yes" name="igce1"
+                      formControlName="igce1" class="custom-control-input" value="Yes">
+                    <label class="custom-control-label" for="igce1Yes" id="igce1Yes" value="Yes"
+                      >Yes</label>
+                  </div>
+                  <div class="custom-control custom-radio ml-3">
+                    <input type="radio" id="igce1No" name="igce1"
+                      formControlName="igce1" class="custom-control-input" value="No">
+                    <label class="custom-control-label" id="igce1No" for="igce1No"
+                      value="No">No</label>
+                  </div>
+
+
+
+                  <div 
+                  *ngIf="projectGeneral.get('igce1').value == 'Yes'"
+                  >
+                    <label class="label-class mt-3">As it pertains to this procurement, I hereby certify that this service requirement is closely associated with an inherently governmental function defined as 
+                      ​certain services and actions that generally are not considered to be inherently governmental, but may approach that category because of the nature of the 
+                      ​function and the risk that performance may impinge on the performance of an inherently governmental function. </label>
+                  <div class="custom-control custom-radio ml-3" style="margin-top: 14px;">
+                    <input type="radio" id="igce2Yes" name="igce2"
+                      formControlName="igce2" class="custom-control-input" value="Yes">
+                    <label class="custom-control-label" for="igce2Yes" id="igce2Yes" value="Yes"
+                      >Yes</label>
+                  </div>
+                  <div class="custom-control custom-radio ml-3">
+                    <input type="radio" id="igce2No" name="igce2"
+                      formControlName="igce2" class="custom-control-input ml-3" value="No">
+                    <label class="custom-control-label" for="igce2No" id="igce2No"
+                      value="No">No</label>
+                  </div>
+
+
+                  
+              <div class="form-group col-md-12 mt-4" style="margin-left: 22px">
+                  <div class="textfield-box">
+                    <label class="label-class mb-1">Briefly describe your rationale for selecting "Yes" or "No" in the previous two questions.</label>
+    
+                    <textarea class="form-control" rows="3" formControlName="igce2textarea" id="igce2textarea" type="text"
+                      placeholder="Please type your Government-Furnished Information"></textarea>
+                  </div>
+              </div>
+
+
+
+
+              <label class="label-class mt-3">As it pertains to this procurement, I hereby certify that this service requirement is for a critical government function which is defined as a function that is 
+                  ​necessary to the agency being able to effectively perform and maintain control of its mission and operations. Critical functions are typically recurring and
+                  ​long-term in duration. </label>
+              <div class="custom-control custom-radio ml-3" style="margin-top: 14px;">
+                <input type="radio" id="igce3Yes" name="igce3"
+                  formControlName="igce3" class="custom-control-input" value="Yes">
+                <label class="custom-control-label" for="igce3Yes" id="igce3Yes" value="Yes"
+                  >Yes</label>
+              </div>
+              <div class="custom-control custom-radio ml-3">
+                <input type="radio" id="igce3No" name="igce3"
+                  formControlName="igce3" class="custom-control-input ml-3" value="No">
+                <label class="custom-control-label" id="igce3No" for="igce3No"
+                  value="No">No</label>
+              </div>
+
+
+              
+          <div class="form-group col-md-12 mt-4" style="margin-left: 22px">
+              <div class="textfield-box">
+                <label class="label-class mb-1">Briefly describe your rationale for selecting "Yes" or "No" in the previous question.</label>
+
+                <textarea class="form-control" rows="3" id="igce3textarea" formControlName="igce3textarea" type="text"
+                  placeholder="Please type your Government-Furnished Information"></textarea>
+              </div>
+          </div>
+                  </div>
+
+
+
+
+                </div>
+
+
+
+              <div class="form-group col-md-10 mt-4">
+                  <div class="textfield-box">
+                    <label class="label-class mb-1" style="font-weight: 600;">Management Information Requirements - Contractor Monitoring Management System</label>
+                    <div class="mb-2">
+                      <a class="tooltips tu">FAR ⁠7.105 (b)(11)<span class="classic">Discuss, as appropriate, what management system will be used by the Government to monitor the contractor’s effort. If an Earned Value Management System is to be used, discuss the methodology the Government will employ to analyze and use the earned value data to assess and monitor contract performance. In addition, discuss how the offeror’s/contractor’s EVMS will be verified for compliance with the Electronic Industries Alliance Standard 748 (EIA-748), Earned Value Management Systems, and the timing and conduct of integrated baseline reviews (whether prior to or post award). (See 34.202.)</span></a>
+                    </div>
+                    <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss, as appropriate, what management system will be used by the Government to monitor the contractor's effort. If an Earned Value Management System (EVMS) is to be used, discuss the methodology the Government will employ to analyze and use the earned value data to assess and monitor contract performance. In addition, discuss how the offeror's/contractor's EVMS will be verified for compliance with the Electronic Industries Alliance Standard 748 (EIA-748), Earned Value Management Systems, and the timing and conduct of integrated baseline reviews (whether prior to or post-award).</label>
+    
+                    <textarea class="form-control" rows="3" id="managementInformationRequirements" formControlName="managementInformationRequirements" type="text"
+                      placeholder="Please type your Management Information Requirements"></textarea>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="expansion-panel mb-2 list-group-item">
+        <a (click)="scrollTop4()" aria-controls="collapseSix" aria-expanded="false" class="btn-primar expansion-panel-toggler collapsed"
+          data-toggle="collapse" data-target="#collapseSix" id="headingSix" href="javascript:void(0);">
+          Supplemental Information
+          <div class="expansion-panel-icon ml-3 text-black-secondary">
+            <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+            <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+          </div>
+        </a>
+        <div aria-labelledby="headingSix" class="collapse" data-parent="#accordionOne" id="collapseSix">
+          <div class="expansion-panel-body">
+            <div class="form-group col-md-12 mt-4">
+              <div class="form-group">
+                <label class="label-class" style="font-weight: 600;">Organizational Conflict of Interest*</label>
+              </div>
+              <div style="margin-top: -10px;">
+                <a class="tooltipss">FAR Subpart 9.5</a>
+              </div>
+              <label class="label-class mt-2">Review FAR Fart 9.5 Organizational and Consultant Conflicts of Interest for roles and responsibilities concerning potential Conflicts of Interest. As it pertains to the procurement there is potential for Conflict of Interest. </label>
+              <div class="custom-control custom-radio" style="margin-top: 14px;">
+                <input type="radio" id="organizationalConflictYes" name="organizationalConflict"
+                  formControlName="organizationalConflict" class="custom-control-input" value="Yes">
+                <label class="custom-control-label" for="organizationalConflictYes" value="Yes" id="organizationalConflictYes">Yes</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="organizationalConflictNo" name="organizationalConflict"
+                  formControlName="organizationalConflict" class="custom-control-input" value="No">
+                <label class="custom-control-label" for="organizationalConflictNo" value="No" id="organizationalConflictNo">No</label>
+              </div>
+            </div>
+            <div *ngIf="projectGeneral.get('organizationalConflict').value == 'Yes'" class="form-group col-md-10 mt-2" style="margin-left: 22px">
+              <div class="textfield-box">
+                <label class="label-class mb-1">In reference to FAR Fart 9.5, discuss Organizational Conflict of Interest as it pertains to this procurement.</label>
+
+                <textarea class="form-control" rows="3" formControlName="organizationalConflictText" id="organizationalConflictText" type="text"></textarea>
+              </div>
+            </div>
+
+
+
+            <div class="form-group col-md-12 mt-4">
+              <div class="form-group">
+                <label class="label-class" style="font-weight: 600;">Severability</label>
+              </div>
+              <div style="margin-top: -10px;">
+                 
+                </div>
+              <label class="label-class" style="margin-top: -15px;">As it pertains to this procurement, the following
+                applies: <span style="color: grey;">Select one option.</span> </label>
+              <div class="custom-control custom-radio" style="margin-top: 14px;">
+                <input type="radio" id="severabilityYes" name="severability" formControlName="severability"
+                  class="custom-control-input" value="Yes">
+                <label class="custom-control-label" for="severabilityYes" value="Yes" id="severabilityYes">Severable </label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="severabilityNo" name="severability" formControlName="severability"
+                  class="custom-control-input" value="No">
+                <label class="custom-control-label" for="severabilityNo" value="No" id="severabilityNo">Non-Severable </label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="severabilityNA" name="severability" formControlName="severability"
+                  class="custom-control-input" value="NA">
+                <label class="custom-control-label" for="severabilityNA" value="No">N/A</label>
+              </div>
+            </div>
+
+
+            <div *ngIf="productService != 'svc'" class="form-group col-md-10 mt-4">
+              <div class="textfield-box">
+                <label class="label-class mb-1" style="font-weight: 600;">Lease or Purchase</label>
+                <div class="mb-2">
+                  <a class="tooltipss">FAR 7.105 (b)(5)</a>
+                </div>
+                <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss whether equipment will be acquired
+                  by lease or purchase (see Subpart 7.4) and why, and any other contracting
+                  ​considerations.</label>
+
+                <textarea class="form-control" rows="3" formControlName="leasePurchase" id="leasePurchase" type="text"
+                  placeholder="Please type your Lease or Purchase"></textarea>
+              </div>
+            </div>
+
+
+            <div *ngIf="productService == 'svc'" class="form-group col-md-12 mt-4">
+              <div class="form-group">
+                <label class="label-class" style="font-weight: 600;">Performance-Based Acquisition</label>
+              </div>
+              <div style="margin-top: -10px;">
+                <a class="tooltipss">FAR 37.6</a>
+              </div>
+              <label class="label-class mt-2">As it pertains to this procurement, it is performance-based: <span
+                  style="color: grey;">Select one option.</span></label>
+              <div class="custom-control custom-radio" style="margin-top: 14px;">
+                <input type="radio" id="performanceBasedAcqYes" name="performanceBasedAcq"
+                  formControlName="performanceBasedAcq" class="custom-control-input" value="Yes">
+                <label class="custom-control-label" id="performanceBasedAcqYes"  for="performanceBasedAcqYes" value="Yes"
+                  (click)="performanceBasedAcqYes()">Yes</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="performanceBasedAcqNo" name="performanceBasedAcq"
+                  formControlName="performanceBasedAcq" class="custom-control-input" value="No">
+                <label class="custom-control-label"  id="performanceBasedAcqNo" for="performanceBasedAcqNo" (click)="performanceBasedAcqNo()"
+                  value="No">No</label>
+              </div>
+            </div>
+
+            <div *ngIf="performanceBased">
+              <div class="form-group col-md-10 mt-3" style="margin-left: 30px;">
+                <div class="textfield-box">
+
+                  <div class="label-class mb-1" style="font-style: italic; font-size:13px"> Provide explanation for why this
+                    procurement is not performance-based. </div>
+
+                  <textarea class="form-control" rows="3" id="performanceBasedTextArea" formControlName="performanceBasedTextArea" type="text"
+                    placeholder="Please type your Acquisition explanation Alternatives"></textarea>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group col-md-10 mt-4">
+              <div class="textfield-box">
+                <label class="label-class mb-1" style="font-weight: 600;">Compatibility</label>
+                <div class="mb-2">
+                  <a class="tooltips tu">FAR ⁠7.105 (a)(2)<span class="classic"><b>Applicable Conditions</b><br>
+                    State all significant conditions affecting the acquisition, such as-<br>
+                    1.	Requirements for compatibility with existing or future systems or programs; and<br>
+                    2.	Any known cost, schedule, and capability or performance constraints.<br>
+                    
+                    </span></a>
+                </div>
+                <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss any compatibility requirements with
+                  future or existing systems/programs. </label>
+
+                <textarea class="form-control" rows="3" id="compatibilityYes" formControlName="compatibility" type="text"
+                  placeholder="Please type your Compatibility"></textarea>
+              </div>
+            </div>
+
+
+
+            <div class="form-group col-md-10 mt-4">
+              <div class="textfield-box">
+                <label class="label-class mb-1" style="font-weight: 600;">Constraints</label>
+                <div class="mb-2">
+                 <a class="tooltips tu">FAR ⁠7.105 (a)(2)<span class="classic"><b>Applicable Conditions</b><br>
+                    State all significant conditions affecting the acquisition, such as-<br>
+                    1.	Requirements for compatibility with existing or future systems or programs; and<br>
+                    2.	Any known cost, schedule, and capability or performance constraints.<br>
+                    
+                    </span></a>
+                </div>
+                <label class="label-class mb-1" style="font-style: italic; font-size:13px">Discuss any known cost, schedule, capability
+                  or performance constraints. If such conditions exist, discuss the steps that will be taken to promote
+                  competition and socio-economic goals. </label>
+
+                <textarea class="form-control" rows="3" id="constraints" formControlName="constraints" type="text"
+                  placeholder="Please type your constraints"></textarea>
+              </div>
+            </div>
+
+
+            <div class="form-group col-md-10 mt-4" *ngIf="productService != 'svc'">
+              <div class="textfield-box">
+                <label class="label-class mb-1" style="font-weight: 600;">Spares and Repair Parts Competition</label>
+                <div class="mb-2">
+                  <a class="tooltipss">FAR ⁠7.105 (a)(2)</a>
+                </div>
+                <label class="label-class mb-1" style="font-style: italic; font-size:13px">Describe how competition will be sought,
+                  promoted, and sustained for spares and repair parts. Identify the key logistic milestones, such as
+                  technical data delivery schedules and acquisition method coding conferences that affect competition.
+                </label>
+
+                <textarea class="form-control" rows="3" id="spareParts" formControlName="spareParts" type="text"
+                  placeholder="Please type your Spare and Repair Parts Competition"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <pre> {{projectGeneral.value | json}} </pre> -->
+  </form>
+</div>
+
+<div class="mb-5" style="margin-bottom: 90px !important">
+
+</div>

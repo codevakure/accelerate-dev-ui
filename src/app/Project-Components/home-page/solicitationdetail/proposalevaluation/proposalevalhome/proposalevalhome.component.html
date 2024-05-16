@@ -1,0 +1,537 @@
+<div class="header">
+  <div style="white-space:nowrap; color:#1a355d; 
+      font-weight:bold; font-size:16px;
+      text-align:left;">
+    Proposal Evaluation
+  </div>
+
+  <div class="row">
+    <div class=" col mt-3">
+      <div style="color: #0844a4;  font-weight: bold; font-size: 14px;text-align: left;background-color:#eff2f5; padding:6px; width: 350px"
+        data-toggle="tooltip" data-placement="left" title="Period of Performance can be changed in Genral page">
+        Due Date &nbsp; {{this.dueDate?.offerDueDate | date:'short' }} EST
+      </div>
+      <!-- <div style="color: #0844a4;  font-weight: bold; font-size: 14px;
+          font-family: 'Arial', 'SansSerif'; text-align: left;background-color:#eff2f5; padding:6px; width: 350px"
+        data-toggle="tooltip" data-placement="left" title="Period of Performance can be changed in Genral page">
+        Evaluation Due Date &nbsp; 10/13/2019 5:00 PM EST
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="mt-4">
+
+  <div style="margin-top: 20px" [class.d-none]="this.unitedproposalResults != ''" class="alert alert-info" role="alert">
+    <i style="font-size: 140%; color: #1a355d" class="fa fa-info-circle" aria-hidden="true"></i>&nbsp; There are no
+    Vendor Responses
+  </div>
+
+  <div [class.d-none]="this.unitedproposalResults == ''">
+    <button *ngIf="!this.hideAddEvaluator" id="clauseLibrary" style="color: #2e73dc" class="btn btn-sm btn-primary shadow-none text-white float-right"
+      data-toggle="modal" data-target=".bd-example-modal-lg">
+      Review Evaluation Criteria
+    </button>
+    <div>
+      <!-- <p style="color:navy; font-style: italic;"><span class="badge badge-info">Note:</span>&nbsp;The following
+            clauses have been auto-picked by the accelerate system and are included in the solictation. The user can
+            review/delete the Applicable/optional clauses and can also select new clauses from the clause library</p> -->
+    </div>
+    <div>
+
+
+      <ul class="nav nav-tabs" id="justifiedTab" role="tablist">
+        <li class="nav-item nav-item1 text-center">
+          <a (click)="showEvaluate()" aria-controls="home" aria-selected="true" class="nav-link active" data-toggle="tab" href="#home"
+            id="home-tab" role="tab">Evaluation</a>
+        </li>
+        <li class="nav-item nav-item1 text-center">
+          <a (click)="hideEvaluate()" aria-controls="contact" aria-selected="false" class="nav-link" data-toggle="tab" href="#contact"
+            id="contact-tab" role="tab">Evaluators</a>
+        </li>
+      </ul>
+
+      <!--loading Table-->
+      <div class="tab-content" id="justifiedTabContent">
+        <div aria-labelledby="home-tab" class="tab-pane fade show active p-2" id="home" role="tabpanel" style="
+          z-index:200px;
+                background: white !Important;border-bottom-style:none !Important; border: 1px solid rgb(230, 230, 230)">
+
+
+
+
+
+
+          <div>
+            <!-- <mat-form-field class="search-form-field shadow-1" floatLabel="never">
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Vendor Response">
+              </mat-form-field> -->
+            <div id="something" style="
+              background: white !Important;border-bottom-style:none !Important;  max-height: 300px; min-height: 300px;">
+              <table mat-table [dataSource]="dataSource" matSort
+                class="table-striped  col-md-12 col-lg-12 col-sm-12 col-xl-12" style="
+                  border-bottom: 2px solid #D6D6D6;">
+
+                <!-- Acquisition Number Column -->
+                <ng-container matColumnDef="Vendor">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Vendor </th>
+                  <td mat-cell *matCellDef="let element" style="color: #0844a4;
+                    font-size: 14px;"> {{element?.vendorName}} </td>
+                </ng-container>
+
+                <!-- Description Column -->
+                <ng-container matColumnDef="SubmissionDate">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header style="word-spacing: 4px;"> Submission Date
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="textupdate">
+                    {{element.submissionTimeStamp | date:'MMM d, y, h:mm a'}} EST </td>
+                </ng-container>
+
+                <!-- Supply or Service Column -->
+                <ng-container matColumnDef="Status">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                  <td mat-cell *matCellDef="let element">
+                    <div *ngIf="!element.status" class="textupdate">
+                      &nbsp;<i class="fa fa-hourglass-start" style="color:#0844a4 " aria-hidden="true"></i>
+                      &nbsp;<span style="color: grey">Pending Evaluation</span></div>
+
+                    <div *ngIf="element.status == 'Pending'" class="textupdate">&nbsp;<i class="fa fa-hourglass-start"
+                        aria-hidden="true"></i>
+                      &nbsp;<span style="color:#2e73dc">Pending Evaluation</span></div>
+
+                    <div *ngIf="element.status == 'Completed'" class="textupdate"> &nbsp;<i style="color: #629c44;"
+                        class="fa fa-check-circle-o" aria-hidden="true"></i>
+                      &nbsp;<span style="color: green">Completed</span></div>
+
+                    <div *ngIf="element.status == 'Rejected'" class="textupdate"> &nbsp;<i style="color: red;"
+                        class="fa fa-ban" aria-hidden="true"></i>
+                      &nbsp;<span style="color: red">Rejected</span>
+                    </div>
+
+
+                  </td>
+
+
+
+                </ng-container>
+
+
+                <!-- <ng-container matColumnDef="MyScore">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> My Score </th>
+                    <td mat-cell *matCellDef="let element"> {{element.score }} </td>
+                  </ng-container> -->
+
+
+
+
+                <ng-container matColumnDef="Action">
+                  <th class="text-center" mat-header-cell *matHeaderCellDef>Action</th>
+                  <td mat-cell class="text-center" *matCellDef="let element;let i=index">
+
+
+                    <!-- <button [ngStyle]="{'display':element.status == 'Rejected'?'inline-block':'none'}"
+                      [attr.id]="'notselected'+i" class="notselected">Not Selected</button>
+                    <div *ngIf="element.evaluation.status != 'Rejected'" class="btn-group dropdown"
+                      [attr.id]="'btn_dropdown' + i"
+                      style="background: transparent;border:none;box-shadow: none;height:31.67px;">
+                      <button (click)="review(element)" style="border-radius:5px !Important" type="button"
+                        class="btn btn-primary btn-sm action">
+                        {{element.evaluation.status == 'Pending Evaluation'? 'Evaluate':element.evaluation.status == 'Completed'?'Review':!element.evaluation.status?"Evaluate":"Evaluate"}}
+                      </button>
+                      <button style="margin-left:-5px" *ngIf="element.status == 'Completed'" type="button"
+                        class="actiondropdown btn btn-primary  btn-sm dropdown-toggle dropdown-toggle-split"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" style="padding:5px;width:158px;height:auto">
+
+                        <button class="dropdown-item dropmenubutton hover" type="button" data-toggle="modal"
+                          [attr.data-target]="'#rejectmodel'+i">Reject</button>
+                        <button class="dropdown-item dropmenubutton hover" type="button" data-toggle="modal"
+                          [attr.data-target]="'#awardmodel'+i">Award</button>
+                      </div>
+                    </div>  -->
+
+
+
+                    <!-- <button [ngStyle]="{'display':element.evaluation.status == 'Rejected'?'inline-block':'none'}"
+                    [attr.id]="'notselected'+i" class="notselected">Not Selected</button> -->
+                    <!-- Default dropup button-->
+
+
+                    <div class="btn-group dropdown" [attr.id]="'btn_dropdown' + i"
+                      style="background: transparent;border:none;box-shadow: none;height:31.67px;">
+
+                    
+                      <button [class.d-none]="element?.status == 'Rejected'" *ngIf="element?.status != 'Completed'" (click)="review(element,i)"
+                        style="border-radius:5px !Important" type="button" class="btn btn-primary btn-sm">
+                        Evaluate
+                      </button>
+
+                      <button *ngIf="element?.status == 'Completed'" (click)="review(element,i)" style="border-radius:5px !Important"
+                        type="button" class="btn btn-primary btn-sm">
+                        Review
+                      </button>
+
+                      <button [ngStyle]="{'display':element?.status == 'Rejected'?'inline-block':'none'}"
+                        [attr.id]="'notselected'+i" class="notselected">Not Selected</button>
+
+                      <!-- <button *ngIf="element.status == 'Completed'" style="margin-left:-5px" type="button" -->
+                      <button *ngIf="element?.status == 'Completed' && this.userid == this.assignedco"
+                        style="margin-left:-3px; " type="button"
+                        class="btn btn-sm dropdown-toggle btn-toogleprimary dropdown-toggle-split"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+
+
+                      <div class="dropdown-menu" style="padding:5px;width:158px;height:auto">
+
+                        <button class="dropdown-item dropmenubutton hover" type="button" data-toggle="modal"
+                          [attr.data-target]="'#rejectmodel'+i">Reject</button>
+                        <button class="dropdown-item dropmenubutton hover" type="button" data-toggle="modal"
+                          [attr.data-target]="'#awardmodel'+i">Award</button>
+                      </div>
+                    </div>
+
+
+
+                    
+
+
+                    <!-- Modal to verify the award contract-->
+                    <div class="modal fade" [attr.id]="'awardmodel'+i" tabindex="-1" role="dialog"
+                      aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" style="margin-top: 8%" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <img src="assets/hhs-accelerate-logo.png" height="27" style="margin-top: -30px;">
+                            <button style="margin-top: -35px;" type="button" id="closeModalPmdashboard" class="close" data-dismiss="modal"
+                              aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body awardcontent" [attr.id]="'awardcontent'+i">
+                            <div [attr.id]="'carouselExampleControls'+i" class="carousel slide" data-ride="carousel"
+                              data-interval="false">
+                              <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                  <div style="width:100%">
+
+
+                                    <div class="p-3 text-center" style="color: #0c59cf;">
+                                      <span>Are you sure you want to award</span> <br/>
+                                      <div >Solicitation# <span style="font-weight: 600;">{{this.solno}}?</span></div>
+                                    </div>
+                                    <div class="p-3 text-center">
+                                      <button class="btn btn-primary btn-sm mr-3" [attr.href]="'#carouselExampleControls'+i"
+                                      data-slide="next">
+                                          Yes
+                                      </button>
+                            
+                                      <button class="btn btn-secondary btn-sm cancel" style="background-color: white;" type="button" data-dismiss="modal">
+                                        Cancel
+                                    </button>
+                                    </div>
+
+
+                                    <!-- <span class="d-block w-100" style="padding:50px">
+                                      <p>Are you sure you want to award<br>
+                                      </p>
+                                      <p style="font-size:20px;font-weight: bold"> Solicitation# {{this.solno}} <br></p>
+
+                                      <p>to <br></p>
+
+                                      <p style="font-size:20px;font-weight: bold"> {{element.vendorName}}?</p>
+
+                                    </span>
+                                    <div class="modal-footer" style="border-top:1px solid lightgray;padding:20px">
+                                      <div class="center ">
+                                        <button type="button" class="btn btn-primary action" style="height: 30px;
+                                                        color: white;
+                                                        font-size: 14px;" [attr.href]="'#carouselExampleControls'+i"
+                                          data-slide="next">Yes</button>
+                                        <button type="button" class="btn btn-secondary cancel"
+                                          data-dismiss="modal">Cancel</button>
+                                      </div>
+                                    </div> -->
+                                  </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                  <div style="width:100%">
+
+                                    
+
+                                    <div class="p-3 text-center" style="color: #0c59cf;">
+                                      <span>Great! Accelerate will prepare the contract for</span> <br/>
+                                      <div ><span style="font-weight: 600;">{{element?.vendorName}}</span> on Solicitation# <span style="font-weight: 600;">{{this.solno}}?</span></div>
+                                    </div>
+                                    <div class="p-3 text-center">
+                                      <button class="btn btn-primary btn-sm mr-3"[attr.data-vendor]="element.vendorName"
+                                      [attr.href]="'#carouselExampleControls'+i" data-dismiss="modal"
+                                      (click)="generateContract(element?.vendorName)">
+                                      Generate Contract
+                                      </button>
+                            
+                                      <button [attr.href]="'#carouselExampleControls'+i" class="btn btn-secondary btn-sm cancel" style="background-color: white;" type="button" data-dismiss="modal">
+                                        Cancel
+                                    </button>
+                                    </div>
+
+
+                                    <!-- <span class="d-block w-100" style="padding:50px">
+                                      <p>
+                                        Great! Accelerate will prepare the contract for
+                                        <br>
+                                      </p>
+                                      <p style="font-size:20px;font-weight: bold;margin:0px">
+                                        {{element?.vendorName}}</p>
+                                      <p style="margin:0px">on</p>
+                                      <p style="font-size:20px;font-weight: bold;margin:0px"> Solicitation#
+                                        {{this.solno}}. <br></p>
+
+
+
+
+
+                                    </span>
+                                    <div class="modal-footer" style="border-top:1px solid lightgray;padding:20px">
+                                      <div class="center ">
+                                        <button type="button" class="btn btn-primary action" style="height: 30px;
+                                                            color: white;
+                                                            font-size: 14px;width:160px"
+                                          [attr.data-vendor]="element.vendorName"
+                                          [attr.href]="'#carouselExampleControls'+i" data-dismiss="modal"
+                                          (click)="generateContract(element?.vendorName)">Generate
+                                          Contract</button>
+                                        <button type="button" [attr.href]="'#carouselExampleControls'+i"
+                                          data-slide="prev" class="btn btn-secondary cancel"
+                                          data-dismiss="modal">Cancel</button>
+                                      </div>
+                                    </div> -->
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Modal to Reject the vendor application-->
+                    <div class="modal fade" [attr.id]="'rejectmodel'+i" tabindex="-1" role="dialog"
+                      aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-body awardcontent" [attr.id]="'rejectcontent'+i">
+                            <div [attr.id]="'rejectmodelView'+i" class="carousel slide" data-ride="carousel"
+                              data-interval="false">
+                              <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                  <div style="width:100%">
+                                    <span class="d-block w-100" style="padding:50px">
+                                      <p>Are you sure you want to reject<br>
+                                      </p>
+                                      <p style="font-size:20px;font-weight: bold"> {{element.vendorName}}'s</p>
+                                      <p>vendor response for</p>
+                                      <p style="font-size:20px;font-weight: bold"> Solicitation# {{this.solno}}</p>
+
+                                    </span>
+                                    <div class="modal-footer" style="border-top:1px solid lightgray;padding:20px">
+                                      <div class="center ">
+                                        <button type="button" class="btn btn-primary action" style="height: 30px;
+                                                          color: white;
+                                                          font-size: 14px;" (click)="notselected(element)"
+                                          data-dismiss="modal">Yes</button>
+                                        <button type="button" class="btn btn-secondary cancel"
+                                          data-dismiss="modal">Cancel</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+
+              <mat-paginator *ngIf="lengthProposalEval > 10" #paginator [pageSizeOptions]="[5, 10, 15]" [showFirstLastButtons]="false"></mat-paginator>
+
+
+            </div>
+
+          </div>
+
+
+
+        </div>
+        <div style="margin-top: 15px;" aria-labelledby="contact-tab" class="tab-pane fade" id="contact"
+          role="tabpanel">
+          <form [formGroup]="proposalEvaluation" novalidate (change)="onChange(proposalEvaluation)" style="padding: 20px !Important;
+              background: white !Important;border-bottom-style:none !Important;margin-top:-15px;border: 1px solid rgb(230, 230, 230)">
+
+            <div class="pl-3 pr-3 mt-2" *ngIf="this.undefined">
+              <button class="btn btn-primary" (click)="changeItem()">Add Evaluator</button>
+            </div>
+
+            <div *ngIf="!this.undefined" class="product-container" formArrayName="addEvaluators">
+
+              <table class="table table-striped mb-0 border" style="border:none !Important">
+
+                <thead>
+
+                  <tr>
+                    <th class="thclass" scope="col">Evaluator</th>
+                    <th class="thclass" scope="col">Form</th>
+                    <th class="thclass" scope="col">Status</th>
+                    <th class="thclass" scope="col">Action</th>
+                    <th class="thclass" scope="col" data-toggle="tooltip" data-placement="left" title="Delete CLIN">
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let product of getEvaluator(proposalEvaluation); let i = index" [formGroupName]="i">
+                    <td>
+                      <div class="textfield-box" style="width: 100px">
+                        <select type="text" class="form-controls select" id="unitmesure"
+                          formControlName="evaluatorName">
+                          <option value="">Select</option>
+                          <option *ngFor="let c of evaluators" [ngValue]="c">{{c}}</option>
+                        </select>
+                     
+                      </div>
+                      
+                    </td>
+                   
+
+                    <td>
+
+                      <div formArrayName="forms">
+                        <div *ngFor="let ca of getForms(product); let j = index" [formGroupName]="j">
+                          <div class="custom-control custom-checkbox">
+
+                            <input type="checkbox" class="custom-control-input" id="COR+{{i}}+{{j}}"
+                              formControlName="COR" 
+                             >
+                            <label class="custom-control-label" for="COR+{{i}}+{{j}}"
+                            [class.filterDisable]="product.get('evaluatorName').value ==''">Conflict of Interest</label>
+                           
+                          </div>
+                    
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="NDA+{{i}}+{{j}}"
+                              value="Not-Acceptable" formControlName="NDA">
+                            <label 
+                            [class.filterDisable]="product.get('evaluatorName').value ==''"
+                            class="custom-control-label" for="NDA+{{i}}+{{j}}">Non-Disclosure Agreement</label>
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </td>
+                    <td><input class="form-controls" formControlName="status"></td>
+
+                    <td><button type="button"
+                        [disabled]="(product.get('forms').controls[0].get('COR').value && product.get('forms').controls[0].get('NDA').value) === false "
+                        class="btn btn-primary btn-sm shadow-none" (click)="release(i)">Release
+                      </button>
+                    </td>
+
+
+                    <td data-toggle="tooltip" data-placement="bottom" title="Delete SLIN"> <a
+                        *ngIf="getEvaluator(proposalEvaluation).length > 1" (click)="removeEvaluator(i)"><i
+                          class="fa fa-trash-o mr-1" aria-hidden="true" style='padding: 25%; font-size:125%'></i></a>
+                    </td>
+
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+              <div class="col-12 mt-2" style="margin:20px">
+                <button type="submit" (click)="addEvaluator()" class="btn btn-sm btn-primary float-right"><i
+                    class="fa fa-plus mr-2" aria-hidden="true"></i>Add Evaluator</button>
+              </div>
+
+
+
+            </div>
+
+            <!-- <pre class="mt-5"> {{proposalEvaluation.value | json}} </pre> -->
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="assets/hhs-accelerate-logo.png" height="27" style="margin-top: -30px;">
+        <button style="margin-top: -35px;" type="button" id="closeModalPmdashboard" class="close" data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <div class="mt-1">
+        <div style="height: 400px; overflow-y:scroll">
+            <!-- <h5 class="ml-3 mt-2"><b>Mandatory Criteria</b></h5>
+
+            <div class="card p-3">
+                <span [innerHtml]="this.evaluationFactors?.mandatoryCriterias"></span>
+            </div> -->
+            <h5 class="ml-3 mt-1"><b>Evaluation Criteria</b></h5>
+          <div *ngFor="let eval of this.evaluationFactors?.evaluationCriteria; let i = index">
+            <div class="card p-3">
+              <span style="font-size: 16px; color: #2e73dc">{{i+1}}. &nbsp;{{eval.volumeName}}</span>
+              <div *ngFor="let evalFactors of eval.factorRows">
+                <div class="p-2 pl-4">
+                  <span><b>{{evalFactors.factorName}}</b></span><br>
+                  <span [innerHtml]="evalFactors.factorText"></span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ngx-spinner bdColor="#93C0E1" size="large" color="#fff" type="false">
+
+  <div class="div-animation">
+      <h1 class="cssanimation sequence fadeInBottom">accelerate</h1>
+  </div>
+
+  <div class="div-animation2">
+      <h2 class="cssanimation1 sequence fadeInBottom">Generating Contract</h2>
+  </div>
+
+<div style="margin-top: -160px; margin-left: 20px;">
+  <img height="450" src="assets/LoadingScreen/AniamtedSequence.gif">
+</div>
+
+
+</ngx-spinner>

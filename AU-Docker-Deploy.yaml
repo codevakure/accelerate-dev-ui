@@ -1,0 +1,117 @@
+# deploy:dockersandbox:
+#     stage: deploy
+#     tags:
+#       - dockerDeploySandboxAurotech
+#     when: manual
+#     only:
+#       - master
+#     script:
+#       - |+
+#         for dirName in *
+#         do
+#           if [ -d $dirName ]
+#           then       
+#               cd $dirName
+#               if [ -f Dockerfile ]
+#               then
+#                 regName=`echo $dirName'_sandbox'`
+#                 PORT=`sed -n 's/ENV HOST=0.0.0.0 PORT=\(.*\)/\1/p' < Dockerfile`
+#                 docker login -u $USER_NAME -p $USER_PW $REGISTRY_HOST
+#                   if [ "$(docker ps -a | grep $regName)" ]
+#                   then
+#                     docker rm $(docker stop $(docker ps -a | grep $regName | awk '{print $1}'))
+#                   fi
+#                 docker pull $REGISTRY_HOST/hhs-accelerate/$CI_PROJECT_NAME/$regName
+#                 docker run -d -p $PORT:$PORT $REGISTRY_HOST/hhs-accelerate/$CI_PROJECT_NAME/$regName
+#               fi
+#           cd ${CI_PROJECT_DIR}
+#           fi
+#         done
+  # deploy:dockerintegration:
+  #   stage: deploy
+  #   tags:
+  #     - dockerDeployIntegrationAurotech
+  #   when: manual
+  #   only:
+  #     - master
+  #   script:
+  #     - |+
+  #       for dirName in *
+  #       do
+  #         if [ -d $dirName ]
+  #         then       
+  #             cd $dirName
+  #             if [ -f Dockerfile ]
+  #             then
+  #               regName=`echo $dirName'_integration'`
+  #               PORT=`sed -n 's/ENV HOST=0.0.0.0 PORT=\(.*\)/\1/p' < Dockerfile`
+  #               docker login -u $USER_NAME -p $USER_PW $REGISTRY_HOST
+  #                 if [ "$(docker ps -a | grep $regName)" ]
+  #                 then
+  #                   docker rm $(docker stop $(docker ps -a | grep $regName | awk '{print $1}'))
+  #                 fi
+  #               docker pull $REGISTRY_HOST/hhs-accelerate/$CI_PROJECT_NAME/$regName
+  #               docker run -d -p $PORT:$PORT $REGISTRY_HOST/hhs-accelerate/$CI_PROJECT_NAME/$regName
+  #             fi
+  #         cd ${CI_PROJECT_DIR}
+  #         fi
+  #       done
+  deploy:dockerstaging:
+    stage: deploy
+    tags:
+      - dockerDeployStagingAurotech
+    when: manual
+    only:
+      - master
+    script:
+      - |+
+        for dirName in *
+        do
+          if [ -d $dirName ]
+          then       
+              cd $dirName
+              if [ -f Dockerfile ]
+              then
+                regName=`echo $dirName'_staging'`
+                PORT=`sed -n 's/ENV HOST=0.0.0.0 PORT=\(.*\)/\1/p' < Dockerfile`
+                docker login -u $USER_NAME -p $USER_PW $REGISTRY_HOST
+                  if [ "$(docker ps -a | grep $regName)" ]
+                  then
+                    docker rm $(docker stop $(docker ps -a | grep $regName | awk '{print $1}'))
+                  fi
+                docker pull $REGISTRY_HOST/hhs-accelerate/$CI_PROJECT_NAME/$regName
+                docker run -d -p $PORT:$PORT $REGISTRY_HOST/hhs-accelerate/$CI_PROJECT_NAME/$regName
+              fi
+          cd ${CI_PROJECT_DIR}
+          fi
+        done
+  # deploy:dockerprod:
+  #   stage: deploy
+  #   tags:
+  #     - dockerDeployProductionAurotech
+  #   when: manual
+  #   only:
+  #     - master
+  #   script:
+  #     - |+
+  #       for dirName in *
+  #       do
+  #         if [ -d $dirName ]
+  #         then       
+  #             cd $dirName
+  #             if [ -f Dockerfile ]
+  #             then
+  #               regName=`echo $dirName'_prod'`
+  #               PORT=`sed -n 's/ENV HOST=0.0.0.0 PORT=\(.*\)/\1/p' < Dockerfile`
+  #               docker login -u $USER_NAME -p $USER_PW $REGISTRY_HOST
+  #                 if [ "$(docker ps -a | grep $regName)" ]
+  #                 then
+  #                   docker rm $(docker stop $(docker ps -a | grep $regName | awk '{print $1}'))
+  #                 fi
+  #               docker pull $REGISTRY_HOST/hhs-accelerate/$CI_PROJECT_NAME/$regName
+  #               docker run -d -p $PORT:$PORT $REGISTRY_HOST/hhs-accelerate/$CI_PROJECT_NAME/$regName
+  #             fi
+  #         cd ${CI_PROJECT_DIR}
+  #         fi
+  #       done
+  

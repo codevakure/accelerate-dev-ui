@@ -1,0 +1,380 @@
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+
+        <ul class="list-unstyled components">
+            <div id="solicitationnav" (click)="getClickSol()">
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" style="border-left: #ffffff; border-bottom: .8px solid #AABCFB">
+                <a (click)="clickIgceCollapse()" href="#pageSubmenu" id="solicitationSideMenu" data-toggle="collapse" aria-expanded="false">
+                    <i class="fa fa-folder-o" aria-hidden="true"></i>
+                    &nbsp; &nbsp; Solicitation</a>
+                <ul *ngIf="solType1" class="collapse list-unstyled show" id="pageSubmenu">
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a id="form-a" data-animal-type="bird" *ngIf="formData" [routerLink]="['/home/sol', formData?.sol_no]">
+                            A. Form
+                        </a>
+                        <a *ngIf="!formData">A. Form</a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="suppliesandservices"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'suppliesandservices']">
+                            B. Supplies and Services
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="statementofwork"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'statementofwork']">
+                            C. Statement of Work
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="packagingandmarking"
+                            [routerLink]="['/home/sol',formData?.sol_no,'packagingandmarking']">
+                            D. Packaging and Marking
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="inspectionandacceptance"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'inspectionandacceptance']">
+                            E. Inspection and Acceptance
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="deliveriesandperformance"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'deliveriesandperformance']">
+                            F. Deliveries and Performance
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="contractadmindata"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'contractadmindata']">
+                            G. Contract Admin Data
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="specialcontractreq"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'specialcontractreq']">
+                            H. Special Contract Req.
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="contractclauses"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'contractclauses']">
+                            I. Contract Clauses
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="Attachments"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'attachmentsinfo']">
+                            J. Attachments
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="Representations"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'representationandcerts']">
+                            K. Representations, Certs
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="Instructions"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'instructions']">
+                            L. Instructions
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="Evaluation"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'evluationfactors']">
+                            M. Evaluation Factors
+                        </a>
+                    </li>
+                </ul>
+
+
+                <ul *ngIf="solType2" class="collapse list-unstyled show" id="pageSubmenu">
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a id="owl" data-animal-type="bird" *ngIf="formData" [routerLink]="['/home/sol', formData?.sol_no]">
+                            A. Form
+                        </a>
+                        <a *ngIf="!formData">A. Form</a>
+                    </li>
+
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="part2"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'part2']">
+                            B. Continuation of SF1449
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="contractclauses"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'contractclauses']">
+                            C. Contract Clauses
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="Attachments"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'attachmentsinfo']">
+                            D. Attachments
+                        </a>
+                    </li>
+
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="Provisions"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'solprovisions']">
+                            E. Solicitation Provisions
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+
+
+
+
+        <div (click)="getClick()" *ngIf="this.status == 'Amendment'" id="ammendmentnav">
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" style="border-left: #ffffff; border-bottom: .8px solid #AABCFB">
+                <a (click)="clickIgceCollapse()" href="#ammendmentSubmenu" id="ammendmentSideMenu" data-toggle="collapse" aria-expanded="false">
+                    <i class="fa fa-folder-o" aria-hidden="true"></i>
+                    &nbsp; &nbsp; Amendment</a>
+                <ul *ngIf="solType1" class="collapse list-unstyled" id="ammendmentSubmenu">
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a id="owl" data-animal-type="bird" *ngIf="formData" [routerLink]="['/home/sol', formData?.sol_no, 'sf30']">
+                            A. Form
+                        </a>
+                        <a *ngIf="!formData">A. Form</a>
+                    </li>
+
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-soc"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-soc']">
+                            &nbsp;&nbsp; Summary of Changes
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-suppliesandservices"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-suppliesandservices']">
+                            B. Supplies and Services
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-statementofwork"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-statementofwork']">
+                            C. Statement of Work
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-packagingandmarking"
+                            [routerLink]="['/home/sol',formData?.sol_no,'a-packagingandmarking']">
+                            D. Packaging and Marking
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-inspectionandacceptance"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-inspectionandacceptance']">
+                            E. Inspection and Acceptance
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-deliveriesandperformance"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-deliveriesandperformance']">
+                            F. Deliveries and Performance
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-contractadmindata"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-contractadmindata']">
+                            G. Contract Admin Data
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-specialcontractreq"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-specialcontractreq']">
+                            H. Special Contract Req.
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-contractclauses"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-contractclauses']">
+                            I. Contract Clauses
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="Attachments"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'attachmentsinfo']">
+                            J. Attachments
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-Representations"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-representationandcerts']">
+                            K. Representations, Certs
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-Instructions"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-instructions']">
+                            L. Instructions
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-Evaluation"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-evluationfactors']">
+                            M. Evaluation Factors
+                        </a>
+                    </li>
+
+                    <!-- <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-Evaluation"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-evluationfactors']">
+                            N. Summary of Changes
+                        </a>
+                    </li> -->
+                </ul>
+
+
+                <ul *ngIf="solType2" class="collapse list-unstyled" id="ammendmentSubmenu">
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a id="owl" data-animal-type="bird" *ngIf="formData" [routerLink]="['/home/sol', formData?.sol_no, 'sf30']">
+                            A. Form
+                        </a>
+                        <a *ngIf="!formData">A. Form</a>
+                    </li>
+
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-part2"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-part2']">
+                            B. Continuation of SF30
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-contractclauses"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-contractclauses']">
+                            C. Contract Clauses
+                        </a>
+                    </li>
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-Attachments"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-attachmentsinfo']">
+                            D. Attachments
+                        </a>
+                    </li>
+
+                    <li [routerLinkActive]="['active2']" [routerLinkActiveOptions]="{exact:true}">
+                        <a *ngIf="formData" id="a-Provisions"
+                            [routerLink]="['/home/sol',formData?.sol_no, 'a-solprovisions']">
+                            E. Solicitation Provisions
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+
+
+
+
+
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a *ngIf="formData" id="COR"
+                    [routerLink]="['/home/sol',formData?.sol_no,'cor']">
+                    <i class="fa fa-check-square" ></i>
+                    &nbsp; &nbsp; COR Nomination
+                    </a>
+                </li>
+
+
+                <div *ngIf="this.status=='Published'">
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a  id="Question" *ngIf="formData" [routerLink]="['/home/sol',formData?.sol_no,'qanda']">
+                            <i class="fa fa-desktop" aria-hidden="true"></i>
+                            &nbsp; &nbsp; Question and Answers
+                        </a>
+                    </li>
+                    <li *ngIf="this.status=='Published'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a id="proposalevaluation" *ngIf="formData"
+                            [routerLink]="['/home/sol',formData?.sol_no,'proposalevaluation']">
+                            <i class="fa fa-list-alt" aria-hidden="true"></i>
+                            &nbsp; &nbsp; Proposal Evaluation
+                        </a>
+                    </li>
+                    </div>
+            
+
+
+        </ul>
+
+
+
+
+
+
+
+    </nav>
+
+
+    <!-- Page Content  -->
+    <div id="content" style="margin-top: 135px;">
+        <div class="col-md-11 col-xl-11 col-lg-11 col-xl-11 position-fixed row"
+            style="background-color: #f7f6f6;; margin-top: -81px; height: 64px; z-index: 2; border-bottom: 1px solid #ebebeb">
+
+            <div class="p-2 pl-2">
+                <span class="projecttitle">{{this.navtabdata?.projectTitle}}
+
+                </span><br>
+                <span class="projectsub">
+                    Solicitation # {{this.navtabdata?.sol_no}}
+                </span>
+            </div>
+        <div id="hide" [class.d-none]="this.routeHeader == 'preview' || this.routeHeader == 'sf30Preview' || this.routeHeader == 'qanda' || this.routeHeader == 'proposalevaluation' ||  this.routeHeader =='cor'">
+            <!-- <div class="progress col-md-2 mt-3 position-absolute"  style="height: 24px; right: 270px;">
+                <div class="progress-bar progress-bar-animated"
+                    role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%
+                </div>
+                <img src="assets/img1/robot.png" class="mb-1" style="width: 27px; height: 25px;" alt="%">
+            </div> -->
+
+            <div class="position-absolute" style="right: 0; margin-right: 170px; margin-top: 14px">
+
+
+                <a class="mr-2" *ngIf="formData && this.previewState =='Solicitation'" id="preview" [routerLink]="['/home/sol',formData?.sol_no,'preview']">
+                        <img height="35" src="assets/file-icon.png"></a>
+
+                        <a class="mr-2" *ngIf="formData && this.previewState =='Amendment'" id="preview" [routerLink]="['/home/sol',formData?.sol_no,'sf30Preview']">
+                            <img height="35" src="assets/file-icon.png"></a>
+
+                <a *ngIf="formData" [routerLink]="['/home/',this.ap_no]">
+                    <img
+                        src="assets/APICON.png" alt="" height="35">
+                </a>
+            </div>
+            
+            <div class="position-absolute" style="right: 0; margin-right: 110px; margin-top: 13px">
+
+
+                <a id="commentCollab" data-target="#navdrawerRight1" data-toggle="navdrawer" style="margin-top: 30px" class="mr-1 ml-1 mb-2"><i style="color: #2e73dc" class="fa fa-commenting fa-4x" aria-hidden="true"></i></a>
+
+               
+
+            </div>
+            
+          
+        </div>
+
+        </div>
+
+        <router-outlet></router-outlet>
+        <div class="mb-5"></div>
+    </div>
+</div>
+
+<div style="z-index: 2000" aria-hidden="true" class="navdrawer navdrawer-right" id="navdrawerRight1" tabindex="-1">
+        <div class="navdrawer-content">
+            <div class="navdrawer-header">
+                <span style="margin-top: 20px">{{this.sectionHeader}}&nbsp;Collaboration Updates</span>
+                <button style="margin-top: -12px" type="button" class="close text-white float-right ml-3" data-dismiss="navdrawer" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                <img class="float-right" style="margin-top: -12px;" src="assets/hhs-accelerate-logo.png"
+                  height="25" alt="">
+            </div>
+            <app-sol-comment-box [sectionHeader]="sectionHeader" [routeHeader]="routeHeader"></app-sol-comment-box>
+        </div>
+    </div>

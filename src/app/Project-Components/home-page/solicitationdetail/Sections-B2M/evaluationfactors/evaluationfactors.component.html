@@ -1,0 +1,289 @@
+<div class="col-md-12 col-lg-12 col-xl-12 col-sm-12">
+  <div class="col-11 mb-3">
+    <span class="mt-2 ap-detail-title">Evaluation Factors</span>
+  </div>
+  <form [formGroup]="evaluations" novalidate (change)="onChange(evaluations)" (keyup)="onKeyy()"  >
+    <div class="list-group p-2 col-md-12 col-lg-11 col-xl-11" id="accordionOne"  >
+ 
+
+      <div class="expansion-panel mb-2 list-group-item">
+        <a aria-controls="collapseFour" aria-expanded="false" class="btn-primar expansion-panel-toggler collapsed"
+          data-toggle="collapse" href="#collapseFour" id="headingFour" (click)="mandatoryCriteria($event)">
+          Mandatory Criteria
+          <div class="expansion-panel-icon ml-3 text-black-secondary">
+            <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+            <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+          </div>
+        </a>
+        <div aria-labelledby="headingFour" class="collapse" data-parent="#accordionOne" id="collapseFour">
+          <div class="expansion-panel-body">
+            <quill-editor  class="mandatoryCriteria" format="html" formControlName="mandatoryCriterias"
+              [styles]="{height: '250px'}" placeholder="" (onSelectionChanged)="mandatoryCriteria($event)">
+              
+            </quill-editor>
+           
+
+          <!-- <div  id="noedit" 
+          
+          style="width: 70vw;
+          /* height: auto; */
+          height: 250px;
+          background: white;
+          border: 1px solid lightgray;
+          padding:30px">
+
+      
+            
+          </div> -->
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="expansion-panel mb-2 list-group-item">
+        <a aria-controls="collapseThree" aria-expanded="false" class="btn-primar expansion-panel-toggler collapsed"
+          data-toggle="collapse" href="#collapseThree" id="headingThree">
+          Evaluation Criteria
+          <div class="expansion-panel-icon ml-3 text-black-secondary">
+            <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+            <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+          </div>
+        </a>
+        <div aria-labelledby="headingThree" class="collapse" data-parent="#accordionOne" id="collapseThree">
+          <div class="expansion-panel-body">
+
+            <div class="col-12">
+              <div class="mt-3">
+                  <button  [disabled]="this.status =='Published'"
+                  [ngClass]="{'d-none': this.status=='Published'}"
+                  class="btn btn-sm btn-outline-primary" id="createVolume" (click)="addVolume($event)">
+                    <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Create Volume
+                  </button>
+                 
+
+              </div>
+      
+            </div>
+
+            <!---Evaluations Volumes -->
+            <div formArrayName="evaluationCriteria">
+              <div
+                *ngFor="let evaluationCriteria of getVolumes(evaluations); let i = index; let f = first; let l = last;">
+
+                <div class="pl-4 pr-4" [formGroupName]="i">
+                  <div id="getIndexeval" (click)="getIndex(evaluationCriteria, i)"></div>
+                  <div style="border-bottom:2px solid #1c6cbf;">
+                    <div class="float-right mr-2" style=" margin-top: 21px;" >
+                      <a [ngClass]="{'d-none': this.status=='Published'}" (click)="removeVolumes(i)" style="color: grey; font-size: 130%" ><i class="fa fa-trash"
+                          aria-hidden="true" ></i></a>
+                    </div>
+                    <div [ngClass]="{'d-none': this.status=='Published'}" *ngIf="l" class="float-right mr-2" style="margin-top: 23px; color: #1c6cbf">
+                      |
+                    </div>
+
+
+                    <div *ngIf=" evaluationCriteria.get('volumeName').value !=''" class="float-right mr-2" style=" margin-top: 24px;">
+                      <a *ngIf="l" [ngClass]="{'d-none': this.status=='Published'}" style="color: #1c6cbf " (click)="addVolume($event)" > Create Volume </a>
+                    </div>
+
+
+                    <div class="float-left mt-3" style="width: 290px; height: 32px; background: #1c6cbf;">
+                      <span class="float-left"
+                        style="text-transform:none; color:#ffffff; font-weight:bold; text-decoration:none; font-size:13px; font-family:Arial, SansSerif; font-style:normal; width:null; height:null; margin-left: 6px; margin-top: 8px">Volume
+                        {{i+1}}: &nbsp;</span>
+                      <div class="form-group float-right" style="width: 200px; margin-top: 3px">
+                        <div class="textfield-box col-12">
+                          <input type="text" class="mb-2" formControlName="volumeName" (click)="getIndex(i)"
+                            (keyup)="textV($event)">
+                        </div>
+                      </div>
+
+                    </div>
+                    <button class="btnn btn-sm mt-3 shadow-none ml-0" id="showVolume"
+                      style="height: 32px; background: #1c6cbf; margin-left: -20px; color: white;" type="button"
+                      data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                      aria-controls="collapseExample" [attr.data-target]="'#' + 'prefix' + m + i"
+                       [disabled]=" evaluationCriteria.get('volumeName').value ==''"
+                       [ngStyle]="{'background': evaluationCriteria.get('volumeName').value ==''?'lightgray':'#1c6cbf'}">
+                      <i class="fa fa-angle-down float-right" aria-hidden="true"></i>
+                    </button>
+
+                    <!-- <a class="p-1" (click)="removeVolumes(i)"><i class="fa fa-times" aria-hidden="true"></i></a> -->
+
+                  </div>
+                  <div class="collapse" id="collapseExample" [attr.id]=" 'prefix' + m + i">
+                    <div class="col-3">
+                      <div class="mt-3">
+
+                        <!-- <label class="label-class mb-1">Add More</label> -->
+                        <select [ngClass]="{'d-none': this.status=='Published'}" (click)="getIndex(i)"
+                          *ngIf="this.textVolume[textVolumeIndex] == true || evaluationCriteria.get('volumeName').value"
+                          (change)="addFactors(i,$event)" type="text" class="form-control dropdown" id="product">
+                          <option *ngFor="let c of getacq" [ngValue]="c">{{c.description}}</option>
+                        </select>
+
+                      </div>
+                    </div>
+
+                    <!-- Factors segment -->
+                    <div class="product-container mt-3 col-12" formArrayName="factorRows">
+                      <div *ngFor="let factors of getFactors(evaluationCriteria); let j = index; trackBy: factorsSet"
+                        [formGroupName]="j">
+                        
+
+
+                        <div class="list-group" id="accordionFive">
+                          <div class="expansion-panel mb-2 list-group-item">
+                            <a (click)="getIndex(i)" aria-controls="collapseSix" aria-expanded="false"
+                              class="btn-primar expansion-panel-toggler collapsed"
+                              style="height: 15px; background: #F0F0F0;" data-toggle="collapse"
+                              [attr.data-target]="'#' + 'active' + n + j" href="#collapseSix" id="headingSix">
+                              <span style="color: #1c6cbf; font-weight: 600">Factor {{j+1}}: </span>
+                              <!-- <input type="text"
+                                class="form-control input-factor col-9" formControlName="factorName"
+                                [readonly]="!this.selected == ''"> -->
+
+                                <input type="text"
+                                class="form-control input-factor col-9" formControlName="factorName"
+                                [ngClass]="{'disInput':factors.controls.factorName.value =='Technical Capabilities' || factors.controls.factorName.value =='Key Personnel' ||
+                                factors.controls.factorName.value =='Organizational Experience' || factors.controls.factorName.value =='Pricing'||
+                                factors.controls.factorName.value =='Past Performance'}"
+                                >
+
+                                <!-- [disabled]="factors.controls.factorName.value =='Technicaddl Capabilities' || factors.controls.factorName.value =='Key Personnel' ||
+                                factors.controls.factorName.value =='Organizational Experience' || factors.controls.factorName.value =='Pricing'||
+                                factors.controls.factorName.value =='Past Performance'?true:false" -->
+
+                              <div class="expansion-panel-icon ml-3 text-black-secondary">
+                                <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+                                <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+                              </div>
+                              <a [ngClass]="{'d-none': this.status=='Published'}" (click)="removeFactors(evaluationCriteria.controls.factorRows, j)"><i
+                                  class="fa fa-times" aria-hidden="true"></i></a>
+                            </a>
+                            <div aria-labelledby="headingSix" class="collapse" [attr.id]=" 'active' + n + j"
+                              data-parent="#accordionFive" id="collapseSix">
+                              <div class="expansion-panel-body">
+
+                                <quill-editor name="factorText" format="html" formControlName="factorText"
+                                  [styles]="{height: '250px'}" placeholder="" (onContentChanged)="factorText($event)">
+                                </quill-editor>
+
+
+                                <div class="mt-3"
+                                  style="color:#1c6cbf; font-weight:normal; font-size:15px; font-family:Arial, SansSerif; text-align:left;">
+                                  Scoring</div>
+                                  <div
+                                  style="font-weight:normal; font-size:14px; font-family:Arial, SansSerif; text-align:left;">
+                                  <div class="mt-3">
+                                    <div class="custom-control custom-radio">
+                                      <input  type="radio" id="adjectival+{{i}}+{{j}}" class="custom-control-input"
+                                        formControlName="factorScore" value="Acceptable">
+                                      <label  class="custom-control-label"
+                                        for="adjectival+{{i}}+{{j}}">Adjectival</label>
+                                    </div>
+
+
+                                    <div class="ml-3 mt-3 mb-2" [ngStyle]="{'display':factors.controls.factorScore.value =='Acceptable'?'block':'none'}">
+                                      <div class="custom-control custom-radio">
+                                        <input  type="radio" id="option1+{{i}}+{{j}}" class="custom-control-input"
+                                          formControlName="factorScoreUpdate" value="factorScoreUpdateYes">
+                                        <label  class="custom-control-label"
+                                          for="option1+{{i}}+{{j}}"> Excellent, Satisfactory, Poor, etc.</label>
+                                      </div>
+  
+                                      <div class="custom-control custom-radio">
+                                        <input  type="radio" id="option2+{{i}}+{{j}}" class="custom-control-input"
+                                        formControlName="factorScoreUpdate" value="factorScoreUpdateNo">
+                                        <label  class="custom-control-label"
+                                          for="option2+{{i}}+{{j}}">Acceptable, Non-Acceptable</label>
+                                      </div>
+                                    </div>
+
+
+                                    <div class="row mt-3">
+
+                                      <div class="none" style="margin-left: 20px">
+                                        <div class="custom-control custom-radio">
+                                          <input  
+                                          type="radio" id="poinscale+{{i}}+{{j}}" class="custom-control-input"
+                                            formControlName="factorScore" value="Points" (keypress)="keyPress($event)">
+                                          <label  class="custom-control-label" for="poinscale+{{i}}+{{j}}">Point
+                                            Scale</label>
+                                        </div>
+                                      </div>
+
+                                      <div
+                                        [ngStyle]="{'display':factors.controls.factorScore.value =='Points'?'block':'none'}"
+                                        class="none " style="margin-left: 5px;
+                                        margin-top: -13px;display:none;">
+                                        <div class="form-group">
+                                          <div class="textfield-box" >
+                                            <input  
+                                            class="form-control inputtext" type="text" placeholder="Insert Points"
+                                               formControlName="factorPoints" (keypress)="keyPress($event)">
+                                          </div>
+                                        </div>
+
+                                      </div>
+
+                                      <!-- {{factors.controls.factorScore.value | json}} -->
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+                    <!-- End Factors -->
+                  </div>
+
+
+                </div>
+
+
+              </div>
+            </div>
+            <!-- End Evaluations -->
+
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="expansion-panel mb-2 list-group-item" >
+        <a aria-controls="collapseFive" aria-expanded="false" class="btn-primar expansion-panel-toggler collapsed"
+          data-toggle="collapse" href="#collapseFive" id="headingFive" (click)="scoringMechanism($event)">
+          Scoring Mechanism
+          <div class="expansion-panel-icon ml-3 text-black-secondary">
+            <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+            <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+          </div>
+        </a>
+        <div aria-labelledby="headingFive" class="collapse" data-parent="#accordionOne" id="collapseFive">
+          <div class="expansion-panel-body">
+            <quill-editor class="scoringMechanism" id="scoringMechanism" name="scoringMechanism" format="html"
+              formControlName="scoringMechanism" [styles]="{height: '50vh'}" placeholder=""
+              (onSelectionChanged)="scoringMechanism($event)"></quill-editor>
+          </div>
+        </div>
+      </div> -->
+      <app-clausesections  [clauseInfo]="clauseString"></app-clausesections>
+    </div>
+   
+  </form>
+
+  <!-- <pre> {{evaluations.value | json}} </pre> -->
+ 
+</div>
+
+
+
+<div class="mb-5" style="margin-bottom: 90px !important">
+
+</div>

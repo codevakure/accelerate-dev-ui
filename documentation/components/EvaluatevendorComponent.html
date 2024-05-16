@@ -1,0 +1,2326 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>hhs_pacd-frontend-phase2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">hhs_pacd-frontend-phase2 documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>EvaluatevendorComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-evaluatevendor</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./evaluatevendor.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./evaluatevendor.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#columnsToDisplay">columnsToDisplay</a>
+                            </li>
+                            <li>
+                                <a href="#evaluationData">evaluationData</a>
+                            </li>
+                            <li>
+                                <a href="#id">id</a>
+                            </li>
+                            <li>
+                                <a href="#response">response</a>
+                            </li>
+                            <li>
+                                <a href="#solno">solno</a>
+                            </li>
+                            <li>
+                                <a href="#vendorEvaluation">vendorEvaluation</a>
+                            </li>
+                            <li>
+                                <a href="#vendorID">vendorID</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addFiles">addFiles</a>
+                            </li>
+                            <li>
+                                <a href="#addPdf">addPdf</a>
+                            </li>
+                            <li>
+                                <a href="#back">back</a>
+                            </li>
+                            <li>
+                                <a href="#getFiles">getFiles</a>
+                            </li>
+                            <li>
+                                <a href="#getPdf">getPdf</a>
+                            </li>
+                            <li>
+                                <a href="#initFiles">initFiles</a>
+                            </li>
+                            <li>
+                                <a href="#initPdf">initPdf</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onChange">onChange</a>
+                            </li>
+                            <li>
+                                <a href="#saveComplete">saveComplete</a>
+                            </li>
+                            <li>
+                                <a href="#savePending">savePending</a>
+                            </li>
+                            <li>
+                                <a href="#updatePropsoalEvaluation">updatePropsoalEvaluation</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, ap: <a href="../injectables/AcquisitionService.html">AcquisitionService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:52</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ap</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AcquisitionService.html" target="_self" >AcquisitionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addFiles"></a>
+                    <span class="name">
+                        <b>
+                            addFiles
+                        </b>
+                        <a href="#addFiles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addFiles()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="131"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:131</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addPdf"></a>
+                    <span class="name">
+                        <b>
+                            addPdf
+                        </b>
+                        <a href="#addPdf"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addPdf()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="136"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:136</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="back"></a>
+                    <span class="name">
+                        <b>
+                            back
+                        </b>
+                        <a href="#back"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>back()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="150"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:150</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFiles"></a>
+                    <span class="name">
+                        <b>
+                            getFiles
+                        </b>
+                        <a href="#getFiles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFiles(form)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="141"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:141</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>form</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPdf"></a>
+                    <span class="name">
+                        <b>
+                            getPdf
+                        </b>
+                        <a href="#getPdf"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPdf(form)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="146"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:146</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>form</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initFiles"></a>
+                    <span class="name">
+                        <b>
+                            initFiles
+                        </b>
+                        <a href="#initFiles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initFiles()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:111</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initPdf"></a>
+                    <span class="name">
+                        <b>
+                            initPdf
+                        </b>
+                        <a href="#initPdf"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initPdf()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onChange"></a>
+                    <span class="name">
+                        <b>
+                            onChange
+                        </b>
+                        <a href="#onChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onChange(f)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="155"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:155</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>f</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveComplete"></a>
+                    <span class="name">
+                        <b>
+                            saveComplete
+                        </b>
+                        <a href="#saveComplete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveComplete(i)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:163</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>i</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="savePending"></a>
+                    <span class="name">
+                        <b>
+                            savePending
+                        </b>
+                        <a href="#savePending"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>savePending(i)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:193</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>i</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePropsoalEvaluation"></a>
+                    <span class="name">
+                        <b>
+                            updatePropsoalEvaluation
+                        </b>
+                        <a href="#updatePropsoalEvaluation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updatePropsoalEvaluation()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="170"
+                            class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:170</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="columnsToDisplay"></a>
+                        <span class="name">
+                            <b>
+                            columnsToDisplay</b>
+                            <a href="#columnsToDisplay"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&#x27;files&#x27;,&#x27;status&#x27;,&#x27;myScore&#x27;,&#x27;action&#x27;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="evaluationData"></a>
+                        <span class="name">
+                            <b>
+                            evaluationData</b>
+                            <a href="#evaluationData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="id"></a>
+                        <span class="name">
+                            <b>
+                            id</b>
+                            <a href="#id"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="response"></a>
+                        <span class="name">
+                            <b>
+                            response</b>
+                            <a href="#response"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    sol_no: &quot;&quot;,
+    vendor: &quot;Vendor 1&quot;,
+    date: &quot;01/12/2019 3:00 PM EST&quot;,
+    status: &quot;&quot;,
+    vendorFiles: [
+      {
+        volumeName: &quot;Volume1: Past Performance&quot;,
+        pdfSrc: &quot;assets/HHSPACDFRONTEND.pdf&quot;,
+        strengths: &quot;&quot;,
+        weekness: &quot;&quot;,
+        Deficiencies: &quot;&quot;,
+        Remarks: &quot;&quot;,
+       // Score: &quot;&quot;,
+        status: &quot;&quot;,
+      },
+    ],
+    supportedFiles: [
+      {
+        fileName: &quot;filename&quot;,
+        pdfSrc: &quot;assets/HHSPACDFRONTEND.pdf&quot;,
+      },
+    ]
+  }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="solno"></a>
+                        <span class="name">
+                            <b>
+                            solno</b>
+                            <a href="#solno"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="vendorEvaluation"></a>
+                        <span class="name">
+                            <b>
+                            vendorEvaluation</b>
+                            <a href="#vendorEvaluation"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="vendorID"></a>
+                        <span class="name">
+                            <b>
+                            vendorID</b>
+                            <a href="#vendorID"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/Project-Components/home-page/solicitationdetail/proposalevaluation/evaluatevendor/evaluatevendor.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Response } from &quot;@angular/http&quot;;
+import { Component, OnInit } from &quot;@angular/core&quot;;
+import { ActivatedRoute, Router, ParamMap } from &quot;@angular/router&quot;;
+import { AcquisitionService } from &quot;../../../../../Services/acquisition.service&quot;;
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+  FormArray
+} from &quot;@angular/forms&quot;;
+import { MatPaginator } from &quot;@angular/material/paginator&quot;;
+import { MatSort } from &quot;@angular/material/sort&quot;;
+import { MatTableDataSource } from &quot;@angular/material/table&quot;;
+
+@Component({
+  selector: &quot;app-evaluatevendor&quot;,
+  templateUrl: &quot;./evaluatevendor.component.html&quot;,
+  styleUrls: [&quot;./evaluatevendor.component.css&quot;]
+})
+export class EvaluatevendorComponent implements OnInit {
+  solno;
+  vendorEvaluation;
+  vendorID;
+  id;
+  evaluationData;
+  columnsToDisplay &#x3D; [&#x27;files&#x27;,&#x27;status&#x27;,&#x27;myScore&#x27;,&#x27;action&#x27;];
+
+  response &#x3D; {
+    sol_no: &quot;&quot;,
+    vendor: &quot;Vendor 1&quot;,
+    date: &quot;01/12/2019 3:00 PM EST&quot;,
+    status: &quot;&quot;,
+    vendorFiles: [
+      {
+        volumeName: &quot;Volume1: Past Performance&quot;,
+        pdfSrc: &quot;assets/HHSPACDFRONTEND.pdf&quot;,
+        strengths: &quot;&quot;,
+        weekness: &quot;&quot;,
+        Deficiencies: &quot;&quot;,
+        Remarks: &quot;&quot;,
+       // Score: &quot;&quot;,
+        status: &quot;&quot;,
+      },
+    ],
+    supportedFiles: [
+      {
+        fileName: &quot;filename&quot;,
+        pdfSrc: &quot;assets/HHSPACDFRONTEND.pdf&quot;,
+      },
+    ]
+  };
+  constructor(    private route: ActivatedRoute,
+    private router: Router,
+    private fb: FormBuilder,
+    private ap: AcquisitionService) {
+      this.vendorID &#x3D; this.route.snapshot.parent.firstChild.params.vendorName;
+    }
+
+  ngOnInit() {
+    this.solno &#x3D; this.route.snapshot.parent.parent.params.sid;
+    console.log(this.vendorID);
+    
+    this.vendorEvaluation &#x3D; new FormGroup({
+      vendor: new FormControl(&quot;&quot;),
+      date: new FormControl(&quot;&quot;),
+      status: new FormControl(&quot;&quot;),
+      vendorFiles: new FormArray([
+        //this.initFiles()
+      ]),
+      supportedFiles: new FormArray([
+        //this.initPdf()
+      ])
+    });
+    this.ap.getPropsalevaluation(this.vendorID).subscribe(response &#x3D;&gt; {
+      console.log(response);
+      
+      this.vendorEvaluation.get(&#x27;vendor&#x27;).setValue(response.vendor);
+      this.vendorEvaluation.get(&#x27;date&#x27;).setValue(response.date);
+      this.vendorEvaluation.get(&#x27;status&#x27;).setValue(response.status);
+      let control &#x3D; &lt;FormArray&gt;this.vendorEvaluation.controls.vendorFiles;
+      let control1 &#x3D; &lt;FormArray&gt;this.vendorEvaluation.controls.supportedFiles;
+      response.vendorFiles.forEach(li &#x3D;&gt; { 
+        control.push(
+          this.fb.group({
+            volumeName: li.volumeName,
+            pdfSrc: li.pdfSrc,
+            strengths: li.strengths,
+            weekness: li.weekness,
+            Deficiencies: li.Deficiencies,
+            Remarks: li.Remarks,
+           // Score: li.Score,
+            status: li.status,
+          })
+        );
+      });
+      response.supportedFiles.forEach(ul &#x3D;&gt; { 
+        control1.push(
+          this.fb.group({
+            fileName: ul.fileName,
+            pdfSrc: ul.pdfSrc,
+          })
+        );
+      });
+    });
+  
+  
+  }
+
+  
+  initFiles() {
+    return new FormGroup({
+      volumeName: new FormControl(&quot;&quot;, Validators.required),
+      pdfSrc: new FormControl(&quot;&quot;, Validators.required),
+      strengths: new FormControl(&quot;&quot;, Validators.required),
+      weekness: new FormControl(&quot;&quot;, Validators.required),
+      Deficiencies: new FormControl(&quot;&quot;, Validators.required),
+      Remarks: new FormControl(&quot;&quot;, Validators.required),
+      //Score: new FormControl(&quot;&quot;, Validators.required),
+      status: new FormControl(&quot;&quot;, Validators.required),
+    });
+  }
+
+  initPdf() {
+    return new FormGroup({
+      fileName: new FormControl(&quot;&quot;, Validators.required),
+      pdfSrc: new FormControl(&quot;&quot;, Validators.required),
+    });
+  }
+
+  addFiles() {
+    const control &#x3D; &lt;FormArray&gt;this.vendorEvaluation.get(&quot;vendorFiles&quot;);
+    control.push(this.initFiles());
+  }
+
+  addPdf() {
+    const control &#x3D; &lt;FormArray&gt;this.vendorEvaluation.get(&quot;supportedFiles&quot;);
+    control.push(this.initPdf());
+  }
+
+  getFiles(form) {
+    return form.controls.vendorFiles.controls;
+  }
+
+  
+  getPdf(form) {
+    return form.controls.supportedFiles.controls;
+  }
+
+  back() {
+    this.router.navigate([&quot;/home/sol/&quot; + this.solno + &quot;/proposalevaluation/&quot;]);
+  }
+
+
+  onChange(f) {
+    //console.log(f.value);
+    //console.log(this.vendorID);
+    this.ap.patchProposalevaluation(this.vendorID, f.value).subscribe((response)&#x3D;&gt; {
+      console.log(response);
+    })
+  }
+  
+  saveComplete(i) {
+   // console.log(i);
+    const control &#x3D; &lt;FormArray&gt;this.vendorEvaluation.get(&quot;vendorFiles&quot;).controls[i].get(&quot;status&quot;).setValue(&quot;Complete&quot;);
+    this.onChange(this.vendorEvaluation);
+    this.updatePropsoalEvaluation();
+  }
+
+  updatePropsoalEvaluation(){
+    let all &#x3D;&lt;FormArray&gt;this.vendorEvaluation.get(&quot;vendorFiles&quot;).controls ;
+    let length &#x3D; all.length;
+    let completed&#x3D;0;
+    for(let i&#x3D;0;i&lt;length;i++){
+      all[i].get(&quot;status&quot;).value &#x3D;&#x3D; &quot;Complete&quot;? completed &#x3D; completed+1:&quot;&quot;; 
+      console.log(completed) 
+    };
+    let updatepropsalstatus &#x3D; (status)&#x3D;&gt;{
+      let data &#x3D;{
+        &quot;status&quot;:status
+      }
+      console.log(data)
+      this.ap.patchProposalevaluation(this.vendorID,data).subscribe(response &#x3D;&gt;{
+        console.log(response)
+      })
+    }
+    setTimeout(() &#x3D;&gt; {
+      completed &#x3D;&#x3D; 5?updatepropsalstatus(&quot;Completed&quot;):completed &#x3D;&#x3D; 0?updatepropsalstatus(&quot;Pending Evaluation&quot;):updatepropsalstatus(&quot;Pending Evaluation&quot;);
+    }, 500);
+  }
+
+
+  savePending(i) {
+    //console.log(i);
+    const control &#x3D; &lt;FormArray&gt;this.vendorEvaluation.get(&quot;vendorFiles&quot;).controls[i].get(&quot;status&quot;).setValue(&quot;Pending&quot;);
+    this.onChange(this.vendorEvaluation);
+    this.updatePropsoalEvaluation();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;header&quot;&gt;
+      &lt;div style&#x3D;&quot;white-space:nowrap; color:#1a355d; 
+                    font-weight:bold; font-size:16px; font-family:&#x27;Arial&#x27;,&#x27;SansSerif&#x27;; 
+                    text-align:left;&quot;&gt;
+            Proposal Evaluation - {{this.vendorEvaluation.get(&#x27;vendor&#x27;).value}}
+      &lt;/div&gt;
+      &lt;a class&#x3D;&quot;float-right&quot; style&#x3D;&quot;text-decoration: none&quot; (click)&#x3D;&quot;back()&quot;&gt;&lt;span class&#x3D;&quot;back&quot;&gt;&lt;i
+                        class&#x3D;&quot;fa fa-arrow-left mr-2&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;Back&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;mt-4&quot;&gt;
+      &lt;form [formGroup]&#x3D;&quot;vendorEvaluation&quot; novalidate (change)&#x3D;&quot;onChange(vendorEvaluation)&quot;&gt;
+
+
+            &lt;div&gt;
+                  &lt;div&gt;
+                        &lt;ul class&#x3D;&quot;nav nav-tabs&quot; id&#x3D;&quot;justifiedTab&quot; role&#x3D;&quot;tablist&quot;&gt;
+                              &lt;li class&#x3D;&quot;nav-item nav-item1 text-center&quot;&gt;
+                                    &lt;a aria-controls&#x3D;&quot;home&quot; aria-selected&#x3D;&quot;true&quot; class&#x3D;&quot;nav-link active&quot;
+                                          data-toggle&#x3D;&quot;tab&quot; href&#x3D;&quot;#home&quot; id&#x3D;&quot;home-tab&quot; role&#x3D;&quot;tab&quot;&gt;Vendor Response&lt;/a&gt;
+                              &lt;/li&gt;
+                              &lt;li class&#x3D;&quot;nav-item nav-item1 text-center&quot;&gt;
+                                    &lt;a aria-controls&#x3D;&quot;contact&quot; aria-selected&#x3D;&quot;false&quot; class&#x3D;&quot;nav-link&quot; data-toggle&#x3D;&quot;tab&quot;
+                                          href&#x3D;&quot;#contact&quot; id&#x3D;&quot;contact-tab&quot; role&#x3D;&quot;tab&quot;&gt;Evaluation Package&lt;/a&gt;
+                              &lt;/li&gt;
+                        &lt;/ul&gt;
+
+                        &lt;div class&#x3D;&quot;tab-content&quot; id&#x3D;&quot;justifiedTabContent&quot;
+                              style&#x3D;&quot;background:white;padding:40px;margin-top:-1px;&quot;&gt;
+
+                              &lt;div class&#x3D;&quot;tab-pane fade show active&quot; aria-labelledby&#x3D;&quot;home-tab&quot; id&#x3D;&quot;home&quot;
+                                    role&#x3D;&quot;tabpanel&quot; style&#x3D;&quot;border-bottom: 2px solid #D6D6D6;&quot;&gt;
+                                    &lt;table style&#x3D;&quot;width:100% !Important&quot; id&#x3D;&quot;home&quot; formArrayName&#x3D;&quot;vendorFiles&quot;&gt;
+                                          &lt;colgroup&gt;
+                                                &lt;col span&#x3D;&quot;3&quot; style&#x3D;&quot;width:33.33%&quot;&gt;
+                                          &lt;/colgroup&gt;
+                                          &lt;tr style&#x3D;&quot;padding:5px&quot;&gt;
+                                                &lt;th style&#x3D;&quot; color: #0844a4 !Important;
+                                            font-weight: bold !Important;
+                                            font-size: 14px !Important;
+                                            text-align: left !Important;
+                                            font-family: Arial, SansSerif !Important;&quot;&gt;File&lt;/th&gt;
+                                                &lt;th style&#x3D;&quot; color: #0844a4 !Important;
+                                            font-weight: bold !Important;
+                                            font-size: 14px !Important;
+                                            text-align: left !Important;
+                                            font-family: Arial, SansSerif !Important;&quot;&gt;Status&lt;/th&gt;
+                                                &lt;th
+                                                      style&#x3D;&quot; color: #0844a4 !Important;
+                                            font-weight: bold !Important;
+                                            font-size: 14px !Important;
+                                            text-align: left !Important;
+                                            font-family: Arial, SansSerif !Important;position: relative;float:left;margin-left:9%&quot;&gt;
+                                                      Action&lt;/th&gt;
+                                          &lt;/tr&gt;
+
+                                          &lt;tr *ngFor&#x3D;&quot;let vendor of getFiles(vendorEvaluation); let i &#x3D; index;&quot;
+                                                class&#x3D;&quot; acc&quot; id&#x3D;&quot;accordion+i&quot; [formGroupName]&#x3D;&quot;i&quot; style&#x3D;&quot;height:52px&quot;&gt;
+
+                                                &lt;td&gt;
+                                                      &lt;span style&#x3D;&quot;color: #0844a4;
+                                                      font-family: Arial, SansSerif;
+                                                      font-size: 14px; width: 200px;font-weight: normal&quot;&gt;{{vendor.get(&#x27;volumeName&#x27;).value}}
+                                                      &lt;/span&gt;
+                                                &lt;/td&gt;
+
+                                                &lt;td&gt;
+                                                      &lt;div *ngIf&#x3D;&quot;!vendor.get(&#x27;status&#x27;).value&quot; class&#x3D;&quot;textupdate&quot;&gt;
+                                                            &amp;nbsp;&lt;i class&#x3D;&quot;fa fa-hourglass-start&quot;
+                                                                  style&#x3D;&quot;color:#0844a4 &quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+                                                            &amp;nbsp;&lt;span style&#x3D;&quot;color: grey&quot;&gt;Not Started&lt;/span&gt;&lt;/div&gt;
+                                                      &lt;div *ngIf&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Pending&#x27;&quot;
+                                                            class&#x3D;&quot;textupdate&quot;&gt;&amp;nbsp;&lt;i class&#x3D;&quot;fa fa-hourglass-start&quot;
+                                                                  aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+                                                            &amp;nbsp;&lt;span style&#x3D;&quot;color:#2e73dc&quot;&gt;Pending&lt;/span&gt;&lt;/div&gt;
+                                                      &lt;div *ngIf&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;
+                                                            class&#x3D;&quot;textupdate&quot;&gt; &amp;nbsp;&lt;i style&#x3D;&quot;color: #629c44;&quot;
+                                                                  class&#x3D;&quot;fa fa-check-circle-o&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+                                                            &amp;nbsp;&lt;span style&#x3D;&quot;color: green&quot;&gt;Completed&lt;/span&gt;
+                                                      &lt;/div&gt;
+                                                &lt;/td&gt;
+
+                                                &lt;td&gt;
+                                                      &lt;a class&#x3D;&quot;expansion-panel-icon ml-3 text-black-secondary&quot;&gt;
+                                                            &lt;a target&#x3D;&quot;_blank&quot; [href]&#x3D;&quot;vendor.get(&#x27;pdfSrc&#x27;).value&quot;
+                                                                  class&#x3D;&quot;btn btn-sm btn-light&quot; style&#x3D;&quot;color: #000333;
+                                                                              font-weight: normal;
+                                                                              text-decoration: none;
+                                                                              font-size: 14px;
+                                                                              font-family: Arial,SansSerif;
+                                                                              font-style: normal;&quot;&gt;View&lt;/a&gt;
+                                                            &lt;button *ngIf&#x3D;&quot;vendor.get(&#x27;status&#x27;).value !&#x3D; &#x27;Complete&#x27;&quot;
+                                                                  class&#x3D;&quot;btn btn-sm btn-primary ml-3&quot;
+                                                                  data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#collapseOne&quot;
+                                                                  aria-expanded&#x3D;&quot;true&quot; aria-controls&#x3D;&quot;collapseOne&quot;
+                                                                  [attr.data-target]&#x3D;&quot;&#x27;#&#x27; + &#x27;active&#x27; + n + i&quot;&gt;Evaluate&lt;/button&gt;
+                                                            &lt;button *ngIf&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;
+                                                                  class&#x3D;&quot;btn btn-sm btn-success ml-3&quot;
+                                                                  data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#collapseOne&quot;
+                                                                  aria-expanded&#x3D;&quot;true&quot; aria-controls&#x3D;&quot;collapseOne&quot;
+                                                                  [attr.data-target]&#x3D;&quot;&#x27;#&#x27; + &#x27;active&#x27; + n + i&quot;&gt;Review&lt;/button&gt;
+
+                                                            &lt;div class&#x3D;&quot;modal fade bd-example-modal-lg&quot;
+                                                                  [attr.id]&#x3D;&quot; &#x27;active&#x27; + n + i&quot; tabindex&#x3D;&quot;-1&quot;
+                                                                  role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;myLargeModalLabel&quot;
+                                                                  aria-hidden&#x3D;&quot;true&quot;&gt;
+                                                                  &lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
+                                                                        &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                                                                              &lt;img src&#x3D;&quot;assets/hhs-accelerate-logo.png&quot;
+                                                                                    height&#x3D;&quot;30&quot;&gt;
+                                                                              &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot;
+                                                                                    data-dismiss&#x3D;&quot;modal&quot;
+                                                                                    aria-label&#x3D;&quot;Close&quot;&gt;
+                                                                                    &lt;span
+                                                                                          aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                                                                              &lt;/button&gt;
+                                                                        &lt;/div&gt;
+                                                                        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+                                                                              &lt;div class&#x3D;&quot;card-header p-3&quot;&gt;
+                                                                                    &lt;h5 class&#x3D;&quot;card-title&quot;
+                                                                                          style&#x3D;&quot;color: #0844a4;font-weight: bold;font-size: 14px;font-family: Arial, SansSerif&quot;&gt;
+                                                                                          &lt;i class&#x3D;&quot;fa fa-tags&quot;
+                                                                                                style&#x3D;&quot;color: grey&quot;
+                                                                                                aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+                                                                                          Evaluation
+                                                                                    &lt;/h5&gt;
+                                                                              &lt;/div&gt;
+                                                                              &lt;div class&#x3D;&quot;card-body&quot;
+                                                                                    style&#x3D;&quot;height: 60vh; overflow-y:scroll&quot;&gt;
+                                                                                    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                                                                                          &lt;label
+                                                                                                for&#x3D;&quot;strengths&quot;&gt;Strengths&lt;/label&gt;
+                                                                                          &lt;textarea class&#x3D;&quot;form-control&quot;
+                                                                                                formControlName&#x3D;&quot;strengths&quot;
+                                                                                                id&#x3D;&quot;strengths&quot; rows&#x3D;&quot;3&quot;
+                                                                                                [readonly]&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                                                                                    &lt;/div&gt;
+
+                                                                                    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                                                                                          &lt;label
+                                                                                                for&#x3D;&quot;weakness&quot;&gt;Weakness&lt;/label&gt;
+                                                                                          &lt;textarea class&#x3D;&quot;form-control&quot;
+                                                                                                formControlName&#x3D;&quot;weekness&quot;
+                                                                                                id&#x3D;&quot;weakness&quot; rows&#x3D;&quot;3&quot;
+                                                                                                [readonly]&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                                                                                    &lt;/div&gt;
+
+                                                                                    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                                                                                          &lt;label
+                                                                                                for&#x3D;&quot;Deficiencies&quot;&gt;Deficiencies&lt;/label&gt;
+                                                                                          &lt;textarea class&#x3D;&quot;form-control&quot;
+                                                                                                formControlName&#x3D;&quot;Deficiencies&quot;
+                                                                                                id&#x3D;&quot;Deficiencies&quot;
+                                                                                                rows&#x3D;&quot;3&quot;
+                                                                                                [readonly]&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                                                                                    &lt;/div&gt;
+
+                                                                                    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                                                                                          &lt;label
+                                                                                                for&#x3D;&quot;Remarks&quot;&gt;Remarks&lt;/label&gt;
+                                                                                          &lt;textarea class&#x3D;&quot;form-control&quot;
+                                                                                                formControlName&#x3D;&quot;Remarks&quot;
+                                                                                                id&#x3D;&quot;Remarks&quot; rows&#x3D;&quot;3&quot;
+                                                                                                [readonly]&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                                                                                    &lt;/div&gt;
+
+                                                                              &lt;/div&gt;
+                                                                              &lt;div class&#x3D;&quot;card-footer&quot;&gt;
+                                                                                    &lt;button data-dismiss&#x3D;&quot;modal&quot;
+                                                                                          aria-label&#x3D;&quot;Close&quot;
+                                                                                          class&#x3D;&quot;close nav-link btn btn-sm btn-success&quot;
+                                                                                          (click)&#x3D;&quot;saveComplete(i)&quot;
+                                                                                          [disabled]&#x3D;&quot;(vendor.get(&#x27;strengths&#x27;).value &amp;&amp; vendor.get(&#x27;weekness&#x27;).value &amp;&amp; vendor.get(&#x27;Deficiencies&#x27;).value &amp;&amp; vendor.get(&#x27;Remarks&#x27;).value) &#x3D;&#x3D; &#x27;&#x27; &quot;&gt;Save
+                                                                                          &amp; Complete&lt;/button&gt;
+                                                                                    &lt;button data-dismiss&#x3D;&quot;modal&quot;
+                                                                                          aria-label&#x3D;&quot;Close&quot;
+                                                                                          class&#x3D;&quot;close nav-link btn btn-sm btn-primary mr-3&quot;
+                                                                                          (click)&#x3D;&quot;savePending(i)&quot;&gt;Save&lt;/button&gt;
+                                                                              &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                  &lt;/div&gt;
+                                                            &lt;/div&gt;
+
+                                                      &lt;/a&gt;
+
+                                                &lt;/td&gt;
+                                          &lt;/tr&gt;
+
+
+                                    &lt;/table&gt;
+
+                              &lt;/div&gt;
+
+                              &lt;!-- &lt;div aria-labelledby&#x3D;&quot;home-tab&quot; class&#x3D;&quot;tab-pane fade show active&quot; id&#x3D;&quot;home&quot;
+                                    role&#x3D;&quot;tabpanel&quot; formArrayName&#x3D;&quot;vendorFiles&quot;
+                                    style&#x3D;&quot;border-bottom: 2px solid #D6D6D6;&quot;&gt;
+
+
+                                    &lt;ul style&#x3D;&quot;list-style-type: none;width:100%;height: 10px;font-weight:normal !Important
+                                    &quot;&gt;
+                                          &lt;li&gt;Files&lt;/li&gt;
+                                          &lt;li style&#x3D;&quot;margin-left:24%&quot;&gt;Status&lt;/li&gt;
+                                          &lt;li style&#x3D;&quot;margin-left:10%&quot;&gt;Action&lt;/li&gt;
+                                    &lt;/ul&gt;
+
+                                    &lt;div *ngFor&#x3D;&quot;let vendor of getFiles(vendorEvaluation); let i &#x3D; index;&quot;
+                                          class&#x3D;&quot;list-group acc&quot; id&#x3D;&quot;accordion+i&quot; [formGroupName]&#x3D;&quot;i&quot; style&#x3D;&quot;height:52px&quot;&gt;
+
+
+                                          &lt;div class&#x3D;&quot;expansion-panel mb-2 list-group-item row &quot;&gt;
+                                                &lt;div aria-expanded&#x3D;&quot;false&quot;
+                                                      class&#x3D;&quot;expansion-panel-toggler btn-primar collapsed row &quot;
+                                                      id&#x3D;&quot;acquisitionInformation&quot; style&#x3D;&quot;height: 38px&quot;&gt;
+                                                      &lt;span
+                                                            style&#x3D;&quot;color: #0844a4;
+                                                            font-family: Arial, SansSerif;
+                                                            font-size: 14px; width: 200px;font-weight: normal&quot;&gt;{{vendor.get(&#x27;volumeName&#x27;).value}}
+                                                            &lt;/span&gt;
+
+
+                                                      &lt;div *ngIf&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;&#x27;&quot;
+                                                            class&#x3D;&quot;textupdate&quot; &gt; &amp;nbsp;&lt;i
+                                                                  class&#x3D;&quot;fa fa-hourglass-start&quot; style&#x3D;&quot;color:#0844a4 &quot;aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+                                                            &amp;nbsp;&lt;span style&#x3D;&quot;color: grey&quot;&gt;Not Started&lt;/span&gt;&lt;/div&gt;
+                                                      &lt;div *ngIf&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Pending&#x27;&quot;
+                                                      class&#x3D;&quot;textupdate&quot;&gt;&amp;nbsp;&lt;i
+                                                                  class&#x3D;&quot;fa fa-hourglass-start&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+                                                            &amp;nbsp;&lt;span style&#x3D;&quot;color:#2e73dc&quot;&gt;Pending&lt;/span&gt;&lt;/div&gt;
+                                                      &lt;div *ngIf&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;
+                                                      class&#x3D;&quot;textupdate&quot;&gt; &amp;nbsp;&lt;i
+                                                                  style&#x3D;&quot;color: #629c44;&quot; class&#x3D;&quot;fa fa-check-circle-o&quot;
+                                                                  aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+                                                            &amp;nbsp;&lt;span style&#x3D;&quot;color: green&quot;&gt;Completed&lt;/span&gt;&lt;/div&gt;
+
+
+
+                                                      &lt;a class&#x3D;&quot;expansion-panel-icon ml-3 text-black-secondary&quot;&gt;
+                                                            &lt;a target&#x3D;&quot;_blank&quot; [href]&#x3D;&quot;vendor.get(&#x27;pdfSrc&#x27;).value&quot;
+                                                                  class&#x3D;&quot;btn btn-sm btn-light&quot; style&#x3D;&quot;color: #000333;
+                                                                  font-weight: normal;
+                                                                  text-decoration: none;
+                                                                  font-size: 14px;
+                                                                  font-family: Arial,SansSerif;
+                                                                  font-style: normal;&quot;&gt;View&lt;/a&gt;
+                                                            &lt;button *ngIf&#x3D;&quot;vendor.get(&#x27;status&#x27;).value !&#x3D; &#x27;Complete&#x27;&quot;
+                                                                  class&#x3D;&quot;btn btn-sm btn-primary ml-3&quot;
+                                                                  data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#collapseOne&quot;
+                                                                  aria-expanded&#x3D;&quot;true&quot; aria-controls&#x3D;&quot;collapseOne&quot;
+                                                                  [attr.data-target]&#x3D;&quot;&#x27;#&#x27; + &#x27;active&#x27; + n + i&quot;&gt;Evaluate&lt;/button&gt;
+                                                            &lt;button *ngIf&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;
+                                                                  class&#x3D;&quot;btn btn-sm btn-success ml-3&quot;
+                                                                  data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#collapseOne&quot;
+                                                                  aria-expanded&#x3D;&quot;true&quot; aria-controls&#x3D;&quot;collapseOne&quot;
+                                                                  [attr.data-target]&#x3D;&quot;&#x27;#&#x27; + &#x27;active&#x27; + n + i&quot;&gt;Review&lt;/button&gt;
+
+                                                            &lt;div class&#x3D;&quot;modal fade bd-example-modal-lg&quot;
+                                                                  [attr.id]&#x3D;&quot; &#x27;active&#x27; + n + i&quot; tabindex&#x3D;&quot;-1&quot;
+                                                                  role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;myLargeModalLabel&quot;
+                                                                  aria-hidden&#x3D;&quot;true&quot;&gt;
+                                                                  &lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
+                                                                        &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                                                                              &lt;img src&#x3D;&quot;assets/hhs-accelerate-logo.png&quot;
+                                                                                    height&#x3D;&quot;30&quot;&gt;
+                                                                              &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot;
+                                                                                    data-dismiss&#x3D;&quot;modal&quot;
+                                                                                    aria-label&#x3D;&quot;Close&quot;&gt;
+                                                                                    &lt;span
+                                                                                          aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                                                                              &lt;/button&gt;
+                                                                        &lt;/div&gt;
+                                                                        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+                                                                              &lt;div class&#x3D;&quot;card-header p-3&quot;&gt;
+                                                                                    &lt;h5 class&#x3D;&quot;card-title&quot;
+                                                                                          style&#x3D;&quot;color: #0844a4;font-weight: bold;font-size: 14px;font-family: Arial, SansSerif&quot;&gt;
+                                                                                          &lt;i class&#x3D;&quot;fa fa-tags&quot;
+                                                                                                style&#x3D;&quot;color: grey&quot;
+                                                                                                aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+                                                                                          Evaluation
+                                                                                    &lt;/h5&gt;
+                                                                              &lt;/div&gt;
+                                                                              &lt;div class&#x3D;&quot;card-body&quot;
+                                                                                    style&#x3D;&quot;height: 60vh; overflow-y:scroll&quot;&gt;
+                                                                                    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                                                                                          &lt;label
+                                                                                                for&#x3D;&quot;strengths&quot;&gt;Strengths&lt;/label&gt;
+                                                                                          &lt;textarea class&#x3D;&quot;form-control&quot;
+                                                                                                formControlName&#x3D;&quot;strengths&quot;
+                                                                                                id&#x3D;&quot;strengths&quot; rows&#x3D;&quot;3&quot;
+                                                                                                [readonly]&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                                                                                    &lt;/div&gt;
+
+                                                                                    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                                                                                          &lt;label
+                                                                                                for&#x3D;&quot;weakness&quot;&gt;Weakness&lt;/label&gt;
+                                                                                          &lt;textarea class&#x3D;&quot;form-control&quot;
+                                                                                                formControlName&#x3D;&quot;weekness&quot;
+                                                                                                id&#x3D;&quot;weakness&quot; rows&#x3D;&quot;3&quot;
+                                                                                                [readonly]&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                                                                                    &lt;/div&gt;
+
+                                                                                    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                                                                                          &lt;label
+                                                                                                for&#x3D;&quot;Deficiencies&quot;&gt;Deficiencies&lt;/label&gt;
+                                                                                          &lt;textarea class&#x3D;&quot;form-control&quot;
+                                                                                                formControlName&#x3D;&quot;Deficiencies&quot;
+                                                                                                id&#x3D;&quot;Deficiencies&quot;
+                                                                                                rows&#x3D;&quot;3&quot;
+                                                                                                [readonly]&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                                                                                    &lt;/div&gt;
+
+                                                                                    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                                                                                          &lt;label
+                                                                                                for&#x3D;&quot;Remarks&quot;&gt;Remarks&lt;/label&gt;
+                                                                                          &lt;textarea class&#x3D;&quot;form-control&quot;
+                                                                                                formControlName&#x3D;&quot;Remarks&quot;
+                                                                                                id&#x3D;&quot;Remarks&quot; rows&#x3D;&quot;3&quot;
+                                                                                                [readonly]&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                                                                                    &lt;/div&gt;
+                                                                   
+                                                                              &lt;/div&gt;
+                                                                              &lt;div class&#x3D;&quot;card-footer&quot;&gt;
+                                                                                    &lt;button data-dismiss&#x3D;&quot;modal&quot;
+                                                                                          aria-label&#x3D;&quot;Close&quot;
+                                                                                          class&#x3D;&quot;close nav-link btn btn-sm btn-success&quot;
+                                                                                          (click)&#x3D;&quot;saveComplete(i)&quot;
+                                                                                          [disabled]&#x3D;&quot;(vendor.get(&#x27;strengths&#x27;).value &amp;&amp; vendor.get(&#x27;weekness&#x27;).value &amp;&amp; vendor.get(&#x27;Deficiencies&#x27;).value &amp;&amp; vendor.get(&#x27;Remarks&#x27;).value) &#x3D;&#x3D; &#x27;&#x27; &quot;&gt;Save
+                                                                                          &amp; Complete&lt;/button&gt;
+                                                                                    &lt;button data-dismiss&#x3D;&quot;modal&quot;
+                                                                                          aria-label&#x3D;&quot;Close&quot;
+                                                                                          class&#x3D;&quot;close nav-link btn btn-sm btn-primary mr-3&quot;
+                                                                                          (click)&#x3D;&quot;savePending(i)&quot;&gt;Save&lt;/button&gt;
+                                                                              &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                  &lt;/div&gt;
+                                                            &lt;/div&gt;
+
+                                                      &lt;/a&gt;
+                                                &lt;/div&gt;
+                                               
+                                          &lt;/div&gt;
+
+
+                                          &lt;div class&#x3D;&quot;modal fade bd-example-modal-lg&quot; [attr.id]&#x3D;&quot; &#x27;active&#x27; + n + i&quot;
+                                                tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;myLargeModalLabel&quot;
+                                                aria-hidden&#x3D;&quot;true&quot;&gt;
+                                                &lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
+                                                      &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                                                            &lt;img src&#x3D;&quot;assets/hhs-accelerate-logo.png&quot; height&#x3D;&quot;30&quot;&gt;
+                                                            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot;
+                                                                  aria-label&#x3D;&quot;Close&quot;&gt;
+                                                                  &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                                                            &lt;/button&gt;
+                                                      &lt;/div&gt;
+                                                      &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+                                                            &lt;div class&#x3D;&quot;card-header p-3&quot;&gt;
+                                                                  &lt;h5 class&#x3D;&quot;card-title&quot;
+                                                                        style&#x3D;&quot;color: #0844a4;font-weight: bold;font-size: 14px;font-family: Arial, SansSerif&quot;&gt;
+                                                                        &lt;i class&#x3D;&quot;fa fa-tags&quot; style&#x3D;&quot;color: grey&quot;
+                                                                              aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; Evaluation
+                                                                  &lt;/h5&gt;
+                                                            &lt;/div&gt;
+                                                            &lt;div class&#x3D;&quot;card-body&quot;
+                                                                  style&#x3D;&quot;height: 60vh; overflow-y:scroll&quot;&gt;
+                                                                  &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                                                                        &lt;label for&#x3D;&quot;strengths&quot;&gt;Strengths&lt;/label&gt;
+                                                                        &lt;textarea class&#x3D;&quot;form-control&quot;
+                                                                              formControlName&#x3D;&quot;strengths&quot; id&#x3D;&quot;strengths&quot;
+                                                                              rows&#x3D;&quot;3&quot;
+                                                                              [readonly]&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                                                                  &lt;/div&gt;
+
+                                                                  &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                                                                        &lt;label for&#x3D;&quot;weakness&quot;&gt;Weakness&lt;/label&gt;
+                                                                        &lt;textarea class&#x3D;&quot;form-control&quot;
+                                                                              formControlName&#x3D;&quot;weekness&quot; id&#x3D;&quot;weakness&quot;
+                                                                              rows&#x3D;&quot;3&quot;
+                                                                              [readonly]&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                                                                  &lt;/div&gt;
+
+                                                                  &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                                                                        &lt;label for&#x3D;&quot;Deficiencies&quot;&gt;Deficiencies&lt;/label&gt;
+                                                                        &lt;textarea class&#x3D;&quot;form-control&quot;
+                                                                              formControlName&#x3D;&quot;Deficiencies&quot;
+                                                                              id&#x3D;&quot;Deficiencies&quot; rows&#x3D;&quot;3&quot;
+                                                                              [readonly]&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                                                                  &lt;/div&gt;
+
+                                                                  &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                                                                        &lt;label for&#x3D;&quot;Remarks&quot;&gt;Remarks&lt;/label&gt;
+                                                                        &lt;textarea class&#x3D;&quot;form-control&quot;
+                                                                              formControlName&#x3D;&quot;Remarks&quot; id&#x3D;&quot;Remarks&quot;
+                                                                              rows&#x3D;&quot;3&quot;
+                                                                              [readonly]&#x3D;&quot;vendor.get(&#x27;status&#x27;).value &#x3D;&#x3D; &#x27;Complete&#x27;&quot;&gt;&lt;/textarea&gt;
+                                                                  &lt;/div&gt;
+                                                    
+                                                            &lt;/div&gt;
+                                                            &lt;div class&#x3D;&quot;card-footer&quot;&gt;
+                                                                  &lt;button data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;
+                                                                        class&#x3D;&quot;close nav-link btn btn-sm btn-success&quot;
+                                                                        (click)&#x3D;&quot;saveComplete(i)&quot;
+                                                                        [disabled]&#x3D;&quot;(vendor.get(&#x27;strengths&#x27;).value &amp;&amp; vendor.get(&#x27;weekness&#x27;).value &amp;&amp; vendor.get(&#x27;Deficiencies&#x27;).value &amp;&amp; vendor.get(&#x27;Remarks&#x27;).value) &#x3D;&#x3D; &#x27;&#x27; &quot;&gt;Save
+                                                                        &amp; Complete&lt;/button&gt;
+                                                                  &lt;button data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;
+                                                                        class&#x3D;&quot;close nav-link btn btn-sm btn-primary mr-3&quot;
+                                                                        (click)&#x3D;&quot;savePending(i)&quot;&gt;Save&lt;/button&gt;
+                                                            &lt;/div&gt;
+                                                      &lt;/div&gt;
+                                                &lt;/div&gt;
+                                          &lt;/div&gt;
+                                    &lt;/div&gt;
+
+                                    
+
+                                    
+                              &lt;/div&gt; --&gt;
+
+                              &lt;div id&#x3D;&quot;contact&quot; aria-labelledby&#x3D;&quot;contact-tab&quot; class&#x3D;&quot;tab-pane fade&quot; role&#x3D;&quot;tabpanel&quot;&gt;
+                                    &lt;table style&#x3D;&quot;   
+                               border-bottom: 2px solid #D6D6D6;
+                              z-index: 900;width:100%&quot;&gt;
+                                          &lt;colgroup&gt;
+                                                &lt;col span&#x3D;&quot;1&quot; style&#x3D;&quot;width:80%&quot;&gt;
+                                          &lt;/colgroup&gt;
+
+                                          &lt;tr style&#x3D;&quot;margin-bottom:10px&quot;&gt;
+                                                &lt;th style&#x3D;&quot;color: #0844a4 !Important;
+                                      font-weight: bold !Important;
+                                      font-size: 14px !Important;
+                                      text-align: left !Important;
+                                      font-family: Arial, SansSerif !Important;&quot;&gt;
+                                                      Files
+                                                &lt;/th&gt;
+                                                &lt;th style&#x3D;&quot;color: #0844a4 !Important;
+                                      font-weight: bold !Important;
+                                      font-size: 14px !Important;
+                                      text-align: left !Important;
+                                      font-family: Arial, SansSerif !Important;&quot;&gt;
+                                                      Action
+                                                &lt;/th&gt;
+                                          &lt;/tr&gt;
+                                          &lt;!-- &lt;ul style&#x3D;&quot;list-style-type: none;width:100%;height: 10px;font-weight:normal !Important
+                                     ;padding:0px&quot;&gt;
+                                           &lt;li style&#x3D;&quot;    width: 70px;
+                                           position: relative;
+                                           float: left;
+                                           color: #0844a4 !Important;
+                                          font-weight: bold !Important;
+                                          font-size: 14px !Important;
+                                          text-align: left !Important;
+                                          font-family: Arial, SansSerif !Important; &quot;&gt;Files&lt;/li&gt;
+                                           &lt;li style&#x3D;&quot;width: 40px;
+                                           position: relative;
+                                           float: left;margin-left:79%;
+                                           color: #0844a4 !Important;
+                                          font-weight: bold !Important;
+                                          font-size: 14px !Important;
+                                          text-align: left !Important;
+                                          font-family: Arial, SansSerif !Important;&quot;&gt;Action&lt;/li&gt;
+                                     &lt;/ul&gt; --&gt;
+                                          &lt;tr *ngFor&#x3D;&quot;let res of getPdf(vendorEvaluation);let j &#x3D; index;&quot; class&#x3D;&quot;acc&quot;
+                                                style&#x3D;&quot;height:52px&quot;&gt;
+
+                                                &lt;td&gt;
+
+                                                      &lt;span style&#x3D;&quot;color: #1a355d;&quot;&gt;{{res.get(&#x27;fileName&#x27;).value}}&lt;/span&gt;
+                                                &lt;/td&gt;
+
+                                                &lt;td&gt;
+                                                      &lt;a&gt;
+                                                            &lt;a target&#x3D;&quot;_blank&quot; [href]&#x3D;&quot;res.get(&#x27;pdfSrc&#x27;).value&quot;
+                                                                  class&#x3D;&quot;btn btn-sm btn-light&quot; style&#x3D;&quot;color: #ffffff;
+                                                      font-size: 11px;
+                                                       background-color: #006fbe;
+                                                       font-family: Arial, SansSerif;
+                                                      text-align: center;
+                                                      padding: 6px;
+                                                      border-radius:5px&quot;&gt;View&lt;/a&gt;
+                                                      &lt;/a&gt;
+
+                                                &lt;/td&gt;
+                                                &lt;!-- &lt;div aria-expanded&#x3D;&quot;false&quot;
+                                                      class&#x3D;&quot;expansion-panel-toggler btn-primar collapsed&quot;
+                                                      id&#x3D;&quot;acquisitionInformation&quot;
+                                                      style&#x3D;&quot;background:transparent !Important;padding:0px !Important&quot;&gt;
+
+                                                      &lt;span style&#x3D;&quot;color: #1a355d;&quot;&gt;{{res.get(&#x27;fileName&#x27;).value}}&lt;/span&gt;
+
+                                                      &lt;a&gt;
+                                                            &lt;a target&#x3D;&quot;_blank&quot; [href]&#x3D;&quot;res.get(&#x27;pdfSrc&#x27;).value&quot;
+                                                                  class&#x3D;&quot;btn btn-sm btn-light&quot;
+                                                                  style&#x3D;&quot;color: #ffffff;
+                                                                  font-size: 11px;
+                                                                  background-color: #006fbe;
+                                                                  font-family: Arial, SansSerif;
+                                                                  text-align: center;
+                                                                  padding: 6px;
+                                                                  border-radius:5px&quot;&gt;View&lt;/a&gt;
+                                                      &lt;/a&gt;
+                                                &lt;/div&gt; --&gt;
+
+                                          &lt;/tr&gt;
+                                    &lt;/table&gt;
+                              &lt;/div&gt;
+
+
+                              &lt;!-- &lt;div id&#x3D;&quot;footer&quot;&gt;
+                                    &lt;select id&#x3D;&quot;page_select_drop_down&quot;  [(ngModel)]&#x3D;&quot;pageamount&quot; (change)&#x3D;&quot;pagesize(pageamount)&quot;  &gt;
+                                          &lt;option *ngFor&#x3D;&quot;let count of this.counter&quot;  value&#x3D;&quot;{{count}}&quot;&gt;{{count}}&lt;/option&gt;
+                                    &lt;/select&gt;
+                                    &lt;div id&#x3D;&quot;items_of&quot; class&#x3D;&quot;bold&quot; style&#x3D;&quot;width:fit-content&quot; &gt;
+                                     OF
+                                    &lt;/div&gt;
+                                    &lt;div id&#x3D;&quot;previous&quot; class&#x3D;&quot;bold hover&quot; (click)&#x3D;&quot;previouspage()&quot; &gt;
+                                      PREVIOUS
+                                    &lt;/div&gt;
+                                    &lt;div id&#x3D;&quot;pagecount&quot;&gt;&lt;/div&gt;
+                    
+                                    &lt;div id&#x3D;&quot;next&quot; class&#x3D;&quot;bold hover&quot; (click)&#x3D;&quot;nextpage()&quot; &gt;
+                                      NEXT
+                                    &lt;/div&gt;
+                    
+                              &lt;/div&gt; --&gt;
+
+
+                        &lt;/div&gt;
+                  &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- &lt;pre class&#x3D;&quot;mt-5&quot;&gt; {{vendorEvaluation.value | json}} &lt;/pre&gt; --&gt;
+      &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./evaluatevendor.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+.nav-item1 {
+    width: 233px;
+  }
+  
+  
+  
+  
+  .nav-link.active {
+    color: #0c59cf;
+    background-color: #eff2f5;
+  } 
+  
+
+
+  .list-group-item {
+    box-shadow: none;
+    background-color: rgb(249, 250, 251);
+    border: none !important; 
+}
+
+
+.expansion-panel-toggler {
+  -ms-flex-align: center;
+  align-items: center;
+  color: inherit;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  min-height: 3rem;
+  padding: 0.830357rem 1.5rem;
+  text-align: inherit;
+  width: 100%;
+  border: none !important; 
+}
+
+.btn-primar{
+  background-color: #eff2f5;
+  color: #1a355d;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+}
+
+.textfield-box .form-control, .textfield-box .custom-select, .textfield-box .form-control-file {
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: .6rem .6rem calc(.6rem - .6px);
+  color: #000000;
+  font-size: 14px;
+  font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom-color: #2e73dc;
+}
+
+.label-class {
+  white-space: nowrap;
+  color: #1f5fbd;
+  font-weight: normal;
+  font-size: 14px;
+  font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+  text-decoration: none;
+  font-style: normal;
+  text-transform: none;
+  display: inline-block;
+}
+
+h4 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  
+}
+
+.list-group-item {
+  font-size: 0.9375rem;
+  line-height: 1.028572;
+  min-height: 2rem;
+  padding: 0.230357rem .2rem;
+  position: relative;
+}
+
+.list-group-item.active {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.back1 {
+  background-color: #eeeeee !important;
+  margin-right: 10px !important;
+}
+.back2 {
+  background-color: #2e73dc !important;
+  color: white !important;
+  margin-right: 10px !important;
+}
+
+.btn-outline-primary {
+color: #2e73dc;
+}
+
+.hidden { 
+  display: none
+}
+
+
+.list-group-item {
+  transition-duration: 0.3s;
+  transition-property: background-color, color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  border-top: .1px solid silver;
+  border-bottom: .1px solid silver;
+  /* box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2); */
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.87);
+  display: block;
+  position: relative;
+}
+
+select[disabled] {
+  filter: invert(5%);
+  
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  font-size: 12px;
+  max-height: 200px;
+  min-height: 0px;
+  overflow-y: scroll;
+  box-shadow: none;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropbtn {
+  background-color: none;
+  color: black;
+  padding: 10px;
+  min-width: 200px;
+  font-size: 14px;
+  border: 1px solid grey;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+.row{
+  margin-right: 0px !Important; 
+     margin-left:  0px !Important; 
+     margin:0px !Important
+
+}
+
+.list-group-item{
+  padding:0px !Important;
+  background-color:transparent !Important;
+}
+
+ #home .expansion-panel-toggler:nth-child(2n-1){
+  background-color:transparent !Important;
+}
+
+#home .expansion-panel-toggler{
+  padding:0px !Important
+}
+
+.textupdate{
+  text-transform:none;
+ color: #000333;
+ font-weight: normal;
+  text-decoration: none;
+ font-size: 14px;
+ font-family: &#x27;Arial&#x27;, &#x27;SansSerif&#x27;;
+ font-style:normal
+}
+
+#home ul li{
+  position: relative;
+  float:left;
+  width:20%;
+  color: #0844a4 !Important;
+  font-weight: bold !Important;
+  font-size: 14px !Important;
+  text-align: left !Important;
+  font-family: Arial, &quot;SansSerif&quot; !Important;
+}
+
+#home ul{
+  padding:0px !Important;
+}
+
+.acc:nth-child(even){
+  background:rgba(242,246,249,0.5)
+}
+.acc{
+  padding:5px
+}
+
+#justifiedTabContent{
+  margin-top: 15px;
+  height: 433px;
+        color: #606060;
+        font-size: 14px;
+        background-color: #ffffff;
+        font-family: Arial, SansSerif;
+        padding: 27px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #cad2db;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: #cad2db;
+        border-left-width: 1px;
+        border-left-style: solid;
+        border-left-color: #cad2db;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: #cad2db;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: #cad2db;
+}
+
+.nav-link.active{
+  background-color: white;
+  box-shadow: -1px -1px 1px rgba(0,0,0,0.2);
+  /* height: 60px; */
+}
+
+#items_of {
+
+	height: 18px;
+	font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+	font-size: 12px;
+	text-align: left;
+	color:rgba(0,0,120,1);
+}
+
+#items_of:before{
+  content: &quot;View&quot;;
+  position: absolute;
+  top: -2px;
+  left: -76px;
+  height: 10px;
+  width: 10px;
+  font-size: 14px;
+
+}
+
+
+#page_select_drop_down {
+	position: relative;
+	float:left;
+	margin-top:-2px;
+	width: 41px;
+	height: 20px;
+    background:rgba(242,246,249,0.5);
+	color: #2671d8;
+	border:none;
+}
+
+#footer{
+	position: relative !Important;
+	float:left;
+	width:100%;
+	height:fit-content;
+	padding:30px
+}
+
+#footer div{
+	float:left;
+	position: relative !Important; 
+}
+
+
+#previous {
+	margin-left:190px;
+	width: 61px;
+	height: 18px;
+	font-family:&quot;Arial&quot;,&quot; SansSerif&quot;;
+	font-size: 12px;
+	text-align: left;
+	color:#2671d8;
+}
+
+
+#next {
+
+	width: 35px;
+	height: 18px;
+	font-family:Arial;
+	font-size: 12px;
+	text-align: left;
+	color:#2671d8;
+}
+
+
+
+
+#page_count_select {
+	width: 115px;
+	height: 19px;
+    background:rgba(255,255,255,255);
+}
+
+
+
+.next:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.next::after{
+	content:&quot;&quot;;
+	position: absolute;
+    top: 5px;
+    right: -20px;
+    border-left: 2px solid #006fbe;
+    border-bottom: 2px solid #006fbe;
+    height: 10px;
+    width: 10px;
+    -webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+
+
+.previoustab{
+	position: absolute;
+	bottom:0px;
+	right:80px;
+	display: inline-block;
+    color: #006fbe;
+    font-size: 14px;
+    font-family: &quot;Arial&quot;,&quot; SansSerif&quot;;
+    line-height: 1.5;
+}
+
+.previoustab:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.previoustab::before{
+	content:&quot;&quot;;
+	position: absolute;
+    top: 5px;
+    left: -17px;
+    border-left: 2px solid #006fbe;
+    border-bottom: 2px solid #006fbe;
+    height: 10px;
+    width: 10px;
+    -webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="header">      <div style="white-space:nowrap; color:#1a355d;                     font-weight:bold; font-size:16px; font-family:\'Arial\',\'SansSerif\';                     text-align:left;">            Proposal Evaluation - {{this.vendorEvaluation.get(\'vendor\').value}}      </div>      <a class="float-right" style="text-decoration: none" (click)="back()"><span class="back"><i                        class="fa fa-arrow-left mr-2" aria-hidden="true"></i>Back</span></a></div><div class="mt-4">      <form [formGroup]="vendorEvaluation" novalidate (change)="onChange(vendorEvaluation)">            <div>                  <div>                        <ul class="nav nav-tabs" id="justifiedTab" role="tablist">                              <li class="nav-item nav-item1 text-center">                                    <a aria-controls="home" aria-selected="true" class="nav-link active"                                          data-toggle="tab" href="#home" id="home-tab" role="tab">Vendor Response</a>                              </li>                              <li class="nav-item nav-item1 text-center">                                    <a aria-controls="contact" aria-selected="false" class="nav-link" data-toggle="tab"                                          href="#contact" id="contact-tab" role="tab">Evaluation Package</a>                              </li>                        </ul>                        <div class="tab-content" id="justifiedTabContent"                              style="background:white;padding:40px;margin-top:-1px;">                              <div class="tab-pane fade show active" aria-labelledby="home-tab" id="home"                                    role="tabpanel" style="border-bottom: 2px solid #D6D6D6;">                                    <table style="width:100% !Important" id="home" formArrayName="vendorFiles">                                          <colgroup>                                                <col span="3" style="width:33.33%">                                          </colgroup>                                          <tr style="padding:5px">                                                <th style=" color: #0844a4 !Important;                                            font-weight: bold !Important;                                            font-size: 14px !Important;                                            text-align: left !Important;                                            font-family: Arial, SansSerif !Important;">File</th>                                                <th style=" color: #0844a4 !Important;                                            font-weight: bold !Important;                                            font-size: 14px !Important;                                            text-align: left !Important;                                            font-family: Arial, SansSerif !Important;">Status</th>                                                <th                                                      style=" color: #0844a4 !Important;                                            font-weight: bold !Important;                                            font-size: 14px !Important;                                            text-align: left !Important;                                            font-family: Arial, SansSerif !Important;position: relative;float:left;margin-left:9%">                                                      Action</th>                                          </tr>                                          <tr *ngFor="let vendor of getFiles(vendorEvaluation); let i = index;"                                                class=" acc" id="accordion+i" [formGroupName]="i" style="height:52px">                                                <td>                                                      <span style="color: #0844a4;                                                      font-family: Arial, SansSerif;                                                      font-size: 14px; width: 200px;font-weight: normal">{{vendor.get(\'volumeName\').value}}                                                      </span>                                                </td>                                                <td>                                                      <div *ngIf="!vendor.get(\'status\').value" class="textupdate">                                                            &nbsp;<i class="fa fa-hourglass-start"                                                                  style="color:#0844a4 " aria-hidden="true"></i>                                                            &nbsp;<span style="color: grey">Not Started</span></div>                                                      <div *ngIf="vendor.get(\'status\').value == \'Pending\'"                                                            class="textupdate">&nbsp;<i class="fa fa-hourglass-start"                                                                  aria-hidden="true"></i>                                                            &nbsp;<span style="color:#2e73dc">Pending</span></div>                                                      <div *ngIf="vendor.get(\'status\').value == \'Complete\'"                                                            class="textupdate"> &nbsp;<i style="color: #629c44;"                                                                  class="fa fa-check-circle-o" aria-hidden="true"></i>                                                            &nbsp;<span style="color: green">Completed</span>                                                      </div>                                                </td>                                                <td>                                                      <a class="expansion-panel-icon ml-3 text-black-secondary">                                                            <a target="_blank" [href]="vendor.get(\'pdfSrc\').value"                                                                  class="btn btn-sm btn-light" style="color: #000333;                                                                              font-weight: normal;                                                                              text-decoration: none;                                                                              font-size: 14px;                                                                              font-family: Arial,SansSerif;                                                                              font-style: normal;">View</a>                                                            <button *ngIf="vendor.get(\'status\').value != \'Complete\'"                                                                  class="btn btn-sm btn-primary ml-3"                                                                  data-toggle="modal" data-target="#collapseOne"                                                                  aria-expanded="true" aria-controls="collapseOne"                                                                  [attr.data-target]="\'#\' + \'active\' + n + i">Evaluate</button>                                                            <button *ngIf="vendor.get(\'status\').value == \'Complete\'"                                                                  class="btn btn-sm btn-success ml-3"                                                                  data-toggle="modal" data-target="#collapseOne"                                                                  aria-expanded="true" aria-controls="collapseOne"                                                                  [attr.data-target]="\'#\' + \'active\' + n + i">Review</button>                                                            <div class="modal fade bd-example-modal-lg"                                                                  [attr.id]=" \'active\' + n + i" tabindex="-1"                                                                  role="dialog" aria-labelledby="myLargeModalLabel"                                                                  aria-hidden="true">                                                                  <div class="modal-dialog modal-lg">                                                                        <div class="modal-header">                                                                              <img src="assets/hhs-accelerate-logo.png"                                                                                    height="30">                                                                              <button type="button" class="close"                                                                                    data-dismiss="modal"                                                                                    aria-label="Close">                                                                                    <span                                                                                          aria-hidden="true">&times;</span>                                                                              </button>                                                                        </div>                                                                        <div class="modal-content">                                                                              <div class="card-header p-3">                                                                                    <h5 class="card-title"                                                                                          style="color: #0844a4;font-weight: bold;font-size: 14px;font-family: Arial, SansSerif">                                                                                          <i class="fa fa-tags"                                                                                                style="color: grey"                                                                                                aria-hidden="true"></i>                                                                                          Evaluation                                                                                    </h5>                                                                              </div>                                                                              <div class="card-body"                                                                                    style="height: 60vh; overflow-y:scroll">                                                                                    <div class="form-group">                                                                                          <label                                                                                                for="strengths">Strengths</label>                                                                                          <textarea class="form-control"                                                                                                formControlName="strengths"                                                                                                id="strengths" rows="3"                                                                                                [readonly]="vendor.get(\'status\').value == \'Complete\'"></textarea>                                                                                    </div>                                                                                    <div class="form-group">                                                                                          <label                                                                                                for="weakness">Weakness</label>                                                                                          <textarea class="form-control"                                                                                                formControlName="weekness"                                                                                                id="weakness" rows="3"                                                                                                [readonly]="vendor.get(\'status\').value == \'Complete\'"></textarea>                                                                                    </div>                                                                                    <div class="form-group">                                                                                          <label                                                                                                for="Deficiencies">Deficiencies</label>                                                                                          <textarea class="form-control"                                                                                                formControlName="Deficiencies"                                                                                                id="Deficiencies"                                                                                                rows="3"                                                                                                [readonly]="vendor.get(\'status\').value == \'Complete\'"></textarea>                                                                                    </div>                                                                                    <div class="form-group">                                                                                          <label                                                                                                for="Remarks">Remarks</label>                                                                                          <textarea class="form-control"                                                                                                formControlName="Remarks"                                                                                                id="Remarks" rows="3"                                                                                                [readonly]="vendor.get(\'status\').value == \'Complete\'"></textarea>                                                                                    </div>                                                                              </div>                                                                              <div class="card-footer">                                                                                    <button data-dismiss="modal"                                                                                          aria-label="Close"                                                                                          class="close nav-link btn btn-sm btn-success"                                                                                          (click)="saveComplete(i)"                                                                                          [disabled]="(vendor.get(\'strengths\').value && vendor.get(\'weekness\').value && vendor.get(\'Deficiencies\').value && vendor.get(\'Remarks\').value) == \'\' ">Save                                                                                          & Complete</button>                                                                                    <button data-dismiss="modal"                                                                                          aria-label="Close"                                                                                          class="close nav-link btn btn-sm btn-primary mr-3"                                                                                          (click)="savePending(i)">Save</button>                                                                              </div>                                                                        </div>                                                                  </div>                                                            </div>                                                      </a>                                                </td>                                          </tr>                                    </table>                              </div>                              <!-- <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home"                                    role="tabpanel" formArrayName="vendorFiles"                                    style="border-bottom: 2px solid #D6D6D6;">                                    <ul style="list-style-type: none;width:100%;height: 10px;font-weight:normal !Important                                    ">                                          <li>Files</li>                                          <li style="margin-left:24%">Status</li>                                          <li style="margin-left:10%">Action</li>                                    </ul>                                    <div *ngFor="let vendor of getFiles(vendorEvaluation); let i = index;"                                          class="list-group acc" id="accordion+i" [formGroupName]="i" style="height:52px">                                          <div class="expansion-panel mb-2 list-group-item row ">                                                <div aria-expanded="false"                                                      class="expansion-panel-toggler btn-primar collapsed row "                                                      id="acquisitionInformation" style="height: 38px">                                                      <span                                                            style="color: #0844a4;                                                            font-family: Arial, SansSerif;                                                            font-size: 14px; width: 200px;font-weight: normal">{{vendor.get(\'volumeName\').value}}                                                            </span>                                                      <div *ngIf="vendor.get(\'status\').value == \'\'"                                                            class="textupdate" > &nbsp;<i                                                                  class="fa fa-hourglass-start" style="color:#0844a4 "aria-hidden="true"></i>                                                            &nbsp;<span style="color: grey">Not Started</span></div>                                                      <div *ngIf="vendor.get(\'status\').value == \'Pending\'"                                                      class="textupdate">&nbsp;<i                                                                  class="fa fa-hourglass-start" aria-hidden="true"></i>                                                            &nbsp;<span style="color:#2e73dc">Pending</span></div>                                                      <div *ngIf="vendor.get(\'status\').value == \'Complete\'"                                                      class="textupdate"> &nbsp;<i                                                                  style="color: #629c44;" class="fa fa-check-circle-o"                                                                  aria-hidden="true"></i>                                                            &nbsp;<span style="color: green">Completed</span></div>                                                      <a class="expansion-panel-icon ml-3 text-black-secondary">                                                            <a target="_blank" [href]="vendor.get(\'pdfSrc\').value"                                                                  class="btn btn-sm btn-light" style="color: #000333;                                                                  font-weight: normal;                                                                  text-decoration: none;                                                                  font-size: 14px;                                                                  font-family: Arial,SansSerif;                                                                  font-style: normal;">View</a>                                                            <button *ngIf="vendor.get(\'status\').value != \'Complete\'"                                                                  class="btn btn-sm btn-primary ml-3"                                                                  data-toggle="modal" data-target="#collapseOne"                                                                  aria-expanded="true" aria-controls="collapseOne"                                                                  [attr.data-target]="\'#\' + \'active\' + n + i">Evaluate</button>                                                            <button *ngIf="vendor.get(\'status\').value == \'Complete\'"                                                                  class="btn btn-sm btn-success ml-3"                                                                  data-toggle="modal" data-target="#collapseOne"                                                                  aria-expanded="true" aria-controls="collapseOne"                                                                  [attr.data-target]="\'#\' + \'active\' + n + i">Review</button>                                                            <div class="modal fade bd-example-modal-lg"                                                                  [attr.id]=" \'active\' + n + i" tabindex="-1"                                                                  role="dialog" aria-labelledby="myLargeModalLabel"                                                                  aria-hidden="true">                                                                  <div class="modal-dialog modal-lg">                                                                        <div class="modal-header">                                                                              <img src="assets/hhs-accelerate-logo.png"                                                                                    height="30">                                                                              <button type="button" class="close"                                                                                    data-dismiss="modal"                                                                                    aria-label="Close">                                                                                    <span                                                                                          aria-hidden="true">&times;</span>                                                                              </button>                                                                        </div>                                                                        <div class="modal-content">                                                                              <div class="card-header p-3">                                                                                    <h5 class="card-title"                                                                                          style="color: #0844a4;font-weight: bold;font-size: 14px;font-family: Arial, SansSerif">                                                                                          <i class="fa fa-tags"                                                                                                style="color: grey"                                                                                                aria-hidden="true"></i>                                                                                          Evaluation                                                                                    </h5>                                                                              </div>                                                                              <div class="card-body"                                                                                    style="height: 60vh; overflow-y:scroll">                                                                                    <div class="form-group">                                                                                          <label                                                                                                for="strengths">Strengths</label>                                                                                          <textarea class="form-control"                                                                                                formControlName="strengths"                                                                                                id="strengths" rows="3"                                                                                                [readonly]="vendor.get(\'status\').value == \'Complete\'"></textarea>                                                                                    </div>                                                                                    <div class="form-group">                                                                                          <label                                                                                                for="weakness">Weakness</label>                                                                                          <textarea class="form-control"                                                                                                formControlName="weekness"                                                                                                id="weakness" rows="3"                                                                                                [readonly]="vendor.get(\'status\').value == \'Complete\'"></textarea>                                                                                    </div>                                                                                    <div class="form-group">                                                                                          <label                                                                                                for="Deficiencies">Deficiencies</label>                                                                                          <textarea class="form-control"                                                                                                formControlName="Deficiencies"                                                                                                id="Deficiencies"                                                                                                rows="3"                                                                                                [readonly]="vendor.get(\'status\').value == \'Complete\'"></textarea>                                                                                    </div>                                                                                    <div class="form-group">                                                                                          <label                                                                                                for="Remarks">Remarks</label>                                                                                          <textarea class="form-control"                                                                                                formControlName="Remarks"                                                                                                id="Remarks" rows="3"                                                                                                [readonly]="vendor.get(\'status\').value == \'Complete\'"></textarea>                                                                                    </div>                                                                                                                                                 </div>                                                                              <div class="card-footer">                                                                                    <button data-dismiss="modal"                                                                                          aria-label="Close"                                                                                          class="close nav-link btn btn-sm btn-success"                                                                                          (click)="saveComplete(i)"                                                                                          [disabled]="(vendor.get(\'strengths\').value && vendor.get(\'weekness\').value && vendor.get(\'Deficiencies\').value && vendor.get(\'Remarks\').value) == \'\' ">Save                                                                                          & Complete</button>                                                                                    <button data-dismiss="modal"                                                                                          aria-label="Close"                                                                                          class="close nav-link btn btn-sm btn-primary mr-3"                                                                                          (click)="savePending(i)">Save</button>                                                                              </div>                                                                        </div>                                                                  </div>                                                            </div>                                                      </a>                                                </div>                                                                                         </div>                                          <div class="modal fade bd-example-modal-lg" [attr.id]=" \'active\' + n + i"                                                tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"                                                aria-hidden="true">                                                <div class="modal-dialog modal-lg">                                                      <div class="modal-header">                                                            <img src="assets/hhs-accelerate-logo.png" height="30">                                                            <button type="button" class="close" data-dismiss="modal"                                                                  aria-label="Close">                                                                  <span aria-hidden="true">&times;</span>                                                            </button>                                                      </div>                                                      <div class="modal-content">                                                            <div class="card-header p-3">                                                                  <h5 class="card-title"                                                                        style="color: #0844a4;font-weight: bold;font-size: 14px;font-family: Arial, SansSerif">                                                                        <i class="fa fa-tags" style="color: grey"                                                                              aria-hidden="true"></i> Evaluation                                                                  </h5>                                                            </div>                                                            <div class="card-body"                                                                  style="height: 60vh; overflow-y:scroll">                                                                  <div class="form-group">                                                                        <label for="strengths">Strengths</label>                                                                        <textarea class="form-control"                                                                              formControlName="strengths" id="strengths"                                                                              rows="3"                                                                              [readonly]="vendor.get(\'status\').value == \'Complete\'"></textarea>                                                                  </div>                                                                  <div class="form-group">                                                                        <label for="weakness">Weakness</label>                                                                        <textarea class="form-control"                                                                              formControlName="weekness" id="weakness"                                                                              rows="3"                                                                              [readonly]="vendor.get(\'status\').value == \'Complete\'"></textarea>                                                                  </div>                                                                  <div class="form-group">                                                                        <label for="Deficiencies">Deficiencies</label>                                                                        <textarea class="form-control"                                                                              formControlName="Deficiencies"                                                                              id="Deficiencies" rows="3"                                                                              [readonly]="vendor.get(\'status\').value == \'Complete\'"></textarea>                                                                  </div>                                                                  <div class="form-group">                                                                        <label for="Remarks">Remarks</label>                                                                        <textarea class="form-control"                                                                              formControlName="Remarks" id="Remarks"                                                                              rows="3"                                                                              [readonly]="vendor.get(\'status\').value == \'Complete\'"></textarea>                                                                  </div>                                                                                                                </div>                                                            <div class="card-footer">                                                                  <button data-dismiss="modal" aria-label="Close"                                                                        class="close nav-link btn btn-sm btn-success"                                                                        (click)="saveComplete(i)"                                                                        [disabled]="(vendor.get(\'strengths\').value && vendor.get(\'weekness\').value && vendor.get(\'Deficiencies\').value && vendor.get(\'Remarks\').value) == \'\' ">Save                                                                        & Complete</button>                                                                  <button data-dismiss="modal" aria-label="Close"                                                                        class="close nav-link btn btn-sm btn-primary mr-3"                                                                        (click)="savePending(i)">Save</button>                                                            </div>                                                      </div>                                                </div>                                          </div>                                    </div>                                                                                                      </div> -->                              <div id="contact" aria-labelledby="contact-tab" class="tab-pane fade" role="tabpanel">                                    <table style="                                  border-bottom: 2px solid #D6D6D6;                              z-index: 900;width:100%">                                          <colgroup>                                                <col span="1" style="width:80%">                                          </colgroup>                                          <tr style="margin-bottom:10px">                                                <th style="color: #0844a4 !Important;                                      font-weight: bold !Important;                                      font-size: 14px !Important;                                      text-align: left !Important;                                      font-family: Arial, SansSerif !Important;">                                                      Files                                                </th>                                                <th style="color: #0844a4 !Important;                                      font-weight: bold !Important;                                      font-size: 14px !Important;                                      text-align: left !Important;                                      font-family: Arial, SansSerif !Important;">                                                      Action                                                </th>                                          </tr>                                          <!-- <ul style="list-style-type: none;width:100%;height: 10px;font-weight:normal !Important                                     ;padding:0px">                                           <li style="    width: 70px;                                           position: relative;                                           float: left;                                           color: #0844a4 !Important;                                          font-weight: bold !Important;                                          font-size: 14px !Important;                                          text-align: left !Important;                                          font-family: Arial, SansSerif !Important; ">Files</li>                                           <li style="width: 40px;                                           position: relative;                                           float: left;margin-left:79%;                                           color: #0844a4 !Important;                                          font-weight: bold !Important;                                          font-size: 14px !Important;                                          text-align: left !Important;                                          font-family: Arial, SansSerif !Important;">Action</li>                                     </ul> -->                                          <tr *ngFor="let res of getPdf(vendorEvaluation);let j = index;" class="acc"                                                style="height:52px">                                                <td>                                                      <span style="color: #1a355d;">{{res.get(\'fileName\').value}}</span>                                                </td>                                                <td>                                                      <a>                                                            <a target="_blank" [href]="res.get(\'pdfSrc\').value"                                                                  class="btn btn-sm btn-light" style="color: #ffffff;                                                      font-size: 11px;                                                       background-color: #006fbe;                                                       font-family: Arial, SansSerif;                                                      text-align: center;                                                      padding: 6px;                                                      border-radius:5px">View</a>                                                      </a>                                                </td>                                                <!-- <div aria-expanded="false"                                                      class="expansion-panel-toggler btn-primar collapsed"                                                      id="acquisitionInformation"                                                      style="background:transparent !Important;padding:0px !Important">                                                      <span style="color: #1a355d;">{{res.get(\'fileName\').value}}</span>                                                      <a>                                                            <a target="_blank" [href]="res.get(\'pdfSrc\').value"                                                                  class="btn btn-sm btn-light"                                                                  style="color: #ffffff;                                                                  font-size: 11px;                                                                  background-color: #006fbe;                                                                  font-family: Arial, SansSerif;                                                                  text-align: center;                                                                  padding: 6px;                                                                  border-radius:5px">View</a>                                                      </a>                                                </div> -->                                          </tr>                                    </table>                              </div>                              <!-- <div id="footer">                                    <select id="page_select_drop_down"  [(ngModel)]="pageamount" (change)="pagesize(pageamount)"  >                                          <option *ngFor="let count of this.counter"  value="{{count}}">{{count}}</option>                                    </select>                                    <div id="items_of" class="bold" style="width:fit-content" >                                     OF                                    </div>                                    <div id="previous" class="bold hover" (click)="previouspage()" >                                      PREVIOUS                                    </div>                                    <div id="pagecount"></div>                                                        <div id="next" class="bold hover" (click)="nextpage()" >                                      NEXT                                    </div>                                                  </div> -->                        </div>                  </div>            </div>            <!-- <pre class="mt-5"> {{vendorEvaluation.value | json}} </pre> -->      </form></div></div>'
+    var COMPONENTS = [{'name': 'ApdetailComponent', 'selector': 'app-apdetail'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AttachmentsComponent', 'selector': 'app-attachments'},{'name': 'AttachmentsinfoComponent', 'selector': 'app-attachmentsinfo'},{'name': 'ClausesectionsComponent', 'selector': 'app-clausesections'},{'name': 'CloseOutComponent', 'selector': 'app-close-out'},{'name': 'CodeValidateComponent', 'selector': 'app-code-validate'},{'name': 'CommentBoxComponent', 'selector': 'app-comment-box'},{'name': 'CompatibilityComponent', 'selector': 'app-compatibility'},{'name': 'CompetetionComponent', 'selector': 'app-competetion'},{'name': 'ConstraintsComponent', 'selector': 'app-constraints'},{'name': 'ContactAdminComponent', 'selector': 'app-contact-admin'},{'name': 'ContractadmindataComponent', 'selector': 'app-contractadmindata'},{'name': 'ContractComponent', 'selector': 'app-contract'},{'name': 'ContractdetailComponent', 'selector': 'app-contractdetail'},{'name': 'ContractFileComponent', 'selector': 'app-contract-file'},{'name': 'ContractGenerationComponent', 'selector': 'app-contract-generation'},{'name': 'ContractPreviewComponent', 'selector': 'app-contract-preview'},{'name': 'ContractsdisplayComponent', 'selector': 'app-contractsdisplay'},{'name': 'CoprofileComponent', 'selector': 'app-coprofile'},{'name': 'CornominationComponent', 'selector': 'app-cornomination'},{'name': 'DashAcquisitionComponent', 'selector': 'app-dash-acquisition'},{'name': 'DashActiveComponent', 'selector': 'app-dash-active'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DashExpiredComponent', 'selector': 'app-dash-expired'},{'name': 'DashSolicitationComponent', 'selector': 'app-dash-solicitation'},{'name': 'DeleveriesandperformanceComponent', 'selector': 'app-deleveriesandperformance'},{'name': 'EstimateComponent', 'selector': 'app-estimate'},{'name': 'EvaluatevendorComponent', 'selector': 'app-evaluatevendor'},{'name': 'EvaluationfactorsComponent', 'selector': 'app-evaluationfactors'},{'name': 'EvaluationsComponent', 'selector': 'app-evaluations'},{'name': 'FormdetailComponent', 'selector': 'app-formdetail'},{'name': 'GeneralComponent', 'selector': 'app-general'},{'name': 'HomePageComponent', 'selector': 'app-home-page'},{'name': 'IgceComponent', 'selector': 'app-igce'},{'name': 'InspectionandacceptanceComponent', 'selector': 'app-inspectionandacceptance'},{'name': 'InstructionsComponent', 'selector': 'app-instructions'},{'name': 'LoginPageComponent', 'selector': 'app-login-page'},{'name': 'LogoutComponent', 'selector': ''},{'name': 'MarketresearchComponent', 'selector': 'app-marketresearch'},{'name': 'ModifyContractComponent', 'selector': 'app-modify-contract'},{'name': 'PackagingandmarketingComponent', 'selector': 'app-packagingandmarketing'},{'name': 'PmacquisitionsComponent', 'selector': 'app-pmacquisitions'},{'name': 'PmdashComponent', 'selector': 'app-pmdash'},{'name': 'PmprofileComponent', 'selector': 'app-pmprofile'},{'name': 'PmsolComponent', 'selector': 'app-pmsol'},{'name': 'PreviewComponent', 'selector': 'app-preview'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProposalevalhomeComponent', 'selector': 'app-proposalevalhome'},{'name': 'ProposalevaluationComponent', 'selector': 'app-proposalevaluation'},{'name': 'QandaComponent', 'selector': 'app-qanda'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RepresentationcertsComponent', 'selector': 'app-representationcerts'},{'name': 'ReqformComponent', 'selector': 'app-reqform'},{'name': 'SolCommentBoxComponent', 'selector': 'app-sol-comment-box'},{'name': 'SolicitationdetailComponent', 'selector': 'app-solicitationdetail'},{'name': 'SowComponent', 'selector': 'app-sow'},{'name': 'SpecialcontractreqComponent', 'selector': 'app-specialcontractreq'},{'name': 'StatementofworkComponent', 'selector': 'app-statementofwork'},{'name': 'SuppliesandservicesComponent', 'selector': 'app-suppliesandservices'},{'name': 'TradeoffsComponent', 'selector': 'app-tradeoffs'},{'name': 'VendorresevalComponent', 'selector': 'app-vendorreseval'},{'name': 'VendorresponseComponent', 'selector': 'app-vendorresponse'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'EvaluatevendorComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EvaluatevendorComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,23 @@
+.containerbg {
+    height: 100vh;
+    display: flex;
+    background-color: #253245;
+  }
+  
+  .img1 {
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+  }
+  
+  /* .img1:hover {
+    animation: shake 1.2s;
+    animation-iteration-count: infinite;
+  } */
+  
+  .login-text {
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #1f5fbd;
+    /* text-shadow: .2px .2px .2px black, 0 0 5px #1f5fbd, 0 0 2px #1f5fbd; */
+  }
+  
